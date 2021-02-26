@@ -22,6 +22,11 @@ class User extends Authenticatable
         'phone_num',
         'email',
         'email_verified_at',
+        'start_delivery',
+        'end_delivery',
+        'price_delivery',
+        'lat',
+        'long',
         'password'
     ];
     public function items(){

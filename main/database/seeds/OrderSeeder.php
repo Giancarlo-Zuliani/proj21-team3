@@ -3,7 +3,6 @@
 use Illuminate\Database\Seeder;
 use App\Item;
 use App\Order;
-use App\User;
 
 class OrderSeeder extends Seeder
 {
@@ -14,15 +13,14 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, 150)
-           ->make()
+        factory(Order::class, 50)
+           ->create()
            ->each(function($ord){
-               $user = User::inRandomOrder() -> first();
-               $ord -> user() -> associate($user);
-               $ord -> save();
-               $dish = Item::inRandomOrder() -> limit(rand(5,15))->get();
-               $ord -> dishes()-> attach($dish);
-
+               $item = Item::inRandomOrder() -> limit(rand(5,15))->get();
+               $ord -> items()-> attach($item);
+               $ran = rand(1,3);
+               $idOrder = $ord -> id;
+               DB::update('update item_order set quantity ='. $ran . ' where order_id =' . $idOrder);
             });
     }
 }

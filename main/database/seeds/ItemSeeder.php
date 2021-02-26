@@ -13,12 +13,12 @@ class ItemSeeder extends Seeder
      */
     public function run()
     {
-        factory(Dish::class, 150)
+        factory(Item::class, 50)
             ->make()
-            ->each(function($dish){
+            ->each(function($item){
                 $user = User::inRandomOrder() -> first();
-                $dish -> user() -> associate($user);
-                $dish -> save();
+                $item -> user() -> associate($user);
+                $item -> save();
             });
     }
 }

@@ -2,19 +2,17 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
+use App\Order;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Order::class, function (Faker $faker) {
     return [
-        'name' => $faker -> firstName,
-        'lastname' => $faker ->lastName,
+        'buyer_name' => $faker -> firstName,
+        'buyer_lastname' => $faker ->lastName,
         'address' => $faker -> address,
         'phone_num' => $faker ->phoneNumber,
         'email' => $faker -> email,
-        'payment_status' => rand(0,1),
         'discount' => rand(10,40),
         'total_price' => rand(50,250),
-        'final_price' => rand(50,250),
     ];
 });

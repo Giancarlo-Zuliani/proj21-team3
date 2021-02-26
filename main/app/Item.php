@@ -8,11 +8,14 @@ class Item extends Model
 {
     protected $fillable = [
         'name',
-       'description',
+        'description',
         'ingredients',
         'photo',
         'price',
         'available',
+        'deleted',
+        'lactose',
+        'gluten',
     ];
     public function user(){
         return $this -> belongsTo(User::class);
