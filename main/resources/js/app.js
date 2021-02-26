@@ -16,10 +16,9 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+const files = require.context('./', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,4 +28,33 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        showtypo: true,
+        showRestaurant: false,
+        allTypoArray: [],
+        randomTypoArray: [],
+        restaurantArray: [],
+    },
+    mounted: function() {
+        axios.get('http://127.0.0.1:8000/gettypo')
+            .then(response => {
+                console.log(response.data);
+                this.allTypoArray = response.data;
+                for (i = 0; i < 12; i++) {
+                    let rand = Math.floor(Math.random() * 50);
+                    this.randomTypoArray.includes(response.data[rand]) ? i-- : this.randomTypoArray.push(response.data[rand]);
+                };
+            });
+    },
+    methods: {
+        getRestaurant(id) {
+            axios.get('http://127.0.0.1:8000/getRestaurantByType/' + id)
+                .then(response => {
+                    this.restaurantArray = response.data;
+                    this.showtypo = !this.showtypo;
+                    this.showRestaurant = !this.showRestaurant;
+                    console.log(response.data);
+                });
+        }
+    }
 });

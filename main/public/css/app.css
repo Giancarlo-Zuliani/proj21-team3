@@ -10944,3 +10944,20 @@ a.text-dark:focus {
   }
 }
 
+main {
+  width: 90%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main .typologybox {
+  margin: 25px;
+  width: 20%;
+  height: 150px;
+  background-color: purple;
+}
+
