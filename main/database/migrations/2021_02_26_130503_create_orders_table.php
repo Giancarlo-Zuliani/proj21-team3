@@ -22,6 +22,8 @@ class CreateOrdersTable extends Migration
             $table->string('email');
             $table->string('discount');
             $table->integer('total_price');
+            $table->integer('final_price');
+            $table->tinyInteger('payment_status');
             $table->timestamps();
         });
     }

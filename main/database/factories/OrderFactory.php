@@ -14,5 +14,7 @@ $factory->define(Order::class, function (Faker $faker) {
         'email' => $faker -> email,
         'discount' => rand(10,40),
         'total_price' => rand(50,250),
+        'final_price' => rand(20,50),
+        'payment_status' => rand(0,1),
     ];
 });

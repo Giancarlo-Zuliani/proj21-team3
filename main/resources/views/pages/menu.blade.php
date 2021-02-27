@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    <h2>Restaurant name: {{$rest -> name}}</h2>
+    <h2>Restaurant name: {{$rest -> name}}</h2> <br>
 
     <ul>
       @foreach ($rest -> items as $value)

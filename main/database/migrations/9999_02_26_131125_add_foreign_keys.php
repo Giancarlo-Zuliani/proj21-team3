@@ -21,7 +21,7 @@ class AddForeignKeys extends Migration
             ->references('id')
             ->on('typologies');
     });
-    
+
     Schema::table('item_order' , function(Blueprint $table){
         $table->foreign('item_id' , 'io-item')
         ->references('id')
@@ -29,7 +29,7 @@ class AddForeignKeys extends Migration
         $table->foreign('order_id' , 'io-order')
         ->references('id')
         ->on('orders');
-    });    
+    });
 
     Schema::table('items' , function(Blueprint $table){
         $table->foreign('user_id' , 'user-item')
@@ -37,11 +37,6 @@ class AddForeignKeys extends Migration
         ->on('users');
     });
 
-    Schema::table('payments' , function(Blueprint $table){
-        $table->foreign('order_id' , 'order-payment')
-        ->references('id')
-        ->on('orders');
-    });
 }
 
     /**
@@ -51,10 +46,6 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
-        Schema::table('payments' , function (Blueprint $table){
-            $table -> dropForeign('order-payment');
-        });
-
         Schema::table('items' , function (Blueprint $table){
             $table -> dropForeign('user-item');
         });
@@ -62,11 +53,10 @@ class AddForeignKeys extends Migration
         Schema::table('item_order' , function (Blueprint $table){
             $table->dropForeign('io-item');
             $table->dropForeign('io-order');
-        });        
+        });
         Schema::table('typology_user' , function (Blueprint $table){
             $table->dropForeign('ut-typology');
             $table->dropForeign('ut-users');
         });
     }
 }
-
