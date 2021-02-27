@@ -8,15 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-   
+
     @include('components.header')
-   
+
     <main id="app">
-        @yield('content')
+      @yield('content')
+
     </main>
+
+    <div id="prova">
+      @yield('itemContainer')
+    </div>
+
     @include('components.footer')
-   
-   
+
+
     <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
