@@ -10944,7 +10944,24 @@ a.text-dark:focus {
   }
 }
 
-main {
+.console {
+  margin: 25px 50px 25px;
+}
+
+.console:hover {
+  cursor: pointer;
+}
+
+.console i {
+  font-size: 1.5rem;
+  transition: transform ease 0.2s;
+}
+
+.console i:hover {
+  transform: scale(1.4);
+}
+
+section {
   width: 90%;
   margin: 50px auto;
   display: flex;
@@ -10954,7 +10971,7 @@ main {
   flex-wrap: wrap;
 }
 
-main .typologybox {
+section .typologybox {
   margin: 25px;
   width: 20%;
   height: 150px;

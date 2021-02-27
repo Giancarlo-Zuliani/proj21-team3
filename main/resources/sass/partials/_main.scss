@@ -1,4 +1,18 @@
-main {
+.console {
+    margin: 25px 50px 25px;
+    &:hover {
+        cursor: pointer;
+    }
+    i {
+        font-size: 1.5rem;
+        transition: transform ease .2s;
+        &:hover {
+            transform: scale(1.4);
+        }
+    }
+}
+
+section {
     width: 90%;
     margin: 50px auto;
     display: flex;
