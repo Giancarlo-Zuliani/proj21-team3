@@ -30,7 +30,7 @@ class User extends Authenticatable
         'password'
     ];
     public function items(){
-        return $this->hasMany(Dish::class);
+        return $this->hasMany(Item::class);
     }
     public function typologies(){
         return $this->belongsToMany(Typology::class);
