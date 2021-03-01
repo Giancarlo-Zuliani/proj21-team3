@@ -11,16 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
+
 
     use RegistersUsers;
 
@@ -53,6 +44,16 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'address' => ['required', 'string', 'max:120'],
+            // 'vat_num' => ['required', 'string', 'min:11', 'max:20'],
+            // 'phone_num' => ['required', 'string', 'min:8', 'max:20'],
+            // 'img' => ['required', 'string', 'min:8', 'max:20'],
+            // 'start_delivery' => ['required', 'string', 'max:20'],
+            // 'end_delivery' => ['required', 'string', 'max:20'],
+            // 'price_delivery' => ['required', 'integer', 'max:10'],
+            // 'lat' => ['required', 'float', 'max:20'],
+            // 'long' => ['required', 'float', 'max:20'],
+
         ]);
     }
 
@@ -68,6 +69,14 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+            'address' => $data['address'],
+            // 'vat_num' => $data['vat_num'],
+            // 'phone_num' => $data['phone_num'],
+            // 'start_delivery' => $data['start_delivery'],
+            // 'end_delivery' => $data['end_delivery'],
+            // 'price_delivery' => $price_delivery,
+            // 'lat' =>
+             // 'long' =>
+           ]);
     }
 }
