@@ -16,3 +16,7 @@ Route::get('/restaurant/{id}' , 'MainController@showMenu')
     Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/item', 'HomeController@createItem')->name('item-create');
+
+Route::post('/item/store', 'HomeController@storeItem')->name('item-store');

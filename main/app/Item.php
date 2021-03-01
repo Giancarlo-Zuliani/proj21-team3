@@ -10,7 +10,6 @@ class Item extends Model
         'name',
         'description',
         'ingredients',
-        'photo',
         'price',
         'available',
         'deleted',

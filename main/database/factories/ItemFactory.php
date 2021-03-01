@@ -10,7 +10,6 @@ $factory->define(Item::class, function (Faker $faker) {
         'name' => $faker -> word,
         'description' => $faker -> sentence,
         'ingredients' => $faker -> word,
-        'photo' => $faker -> word,
         'price' => rand(10,100),
         'available'=> rand(0,1),
         'deleted' => rand(0,1),
