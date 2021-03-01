@@ -19,9 +19,10 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
-    {
-        return view('home');
+    public function index() {
+        $user = Auth::user() -> id;
+        $items = Item::where('user_id', $user) -> get();
+        return view('home', compact('items'));
     }
 
     public function createItem() {

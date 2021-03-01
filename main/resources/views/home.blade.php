@@ -14,6 +14,12 @@
                         </div>
                     @endif
 
+                    @foreach ($items as $item)
+                      <div class="">
+                        {{$item -> name}}
+                      </div>
+                    @endforeach
+
                     <a href="{{route('item-create')}}">Nuovo item</a>
                 </div>
             </div>
