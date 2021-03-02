@@ -151,7 +151,7 @@ class HomeController extends Controller
 
       try {
         $filename = $user -> img;
-        $file = storage_path('app/public/imgs/' . $filename);
+        $file = storage_path('app/public/img/' . $filename);
         $res = File::delete($file);
         // dd($file, $res);
       } catch (\Exception $e) {}
