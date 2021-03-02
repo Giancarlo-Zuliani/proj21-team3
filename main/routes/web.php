@@ -32,3 +32,5 @@ Route::get('/user-show', 'HomeController@userShow')->name('user-show');
 Route::get('/user-show/edit/{id}', 'HomeController@userEdit')->name('user-edit');
 // UPDATE USER
 Route::post('/user-show/update/{id}', 'HomeController@updateUser')->name('user-update');
+// DELETE USER IMG
+Route::get('/clear-user-img', 'HomeController@clearUserImg')->name('clear-user-img');

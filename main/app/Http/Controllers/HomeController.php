@@ -120,39 +120,38 @@ class HomeController extends Controller
         'price_delivery' => $price,
       ));
       ///////// immagine
-      $this -> deleteUserIcon();
+      $this -> deleteUserImg();
 
-      $image = $request -> file('icon');
+      $image = $request -> file('img');
       $ext = $image -> getClientOriginalExtension();
       $name = rand(100000, 999999).'_'.time();
       $destFile = $name.'.'.$ext;
-      $file = $image -> storeAs('icon', $destFile, 'public');
+      $file = $image -> storeAs('img', $destFile, 'public');
       // dd($data, $image);
       // dd($image, $ext, $name, $destFile);
       $user = Auth::user();
-      $user -> icon = $destFile;
+      $user -> img = $destFile;
       $user -> save();
-      return redirect() -> back();
 /////////////////////////////////
       return redirect() -> route('user-show', $user -> id);
     }
 
-    public function clearUserIcon() {
+    public function clearUserImg() {
 
-      $this -> deleteUserIcon();
+      $this -> deleteUserImg();
 
       $user = Auth::user();
-      $user -> icon = null;
+      $user -> img = null;
       $user -> save();
-      return redirect() -> back();
+      return redirect() -> route('user-show', $user -> id);
     }
 
-    private function deleteUserIcon() {
+    private function deleteUserImg() {
       $user = Auth::user();
 
       try {
-        $filename = $user -> icon;
-        $file = storage_path('app/public/icon/' . $filename);
+        $filename = $user -> img;
+        $file = storage_path('app/public/imgs/' . $filename);
         $res = File::delete($file);
         // dd($file, $res);
       } catch (\Exception $e) {}

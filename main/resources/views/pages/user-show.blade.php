@@ -1,8 +1,8 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    
-    <ul>        
+
+    <ul>
         <li>{{$user->name}}</li>
         <li>{{$user->vat_num}}</li>
         <li>{{$user->address}}</li>
@@ -11,7 +11,7 @@
     </ul>
 
     <h2>informazioni di consegna</h2>
-    <ul> 
+    <ul>
         <li>start deli</li>
         <li>{{$user->start_delivery}}</li>
         <li>start end</li>
@@ -20,8 +20,15 @@
         <li>{{$user->price_delivery / 100}}€</li>
     </ul>
 
+    @if (Auth::user() -> img != null)
+      <div class="card-body">
+        <h3>Profile image added</h3>
+        <img src="{{asset('storage/img/' . Auth::user() -> img)}}">
+      </div>
+    @endif
+
     <a href="{{route('user-edit', $user -> id)}}">
         <button>aggiungi informazioni consegna</button>
     </a>
-    
+
 @endsection

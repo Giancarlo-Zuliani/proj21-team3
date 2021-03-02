@@ -30,6 +30,7 @@
     <br>
 
     <input type="file" name="img" value="" >
+    <a href="{{route('clear-user-img')}}"> <button type="button" name="button">Elimina immagine</button> </a>
 
     {{-- @if ($errors->any())
     @foreach ($errors->all() as $error)
