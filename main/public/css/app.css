@@ -10988,3 +10988,13 @@ section .typologybox {
   display: inline-block;
 }
 
+.svg {
+  height: 100px;
+  width: 100vw;
+}
+
+.svg-test {
+  fill: #FCC244;
+  height: 100px;
+}
+
