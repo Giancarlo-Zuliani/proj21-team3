@@ -26,20 +26,20 @@
     </select>
     <br>
     <label for="price_delivery">price delivery</label>
-    <input type="number" min="0" max="20" value="{{$user -> price_delivery}}" name="price_delivery" placeholder="price">
+    <input type="number" min="0" max="20" step="0.50" value="{{$user -> price_delivery / 100}}" name="price_delivery" placeholder="price">
     <br>
 
     {{-- @if ($errors->any())
     @foreach ($errors->all() as $error)
-        <div class="alert alert-div">    
+        <div class="alert alert-div">
             <div class="">
                 <h3>Error</h3>
                 <span class="error-msg">{{$error}}</span>
                 <br>
-                <button class="button-alert"><i class="fas fa-times"></i></button> 
-            </div>  
+                <button class="button-alert"><i class="fas fa-times"></i></button>
+            </div>
         </div>
-        @endforeach                    
+        @endforeach
     @endif  --}}
 
     <input type="submit" value="Salva dati">

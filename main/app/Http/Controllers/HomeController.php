@@ -41,9 +41,9 @@ class HomeController extends Controller
       // dd($data);
 
       Validator::make($data, [
-        'name' => 'required|string|min:3',
-        'description' => 'required|string|min:5',
-        'ingredients' => 'string|min:4',
+        'name' => 'required|string',
+        'description' => 'required|string',
+        'ingredients' => 'string',
         'price' => 'required|integer',
       ]) -> validate();
 
@@ -66,10 +66,10 @@ class HomeController extends Controller
       // dd($data, $id);
 
       Validator::make($data, [
-        'name' => 'required|string|min:3',
-        'description' => 'required|string|min:5',
-        'ingredients' => 'string|min:4',
-        'price' => 'required|integer',
+        'name' => 'required|string',
+        'description' => 'required',
+        'ingredients' => 'string',
+        'price' => 'required',
       ]) -> validate();
 
       $item = Item::findOrFail($id);
@@ -90,8 +90,8 @@ class HomeController extends Controller
 
     // USER SHOW
     public function userShow() {
-      
-      
+
+
       $user = Auth::user();
       // dd($user);
       return view('pages.user-show', compact('user'));
@@ -99,7 +99,7 @@ class HomeController extends Controller
 
     // FORM EDIT USER
     public function userEdit() {
-    
+
       $user = Auth::user();
       // dd($user);
       return view('pages.user-edit', compact('user'));
@@ -115,9 +115,9 @@ class HomeController extends Controller
       $user = User::findOrFail($id);
       $user -> update
       (array(
-        'start_delivery' => $startDelivery, 
+        'start_delivery' => $startDelivery,
         'end_delivery' => $endDelivery,
-        'price_delivery' => $price,        
+        'price_delivery' => $price,
       ));
 
       return redirect() -> route('user-show', $user -> id);

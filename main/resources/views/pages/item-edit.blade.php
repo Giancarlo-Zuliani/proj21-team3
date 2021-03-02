@@ -20,17 +20,17 @@
     <input type="text" name="price" value="{{$item -> price}}"> <br><br>
 
     <span>Lattosio</span>
-   
+
     <input type="radio" id="lactose" name="lactose" value="1"
-    @if ($item -> lactose == 1)        
-        checked 
-    @endif        
+    @if ($item -> lactose === 1)
+        checked
+    @endif
     >
     <label for="lactose">Si</label>
     <input type="radio" id="nolactose" name="lactose" value="0"
-    @if ($item -> lactose == 0)        
-        checked 
-    @endif 
+    @if ($item -> lactose === 0)
+        checked
+    @endif
     >
     <label for="nolactose">No</label>
 
@@ -38,40 +38,40 @@
 
     <span>Glutine</span>
     <input type="radio" id="gluten" name="gluten" value="1"
-    @if ($item -> gluten == 1)        
+    @if ($item -> gluten === 1)
         checked
-    @endif 
+    @endif
     >
     <label for="gluten">Si</label>
     <input type="radio" id="nogluten" name="gluten" value="0"
-    @if ($item -> gluten == 0)        
-        checked 
-    @endif     
+    @if ($item -> gluten === 0)
+        checked
+    @endif
     >
     <label for="nogluten">No</label>
     <br><br>
-    
+
     {{-- available --}}
     <span>Disponibile</span>
     <input type="radio" id="available" name="available" value="1"
-    @if ($item -> available == 1)        
+    @if ($item -> available === 1)
         checked
-    @endif 
+    @endif
     >
-    <label for="gluten">Si</label>
+    <label for="available">Si</label>
     <input type="radio" id="notavailable" name="available" value="0"
-    @if ($item -> available == 0)        
-        checked 
-    @endif     
+    @if ($item -> available === 0)
+        checked
+    @endif
     >
-    <label for="available">No</label>
+    <label for="notavailable">No</label>
     <br><br>
 
     {{-- deleted --}}
-    <input type="hidden" name="deleted" value="1">
+    <input type="hidden" name="deleted" value="0">
     {{-- user id --}}
     <input type="hidden" name="user_id" value="{{Auth::user() -> id}}">
     {{-- submit --}}
-    <input type="submit" value="STORE"> <br><br>
+    <input type="submit" value="UPDATE"> <br><br>
   </form>
 @endsection
