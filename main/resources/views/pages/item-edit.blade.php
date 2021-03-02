@@ -8,16 +8,39 @@
     @method('post')
 
     <label for="name">Name:</label>
-    <input type="text" name="name" value="{{$item -> name}}"> <br><br>
+    <input type="text" name="name" value="{{$item -> name}}" class=" @error('name') is-invalid @enderror">
+    @error('name')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+    @enderror
+    <br><br>
 
     <label for="description">Description:</label>
-    <input type="text" name="description" value="{{$item -> description}}"> <br><br>
+    <input type="text" name="description" value="{{$item -> description}}" class=" @error('description') is-invalid @enderror"> @error('description')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+    @enderror
+    <br><br>
 
     <label for="ingredients">Ingredients:</label>
-    <input type="text" name="ingredients" value="{{$item -> ingredients}}"> <br><br>
+    <input type="text" name="ingredients" value="{{$item -> ingredients}}" class=" @error('ingredients') is-invalid @enderror">
+    @error('ingredients')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+    @enderror
+    <br><br>
 
     <label for="price">Price:</label>
-    <input type="text" name="price" value="{{$item -> price}}"> <br><br>
+    <input type="text" name="price" value="{{$item -> price / 100}}" class=" @error('price') is-invalid @enderror">
+    @error('price')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+    @enderror
+    <br><br>
 
     <span>Lattosio</span>
 

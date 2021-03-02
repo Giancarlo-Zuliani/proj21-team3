@@ -50,10 +50,17 @@ class HomeController extends Controller
       Validator::make($data,
         [
             'name' => 'required|string|min:5',
-
+            'description' => 'required|string',
+            'ingredients' => 'required|string',
+            'price' => 'required|integer',
         ],
         [
-            'name.min' => 'Minimo 5 caratteri per il nome.',
+            'name.min' => 'Minimo 5 caratteri per il nome',
+            'name.required' => 'Campo obbligatorio',
+            'description.required' => 'Campo obbligatorio',
+            'ingredients.required' => 'Campo obbligatorio',
+            'price.required' => 'Campo obbligatorio',
+            'price.integer' => 'Inserire un valore numerico',
 
         ])
         ->validate();
@@ -76,12 +83,27 @@ class HomeController extends Controller
       $data = $request -> all();
       // dd($data, $id);
 
-      Validator::make($data, [
-        'name' => 'required|string',
-        'description' => 'required',
-        'ingredients' => 'string',
-        'price' => 'required',
-      ]) -> validate();
+      // Validator::make($data, [
+      //   'name' => 'required|string',
+      //   'description' => 'required',
+      //   'ingredients' => 'string',
+      //   'price' => 'required',
+      // ]) -> validate();
+
+      Validator::make($data,
+        [
+            'name' => 'required|string|min:5',
+            'description' => 'required|string',
+            'ingredients' => 'string',
+            'price' => 'required',
+        ],
+        [
+            'name.min' => 'Minimo 5 caratteri per il nome',
+            'name.required' => 'Campo obbligatorio',
+            'description.required' => 'Campo obbligatorio',
+            'price.required' => 'Campo obbligatorio',
+        ])
+        ->validate();
 
       $item = Item::findOrFail($id);
       $item -> update($data);

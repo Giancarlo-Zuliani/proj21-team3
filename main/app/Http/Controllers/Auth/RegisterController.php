@@ -58,7 +58,7 @@ class RegisterController extends Controller
 
         Validator::make($data,
           [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'min:5', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'address' => ['required', 'string', 'max:120'],
@@ -67,11 +67,20 @@ class RegisterController extends Controller
 
           ],
           [
-              'name.min' => 'Nome più lungo di 5 caratteri',
-              'name.required' => 'Nome obbligatorio',
-              // 'priority.required' => 'Il campo priorità è richiesto.',
-              // 'priority.between' => 'Il valore :input per la priorità non è fra :min - :max.',
-              // 'description.min' => 'Minimo 10 caratteri per la descrizione.'
+              'name.min' => 'Il nome inserito deve essere di almeno 5 caratteri',
+              'name.required' => 'Campo obbligatorio',
+              'email.required' => 'Campo obbligatorio',
+              'email.email' => 'Inserire una email valida',
+              'email.unique' => 'Email già utilizzata per registrare un utente',
+              'password.required' => 'Campo obbligatorio',
+              'password.min' => 'La password inserita deve essere di almeno 8 caratteri',
+              'address.required' => 'Campo obbligatorio',
+              'vat_num.required' => 'Campo obbligatorio',
+              'vat_num.min' => 'Il valore inserito deve avere almeno 11 cifre',
+              'vat_num.max' => 'Il valore inserito deve avere massimo 20 cifre',
+              'phone_num.required' => 'Campo obbligatorio',
+              'phone_num.min' => 'Il valore inserito deve avere almeno 8 cifre',
+              'phone_num.max' => 'Il valore inserito deve avere massimo 20 cifre',
           ])
           ->validate();
     }

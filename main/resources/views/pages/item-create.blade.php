@@ -17,13 +17,34 @@
     <br><br>
 
     <label for="description">Description:</label>
-    <input type="text" name="description" value=""> <br><br>
+    <input type="text" name="description" value="" class=" @error('description') is-invalid @enderror">
+
+      @error('description')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+      @enderror
+    <br><br>
 
     <label for="ingredients">Ingredients:</label>
-    <input type="text" name="ingredients" value=""> <br><br>
+    <input type="text" name="ingredients" value="" class=" @error('ingredients') is-invalid @enderror">
+
+    @error('ingredients')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+    <br><br>
 
     <label for="price">Price:</label>
-    <input type="text" name="price" value=""> <br><br>
+    <input type="text" name="price" value="" class=" @error('price') is-invalid @enderror">
+
+    @error('price')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+    <br><br>
 
     <span>Lattosio</span>
     <input type="radio" id="lactose" name="lactose" value="1">
