@@ -14,10 +14,26 @@
                         </div>
                     @endif
 
+                    
                     @foreach ($items as $item)
-                      <div class="">
-                        {{$item -> name}}
-                      </div>
+                        @if ($item -> deleted === 0)
+                                                
+                        <div class="">
+                            {{$item -> name}}
+                            <a href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit"></i></a>                        
+                            <a href="#"><i class="far fa-trash-alt"></i></a>
+                        </div>
+
+                        {{-- DELETE BANNER --}}                     
+                        <div class="delete-banner">
+                            <span>Vuoi cancellare?</span>
+                            <a class="button-alert"  href="{{route('item-delete', $item -> id)}}">                            
+                                <button class="">Si</button>
+                            </a>
+                            <button>No</button>
+                        </div>
+
+                        @endif
                     @endforeach
 
                     <a href="{{route('item-create')}}">Nuovo item</a>

@@ -11,3 +11,13 @@
 @import 'partials/_header.scss';
 @import 'partials/_footer.scss';
 @import 'partials/_animations.scss';
+
+.delete-banner {
+    background-color: red;
+    height: 10px;    
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}

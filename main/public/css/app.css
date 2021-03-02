@@ -10978,3 +10978,13 @@ section .typologybox {
   background-color: purple;
 }
 
+.delete-banner {
+  background-color: red;
+  height: 10px;
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
+

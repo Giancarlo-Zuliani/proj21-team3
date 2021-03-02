@@ -18,17 +18,17 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    // HOME UTENTE LOGGATO
     public function index() {
         $user = Auth::user() -> id;
         $items = Item::where('user_id', $user) -> get();
         return view('home', compact('items'));
     }
-
+    // FORM CREARE NUOVO PIATTO
     public function createItem() {
       return view('pages.item-create');
     }
-
+    // CREA NUOVO PIATTO
     public function storeItem(Request $request) {
       $pr = $request -> get('price') * 100;
 
@@ -55,7 +55,73 @@ class HomeController extends Controller
       return redirect() -> route('home');
     }
 
+    // FORM MODIFICARE PIATTO
+    public function editItem($id) {
+      $item = Item::findOrFail($id);
+      return view('pages.item-edit', compact('item'));
+    }
+    // MODIFICA PIATTO
+    public function updateItem(Request $request, $id) {
+      $data = $request -> all();
+      // dd($data, $id);
 
+      Validator::make($data, [
+        'name' => 'required|string|min:3',
+        'description' => 'required|string|min:5',
+        'ingredients' => 'string|min:4',
+        'price' => 'required|integer',
+      ]) -> validate();
+
+      $item = Item::findOrFail($id);
+      $item -> update($data);
+
+      return redirect() -> route('item-edit', $item -> id);
+    }
+    // DELETE ITEM (TOGGLE 1 AND 0)
+    public function deleteItem($id) {
+
+      $item = Item::findOrFail($id);
+
+      $item -> update(array('deleted' => 1));
+
+      return redirect() -> route('home');
+
+    }
+
+    // USER SHOW
+    public function userShow() {
+      
+      
+      $user = Auth::user();
+      // dd($user);
+      return view('pages.user-show', compact('user'));
+    }
+
+    // FORM EDIT USER
+    public function userEdit() {
+    
+      $user = Auth::user();
+      // dd($user);
+      return view('pages.user-edit', compact('user'));
+    }
+
+    // UPDATE USER INFO
+    public function updateUser(Request $request, $id) {
+      $data = $request -> all();
+      $startDelivery = $data['start_delivery'];
+      $endDelivery = $data['end_delivery'];
+      $price = $data['price_delivery'] * 100;
+
+      $user = User::findOrFail($id);
+      $user -> update
+      (array(
+        'start_delivery' => $startDelivery, 
+        'end_delivery' => $endDelivery,
+        'price_delivery' => $price,        
+      ));
+
+      return redirect() -> route('user-show', $user -> id);
+    }
 
     public function usersUpload(Request $request)
     {
@@ -78,9 +144,6 @@ class HomeController extends Controller
       return redirect() -> back();
     }
 
-
-
-
     public function usersDelete()
     {
       $this -> imageDelete();
@@ -91,7 +154,6 @@ class HomeController extends Controller
 
       return redirect() -> back();
     }
-
 
     public function imageDelete()
     {

@@ -49875,6 +49875,8 @@ webpackContext.id = "./resources/js sync recursive \\.vue$/";
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./dashboard */ "./resources/js/dashboard.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -50121,6 +50123,53 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/dashboard.js":
+/*!***********************************!*\
+  !*** ./resources/js/dashboard.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// document.addEventListener('DOMContentLoaded', function(){
+//     myFunction();
+//     // var deleteBanners = document.getElementsByClassName('delete-banner');
+//     // var trash = document.getElementsByClassName('fa-trash-alt');
+//     // console.log(trash);
+//     // trash.addEventListener('click', function () {
+//     //    console.log('trash');
+//     // });
+//     // function toggleBanner(id) {
+//     //     deleteBanners[id].classList.toggle('show');
+//     // }
+//     // console.log(deleteBanners);
+//     // console.log('ciao');
+// }); 
+// // function myFunction() {
+//     var element = document.getElementById("trash").addEventListener('click', function () {
+//         console.log(element);
+//         console.log('ciao');
+//     });
+// }
+// parte lo script solo quando carica l'HTML
+document.addEventListener('DOMContentLoaded', function () {
+  // banner div
+  var deleteBanner = document.getElementsByClassName("delete-banner");
+  var trash = document.getElementsByClassName("fa-trash-alt");
+
+  var _loop = function _loop(i) {
+    trash[i].addEventListener('click', function () {
+      // alertBtn[i].classList.toggle("show"); 
+      deleteBanner[i].classList.toggle("show"); // console.log(alertBtn);
+    });
+  };
+
+  for (var i = 0; i < trash.length; i++) {
+    _loop(i);
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -50139,8 +50188,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

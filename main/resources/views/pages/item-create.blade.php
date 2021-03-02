@@ -39,7 +39,7 @@
 
     <input type="hidden" name="available" value="1">
 
-    <input type="hidden" name="deleted" value="1">
+    <input type="hidden" name="deleted" value="0">
     <input type="submit" value="STORE"> <br><br>
   </form>
 @endsection
