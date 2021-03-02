@@ -119,52 +119,42 @@ class HomeController extends Controller
         'end_delivery' => $endDelivery,
         'price_delivery' => $price,
       ));
+      ///////// immagine
+      $this -> deleteUserIcon();
 
+      $image = $request -> file('icon');
+      $ext = $image -> getClientOriginalExtension();
+      $name = rand(100000, 999999).'_'.time();
+      $destFile = $name.'.'.$ext;
+      $file = $image -> storeAs('icon', $destFile, 'public');
+      // dd($data, $image);
+      // dd($image, $ext, $name, $destFile);
+      $user = Auth::user();
+      $user -> icon = $destFile;
+      $user -> save();
+      return redirect() -> back();
+/////////////////////////////////
       return redirect() -> route('user-show', $user -> id);
     }
 
-    public function usersUpload(Request $request)
-    {
-      $validatedData = $request->validate([
-        'foto' => 'required|file',
-      ]);
+    public function clearUserIcon() {
 
-      $this -> imageDelete();
-
-      $image = $request -> file('foto');
-      $ext = $image -> getClientOriginalExtension();
-      $name = rand(100000, 999999) . '_' . time();
-      $fileName = $name . '.' . $ext;
-      $file = $image -> storeAs('/photos', $fileName, 'public');
+      $this -> deleteUserIcon();
 
       $user = Auth::user();
-      $user -> photo = $fileName;
+      $user -> icon = null;
       $user -> save();
-
       return redirect() -> back();
     }
 
-    public function usersDelete()
-    {
-      $this -> imageDelete();
-
-      $user = Auth::user();
-      $user -> photo = null;
-      $user -> save();
-
-      return redirect() -> back();
-    }
-
-    public function imageDelete()
-    {
-
+    private function deleteUserIcon() {
       $user = Auth::user();
 
       try {
-        $file = storage_path('app/public/photos/' . $user -> photo);
-        File::delete($file);
-      } catch (\Exception $e) {
-      }
-
+        $filename = $user -> icon;
+        $file = storage_path('app/public/icon/' . $filename);
+        $res = File::delete($file);
+        // dd($file, $res);
+      } catch (\Exception $e) {}
     }
 }

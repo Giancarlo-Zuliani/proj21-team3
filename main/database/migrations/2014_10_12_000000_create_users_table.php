@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('vat_num',150);
             $table->string('phone_num',150);
             $table->string('email')->unique();
+            $table->string('img')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('start_delivery')->nullable();
             $table->string('end_delivery')->nullable();

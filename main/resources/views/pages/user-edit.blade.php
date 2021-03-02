@@ -3,7 +3,7 @@
 @section('content')
   <h1>Informazioni consegna</h1>
 
-  <form action="{{route('user-update', $user -> id)}}" method="post">
+  <form action="{{route('user-update', $user -> id)}}" method="post" enctype='multipart/form-data'>
     @csrf
     @method('post')
 
@@ -28,6 +28,8 @@
     <label for="price_delivery">price delivery</label>
     <input type="number" min="0" max="20" step="0.50" value="{{$user -> price_delivery / 100}}" name="price_delivery" placeholder="price">
     <br>
+
+    <input type="file" name="img" value="" >
 
     {{-- @if ($errors->any())
     @foreach ($errors->all() as $error)
