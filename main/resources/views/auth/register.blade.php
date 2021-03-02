@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container">
-    <div class="row justify-content-center">
+      <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -15,7 +17,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -31,7 +33,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" autocomplete="address" autofocus>
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -47,7 +49,7 @@
                             <label for="vat_num" class="col-md-4 col-form-label text-md-right">{{ __('Vat') }}</label>
 
                             <div class="col-md-6">
-                                <input id="vat_num" type="text" class="form-control @error('vat_num') is-invalid @enderror" name="vat_num" value="{{ old('vat_num') }}" required autocomplete="vat_num" autofocus>
+                                <input id="vat_num" type="text" class="form-control @error('vat_num') is-invalid @enderror" name="vat_num" value="{{ old('vat_num') }}" autocomplete="vat_num" autofocus>
 
                                 @error('vat_num')
                                     <span class="invalid-feedback" role="alert">
@@ -63,7 +65,7 @@
                             <label for="phone_num" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone_num" type="text" class="form-control @error('phone_num') is-invalid @enderror" name="phone_num" value="{{ old('phone_num') }}" required autocomplete="phone_num" autofocus>
+                                <input id="phone_num" type="text" class="form-control @error('phone_num') is-invalid @enderror" name="phone_num" value="{{ old('phone_num') }}" autocomplete="phone_num" autofocus>
 
                                 @error('phone_num')
                                     <span class="invalid-feedback" role="alert">
@@ -79,7 +81,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -95,7 +97,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

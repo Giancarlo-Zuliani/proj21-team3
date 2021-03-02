@@ -8,7 +8,13 @@
     @method('post')
 
     <label for="name">Name:</label>
-    <input type="text" name="name" value=""> <br><br>
+    <input type="text" name="name" value="" class=" @error('name') is-invalid @enderror">
+    @error('name')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+    <br><br>
 
     <label for="description">Description:</label>
     <input type="text" name="description" value=""> <br><br>

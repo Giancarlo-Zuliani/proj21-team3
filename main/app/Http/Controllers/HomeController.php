@@ -40,12 +40,23 @@ class HomeController extends Controller
 
       // dd($data);
 
-      Validator::make($data, [
-        'name' => 'required|string',
-        'description' => 'required|string',
-        'ingredients' => 'string',
-        'price' => 'required|integer',
-      ]) -> validate();
+      // Validator::make($data, [
+      //   'name' => 'required|string',
+      //   'description' => 'required|string',
+      //   'ingredients' => 'string',
+      //   'price' => 'required|integer',
+      // ]) -> validate();
+
+      Validator::make($data,
+        [
+            'name' => 'required|string|min:5',
+
+        ],
+        [
+            'name.min' => 'Minimo 5 caratteri per il nome.',
+
+        ])
+        ->validate();
 
       $user = User::findOrFail($request -> get('user_id'));
       $item = Item::make($request -> all());

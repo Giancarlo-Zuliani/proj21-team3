@@ -40,21 +40,40 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        // return Validator::make($data, [
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        //     'password' => ['required', 'string', 'min:8', 'confirmed'],
+        //     'address' => ['required', 'string', 'max:120'],
+        //     'vat_num' => ['required', 'string', 'min:11', 'max:20'],
+        //     'phone_num' => ['required', 'string', 'min:8', 'max:20'],
+        //     // 'img' => ['required', 'string', 'min:8', 'max:20'],
+        //     // 'start_delivery' => ['required', 'string', 'max:20'],
+        //     // 'end_delivery' => ['required', 'string', 'max:20'],
+        //     // 'price_delivery' => ['required', 'integer', 'max:10'],
+        //     // 'lat' => ['required', 'float', 'max:20'],
+        //     // 'long' => ['required', 'float', 'max:20'],
+        //
+        // ]);
+
+        Validator::make($data,
+          [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'address' => ['required', 'string', 'max:120'],
             'vat_num' => ['required', 'string', 'min:11', 'max:20'],
             'phone_num' => ['required', 'string', 'min:8', 'max:20'],
-            // 'img' => ['required', 'string', 'min:8', 'max:20'],
-            // 'start_delivery' => ['required', 'string', 'max:20'],
-            // 'end_delivery' => ['required', 'string', 'max:20'],
-            // 'price_delivery' => ['required', 'integer', 'max:10'],
-            // 'lat' => ['required', 'float', 'max:20'],
-            // 'long' => ['required', 'float', 'max:20'],
 
-        ]);
+          ],
+          [
+              'name.min' => 'Nome più lungo di 5 caratteri',
+              'name.required' => 'Nome obbligatorio',
+              // 'priority.required' => 'Il campo priorità è richiesto.',
+              // 'priority.between' => 'Il valore :input per la priorità non è fra :min - :max.',
+              // 'description.min' => 'Minimo 10 caratteri per la descrizione.'
+          ])
+          ->validate();
     }
 
     /**
@@ -72,11 +91,6 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'vat_num' => $data['vat_num'],
             'phone_num' => $data['phone_num'],
-            // 'start_delivery' => $data['start_delivery'],
-            // 'end_delivery' => $data['end_delivery'],
-            // 'price_delivery' => $price_delivery,
-            // 'lat' =>
-             // 'long' =>
            ]);
     }
 }
