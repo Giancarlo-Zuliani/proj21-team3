@@ -79,9 +79,14 @@ class HomeController extends Controller
       return view('pages.item-edit', compact('item'));
     }
     // MODIFICA PIATTO
-    public function updateItem(Request $request, $id) {
+    public function updateItem(Request $request, $id) {      
+      $pr = $request -> get('price') * 100;
+
+      $price = intval($pr);
+
+      $request -> merge(['price' => $price]);
+
       $data = $request -> all();
-      // dd($data, $id);
 
       // Validator::make($data, [
       //   'name' => 'required|string',
@@ -108,7 +113,9 @@ class HomeController extends Controller
       $item = Item::findOrFail($id);
       $item -> update($data);
 
-      return redirect() -> route('item-edit', $item -> id);
+      // return redirect() -> route('item-edit', $item -> id);
+      return redirect() -> route('home');
+
     }
     // DELETE ITEM (TOGGLE 1 AND 0)
     public function deleteItem($id) {
