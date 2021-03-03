@@ -12,8 +12,10 @@ class ApiController extends Controller
         $typo = Typology::all();
         return response() -> json($typo);
     }
-    public function getTypologyRestaurants($id){
-        $rests = Typology::findOrFail($id) -> users() -> get() ;
+    public function getTypologyRestaurants($arr){
+        $ser = serialize($arr);
+        $typologies= Typology::findOrFail($ser);
+        $rests = $typologies -> users();
         return response() ->json($rests);
     }
 }

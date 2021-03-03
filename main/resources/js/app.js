@@ -32,27 +32,39 @@ const app = new Vue({
     data: {
         showtypo: true,
         showRestaurant: false,
-        allTypoArray: [],
-        randomTypoArray: [],
         restaurantArray: [],
+        typologyArray: [],
+        selectedTypologies: []
     },
     mounted: function() {
         axios.get('http://127.0.0.1:8000/gettypo')
             .then(response => {
                 console.log(response.data);
-                this.randomTypeArray = response.data;
+                this.typologyArray = response.data;
             });
     },
     methods: {
-        getRestaurant(id) {
-            axios.get('http://127.0.0.1:8000/getRestaurantByType/' + id)
+        getRestaurant() {
+            arr = this.selectedTypologies;
+            var params = {};
+            for (i = 0; i < arr.length; i++) {
+                params[i] = arr[i];
+            }
+            let strjson = JSON.stringify(params);
+            axios.get('http://127.0.0.1:8000/getRestaurant/' + arr)
                 .then(response => {
-                    this.restaurantArray = response.data;
-                    this.showtypo = !this.showtypo;
-                    this.showRestaurant = !this.showRestaurant;
                     console.log(response.data);
-                });
-        }
+                })
+        },
+
+        typologySelection(id) {
+            this.selectedTypologies.includes(id) ?
+                this.selectedTypologies.splice(
+                    this.selectedTypologies.indexOf(id), 1) :
+                this.selectedTypologies.push(id);
+
+            console.log(this.selectedTypologies);
+        },
     }
 });
 

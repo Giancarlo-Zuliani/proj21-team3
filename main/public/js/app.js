@@ -49902,28 +49902,35 @@ var app = new Vue({
   data: {
     showtypo: true,
     showRestaurant: false,
-    allTypoArray: [],
-    randomTypoArray: [],
-    restaurantArray: []
+    restaurantArray: [],
+    typologyArray: [],
+    selectedTypologies: []
   },
   mounted: function mounted() {
     var _this = this;
 
     axios.get('http://127.0.0.1:8000/gettypo').then(function (response) {
       console.log(response.data);
-      _this.randomTypeArray = response.data;
+      _this.typologyArray = response.data;
     });
   },
   methods: {
-    getRestaurant: function getRestaurant(id) {
-      var _this2 = this;
+    getRestaurant: function getRestaurant() {
+      arr = this.selectedTypologies;
+      var params = {};
 
-      axios.get('http://127.0.0.1:8000/getRestaurantByType/' + id).then(function (response) {
-        _this2.restaurantArray = response.data;
-        _this2.showtypo = !_this2.showtypo;
-        _this2.showRestaurant = !_this2.showRestaurant;
+      for (i = 0; i < arr.length; i++) {
+        params[i] = arr[i];
+      }
+
+      var strjson = JSON.stringify(params);
+      axios.get('http://127.0.0.1:8000/getRestaurant/' + arr).then(function (response) {
         console.log(response.data);
       });
+    },
+    typologySelection: function typologySelection(id) {
+      this.selectedTypologies.includes(id) ? this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1) : this.selectedTypologies.push(id);
+      console.log(this.selectedTypologies);
     }
   }
 });

@@ -8,7 +8,7 @@ Route::get('/', 'MainController@index')
 Route::get('/gettypo' , 'ApiController@getAllTypologies')
     ->name('get-all-typology');
 
-Route::get('/getRestaurantByType/{id}' , 'ApiController@getTypologyRestaurants')
+Route::get('/getRestaurant/{arr}' , 'ApiController@getTypologyRestaurants')
     ->name('get-typology-restaurants');
 Route::get('/restaurant/{id}' , 'MainController@showMenu')
     ->name('show-menu');
