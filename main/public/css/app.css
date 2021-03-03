@@ -10979,7 +10979,6 @@ section .typologybox {
 }
 
 header {
-  background-image: url(/images/header.svg?f36418b90e3eec0367430bc046b38b7c);
   height: 100vh;
   /* You must set a specified height */
   background-repeat: no-repeat;
