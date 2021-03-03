@@ -10991,8 +10991,8 @@ header img {
 }
 
 .svg {
-  height: 100px;
-  width: 100vw;
+  /* height: 100px;
+  width: 100vw; */
 }
 
 .svg-test {
