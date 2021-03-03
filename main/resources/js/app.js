@@ -45,13 +45,15 @@ const app = new Vue({
     },
     methods: {
         getRestaurant() {
-            arr = this.selectedTypologies;
-            var params = {};
-            for (i = 0; i < arr.length; i++) {
-                params[i] = arr[i];
+            let url = 'http://127.0.0.1:8000/getRestaurant'
+            for (i = 0; i < this.selectedTypologies.length; i++) {
+                if (this.selectedTypologies[i] === undefined) {
+                    url += '/' + '999';
+                } else {
+                    url += '/' + this.selectedTypologies[i];
+                }
             }
-            let strjson = JSON.stringify(params);
-            axios.get('http://127.0.0.1:8000/getRestaurant/' + arr)
+            let res = axios.get(url)
                 .then(response => {
                     console.log(response.data);
                 })

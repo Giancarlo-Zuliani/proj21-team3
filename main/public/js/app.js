@@ -49916,15 +49916,17 @@ var app = new Vue({
   },
   methods: {
     getRestaurant: function getRestaurant() {
-      arr = this.selectedTypologies;
-      var params = {};
+      var url = 'http://127.0.0.1:8000/getRestaurant';
 
-      for (i = 0; i < arr.length; i++) {
-        params[i] = arr[i];
+      for (i = 0; i < this.selectedTypologies.length; i++) {
+        if (this.selectedTypologies[i] === undefined) {
+          url += '/' + '999';
+        } else {
+          url += '/' + this.selectedTypologies[i];
+        }
       }
 
-      var strjson = JSON.stringify(params);
-      axios.get('http://127.0.0.1:8000/getRestaurant/' + arr).then(function (response) {
+      var res = axios.get(url).then(function (response) {
         console.log(response.data);
       });
     },
