@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\User;
 use App\Item;
+use App\Typology;
 
 class HomeController extends Controller
 {
@@ -141,18 +142,18 @@ class HomeController extends Controller
     public function userEdit() {
 
       $user = Auth::user();
-      // dd($user);
-      return view('pages.user-edit', compact('user'));
+      $typos = Typology::all();
+      return view('pages.user-edit', compact('user' , 'typos'));
     }
 
     // UPDATE USER INFO
     public function updateUser(Request $request, $id) {
       $data = $request -> all();
-      $this -> deleteUserImg();
+      $restTypo = $request -> typologies;
       $startDelivery = $data['start_delivery'];
       $endDelivery = $data['end_delivery'];
       $price = $data['price_delivery'] * 100;
-
+      
       $user = User::findOrFail($id);
       $user -> update
       (array(
@@ -161,18 +162,22 @@ class HomeController extends Controller
         'price_delivery' => $price,
       ));
       ///////// immagine
-
       $image = $request -> file('img');
-      $ext = $image -> getClientOriginalExtension();
-      $name = rand(100000, 999999).'_'.time();
-      $destFile = $name.'.'.$ext;
-      $file = $image -> storeAs('img', $destFile, 'public');
-      // dd($data, $image);
-      // dd($image, $ext, $name, $destFile);
       $user = Auth::user();
-      $user -> img = $destFile;
-      $user -> save();
-/////////////////////////////////
+      
+      if($image !== null){
+        $this -> deleteUserImg();
+        $ext = $image -> getClientOriginalExtension();
+        $name = rand(100000, 999999).'_'.time();
+        $destFile = $name.'.'.$ext;
+        $file = $image -> storeAs('img', $destFile, 'public');
+        $user -> img = $destFile;
+        $user -> save();
+      }
+      
+      ///TYPOLOGIES SYNC;
+      $typos = Typology::findOrFail($restTypo);
+      $user -> typologies() -> sync($typos); 
       return redirect() -> route('user-show', $user -> id);
     }
 

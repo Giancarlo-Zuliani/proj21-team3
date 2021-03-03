@@ -49911,14 +49911,7 @@ var app = new Vue({
 
     axios.get('http://127.0.0.1:8000/gettypo').then(function (response) {
       console.log(response.data);
-      _this.allTypoArray = response.data;
-
-      for (i = 0; i < 12; i++) {
-        var rand = Math.floor(Math.random() * 50);
-        _this.randomTypoArray.includes(response.data[rand]) ? i-- : _this.randomTypoArray.push(response.data[rand]);
-      }
-
-      ;
+      _this.randomTypeArray = response.data;
     });
   },
   methods: {

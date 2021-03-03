@@ -31,19 +31,19 @@
 
     <input type="file" name="img" value="" >
     <a href="{{route('clear-user-img')}}"> <button type="button" name="button">Elimina immagine</button> </a>
+    
+        <label for="typologies[]"> scegli una o piu tipologie</label>
 
-    {{-- @if ($errors->any())
-    @foreach ($errors->all() as $error)
-        <div class="alert alert-div">
-            <div class="">
-                <h3>Error</h3>
-                <span class="error-msg">{{$error}}</span>
-                <br>
-                <button class="button-alert"><i class="fas fa-times"></i></button>
-            </div>
-        </div>
-        @endforeach
-    @endif  --}}
+    @foreach ($typos as $typo)
+        
+        <input type="checkbox" value="{{$typo -> id}}" name="typologies[]" 
+            @if($user -> typologies -> contains($typo -> id))
+                checked
+            @endif
+        >
+        <span>{{$typo -> typology}}</span> <br>
+
+    @endforeach
 
     <input type="submit" value="Salva dati">
 

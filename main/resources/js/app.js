@@ -40,11 +40,7 @@ const app = new Vue({
         axios.get('http://127.0.0.1:8000/gettypo')
             .then(response => {
                 console.log(response.data);
-                this.allTypoArray = response.data;
-                for (i = 0; i < 12; i++) {
-                    let rand = Math.floor(Math.random() * 50);
-                    this.randomTypoArray.includes(response.data[rand]) ? i-- : this.randomTypoArray.push(response.data[rand]);
-                };
+                this.randomTypeArray = response.data;
             });
     },
     methods: {

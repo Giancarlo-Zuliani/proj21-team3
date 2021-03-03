@@ -13,7 +13,7 @@ class TypologySeeder extends Seeder
      */
     public function run()
     {
-        factory(Typology::class,50) -> create() 
+        factory(Typology::class,16) -> create() 
         ->each(function($typo){
             $user = User::inRandomOrder() -> limit(rand(1,8)) -> get();
             $typo -> users()-> attach($user);  
