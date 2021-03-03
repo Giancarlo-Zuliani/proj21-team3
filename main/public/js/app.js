@@ -122,3 +122,5 @@ module.exports = __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/pr
 /***/ })
 
 /******/ });
+
+// test
