@@ -3,7 +3,7 @@
             <path class="cls-1" d="M1917,440V921H-3V422S891,824,1917,440Z" transform="translate(3 -422)"/>
         </svg>
 
-        <object type="image/svg+xml" data="bblogo.svg">
+        {{-- <object type="image/svg+xml" data="bblogo.svg">
             Your browser does not support SVGs
-        </object>
+        </object> --}}
 </footer>

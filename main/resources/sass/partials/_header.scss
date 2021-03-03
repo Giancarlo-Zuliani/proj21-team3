@@ -1,0 +1,26 @@
+header { 
+    background-image: url("img/header.svg");
+    // background-color: $yellow; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+
+    // background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    // background-size: cover; /* Resize the background image to cover the entire container */
+    background-size: contain;
+    // LOGO
+    img {
+        max-width: 200px;
+    }
+  }
+// HEADER SVG TEST
+.svg {
+    height: 100px;
+    width: 100vw;
+}
+
+.svg-test {
+    // background-color: #FCC244;
+    // color:#FCC244;
+    fill: #FCC244;
+    height: 100px;
+}
