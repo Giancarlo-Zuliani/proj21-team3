@@ -10990,16 +10990,6 @@ header img {
   max-width: 200px;
 }
 
-.svg {
-  /* height: 100px;
-  width: 100vw; */
-}
-
-.svg-test {
-  fill: #FCC244;
-  height: 100px;
-}
-
 .delete-banner {
   background-color: red;
   height: 10px;
