@@ -148,6 +148,7 @@ class HomeController extends Controller
     // UPDATE USER INFO
     public function updateUser(Request $request, $id) {
       $data = $request -> all();
+      $this -> deleteUserImg();
       $startDelivery = $data['start_delivery'];
       $endDelivery = $data['end_delivery'];
       $price = $data['price_delivery'] * 100;
@@ -160,7 +161,6 @@ class HomeController extends Controller
         'price_delivery' => $price,
       ));
       ///////// immagine
-      $this -> deleteUserImg();
 
       $image = $request -> file('img');
       $ext = $image -> getClientOriginalExtension();
