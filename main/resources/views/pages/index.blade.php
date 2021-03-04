@@ -28,7 +28,7 @@
             la tua ricerca  non ha prodotto risultati;
         </h5>
     </div>
-    
+
     <div>
         <i v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" class="fas fa-search-dollar" @click="getRestaurants"></i>
     </div>
@@ -40,9 +40,9 @@
     <section>
         <div class="row">
             {{-- typology container --}}
-            <div class="typologybox" v-for="type in typologyArray" @click="typologySelection( type.id )" v-if="!showRestaurant" class="">            
-                @{{type.typology}}     
-                <img style="height: 100px" :src=`{{asset('storage/assets/typologies/', '')}}/${type.immage}.webp`>
+            <div class="typologybox" v-for="type in typologyArray" @click="typologySelection( type.id )" v-if="!showRestaurant" class="">
+                @{{type.typology}}
+                <img style="height: 100px" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
             </div>
         </div>
 
@@ -53,7 +53,7 @@
                 <div  class="typologybox" >
                     @{{rest.name}}
                 </div>
-            </a> 
+            </a>
         </div>
 
         <div v-if="restaurantArray.length < 1 && showRestaurant">

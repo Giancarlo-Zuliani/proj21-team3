@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Typology::class, function (Faker $faker) {
     return [
         'typology' => $faker -> word,
-        'immage' => $faker -> word,
+        'image' => $faker -> word,
     ];
 });

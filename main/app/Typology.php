@@ -8,7 +8,7 @@ class Typology extends Model
 {
     protected $fillable = [
         'typology',
-        'immage'
+        'image'
     ];
     public function users(){
       return $this->belongsToMany(User::class);
