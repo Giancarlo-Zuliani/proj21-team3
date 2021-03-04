@@ -40,8 +40,9 @@
     <section>
         <div class="row">
             {{-- typology container --}}
-            <div class="typologybox" v-for="type in typologyArray" @click="typologySelection( type.id )" v-if="!showRestaurant" class="">
-                @{{type.typology}}
+            <div class="typologybox" v-for="type in typologyArray" @click="typologySelection( type.id )" v-if="!showRestaurant" class="">            
+                @{{type.typology}}     
+                <img style="height: 100px" :src=`{{asset('storage/assets/typologies/', '')}}/${type.immage}.webp`>
             </div>
         </div>
 
