@@ -17,9 +17,9 @@
 
     </main>
 
-    <div id="prova">
-      @yield('itemContainer')
-    </div>
+    {{-- <div>
+      @yield('content')
+    </div> --}}
 
     @include('components.footer')
 
