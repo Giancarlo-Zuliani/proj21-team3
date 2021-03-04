@@ -1,4 +1,5 @@
 @extends('layouts.main-layout')
+<a href="{{route('index')}}">Torna alla home!</a>
 {{-- USER PROFILE PAGE --}}
 @section('content')
 
@@ -16,7 +17,7 @@
         <li>{{$user->start_delivery}}</li>
         <li>start end</li>
         <li>{{$user->end_delivery}}</li>
-        <li>start price</li>
+        <li>delivery price</li>
         <li>{{$user->price_delivery / 100}}€</li>
     </ul>
 

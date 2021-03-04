@@ -1,4 +1,5 @@
 @extends('layouts.main-layout')
+<a href="{{route('index')}}">Torna alla home!</a>
 {{-- FORM TO EDIT USER INFO --}}
 @section('content')
   <h1>Informazioni consegna</h1>
@@ -24,14 +25,17 @@
     </select>
     <br>
     <label for="price_delivery">price delivery</label>
-    <input type="number" min="0" max="20" step="0.50" value="{{$user -> price_delivery / 100}}" name="price_delivery" placeholder="price">
+    <input type="number" min="0" max="20" step="0.50"
+           value="{{$user -> price_delivery / 100}}" 
+           name="price_delivery" placeholder="price">
     <br>
 
     <input type="file" name="img" value="" >
     <a href="{{route('clear-user-img')}}"> <button type="button" name="button">Elimina immagine</button> </a>
-    
+        
+        <br>
         <label for="typologies[]"> scegli una o piu tipologie</label>
-
+        <br>
     @foreach ($typos as $typo)
         
         <input type="checkbox" value="{{$typo -> id}}" name="typologies[]" 

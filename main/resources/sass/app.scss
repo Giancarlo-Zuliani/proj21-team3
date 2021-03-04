@@ -12,7 +12,6 @@
 @import 'partials/_footer.scss';
 @import 'partials/_animations.scss';
 @import 'partials/pages/index.scss';
-
 .delete-banner {
     background-color: red;
     height: 10px;
@@ -23,3 +22,6 @@
     display: inline-block;
 }
 
+* {
+    margin: $margin;
+}
