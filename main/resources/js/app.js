@@ -36,7 +36,7 @@ const app = new Vue({
         typologyArray: [],
         selectedTypologies: [],
         searchLength: 3,
-        searchResultNum: null,
+        searchResultNum: undefined,
     },
 
     mounted: function() {
@@ -83,19 +83,24 @@ const app = new Vue({
 
         getRestaurantCount(id) {
             let url = 'http://127.0.0.1:8000/getCountRestaurant'
-            for (let i = 0; i < this.searchLength; i++) {
-                if (this.selectedTypologies[i] == undefined) {
-                    continue
-                } else {
-                    url += '/' + this.selectedTypologies[i];
-                }
-            }
+            if (this.selectedTypologies.length > 0) {
 
-            axios.get(url)
-                .then(response => {
-                    this.searchResultNum = response.data;
-                    console.log(response.data);
-                });
+                for (let i = 0; i < this.searchLength; i++) {
+                    if (this.selectedTypologies[i] == undefined) {
+                        continue;
+                    } else {
+                        url += '/' + this.selectedTypologies[i];
+                    }
+                }
+
+                axios.get(url)
+                    .then(response => {
+                        this.searchResultNum = response.data;
+                        console.log(response.data);
+                    });
+            } else {
+                this.searchResultNum = undefined;
+            }
         }
     }
 });

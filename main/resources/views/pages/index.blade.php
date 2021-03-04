@@ -19,11 +19,15 @@
         @endif
 
     </div>
-    <div v-if="searchResultNum != null">
-        <h5>
+    <div v-if="searchResultNum != undefined">
+        <h5 v-if="searchResultNum > 0">
             la tua ricerca ha prodotto @{{searchResultNum}} risultati;
         </h5>
+        <h5 v-if="searchResultNum === 0">
+            la tua ricerca  non ha prodotto risultati;
+        </h5>
     </div>
+    
     <div>
         <i v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" class="fas fa-search-dollar" @click="getRestaurant"></i>
     </div>
