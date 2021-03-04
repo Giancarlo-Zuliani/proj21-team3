@@ -34,8 +34,10 @@ const app = new Vue({
         showRestaurant: false,
         restaurantArray: [],
         typologyArray: [],
-        selectedTypologies: []
+        selectedTypologies: [],
+        searchLength: 3,
     },
+
     mounted: function() {
         axios.get('http://127.0.0.1:8000/gettypo')
             .then(response => {
@@ -45,27 +47,36 @@ const app = new Vue({
     },
     methods: {
         getRestaurant() {
+            restaurantArray = [];
             let url = 'http://127.0.0.1:8000/getRestaurant'
-            for (i = 0; i < this.selectedTypologies.length; i++) {
-                if (this.selectedTypologies[i] === undefined) {
-                    url += '/' + '999';
+            for (let i = 0; i < this.searchLength; i++) {
+                if (this.selectedTypologies[i] == undefined) {
+                    continue
                 } else {
                     url += '/' + this.selectedTypologies[i];
                 }
             }
-            let res = axios.get(url)
+
+            axios.get(url)
                 .then(response => {
                     console.log(response.data);
+                    this.restaurantArray = response.data;
+                    this.showRestaurant = !this.showRestaurant;
                 })
         },
 
         typologySelection(id) {
-            this.selectedTypologies.includes(id) ?
-                this.selectedTypologies.splice(
-                    this.selectedTypologies.indexOf(id), 1) :
-                this.selectedTypologies.push(id);
-
-            console.log(this.selectedTypologies);
+            if (this.selectedTypologies === undefined || this.selectedTypologies.length < 3) {
+                this.selectedTypologies.includes(id) ?
+                    this.selectedTypologies.splice(
+                        this.selectedTypologies.indexOf(id), 1) :
+                    this.selectedTypologies.push(id);
+                console.log(this.selectedTypologies);
+            } else if (
+                this.selectedTypologies.includes(id)) {
+                this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1)
+                console.log(this.selectedTypologies);
+            };
         },
     }
 });

@@ -49904,7 +49904,8 @@ var app = new Vue({
     showRestaurant: false,
     restaurantArray: [],
     typologyArray: [],
-    selectedTypologies: []
+    selectedTypologies: [],
+    searchLength: 3
   },
   mounted: function mounted() {
     var _this = this;
@@ -49916,23 +49917,35 @@ var app = new Vue({
   },
   methods: {
     getRestaurant: function getRestaurant() {
+      var _this2 = this;
+
+      restaurantArray = [];
       var url = 'http://127.0.0.1:8000/getRestaurant';
 
-      for (i = 0; i < this.selectedTypologies.length; i++) {
-        if (this.selectedTypologies[i] === undefined) {
-          url += '/' + '999';
+      for (var i = 0; i < this.searchLength; i++) {
+        if (this.selectedTypologies[i] == undefined) {
+          continue;
         } else {
           url += '/' + this.selectedTypologies[i];
         }
       }
 
-      var res = axios.get(url).then(function (response) {
+      axios.get(url).then(function (response) {
         console.log(response.data);
+        _this2.restaurantArray = response.data;
+        _this2.showRestaurant = !_this2.showRestaurant;
       });
     },
     typologySelection: function typologySelection(id) {
-      this.selectedTypologies.includes(id) ? this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1) : this.selectedTypologies.push(id);
-      console.log(this.selectedTypologies);
+      if (this.selectedTypologies === undefined || this.selectedTypologies.length < 3) {
+        this.selectedTypologies.includes(id) ? this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1) : this.selectedTypologies.push(id);
+        console.log(this.selectedTypologies);
+      } else if (this.selectedTypologies.includes(id)) {
+        this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1);
+        console.log(this.selectedTypologies);
+      }
+
+      ;
     }
   }
 });

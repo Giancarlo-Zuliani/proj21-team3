@@ -12,12 +12,15 @@ class ApiController extends Controller
         $typo = Typology::all();
         return response() -> json($typo);
     }
-    public function getTypologyRestaurants($firstType,$secondType){
+    public function getTypologyRestaurants($firstType ,$secondType = '',$thirdType = ''){
         $rests = User::all(); 
         $arr = [];
         foreach($rests as $rest){
-            if($rest -> typologies -> contains($firstType) && $rest -> typologies -> contains($secondType) )
-            $arr[]= $rest; 
+            if($rest -> typologies -> contains($firstType) 
+                && ($secondType === '' ? true : $rest -> typologies -> contains($secondType))
+                && ($thirdType === '' ? true : $rest -> typologies -> contains($thirdType)))
+               
+                $arr[]= $rest; 
         }
         return response() ->json($arr);
     }

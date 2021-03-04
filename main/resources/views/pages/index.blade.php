@@ -20,7 +20,7 @@
 
     </div>
     <div>
-        <i class="fas fa-search-dollar" @click="getRestaurant"></i>
+        <i v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" class="fas fa-search-dollar" @click="getRestaurant"></i>
     </div>
     {{-- Back to Typologies button --}}
     <div v-if="showRestaurant" class="console" @click="showRestaurant = !showRestaurant">
@@ -38,11 +38,18 @@
 
 
         {{-- restaurant container --}}
-      {{--   <a v-for="rest in restaurantArray" :href=`{{route('show-menu','')}}/${rest.id}`>
+        <a v-for="rest in restaurantArray" :href=`{{route('show-menu','')}}/${rest.id}`>
             <div  class="typologybox" v-if="showRestaurant">
                 @{{rest.name}}
             </div>
-        </a> --}}
+        </a> 
 
+        <div v-if="restaurantArray.length < 1 && showRestaurant">
+
+            <h1>
+                NON CI SONO RISTORANTI
+            </h1>
+
+        </div>
     </section>
 @endsection
