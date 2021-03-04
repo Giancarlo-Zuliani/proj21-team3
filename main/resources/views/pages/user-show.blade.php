@@ -3,33 +3,47 @@
 {{-- USER PROFILE PAGE --}}
 @section('content')
 
-    <ul>
-        <li>{{$user->name}}</li>
-        <li>{{$user->vat_num}}</li>
-        <li>{{$user->address}}</li>
-        <li>{{$user->phone_num}}</li>
-        <li>{{$user->email}}</li>
-    </ul>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+      <div class="card">
+          <div class="card-header"><h3>Informazioni personali</h3></div>
+          <div class="card-body">
+            <ul>
+              <li>Nome: {{$user->name}}</li>
+              <li>Codice fiscale:  {{$user->vat_num}}</li>
+              <li>Indirizzo:  {{$user->address}}</li>
+              <li>Numero di telefono:  {{$user->phone_num}}</li>
+              <li>E-mail: {{$user->email}}</li>
+            </ul>
 
-    <h2>informazioni di consegna</h2>
-    <ul>
-        <li>start deli</li>
-        <li>{{$user->start_delivery}}</li>
-        <li>start end</li>
-        <li>{{$user->end_delivery}}</li>
-        <li>delivery price</li>
-        <li>{{$user->price_delivery / 100}}€</li>
-    </ul>
+            @if ($user->start_delivery && end_delivery != '')    
+            <h2>Orari e informazioni</h2>
+            <ul>
+              <li>Orario di apertura:</li>
+              <li>{{$user->start_delivery}}</li>
+              <li>Orario di chiusura:</li>
+              <li>{{$user->end_delivery}}</li>
+              <li>Prezzo delle consegne:</li>
+              <li>{{$user->price_delivery / 100}}€</li>
+            </ul>
+            @endif
 
-    @if (Auth::user() -> img != null)
-      <div class="card-body">
-        <h3>Profile image added</h3>
-        <img src="{{asset('storage/img/' . Auth::user() -> img)}}">
+            @if (Auth::user() -> img != null)
+              <div class="card-body">
+                <h3>Immagine aggiunta:</h3>
+                <img src="{{asset('storage/img/' . Auth::user() -> img)}}">
+              </div>
+            @endif
+
+            <a href="{{route('user-edit', $user -> id)}}">
+                <button class="btn btn-primary">Aggiorna e aggiungi altre informazioni</button>
+            </a>
+          </div>
       </div>
-    @endif
+  </div>
+</div>
+  
 
-    <a href="{{route('user-edit', $user -> id)}}">
-        <button>aggiungi informazioni consegna</button>
-    </a>
+  
 
 @endsection

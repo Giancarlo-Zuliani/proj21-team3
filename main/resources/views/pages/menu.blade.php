@@ -2,7 +2,8 @@
 <a href="{{route('index')}}">Torna alla home!</a>
 {{-- RESTAURANT MENU PAGE  --}}
 @section('content')
-    <h2>Restaurant name: {{$rest -> name}}</h2> <br>
+    <h2>Scegli cosa mangiare nel ristorante <span class="rest-name">{{$rest -> name}}</span></h2> 
+    <br>
     <ul>
       @foreach ($rest -> items as $item)
         <Item

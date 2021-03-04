@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 {{-- FORM TO CREATE NEW ITEM --}}
 @section('content')
-  <h1>New item</h1>
+  <h2>Aggiungi un nuovo piatto al tuo menù:</h2>
 
   <form class="" action="{{route('item-store')}}" method="post">
     @csrf
@@ -67,6 +67,6 @@
     <input type="hidden" name="available" value="1">
 
     <input type="hidden" name="deleted" value="0">
-    <input type="submit" value="STORE"> <br><br>
+    <input type="submit" value="Crea piatto"> <br><br>
   </form>
 @endsection

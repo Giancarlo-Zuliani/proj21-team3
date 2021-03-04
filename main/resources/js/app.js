@@ -30,7 +30,6 @@ const app = new Vue({
                 this.typologyArray = response.data;
             });
     },
-
     methods: {
         // API CALL TO GET ALL RESTAURANTS FILTERED BY TYPOLOGY
         getRestaurants() {
@@ -65,6 +64,8 @@ const app = new Vue({
                 console.log(this.selectedTypologies);
             };
             this.getRestaurantCount(id);
+
+            // console.log(this.selectedTypologies);
         },
         // SCRIPT PRINT NUMBER OF TOTAL RESTAURANTS AFTER FILTER
         getRestaurantCount(id) {
@@ -87,7 +88,7 @@ const app = new Vue({
             } else {
                 this.searchResultNum = undefined;
             }
-        }
+        },
     }
 });
 

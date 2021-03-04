@@ -2,7 +2,7 @@
 <a href="{{route('index')}}">Torna alla home!</a>
 {{-- FORM TO EDIT USER INFO --}}
 @section('content')
-  <h1>Informazioni consegna</h1>
+  <h1>Informazioni</h1>
 
   <form action="{{route('user-update', $user -> id)}}" method="post" enctype='multipart/form-data'>
     @csrf
@@ -30,11 +30,11 @@
            name="price_delivery" placeholder="price">
     <br>
 
-    <input type="file" name="img" value="" >
-    <a href="{{route('clear-user-img')}}"> <button type="button" name="button">Elimina immagine</button> </a>
-        
+    <input type="file" name="img">
+    <a href="{{route('clear-user-img')}}">
+        <button class="btn btn-danger" type="button" name="button">  Elimina immagine</button> </a>
         <br>
-        <label for="typologies[]"> scegli una o piu tipologie</label>
+        <label for="typologies[]"><h4>Scegli una o più tipologie:</h4></label>
         <br>
     @foreach ($typos as $typo)
         
@@ -47,7 +47,8 @@
 
     @endforeach
 
-    <input type="submit" value="Salva dati">
+    
+    <input class="btn btn-primary" type="submit" value="Salva dati">
 
   </form>
 @endsection

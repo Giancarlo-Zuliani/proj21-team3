@@ -1945,6 +1945,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37656,7 +37660,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v(_vm._s(_vm.name) + ":" + _vm._s(_vm.description))])
+  return _c("h3", [
+    _c("i", { staticClass: "fas fa-utensils" }),
+    _vm._v("\n    " + _vm._s(_vm.name) + ": " + _vm._s(_vm.description) + "\n")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49937,7 +49944,7 @@ var app = new Vue({
       }
 
       ;
-      this.getRestaurantCount(id);
+      this.getRestaurantCount(id); // console.log(this.selectedTypologies);
     },
     // SCRIPT PRINT NUMBER OF TOTAL RESTAURANTS AFTER FILTER
     getRestaurantCount: function getRestaurantCount(id) {
@@ -50198,8 +50205,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

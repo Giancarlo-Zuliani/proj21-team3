@@ -11015,3 +11015,29 @@ body .typologybox .img-container .typology-img {
   display: inline-block;
 }
 
+.selected {
+  filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
+  transform: scale(1.1);
+}
+
+.restaurant-name {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+.rest-name {
+  text-transform: capitalize;
+  color: #E7257D;
+}
+
+ul li {
+  list-style: none;
+}
+
+.typolo-name {
+  text-transform: capitalize;
+  color: #E7257D;
+  font-weight: bolder;
+}
+

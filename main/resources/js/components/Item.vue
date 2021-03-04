@@ -1,5 +1,9 @@
 <template>
-  <h1>{{name}}:{{description}}</h1>
+  <h3>
+    <i class="fas fa-utensils">
+    </i>
+      {{name}}: {{description}}
+  </h3>
 </template>
 
 <script>
