@@ -43,6 +43,7 @@
     {{-- TYPOLOGIES AND RESTAURANTS --}}
     <section>
         <div v-if="!showRestaurant" class="row">
+            <h1 class="test">Scegli una o più tipologie</h1>
             {{-- typology container --}}
             <div
                 class="typologybox"

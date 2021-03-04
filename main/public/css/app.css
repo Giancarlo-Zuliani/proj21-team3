@@ -11041,3 +11041,11 @@ ul li {
   font-weight: bolder;
 }
 
+.test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
+}
+
