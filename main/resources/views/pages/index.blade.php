@@ -19,6 +19,11 @@
         @endif
 
     </div>
+    <div v-if="searchResultNum != null">
+        <h5>
+            la tua ricerca ha prodotto @{{searchResultNum}} risultati;
+        </h5>
+    </div>
     <div>
         <i v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" class="fas fa-search-dollar" @click="getRestaurant"></i>
     </div>
@@ -38,11 +43,14 @@
 
 
         {{-- restaurant container --}}
-        <a v-for="rest in restaurantArray" :href=`{{route('show-menu','')}}/${rest.id}`>
-            <div  class="typologybox" v-if="showRestaurant">
-                @{{rest.name}}
-            </div>
-        </a> 
+        <div v-if="showRestaurant">
+            <h3>ci sono tot ristoranti @{{restaurantArray.length}}</h3>
+            <a v-for="rest in restaurantArray" :href=`{{route('show-menu','')}}/${rest.id}`>
+                <div  class="typologybox" >
+                    @{{rest.name}}
+                </div>
+            </a> 
+        </div>
 
         <div v-if="restaurantArray.length < 1 && showRestaurant">
 

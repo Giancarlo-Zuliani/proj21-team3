@@ -19,9 +19,21 @@ class ApiController extends Controller
             if($rest -> typologies -> contains($firstType) 
                 && ($secondType === '' ? true : $rest -> typologies -> contains($secondType))
                 && ($thirdType === '' ? true : $rest -> typologies -> contains($thirdType)))
-               
                 $arr[]= $rest; 
         }
         return response() ->json($arr);
+    }
+
+    public function getCountRestaurants($firstType ,$secondType = '',$thirdType = ''){
+        $rests = User::all(); 
+        $arr = [];
+        foreach($rests as $rest){
+            if($rest -> typologies -> contains($firstType) 
+                && ($secondType === '' ? true : $rest -> typologies -> contains($secondType))
+                && ($thirdType === '' ? true : $rest -> typologies -> contains($thirdType)))
+                $arr[]= $rest; 
+        }
+        $count = count($arr);
+        return response() ->json($count);
     }
 }

@@ -49905,7 +49905,8 @@ var app = new Vue({
     restaurantArray: [],
     typologyArray: [],
     selectedTypologies: [],
-    searchLength: 3
+    searchLength: 3,
+    searchResultNum: null
   },
   mounted: function mounted() {
     var _this = this;
@@ -49946,6 +49947,25 @@ var app = new Vue({
       }
 
       ;
+      this.getRestaurantCount(id);
+    },
+    getRestaurantCount: function getRestaurantCount(id) {
+      var _this3 = this;
+
+      var url = 'http://127.0.0.1:8000/getCountRestaurant';
+
+      for (var i = 0; i < this.searchLength; i++) {
+        if (this.selectedTypologies[i] == undefined) {
+          continue;
+        } else {
+          url += '/' + this.selectedTypologies[i];
+        }
+      }
+
+      axios.get(url).then(function (response) {
+        _this3.searchResultNum = response.data;
+        console.log(response.data);
+      });
     }
   }
 });

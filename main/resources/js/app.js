@@ -36,6 +36,7 @@ const app = new Vue({
         typologyArray: [],
         selectedTypologies: [],
         searchLength: 3,
+        searchResultNum: null,
     },
 
     mounted: function() {
@@ -62,7 +63,7 @@ const app = new Vue({
                     console.log(response.data);
                     this.restaurantArray = response.data;
                     this.showRestaurant = !this.showRestaurant;
-                })
+                });
         },
 
         typologySelection(id) {
@@ -77,7 +78,25 @@ const app = new Vue({
                 this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1)
                 console.log(this.selectedTypologies);
             };
+            this.getRestaurantCount(id);
         },
+
+        getRestaurantCount(id) {
+            let url = 'http://127.0.0.1:8000/getCountRestaurant'
+            for (let i = 0; i < this.searchLength; i++) {
+                if (this.selectedTypologies[i] == undefined) {
+                    continue
+                } else {
+                    url += '/' + this.selectedTypologies[i];
+                }
+            }
+
+            axios.get(url)
+                .then(response => {
+                    this.searchResultNum = response.data;
+                    console.log(response.data);
+                });
+        }
     }
 });
 
