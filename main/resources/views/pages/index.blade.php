@@ -1,4 +1,5 @@
 @extends('layouts.main-layout')
+{{-- INDEX (HOME PAGE WEBSITE (all typologies)) --}}
 @section('content')
 
   <div class="container">
@@ -29,7 +30,7 @@
     </div>
     
     <div>
-        <i v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" class="fas fa-search-dollar" @click="getRestaurant"></i>
+        <i v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" class="fas fa-search-dollar" @click="getRestaurants"></i>
     </div>
     {{-- Back to Typologies button --}}
     <div v-if="showRestaurant" class="console" @click="showRestaurant = !showRestaurant">
@@ -43,8 +44,6 @@
                 @{{type.typology}}
             </div>
         </div>
-
-
 
         {{-- restaurant container --}}
         <div v-if="showRestaurant">

@@ -1,5 +1,5 @@
 @extends('layouts.main-layout')
-
+{{-- FORM TO EDIT USER INFO --}}
 @section('content')
   <h1>Informazioni consegna</h1>
 
@@ -8,7 +8,6 @@
     @method('post')
 
     <label for="start_delivery">start delivery</label>
-    {{-- <input type="text" name="start_delivery" value="{{$user -> start_delivery}}" placeholder="inizio"> --}}
     <select name="start_delivery" id="">
         <option value="" disabled>Seleziona un orario</option>
         <option value="10:30">10:30</option>
@@ -17,7 +16,6 @@
     </select>
     <br>
     <label for="end_delivery">end delivery</label>
-    {{-- <input type="text" name="start_delivery" value="{{$user -> start_delivery}}" placeholder="inizio"> --}}
     <select name="end_delivery" id="">
         <option value="" disabled>Seleziona un orario</option>
         <option value="10:30">10:30</option>

@@ -1,44 +1,28 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 require('./dashboard');
 
 window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
 const files = require.context('./', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
+// VUE INSTANCE
 const app = new Vue({
     el: '#app',
     data: {
+        // INDEX FLAGS 
         showtypo: true,
         showRestaurant: false,
+        // ARRAY FILTERED
         restaurantArray: [],
         typologyArray: [],
         selectedTypologies: [],
+        // MAX NUMBER OF COMBINATIONS
         searchLength: 3,
+        // NUMBER OF RESTAURANTS AFTER SELECTED
         searchResultNum: undefined,
     },
-
+    // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
     mounted: function() {
         axios.get('http://127.0.0.1:8000/gettypo')
             .then(response => {
@@ -46,10 +30,12 @@ const app = new Vue({
                 this.typologyArray = response.data;
             });
     },
+
     methods: {
-        getRestaurant() {
+        // API CALL TO GET ALL RESTAURANTS FILTERED BY TYPOLOGY
+        getRestaurants() {
             restaurantArray = [];
-            let url = 'http://127.0.0.1:8000/getRestaurant'
+            let url = 'http://127.0.0.1:8000/getRestaurants'
             for (let i = 0; i < this.searchLength; i++) {
                 if (this.selectedTypologies[i] == undefined) {
                     continue
@@ -65,13 +51,13 @@ const app = new Vue({
                     this.showRestaurant = !this.showRestaurant;
                 });
         },
-
+        // SCRIPT TO SELECT TYPOLOGY CARD
         typologySelection(id) {
             if (this.selectedTypologies === undefined || this.selectedTypologies.length < 3) {
                 this.selectedTypologies.includes(id) ?
-                    this.selectedTypologies.splice(
-                        this.selectedTypologies.indexOf(id), 1) :
-                    this.selectedTypologies.push(id);
+                this.selectedTypologies.splice(
+                    this.selectedTypologies.indexOf(id), 1) :
+                this.selectedTypologies.push(id);
                 console.log(this.selectedTypologies);
             } else if (
                 this.selectedTypologies.includes(id)) {
@@ -80,7 +66,7 @@ const app = new Vue({
             };
             this.getRestaurantCount(id);
         },
-
+        // SCRIPT PRINT NUMBER OF TOTAL RESTAURANTS AFTER FILTER
         getRestaurantCount(id) {
             let url = 'http://127.0.0.1:8000/getCountRestaurant'
             if (this.selectedTypologies.length > 0) {
@@ -103,9 +89,4 @@ const app = new Vue({
             }
         }
     }
-});
-
-const app2 = new Vue({
-    el: '#prova',
-
 });

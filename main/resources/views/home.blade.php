@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{-- DASHBOARD (user area) --}}
 @section('content')
 
     <div class="row justify-content-center">

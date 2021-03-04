@@ -1,5 +1,5 @@
 @extends('layouts.main-layout')
-
+{{-- FORM TO CREATE NEW ITEM --}}
 @section('content')
   <h1>New item</h1>
 

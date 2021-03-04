@@ -1,5 +1,5 @@
 @extends('layouts.main-layout')
-
+{{-- USER PROFILE PAGE --}}
 @section('content')
 
     <ul>

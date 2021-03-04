@@ -49868,46 +49868,34 @@ webpackContext.id = "./resources/js sync recursive \\.vue$/";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./dashboard */ "./resources/js/dashboard.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
 
 var files = __webpack_require__("./resources/js sync recursive \\.vue$/");
 
 files.keys().map(function (key) {
   return Vue.component(key.split('/').pop().split('.')[0], files(key)["default"]);
-});
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+}); // VUE INSTANCE
 
 var app = new Vue({
   el: '#app',
   data: {
+    // INDEX FLAGS 
     showtypo: true,
     showRestaurant: false,
+    // ARRAY FILTERED
     restaurantArray: [],
     typologyArray: [],
     selectedTypologies: [],
+    // MAX NUMBER OF COMBINATIONS
     searchLength: 3,
+    // NUMBER OF RESTAURANTS AFTER SELECTED
     searchResultNum: undefined
   },
+  // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
   mounted: function mounted() {
     var _this = this;
 
@@ -49917,11 +49905,12 @@ var app = new Vue({
     });
   },
   methods: {
-    getRestaurant: function getRestaurant() {
+    // API CALL TO GET ALL RESTAURANTS FILTERED BY TYPOLOGY
+    getRestaurants: function getRestaurants() {
       var _this2 = this;
 
       restaurantArray = [];
-      var url = 'http://127.0.0.1:8000/getRestaurant';
+      var url = 'http://127.0.0.1:8000/getRestaurants';
 
       for (var i = 0; i < this.searchLength; i++) {
         if (this.selectedTypologies[i] == undefined) {
@@ -49937,6 +49926,7 @@ var app = new Vue({
         _this2.showRestaurant = !_this2.showRestaurant;
       });
     },
+    // SCRIPT TO SELECT TYPOLOGY CARD
     typologySelection: function typologySelection(id) {
       if (this.selectedTypologies === undefined || this.selectedTypologies.length < 3) {
         this.selectedTypologies.includes(id) ? this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1) : this.selectedTypologies.push(id);
@@ -49949,6 +49939,7 @@ var app = new Vue({
       ;
       this.getRestaurantCount(id);
     },
+    // SCRIPT PRINT NUMBER OF TOTAL RESTAURANTS AFTER FILTER
     getRestaurantCount: function getRestaurantCount(id) {
       var _this3 = this;
 
@@ -49972,9 +49963,6 @@ var app = new Vue({
       }
     }
   }
-});
-var app2 = new Vue({
-  el: '#prova'
 });
 
 /***/ }),
@@ -50169,36 +50157,15 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// document.addEventListener('DOMContentLoaded', function(){
-//     myFunction();
-//     // var deleteBanners = document.getElementsByClassName('delete-banner');
-//     // var trash = document.getElementsByClassName('fa-trash-alt');
-//     // console.log(trash);
-//     // trash.addEventListener('click', function () {
-//     //    console.log('trash');
-//     // });
-//     // function toggleBanner(id) {
-//     //     deleteBanners[id].classList.toggle('show');
-//     // }
-//     // console.log(deleteBanners);
-//     // console.log('ciao');
-// }); 
-// // function myFunction() {
-//     var element = document.getElementById("trash").addEventListener('click', function () {
-//         console.log(element);
-//         console.log('ciao');
-//     });
-// }
-// parte lo script solo quando carica l'HTML
 document.addEventListener('DOMContentLoaded', function () {
   // banner div
-  var deleteBanner = document.getElementsByClassName("delete-banner");
+  var deleteBanner = document.getElementsByClassName("delete-banner"); // trash icon
+
   var trash = document.getElementsByClassName("fa-trash-alt");
 
   var _loop = function _loop(i) {
     trash[i].addEventListener('click', function () {
-      // alertBtn[i].classList.toggle("show"); 
-      deleteBanner[i].classList.toggle("show"); // console.log(alertBtn);
+      deleteBanner[i].classList.toggle("show");
     });
   };
 
@@ -50227,8 +50194,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

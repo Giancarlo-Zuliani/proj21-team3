@@ -19,34 +19,27 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-    // HOME UTENTE LOGGATO
+
+    // (DASHBOARD (user area) - HOME) GET ALL USER'S ITEMS 
+
     public function index() {
         $user = Auth::user() -> id;
         $items = Item::where('user_id', $user) -> get();
         return view('home', compact('items'));
     }
-    // FORM CREARE NUOVO PIATTO
+
+    // (ITEM-CREATE) FORM TO CREATE NEW ITEM
+
     public function createItem() {
       return view('pages.item-create');
     }
-    // CREA NUOVO PIATTO
+
+    // STORE NEW ITEM
     public function storeItem(Request $request) {
       $pr = $request -> get('price') * 100;
-
       $price = intval($pr);
-
       $request -> merge(['price' => $price]);
-
       $data = $request -> all();
-
-      // dd($data);
-
-      // Validator::make($data, [
-      //   'name' => 'required|string',
-      //   'description' => 'required|string',
-      //   'ingredients' => 'string',
-      //   'price' => 'required|integer',
-      // ]) -> validate();
 
       Validator::make($data,
         [
@@ -74,12 +67,15 @@ class HomeController extends Controller
       return redirect() -> route('home');
     }
 
-    // FORM MODIFICARE PIATTO
+    // (ITEM-EDIT) FORM TO EDIT ITEM
+
     public function editItem($id) {
       $item = Item::findOrFail($id);
       return view('pages.item-edit', compact('item'));
     }
-    // MODIFICA PIATTO
+
+    // UPDATE ITEM
+
     public function updateItem(Request $request, $id) {      
       $pr = $request -> get('price') * 100;
 
@@ -118,35 +114,32 @@ class HomeController extends Controller
       return redirect() -> route('home');
 
     }
+
     // DELETE ITEM (TOGGLE 1 AND 0)
     public function deleteItem($id) {
-
       $item = Item::findOrFail($id);
-
       $item -> update(array('deleted' => 1));
 
       return redirect() -> route('home');
 
     }
 
-    // USER SHOW
+    // (USER-SHOW (area user)) USER'S PROFILE PAGE
+
     public function userShow() {
-
-
       $user = Auth::user();
-      // dd($user);
       return view('pages.user-show', compact('user'));
     }
 
-    // FORM EDIT USER
+    // (USER-EDIT) EDIT USER PAGE
     public function userEdit() {
-
       $user = Auth::user();
       $typos = Typology::all();
       return view('pages.user-edit', compact('user' , 'typos'));
     }
 
     // UPDATE USER INFO
+
     public function updateUser(Request $request, $id) {
       $data = $request -> all();
       $restTypo = $request -> typologies;
@@ -161,7 +154,8 @@ class HomeController extends Controller
         'end_delivery' => $endDelivery,
         'price_delivery' => $price,
       ));
-      ///////// immagine
+      
+      // UPDATE USER IMAGE
       $image = $request -> file('img');
       $user = Auth::user();
       
@@ -175,22 +169,24 @@ class HomeController extends Controller
         $user -> save();
       }
       
-      ///TYPOLOGIES SYNC;
+      /// TYPOLOGIES SYNC (associate typologies to user);
       $typos = Typology::findOrFail($restTypo);
       $user -> typologies() -> sync($typos); 
       return redirect() -> route('user-show', $user -> id);
     }
 
+    // REMOVE USER'S IMAGE 
+
     public function clearUserImg() {
-
       $this -> deleteUserImg();
-
       $user = Auth::user();
       $user -> img = null;
       $user -> save();
       return redirect() -> route('user-show', $user -> id);
     }
 
+    // DELETE IMAGE FROM FOLDER
+    
     private function deleteUserImg() {
       $user = Auth::user();
 
@@ -198,7 +194,6 @@ class HomeController extends Controller
         $filename = $user -> img;
         $file = storage_path('app/public/img/' . $filename);
         $res = File::delete($file);
-        // dd($file, $res);
       } catch (\Exception $e) {}
     }
 }
