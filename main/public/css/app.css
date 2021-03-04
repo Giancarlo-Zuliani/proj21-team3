@@ -10979,7 +10979,6 @@ section .typologybox {
 }
 
 header {
-  height: 100vh;
   /* You must set a specified height */
   background-repeat: no-repeat;
   /* Do not repeat the image */
@@ -10988,6 +10987,22 @@ header {
 
 header img {
   max-width: 200px;
+}
+
+body .typologybox {
+  background-color: white;
+  text-align: center;
+  font-weight: 2rem;
+}
+
+body .typologybox .img-container {
+  height: 100%;
+  width: 100%;
+}
+
+body .typologybox .img-container .typology-img {
+  width: 100%;
+  height: 100%;
 }
 
 .delete-banner {
