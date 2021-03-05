@@ -202,4 +202,5 @@ class HomeController extends Controller
     public function payment() {
       return view('pages.checkout');
     }
+
 }

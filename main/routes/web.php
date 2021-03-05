@@ -78,3 +78,7 @@ Route::get('/getRestaurants/{firstType}/{secondType?}/{thirdType?}' , 'ApiContro
 // CALL GET FILTERED RESTAURANT COUNT
 Route::get('/getCountRestaurant/{firstType}/{secondType?}/{thirdType?}' , 'ApiController@getCountRestaurants')
 ->name('get-typology-restaurants');
+
+// CALL GET ITEM 
+Route::get('/getItem/{id}' , 'ApiController@getItem')
+    ->name('cart');

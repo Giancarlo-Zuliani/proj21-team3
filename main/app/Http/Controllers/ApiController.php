@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Typology;
 use App\User;
+use App\Item;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -42,5 +43,12 @@ class ApiController extends Controller
         }
         $count = count($arr);
         return response() ->json($count);
+    }
+
+    // GET ITEM BY ID FROM BE
+    public function getItem($id) {
+        $item = Item::findOrFail($id);
+        // dd($item);
+        return response() ->json($item);
     }
 }

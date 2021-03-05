@@ -1,5 +1,5 @@
 <template>
-  <h3>
+  <h3 @click="getItem()">
     <i class="fas fa-utensils">
     </i>
       {{name}}: {{description}}
@@ -8,13 +8,32 @@
 </template>
 
 <script>
-    export default {
+  export default {
+        data: function() {
+            return {
+                itemsArray: [],
+            };
+        },
         mounted() {
-            console.log('Component mounted.')
+            console.log('Item component.')          
         },
         props: {
           name: String,
-          description: String
+          description: String,
+          id: Number,
+        },
+        methods: {
+          getItem() {
+            let url = 'http://127.0.0.1:8000/getItem/' + this.id;
+
+            axios.get(url)
+                    .then(response => {
+                        this.itemsArray.push(response.data);
+                        console.log(this.itemsArray[0].name);
+            });
+
+        },
+        
         }
     }
 </script>
