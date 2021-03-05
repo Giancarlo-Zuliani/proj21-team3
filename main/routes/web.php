@@ -82,3 +82,7 @@ Route::get('/getCountRestaurant/{firstType}/{secondType?}/{thirdType?}' , 'ApiCo
 // CALL GET ITEM 
 Route::get('/getItem/{id}' , 'ApiController@getItem')
     ->name('cart');
+
+// CREATE ORDER 
+Route::post('/store-order' , 'OrderController@storeOrder')
+    ->name('store-order');

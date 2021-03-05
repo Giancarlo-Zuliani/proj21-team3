@@ -14,6 +14,7 @@ class Order extends Model
         'email',
         'discount',
         'total_price',
+        'payment_status',
     ];
     public function items(){
         return $this -> belongsToMany(Item::class);

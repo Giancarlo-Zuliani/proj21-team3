@@ -10978,6 +10978,15 @@ section .typologybox {
   background-color: purple;
 }
 
+#orderbox {
+  width: 50%;
+  height: 50vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 header {
   /* You must set a specified height */
   background-repeat: no-repeat;

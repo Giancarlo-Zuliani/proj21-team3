@@ -6,6 +6,7 @@ window.Vue = require('vue');
 const files = require.context('./', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+
 // VUE INSTANCE
 const app = new Vue({
     el: '#app',
@@ -21,6 +22,8 @@ const app = new Vue({
         searchLength: 3,
         // NUMBER OF RESTAURANTS AFTER SELECTED
         searchResultNum: undefined,
+        cartArray: [],
+        pay: false,
     },
     // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
     mounted: function() {
@@ -54,9 +57,9 @@ const app = new Vue({
         typologySelection(id) {
             if (this.selectedTypologies === undefined || this.selectedTypologies.length < 3) {
                 this.selectedTypologies.includes(id) ?
-                this.selectedTypologies.splice(
-                    this.selectedTypologies.indexOf(id), 1) :
-                this.selectedTypologies.push(id);
+                    this.selectedTypologies.splice(
+                        this.selectedTypologies.indexOf(id), 1) :
+                    this.selectedTypologies.push(id);
                 console.log(this.selectedTypologies);
             } else if (
                 this.selectedTypologies.includes(id)) {
@@ -89,8 +92,32 @@ const app = new Vue({
                 this.searchResultNum = undefined;
             }
         },
-        
+        addToCart(item) {
+            if (this.cartArray.some(obj => obj.id === item.id)) {
+                this.cartArray.forEach(elem => {
+                    if (elem.id === item.id) {
+                        elem.quantity++;
+                    }
+                });
+            } else {
+                item.quantity = 1;
+                this.cartArray.push(item);
+            }
+        },
+        removeFromCart(index) {
+            console.log(index);
+            if (this.cartArray[index].quantity === 1) {
+                this.cartArray.splice(index, 1);
+            } else {
+                this.cartArray[index].quantity--;
+            }
+        },
+        showPayment() {
+            this.pay = true;
+        }
+
     }
+
 });
 
 // const app2 = new Vue({
@@ -100,7 +127,7 @@ const app = new Vue({
 // });
 
 // CHART.JS SCRIPT
-var ctx = document.getElementById('myChart').getContext('2d');
+/* var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -136,4 +163,4 @@ var myChart = new Chart(ctx, {
             }]
         }
     }
-});
+}); */
