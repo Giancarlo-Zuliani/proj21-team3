@@ -1,14 +1,29 @@
 header {
-    // background-color: $yellow; /* Used if the image is unavailable */
-    // height: 100vh;
-    /* You must set a specified height */
-    // background-position: center; /* Center the image */
+    background-image: url('storage/assets/header.svg');
     background-repeat: no-repeat;
-    /* Do not repeat the image */
-    // background-size: cover; /* Resize the background image to cover the entire container */
-    background-size: contain;
+    background-size: cover;
+    width: 100vw;
+    height: 55vh;
+    display: flex;
+    justify-content: space-between;
     // LOGO
-    img {
-        max-width: 200px;
+    .logo {
+        img {
+            height: 50px;
+        }         
+     }
+    // CONTAINERS 
+    div {
+        padding: 35px;
+        .fa-user-circle {
+            font-size: 2rem;
+            color: $pink;
+            vertical-align: middle;
+        }
+        // BUTTONS 
+        .btn {
+            background-color: $pink;
+            border: none;
+        }
     }
 }

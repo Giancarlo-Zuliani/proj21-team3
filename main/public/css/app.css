@@ -10988,14 +10988,32 @@ section .typologybox {
 }
 
 header {
-  /* You must set a specified height */
+  background-image: url(/images/header.svg?f36418b90e3eec0367430bc046b38b7c);
   background-repeat: no-repeat;
-  /* Do not repeat the image */
-  background-size: contain;
+  background-size: cover;
+  width: 100vw;
+  height: 55vh;
+  display: flex;
+  justify-content: space-between;
 }
 
-header img {
-  max-width: 200px;
+header .logo img {
+  height: 50px;
+}
+
+header div {
+  padding: 35px;
+}
+
+header div .fa-user-circle {
+  font-size: 2rem;
+  color: #E7257D;
+  vertical-align: middle;
+}
+
+header div .btn {
+  background-color: #E7257D;
+  border: none;
 }
 
 body .typologybox {
