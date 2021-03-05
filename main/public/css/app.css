@@ -10988,11 +10988,9 @@ section .typologybox {
 }
 
 header {
-  background-image: url(/images/header.svg?f36418b90e3eec0367430bc046b38b7c);
+  background-image: url(/images/header.svg?366a3914ff499d123c1b0002790523ab);
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 55vh;
+  height: 340px;
   display: flex;
   justify-content: space-between;
 }

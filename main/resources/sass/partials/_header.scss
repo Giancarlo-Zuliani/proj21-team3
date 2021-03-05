@@ -1,9 +1,7 @@
 header {
     background-image: url('storage/assets/header.svg');
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 55vh;
+    height: 340px;
     display: flex;
     justify-content: space-between;
     // LOGO
@@ -11,7 +9,7 @@ header {
         img {
             height: 50px;
         }         
-     }
+    }
     // CONTAINERS 
     div {
         padding: 35px;
