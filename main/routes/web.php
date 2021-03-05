@@ -86,13 +86,3 @@ Route::get('/getItem/{id}' , 'ApiController@getItem')
 // CREATE ORDER 
 Route::post('/store-order' , 'OrderController@storeOrder')
     ->name('store-order');
-
-// Payment
-// Reindirizzo alla pagina di caricamento
-Route::get('/payment', function () {
-    return view('payment');
-})->name('payment');
-
-Route::get('/checkout', 'PaymentsController@process')->name('check');
-
-Route::post('/payment/process', 'PaymentsController@store')->name('payment.process');
