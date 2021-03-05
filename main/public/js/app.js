@@ -1949,6 +1949,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37662,7 +37663,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("h3", [
     _c("i", { staticClass: "fas fa-utensils" }),
-    _vm._v("\n    " + _vm._s(_vm.name) + ": " + _vm._s(_vm.description) + "\n")
+    _vm._v(
+      "\n    " + _vm._s(_vm.name) + ": " + _vm._s(_vm.description) + "\n    "
+    ),
+    _c("i", { staticClass: "fas fa-plus" })
   ])
 }
 var staticRenderFns = []

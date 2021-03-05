@@ -60,6 +60,10 @@ Route::post('/user-show/update/{id}', 'HomeController@updateUser')
 Route::get('/clear-user-img', 'HomeController@clearUserImg')
     ->name('clear-user-img');
 
+// CHECK OUT PAGE
+Route::get('/pagamento', 'HomeController@payment')
+    ->name('pagamento');
+
 /*****
 API ROUTES
 ******/

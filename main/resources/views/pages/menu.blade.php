@@ -14,6 +14,18 @@
       @endforeach
     </ul>
 
+    {{-- carrello --}}
+    <div class="carrello">
+      <h1>carrello</h1>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+      </ul>
+      <a href="{{route('pagamento')}}">
+        <input class="btn btn-primary" type="submit"  value="Check-out">
+      </a>
+    </div>
+
 @endsection
 {{-- ITEM COMPONENT --}}
 {{-- @section('itemContainer')

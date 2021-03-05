@@ -196,4 +196,10 @@ class HomeController extends Controller
         $res = File::delete($file);
       } catch (\Exception $e) {}
     }
+
+    // CHECK OUT PAGE 
+
+    public function payment() {
+      return view('pages.checkout');
+    }
 }

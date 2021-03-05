@@ -3,6 +3,7 @@
     <i class="fas fa-utensils">
     </i>
       {{name}}: {{description}}
+      <i class="fas fa-plus"></i>
   </h3>
 </template>
 
