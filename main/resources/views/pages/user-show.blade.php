@@ -16,7 +16,7 @@
               <li>E-mail: {{$user->email}}</li>
             </ul>
 
-            @if ($user->start_delivery && end_delivery != '')    
+            {{-- @if ($user->start_delivery && end_delivery != '')     --}}
             <h2>Orari e informazioni</h2>
             <ul>
               <li>Orario di apertura:</li>
@@ -26,7 +26,7 @@
               <li>Prezzo delle consegne:</li>
               <li>{{$user->price_delivery / 100}}€</li>
             </ul>
-            @endif
+            {{-- @endif --}}
 
             @if (Auth::user() -> img != null)
               <div class="card-body">
