@@ -51,7 +51,7 @@ Route::get('/user-show', 'HomeController@userShow')
 // FORM EDIT USER INFO
 Route::get('/user-show/edit/{id}', 'HomeController@userEdit')
     ->name('user-edit');
-    
+
 // UPDATE (& upload user image) USER INFO
 Route::post('/user-show/update/{id}', 'HomeController@updateUser')
     ->name('user-update');
@@ -79,10 +79,13 @@ Route::get('/getRestaurants/{firstType}/{secondType?}/{thirdType?}' , 'ApiContro
 Route::get('/getCountRestaurant/{firstType}/{secondType?}/{thirdType?}' , 'ApiController@getCountRestaurants')
 ->name('get-typology-restaurants');
 
-// CALL GET ITEM 
+// CALL GET ITEM
 Route::get('/getItem/{id}' , 'ApiController@getItem')
     ->name('cart');
 
-// CREATE ORDER 
-Route::post('/store-order' , 'OrderController@storeOrder')
+// CREATE ORDER
+Route::get('/store-order' , 'PaymentController@payment')
     ->name('store-order');
+
+Route::post('/checkout', 'PaymentController@checkout')
+    -> name('checkout');

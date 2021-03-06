@@ -1,5 +1,6 @@
 require('./bootstrap');
 require('./dashboard');
+require('./payment.js');
 
 window.Vue = require('vue');
 
@@ -11,7 +12,7 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 const app = new Vue({
     el: '#app',
     data: {
-        // INDEX FLAGS 
+        // INDEX FLAGS
         showtypo: true,
         showRestaurant: false,
         // ARRAY FILTERED
