@@ -5,6 +5,21 @@
 
         <div class="payment-checkout">
 
+          <ul>
+            @foreach ($orderedItems as $item)
+            <li>
+
+              {{$item -> name}}
+              {{$quantities [$loop -> index]}}
+              {{$item -> price * $quantities [$loop -> index] / 100}} 
+
+
+            </li>
+
+            @endforeach
+
+          </ul>
+
               <form method="post" id="payment-form" class="payment-checkout-form" action="{{  route('checkout') }}">
                   @csrf
                   @method('post')
@@ -20,6 +35,8 @@
                 </section>
 
 
+
+
                 <input id="client_token" name="token" type="hidden" value="{{ $token }}">
                 <input id="nonce" name="payment_method_nonce" type="hidden" >
                 <input id="sponsor_plan" name="sponsor_plan" type="hidden" value="51" >
@@ -30,6 +47,9 @@
                 </button>
                 </div>
               </form>
+
+
+
         </div>
     </div>
 <script src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js"></script>

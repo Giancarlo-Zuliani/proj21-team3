@@ -84,7 +84,7 @@ Route::get('/getItem/{id}' , 'ApiController@getItem')
     ->name('cart');
 
 // CREATE ORDER
-Route::get('/store-order' , 'PaymentController@payment')
+Route::post('/store-order' , 'PaymentController@payment')
     ->name('store-order');
 
 Route::post('/checkout', 'PaymentController@checkout')

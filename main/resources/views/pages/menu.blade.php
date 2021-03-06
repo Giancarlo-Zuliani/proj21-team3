@@ -3,7 +3,7 @@
 {{-- RESTAURANT MENU PAGE  --}}
 @section('content')
 
-    <h2>Scegli cosa mangiare nel ristorante <span class="rest-name">{{$rest -> name}}</span></h2> 
+    <h2>Scegli cosa mangiare nel ristorante <span class="rest-name">{{$rest -> name}}</span></h2>
     <br>
     <ul>
       @foreach ($rest -> items as $item)
@@ -15,19 +15,27 @@
     </ul>
 
     {{-- carrello --}}
+
+    <form class="" action="{{ route('store-order')}}" method="POST">
+      @csrf
+      @method('post')
     <div v-if="cartArray.length !== 0" class="carrello">
       <ul>
         <li v-for="item , index in cartArray">
           @{{item.name}} @{{item.quantity}} <i class="fas fa-minus" @click="removeFromCart(index)"></i>
         </li>
       </ul>
-    <button @click="showPayment()">Check-out !</button> 
     </div>
 
     <div id="orderbox">
-     
-      <a href="{{route('store-order')}}"> <button>vai al pagamento</button> </a>
-      </form>
+      <div class="" v-for="item in cartArray">
+        <input type="checkbox" name="items[]" :value="[item.id,item.quantity]" checked>
+
+
+      </div>
+      <input type="submit" name="" value="Checkout">
+      <!-- <a href="{{route('store-order')}}"> <button>vai al pagamento</button> </a> -->
+   </form>
     </div>
 
 @endsection
