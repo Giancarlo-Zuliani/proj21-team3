@@ -1,22 +1,21 @@
 <header>
-    {{-- <nav> --}}
         <div class="logo">
             <a href="{{route('index')}}">
-                <img src="{{asset('storage/assets/logo.svg')}}" alt="logo">
+                <img src="{{asset('storage/assets/logo.svg')}}" alt="Fooduro logo">
             </a>
         </div>
         
         <div class="btns">
-            <button class="btn btn-primary">Log in</button>
-            <button class="btn btn-primary">Register</button>
-            <i class="far fa-user-circle"></i>
-        </div>
-    {{-- </nav> --}}
+            <a href="{{ route('register') }}">
+                <button class="btn btn-primary">
+                    Register
+                </button>
+            </a>
 
-    {{-- <div>
-        <a href="{{route('index')}}">
-            <img src="{{asset('storage/assets/header.svg')}}" alt="header">
-        </a>
-    </div> --}}
-   
+            <a href="{{ route('login') }}">
+                <button class="btn btn-primary">
+                    Login
+                </button>
+            </a>
+        </div>
 </header>

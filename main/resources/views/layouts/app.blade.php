@@ -18,17 +18,13 @@
     {{-- Chart js --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 </head>
-<body>
+<body>    
     <div id="app">
-        <nav class="navbar nav-dash navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav id="nav-bar" class="navbar nav-dash navbar-expand-md navbar-dark shadow-sm">
             <div class="container">
-                {{-- <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                    Fooduro
-                </a> --}}
+
                 <a class="navbar-brand" href="{{route('index')}}">
-                    {{-- <img src="{{asset('storage/img/logo.svg')}}" alt="Fooduro logo"> --}}
-                    Fooduro
+                    <img src="{{asset('storage/assets/logo.svg')}}" height="40" alt="Fooduro logo">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -37,9 +33,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    {{-- <ul class="navbar-nav mr-auto">
 
-                    </ul>
+                    </ul> --}}
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -59,7 +55,6 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -68,7 +63,7 @@
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('user-show')}}">                                     
-                                        Profilo
+                                        Dashboard
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -85,7 +80,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @include('components.footer')
     </div>
+
      {{-- Toggle delete banner script --}}
      <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>

@@ -11030,6 +11030,32 @@ body .typologybox .img-container .typology-img {
   height: 100%;
 }
 
+#nav-bar {
+  background-color: #FCC15D;
+}
+
+#nav-bar .container a {
+  color: #E7257D;
+}
+
+#nav-bar .container button {
+  color: #E7257D;
+  border-color: none;
+}
+
+#nav-bar .container button .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28231, 37, 125, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+body {
+  background-color: white;
+}
+
+.card-header {
+  background-color: #FCC15D;
+  color: #E7257D;
+}
+
 .delete-banner {
   background-color: red;
   height: 10px;

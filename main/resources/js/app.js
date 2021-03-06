@@ -128,7 +128,7 @@ const app = new Vue({
 // });
 
 // CHART.JS SCRIPT
-/* var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -164,4 +164,4 @@ var myChart = new Chart(ctx, {
             }]
         }
     }
-}); */
+}); 

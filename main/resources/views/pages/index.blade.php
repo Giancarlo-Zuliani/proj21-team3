@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="container">
-    <div class="flex-center position-ref full-height">
+    {{-- <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
@@ -18,7 +18,7 @@
             </div>
         @endif
 
-    </div>
+    </div> --}}
     {{-- SEARCH COUNT CONTAINER --}}
     <div class="ricerca" v-if="searchResultNum != undefined">
         <h4 v-if="searchResultNum > 0">
@@ -45,18 +45,31 @@
         <div v-if="!showRestaurant" class="row">
             <h1 class="test">Scegli una o più tipologie</h1>
             {{-- typology container --}}
-            <div
+            {{-- <div
                 class="typologybox"
                 :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"                    
                 v-for="type in typologyArray"
                 @click="typologySelection( type.id )"
-                {{-- v-if="!showRestaurant" --}}
              >
                <span class="typolo-name">@{{type.typology}}</span> 
-                {{-- TYPOLOGY IMG --}}
                 <div class="img-container">
-                    <img class="typology-img" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
+                    <img class="typology-img img-fluid" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
+                </div> --}}
+
+                {{-- TEST BOOTSTRAP --}}
+                <div
+                    class="card" style="width: 18rem; margin: 20px;"
+                    :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"                    
+                    v-for="type in typologyArray"
+                    @click="typologySelection( type.id )"
+                >
+                    <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
+                    <div class="card-body">
+                      <h6 class="card-title text-center font-weight-bold">@{{type.typology}}</h6>
+                      {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+                    </div>
                 </div>
+
                 
             </div>
         </div>
