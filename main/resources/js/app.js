@@ -1,5 +1,6 @@
 require('./bootstrap');
 require('./dashboard');
+require('./payment');
 
 window.Vue = require('vue');
 

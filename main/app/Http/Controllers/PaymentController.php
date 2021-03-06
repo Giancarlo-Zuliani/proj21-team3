@@ -16,7 +16,7 @@ class PaymentController extends Controller
 
     public function checkout(Request $request){
       $data = $request -> all();
-      $gateway = new new Braintree\Gateway( config('braintree')
+      $gateway = new Braintree\Gateway( config('braintree')
       );
       $result = $gateway -> transaction() -> sale([
         'amount'=> 200,

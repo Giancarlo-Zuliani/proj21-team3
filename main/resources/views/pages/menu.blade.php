@@ -26,25 +26,7 @@
 
     <div id="orderbox">
      
-      <form action="{{route('store-order')}}" method="POST">
-        @csrf
-        @method('post')
-        <label for="buyer_name">Nome:</label>
-        <input type="text" name="buyer_name"> <br>
-        <label for="buyer_lastname">Cognome:</label>
-        <input type="text" name="buyer_lastname">
-        <label for="address">Indirizzo</label>
-        <input type="text" name="address">
-        <label for="phone_num">Telefono</label>
-        <input type="text" name="phone_num">
-        <label for="email">e-mail</label>
-        <input type="text" name="email">
-        <input type="text" name="discount" hidden value="0">
-        
-        <input v-for="item in cartArray" name="items[]" :value="[item.id,item.quantity]" type="checkbox" hidden checked>
-        {{-- <input v-for="item in cartArray" name="items[]" :value="item.quantity" type="checkbox" hidden checked> --}}
-
-        <input type="submit">
+      <a href="{{route('store-order')}}"> <button>vai al pagamento</button> </a>
       </form>
     </div>
 

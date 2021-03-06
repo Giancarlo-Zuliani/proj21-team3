@@ -49616,6 +49616,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./dashboard */ "./resources/js/dashboard.js");
 
+__webpack_require__(/*! ./payment */ "./resources/js/payment.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 var files = __webpack_require__("./resources/js sync recursive \\.vue$/");
@@ -49849,6 +49851,43 @@ document.addEventListener('DOMContentLoaded', function () {
   for (var i = 0; i < trash.length; i++) {
     _loop(i);
   }
+});
+
+/***/ }),
+
+/***/ "./resources/js/payment.js":
+/*!*********************************!*\
+  !*** ./resources/js/payment.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.querySelector('#payment-form');
+  var client_token = document.querySelector('#client_token').value;
+  braintree.dropin.create({
+    authorization: client_token,
+    selector: '#bt-dropin'
+  }, function (createErr, instance) {
+    if (createErr) {
+      console.log('Create Error', createErr);
+      return;
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      instance.requestPaymentMethod(function (err, payload) {
+        if (err) {
+          console.log('Request Payment Method Error', err);
+          return;
+        } // Add the nonce to the form and submit
+
+
+        document.querySelector('#nonce').value = payload.nonce;
+        form.submit();
+      });
+    });
+  });
 });
 
 /***/ }),
