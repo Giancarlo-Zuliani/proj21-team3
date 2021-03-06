@@ -8,16 +8,11 @@
           <ul>
             @foreach ($orderedItems as $item)
             <li>
-
               {{$item -> name}}
               {{$quantities [$loop -> index]}}
-              {{$item -> price * $quantities [$loop -> index] / 100}} 
-
-
+              {{$item -> price * $quantities [$loop -> index] / 100}}
             </li>
-
             @endforeach
-
           </ul>
 
               <form method="post" id="payment-form" class="payment-checkout-form" action="{{  route('checkout') }}">
@@ -33,6 +28,34 @@
                      <div id="bt-dropin"></div>
                   </div>
                 </section>
+
+                <!-- FORM CLIENT -->
+                <section>
+
+                  <label for="buyer_name">Buyer Name</label>
+                  <input type="text" name="buyer_name" value="">
+
+                  <label for="buyer_lastname">Buyer Lastname</label>
+                  <input type="text" name="buyer_lastname" value="">
+
+                  <label for="address">Address</label>
+                  <input type="text" name="address" value="">
+
+                  <label for="phone_num">Phone Num</label>
+                  <input type="text" name="phone_num" value="">
+
+                  <label for="email">Email</label>
+                  <input type="text" name="email" value="}">
+
+                  <label for="discount">Discount</label>
+                  <input type="text" name="discount" value="">
+
+                  <label for="final_price">Final Price</label>
+                  <input type="text" name="final_price" value="">
+
+                </section>
+
+
 
 
 
