@@ -49616,8 +49616,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./dashboard */ "./resources/js/dashboard.js");
 
-__webpack_require__(/*! ./payment.js */ "./resources/js/payment.js");
-
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 var files = __webpack_require__("./resources/js sync recursive \\.vue$/");
@@ -49855,43 +49853,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ "./resources/js/payment.js":
-/*!*********************************!*\
-  !*** ./resources/js/payment.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-document.addEventListener("DOMContentLoaded", function () {
-  var form = document.querySelector('#payment-form');
-  var client_token = document.querySelector('#client_token').value;
-  braintree.dropin.create({
-    authorization: client_token,
-    selector: '#bt-dropin'
-  }, function (createErr, instance) {
-    if (createErr) {
-      console.log('Create Error', createErr);
-      return;
-    }
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      instance.requestPaymentMethod(function (err, payload) {
-        if (err) {
-          console.log('Request Payment Method Error', err);
-          return;
-        } // Add the nonce to the form and submit
-
-
-        document.querySelector('#nonce').value = payload.nonce;
-        form.submit();
-      });
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49910,8 +49871,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laravel\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laravel\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

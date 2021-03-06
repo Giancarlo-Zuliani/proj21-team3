@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+/* document.addEventListener("DOMContentLoaded", function() {
     var form = document.querySelector('#payment-form');
     var client_token = document.querySelector('#client_token').value;
 
@@ -28,3 +28,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+ */
