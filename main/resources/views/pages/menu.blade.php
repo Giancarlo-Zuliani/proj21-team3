@@ -3,51 +3,52 @@
 {{-- RESTAURANT MENU PAGE  --}}
 @section('content')
 
-    <h2>Scegli cosa mangiare nel ristorante <span class="rest-name">{{$rest -> name}}</span></h2>
-    <br>
-    <ul>
-      @foreach ($rest -> items as $item)
-        <div>
-          <span> {{$item -> name}} , {{$item -> description}}</span>
-          <a href="#"><i class="fas fa-plus" @click ="addToCart({{$item}})">ADD</i></a>
-        </div>
-      @endforeach
+<div class="container">
+
+  <h2 class="test"><span class="rest-name">{{$rest -> name}}</span></h2>
+  {{-- CARRELLO --}}
+  <form v-if="cartArray.length !== 0" action="{{ route('store-order')}}" method="POST">
+    @csrf
+    @method('post')
+    <ul v-if="cartArray.length !== 0" class="list-group">  
+      <li v-for="item, index in cartArray" class="list-group-item d-flex justify-content-between align-items-center">
+        @{{item.name}} 
+        <span class="badge badge-info badge-pill">
+          @{{item.quantity}}                 
+        </span>
+        <span class="badge badge-info badge-pill">
+          @{{item.price * item.quantity / 100}}€  
+        </span>
+        <span @click="removeFromCart(index)" class="badge badge-danger badge-pill">
+          <i class="fas fa-minus"></i>
+        </span>        
+      </li>          
     </ul>
 
-    {{-- carrello --}}
-
-    <form class="" action="{{ route('store-order')}}" method="POST">
-      @csrf
-      @method('post')
-    <div v-if="cartArray.length !== 0" class="carrello">
-      <ul>
-        <li v-for="item , index in cartArray">
-          @{{item.name}} @{{item.quantity}} <i class="fas fa-minus" @click="removeFromCart(index)"></i>
-        </li>
-      </ul>
-    </div>
-
-    <div id="orderbox">
-      <div class="" v-for="item in cartArray">
-        <input type="checkbox" name="items[]" :value="[item.id,item.quantity]" checked>
-
-
+      <div v-for="item in cartArray">
+        <input type="checkbox" name="items[]" :value="[item.id,item.quantity]" hidden checked>
       </div>
-      <input type="submit" name="" value="Checkout">
-      <!-- <a href="{{route('store-order')}}"> <button>vai al pagamento</button> </a> -->
-   </form>
-    </div>
+      <br>
+      <input class="btn btn-success" type="submit" name="" value="Checkout">
+  </form>
 
-@endsection
-{{-- ITEM COMPONENT --}}
-{{-- @section('itemContainer')
-  <ul>
-    @foreach ($rest -> items as $item)
-      <Item
-        :name = "'{{$item -> name}}'"
-        :description = "'{{$item -> description}}'"
-
-      ></Item>
+    {{-- MENU ITEMS --}}
+    @foreach ($rest -> items as $item)        
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{$item -> name}}</h5>
+              <p class="card-text">{{$item -> description}}</p>
+              <p class="card-text">{{$item -> price / 100}}€</p>
+              <a href="#/" @click="addToCart({{$item}})" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>      
+      </div>                
     @endforeach
-  </ul>
-@endsection --}}
+</div>
+@endsection
+

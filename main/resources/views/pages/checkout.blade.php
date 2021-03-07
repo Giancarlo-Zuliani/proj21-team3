@@ -1,25 +1,24 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    <div class="container-center">
-
-        <div class="payment-checkout">
-
-          <ul>
-            @foreach ($orderedItems as $item)
-            <li>
-              {{$item -> name}}
-              {{$quantities [$loop -> index]}}
-              {{$item -> price * $quantities [$loop -> index] / 100}}
-            </li>
+    <div class="container">
+          {{-- MENU ITEMS --}}
+          <div class="row">
+          @foreach ($orderedItems as $item)     
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{$item -> name}}</h5>
+                  <p class="card-text">Quantità: {{$quantities [$loop -> index]}}</p>
+                  <p class="card-text">Prezzo:{{$item -> price * $quantities [$loop -> index] / 100}}€</p>
+                </div>
+              </div>
+            </div>     
             @endforeach
-          </ul>
-
+            {{-- FORM PAYMENT --}}
               <form method="post" id="payment-form" class="payment-checkout-form" action="{{  route('checkout') }}">
                   @csrf
                   @method('post')
-                <section>
-                    <input type="text" placeholder="name" >
                       <div>
                          <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="150" style="display:none">
                      </div>
@@ -27,53 +26,52 @@
                   <div class="bt-drop-in-wrapper">
                      <div id="bt-dropin"></div>
                   </div>
-                </section>
+                  {{-- BUYER INFO --}}                
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="buyer_name">Nome</label>
+                      <input type="text" name="buyer_name" class="form-control" id="buyer_name" placeholder="Nome">
+                    </div>
+                    <div class="form-group">
+                      <label for="buyer_lastname">Cognome</label>
+                      <input type="text" name="buyer_lastname" class="form-control" id="buyer_lastname" placeholder="Cognome">
+                    </div>
+                  </div>
 
-                <!-- FORM CLIENT -->
-                <section>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="email">Email</label>
+                      <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                    </div>                    
+                  </div>
 
-                  <label for="buyer_name">Buyer Name</label>
-                  <input type="text" name="buyer_name" value="">
-
-                  <label for="buyer_lastname">Buyer Lastname</label>
-                  <input type="text" name="buyer_lastname" value="">
-
-                  <label for="address">Address</label>
-                  <input type="text" name="address" value="">
-
-                  <label for="phone_num">Phone Num</label>
-                  <input type="text" name="phone_num" value="">
-
-                  <label for="email">Email</label>
-                  <input type="text" name="email" value="}">
-
-                  <label for="discount">Discount</label>
-                  <input type="text" name="discount" value="">
-
-                  <label for="final_price">Final Price</label>
-                  <input type="text" name="final_price" value="">
-
-                </section>
-
-
-
-
-
-
+                  <div class="form-group">
+                    <label for="address">Indirizzo</label>
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Indirizzo">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone_num">Numero di telefono</label>
+                    <input type="text" class="form-control" id="phone_num" name="phone_num" value="" placeholder="Numero di telefono">
+                  </div>   
+                  <div class="form-group" hidden>
+                    <label for="discount">Sconto</label>
+                    <input type="text" class="form-control" name="discount" id="discount" value="" placeholder="Sconto">
+                  </div>
+                  <div class="form-group" hidden>
+                    <label for="final_price">Totale</label>
+                    <input type="text" class="form-control" name="final_price" id="final_price" value="" placeholder="Totale">
+                  </div>
+                                 
                 <input id="client_token" name="token" type="hidden" value="{{ $token }}">
                 <input id="nonce" name="payment_method_nonce" type="hidden" >
                 <input id="sponsor_plan" name="sponsor_plan" type="hidden" value="51" >
                 <div class="pay-button">
-                <button class="btn-succes" type="submit">
-                          <span>Paga e avvia la sponsorizzazione</span>
-
+                <button class="btn btn-success" type="submit">
+                  Paga
                 </button>
                 </div>
-              </form>
-
-
+            </form>
 
         </div>
-    </div>
 <script src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js"></script>
 @endsection

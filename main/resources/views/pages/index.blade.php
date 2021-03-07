@@ -42,21 +42,10 @@
 
     {{-- TYPOLOGIES AND RESTAURANTS --}}
     <section>
+
+        {{-- TYPOLOGIES --}}
         <div v-if="!showRestaurant" class="row">
             <h1 class="test">Scegli una o più tipologie</h1>
-            {{-- typology container --}}
-            {{-- <div
-                class="typologybox"
-                :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"                    
-                v-for="type in typologyArray"
-                @click="typologySelection( type.id )"
-             >
-               <span class="typolo-name">@{{type.typology}}</span> 
-                <div class="img-container">
-                    <img class="typology-img img-fluid" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
-                </div> --}}
-
-                {{-- TEST BOOTSTRAP --}}
                 <div
                     class="card" style="width: 18rem; margin: 20px;"
                     :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"                    
@@ -66,31 +55,33 @@
                     <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
                     <div class="card-body">
                       <h6 class="card-title text-center font-weight-bold">@{{type.typology}}</h6>
-                      {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
                     </div>
+                </div>                
+        </div>
+
+        {{-- RESTAURANTS --}}
+        <div v-if="showRestaurant" class="row">                            
+            <h1 class="test">Scegli il tuo ristorante</h1>
+            <div                    
+                class="card" style="width: 18rem; margin: 20px;"
+                v-for="rest in restaurantArray"
+            >       
+                {{-- AGGIUNGERE IMMAGINI RISTORANTI --}}
+                {{-- <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`> --}}
+                <div class="card-body">
+                    <a :href=`{{route('show-menu','')}}/${rest.id}`>
+                        <h6 class="card-title text-center font-weight-bold">@{{rest.name}}</h6>                            
+                    </a>
                 </div>
-
-                
             </div>
         </div>
 
-        {{-- restaurant container --}}
-        <div class="row">    
-            <div v-if="showRestaurant">
-                {{-- <h3>Ci sono @{{restaurantArray.length}} ristoranti con le tipologie che hai scelto:</h3> --}}
-                <a v-for="rest in restaurantArray" :href=`{{route('show-menu','')}}/${rest.id}`>
-                    <div class="restaurant-name">
-                        @{{rest.name}}
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        {{-- no restaurants --}}
+        {{-- NO RESTAURANTS FOUND --}}
         <div v-if="restaurantArray.length < 1 && showRestaurant">
             <h1>
                 Nessun ristorante è stato trovato.
             </h1>
         </div>
+
     </section>
 @endsection
