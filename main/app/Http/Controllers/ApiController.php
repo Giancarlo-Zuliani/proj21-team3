@@ -22,13 +22,13 @@ class ApiController extends Controller
     // (INDEX) FILTER RESTAURANTS BY TYPOLOGIES
 
     public function getTypologyRestaurants($firstType ,$secondType = '',$thirdType = ''){
-        $rests = User::all(); 
+        $rests = User::all();
         $arr = [];
         foreach($rests as $rest){
-            if($rest -> typologies -> contains($firstType) 
+            if($rest -> typologies -> contains($firstType)
                 && ($secondType === '' ? true : $rest -> typologies -> contains($secondType))
                 && ($thirdType === '' ? true : $rest -> typologies -> contains($thirdType)))
-                $arr[]= $rest; 
+                $arr[]= $rest;
         }
         return response() ->json($arr);
     }
@@ -36,13 +36,13 @@ class ApiController extends Controller
     // (INDEX) GET COUNT RESTAURANTS FILTERED BY TYPOLOGY
 
     public function getCountRestaurants($firstType ,$secondType = '',$thirdType = ''){
-        $rests = User::all(); 
+        $rests = User::all();
         $arr = [];
         foreach($rests as $rest){
-            if($rest -> typologies -> contains($firstType) 
+            if($rest -> typologies -> contains($firstType)
                 && ($secondType === '' ? true : $rest -> typologies -> contains($secondType))
                 && ($thirdType === '' ? true : $rest -> typologies -> contains($thirdType)))
-                $arr[]= $rest; 
+                $arr[]= $rest;
         }
         $count = count($arr);
         return response() ->json($count);
@@ -67,9 +67,9 @@ class ApiController extends Controller
         $user = User::findOrFail($id);
         $items = $user -> items;
         foreach ($items as $item) {
-            $orderArr[] = $item -> orders; 
+          $orderArr = $item -> orders; 
         }
- 
+
         return response() ->json($orderArr);
 
     }

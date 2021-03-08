@@ -20,7 +20,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    // (DASHBOARD (user area) - HOME) GET ALL USER'S ITEMS 
+    // (DASHBOARD (user area) - HOME) GET ALL USER'S ITEMS
 
     public function index() {
         $user = Auth::user() -> id;
@@ -76,7 +76,7 @@ class HomeController extends Controller
 
     // UPDATE ITEM
 
-    public function updateItem(Request $request, $id) {      
+    public function updateItem(Request $request, $id) {
       $pr = $request -> get('price') * 100;
 
       $price = intval($pr);
@@ -146,7 +146,7 @@ class HomeController extends Controller
       $startDelivery = $data['start_delivery'];
       $endDelivery = $data['end_delivery'];
       $price = $data['price_delivery'] * 100;
-      
+
       $user = User::findOrFail($id);
       $user -> update
       (array(
@@ -154,11 +154,11 @@ class HomeController extends Controller
         'end_delivery' => $endDelivery,
         'price_delivery' => $price,
       ));
-      
+
       // UPDATE USER IMAGE
       $image = $request -> file('img');
       $user = Auth::user();
-      
+
       if($image !== null){
         $this -> deleteUserImg();
         $ext = $image -> getClientOriginalExtension();
@@ -168,14 +168,14 @@ class HomeController extends Controller
         $user -> img = $destFile;
         $user -> save();
       }
-      
+
       /// TYPOLOGIES SYNC (associate typologies to user);
       $typos = Typology::findOrFail($restTypo);
-      $user -> typologies() -> sync($typos); 
+      $user -> typologies() -> sync($typos);
       return redirect() -> route('user-show', $user -> id);
     }
 
-    // REMOVE USER'S IMAGE 
+    // REMOVE USER'S IMAGE
 
     public function clearUserImg() {
       $this -> deleteUserImg();
@@ -186,7 +186,7 @@ class HomeController extends Controller
     }
 
     // DELETE IMAGE FROM FOLDER
-    
+
     private function deleteUserImg() {
       $user = Auth::user();
 
@@ -197,15 +197,12 @@ class HomeController extends Controller
       } catch (\Exception $e) {}
     }
 
-    // CHECK OUT PAGE 
+    // CHECK OUT PAGE
 
     public function payment() {
       return view('pages.checkout');
     }
 
-    // REDIRECT SUCCESS ORDER PAGE
-    public function successOrder() {
-      return view('pages.order_success');
-    }
+    
 
 }

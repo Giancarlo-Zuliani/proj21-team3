@@ -6,6 +6,7 @@ const statistics = new Vue({
     },
     mounted: function () {
             this.initChart();
+            this.getStatistics();
     },
     methods: {
         initChart () {
@@ -47,9 +48,12 @@ const statistics = new Vue({
             }
             });
         },
-        getTime (id) {
-            
+        getStatistics () {
+          let id = document.getElementById('vendorId').value;
+          let url = 'http://127.0.0.1:8000/get-time/' + id;
+          axios.get(url).then(response => {
+            console.log(response.data);
+          });
         },
     },
 });
-

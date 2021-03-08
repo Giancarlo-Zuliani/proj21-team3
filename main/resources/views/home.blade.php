@@ -19,23 +19,23 @@
                         </div>
                     @endif
 
-                    
+
                     @foreach ($items as $item)
                         @if ($item -> deleted === 0)
-                                                
+
                         <div class="">
                             {{$item -> name}}
-                            <a href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit"></i></a>                        
+                            <a href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit"></i></a>
                             <a href="#"><i class="far fa-trash-alt"></i></a>
                         </div>
 
-                        {{-- DELETE BANNER --}}                     
+                        {{-- DELETE BANNER --}}
                         <div class="delete-banner">
                             <span>Vuoi cancellare?</span>
-                            <a class="button-alert"  href="{{route('item-delete', $item -> id)}}">                            
+                            <a class="button-alert"  href="{{route('item-delete', $item -> id)}}">
                                 <button class="btn btn-danger">Sì</button>
                             </a>
-                            <button class="btn btn-danger>No</button>
+                            <button class="btn btn-danger">No</button>
                         </div>
 
                         @endif
@@ -48,6 +48,11 @@
         </div>
     </div>
 
+    @php
+     $user = Auth::user() -> id;
+    @endphp
+    <input id="vendorId" type="text" name="" value="{{$user}}" hidden>
+
     {{-- CHART.JS --}}
     <div id="angelo">
         <div class="row justify-content-center">
@@ -55,8 +60,8 @@
                 <div class="card">
                     <div class="card-header"><h4>Chart</h4></div>
 
-                    <div class="card-body">                    
-                        <canvas id="myChart" width="400" height="400"></canvas>                                                
+                    <div class="card-body">
+                        <canvas id="myChart" width="400" height="400"></canvas>
                     </div>
 
                     </div>
