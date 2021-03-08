@@ -97,3 +97,5 @@ Route::get('/order-success' , 'MainController@successOrder')
 // api: GET DATAS BY TIME (CHART)
 Route::get('/get-time/{id}' , 'ApiController@getTime')
     ->name('get-time');
+Route::get('/getItemStats/{id}' , 'ApiController@getItemsStats')
+    -> name('get-items-stats');

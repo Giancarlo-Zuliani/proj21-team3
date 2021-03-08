@@ -17,6 +17,6 @@ class Order extends Model
         'payment_status',
     ];
     public function items(){
-        return $this -> belongsToMany(Item::class);
+        return $this -> belongsToMany(Item::class)->withPivot('quantity');
     }
 }

@@ -67,10 +67,32 @@ class ApiController extends Controller
         $user = User::findOrFail($id);
         $items = $user -> items;
         foreach ($items as $item) {
-          $orderArr = $item -> orders; 
+         foreach ( $item ->orders as $ord ){
+             $orderArr[] = $ord; 
+         } 
         }
-
         return response() ->json($orderArr);
 
+    }
+    public function getItemsStats($id){
+        $user = User::findOrFail($id);
+        $items = $user -> items;
+        $itemsNamesS = [];
+        $countArr = [];
+        foreach ($items as $item) {
+            $orderArr = $item -> orders; 
+            $itemsNames[] = $item -> name;
+          };
+          foreach($items as $item){
+              $sellcount= 0;
+              $ord = $item -> orders;
+              foreach($ord as $order){
+                  $sellcount += $order -> pivot -> quantity;  
+              };
+              $countArr[] = $sellcount;
+          };
+          
+         
+        return response() -> json(['countArr' => $countArr, "nameArr" => $itemsNames]);
     }
 }

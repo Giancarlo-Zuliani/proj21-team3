@@ -69,6 +69,10 @@
                         <canvas id="myChart" width="400" height="400"></canvas>
                     </div>
 
+                    <div class="card-body">
+                        <canvas id="myPie" width="400" height="400"></canvas>
+                    </div>
+
                     </div>
                 </div>
         </div>
