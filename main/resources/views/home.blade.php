@@ -58,7 +58,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h4>Chart</h4></div>
+                    <div class="card-header"><h4>Chart</h4> 
+                        <select name="" id="yearSelector" @change="getStatistics()">
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>    
+                        </select>
+                    </div>
 
                     <div class="card-body">
                         <canvas id="myChart" width="400" height="400"></canvas>
@@ -67,8 +72,6 @@
                     </div>
                 </div>
         </div>
-    </div>
-
     </div>
 @endsection
 

@@ -61,16 +61,17 @@ const statistics = new Vue({
             });
         },
         getStatistics() {
+            this.dataset = [];
+            let year = document.getElementById('yearSelector').value.toString() + "-";
+            console.log(year);
             let id = document.getElementById('vendorId').value;
             let url = 'http://127.0.0.1:8000/get-time/' + id;
             axios.get(url).then(response => {
-                this.dataset = [];
                 let orderCreatedAt = [];
                 console.log(response.data);
                 response.data.forEach(element => {
                     orderCreatedAt.push(element.created_at.slice(0, 7));
                 });
-                let year = '2021-'
                 for (let y = 1; y <= 12; y++) {
                     let count = 0;
                     for (let i = 0; i < orderCreatedAt.length; i++) {
