@@ -89,3 +89,7 @@ Route::post('/store-order' , 'PaymentController@payment')
 
 Route::post('/checkout', 'PaymentController@checkout')
     -> name('checkout');
+
+// SEND EMAIL ORDER SUCCESS
+Route::get('/order-success' , 'HomeController@successOrder')
+    ->name('success');

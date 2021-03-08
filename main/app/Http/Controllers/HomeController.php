@@ -203,4 +203,9 @@ class HomeController extends Controller
       return view('pages.checkout');
     }
 
+    // REDIRECT SUCCESS ORDER PAGE
+    public function successOrder() {
+      return view('pages.order_success');
+    }
+
 }
