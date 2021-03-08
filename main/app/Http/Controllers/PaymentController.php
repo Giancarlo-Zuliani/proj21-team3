@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use App\Item;
 use App\Order;
 use Braintree;
@@ -51,10 +52,24 @@ class PaymentController extends Controller
       $gateway = new Braintree\Gateway( config('braintree')
       );
       $result = $gateway -> transaction() -> sale([
-        'amount'=> 200,
+        'amount'=> $data['final_price'],
         'paymentMethodNonce'=> $request ['payment_method_nonce'],
       ]);
-      dd($result, $data);
+      // dd($result -> success, $data);
+      $order = new Order;
+      $order -> buyer_name = $data['buyer_name'];
+      $order -> buyer_lastname = $data['buyer_lastname'];
+      $order -> address = $data['address'];
+      $order -> phone_num = $data['phone_num'];
+      $order -> email = $data['email'];
+      $order -> discount = $data['discount'];
+      $order -> payment_status = $result -> success;
+      // dd(gettype(intval($data['final_price'])));
+      $order -> total_price = $data['final_price'];
+      $order -> final_price = $data['final_price'];
+      $order -> save();
+      $order -> items() -> attach($data['dishes']);
+      DB::update('update item_order set quantity =' . $data['quantities'] . ' where order_id =' . $order -> id);
 
     }
 }

@@ -57,14 +57,25 @@
                     <label for="phone_num">Numero di telefono</label>
                     <input type="text" class="form-control" id="phone_num" name="phone_num" value="" placeholder="Numero di telefono" required minlength="10">
                   </div>
-                  <div class="form-group" hidden>
-                    <label for="discount">Sconto</label>
-                    <input type="text" class="form-control" name="discount" id="discount" value="" placeholder="Sconto">
+                  <div class="form-group" >
+                    {{-- <label for="discount">Sconto</label> --}}
+                    <input type="text" class="form-control" name="discount" id="discount" value="123" placeholder="Sconto" hidden>
                   </div>
                   <div class="form-group" hidden>
                     <label for="final_price">Totale</label>
-                    <input type="text" class="form-control" name="final_price" id="final_price" value="" placeholder="Totale">
+                    <input type="number" class="form-control" name="final_price" id="final_price" value="" placeholder="Totale">
                   </div>
+
+                  <label for="final_price">Importo finale</label>
+                  <input type="text" class="form-control" id="final_price" name="final_price" value="{{$fixedPrice}}">
+
+                  @foreach ($dishes as $dish)
+                    <input type="checkbox" name="dishes[]"value="{{$dish}}" checked hidden>
+                  @endforeach
+
+                  @foreach ($quantities as $quantity)
+                    <input type="checkbox" name="quantities[]"value="{{$quantity}}" checked hidden>
+                  @endforeach
 
                   {{-- @if ($errors->any())
                     <div class="alert alert-danger">
@@ -83,6 +94,8 @@
                 <input id="client_token" name="token" type="hidden" value="{{ $token }}">
                 <input id="nonce" name="payment_method_nonce" type="hidden" >
                 <div class="pay-button">
+
+
                 <button class="btn btn-success" type="submit">
                   Paga
                 </button>
