@@ -1,10 +1,14 @@
 @extends('layouts.main-layout')
 
+@push('scriptPayment')
+  <script src="{{asset('js/payment.js')}}"></script>
+@endpush
+
 @section('content')
     <div class="container">
           {{-- MENU ITEMS --}}
           <div class="row">
-          @foreach ($orderedItems as $item)     
+          @foreach ($orderedItems as $item)
             <div class="col-sm-12">
               <div class="card">
                 <div class="card-body">
@@ -13,7 +17,7 @@
                   <p class="card-text">Prezzo:{{$item -> price * $quantities [$loop -> index] / 100}}€</p>
                 </div>
               </div>
-            </div>     
+            </div>
             @endforeach
             {{-- FORM PAYMENT --}}
               <form method="post" id="payment-form" class="payment-checkout-form" action="{{  route('checkout') }}">
@@ -23,36 +27,36 @@
                          <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="150" style="display:none">
                      </div>
                   </label>
-                  <div class="bt-drop-in-wrapper">
+                  {{-- <div class="bt-drop-in-wrapper">
                      <div id="bt-dropin"></div>
-                  </div>
-                  {{-- BUYER INFO --}}                
+                  </div> --}}
+                  {{-- BUYER INFO --}}
                   <div class="form-row">
                     <div class="form-group">
                       <label for="buyer_name">Nome</label>
-                      <input type="text" name="buyer_name" class="form-control" id="buyer_name" placeholder="Nome">
+                      <input type="text" name="buyer_name" class="form-control" id="buyer_name" placeholder="Nome" required minlength="3">
                     </div>
                     <div class="form-group">
                       <label for="buyer_lastname">Cognome</label>
-                      <input type="text" name="buyer_lastname" class="form-control" id="buyer_lastname" placeholder="Cognome">
+                      <input type="text" name="buyer_lastname" class="form-control" id="buyer_lastname" placeholder="Cognome" required minlength="3">
                     </div>
                   </div>
 
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="email">Email</label>
-                      <input type="email" name="email" class="form-control" id="email" placeholder="Email">
-                    </div>                    
+                      <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+                    </div>
                   </div>
 
                   <div class="form-group">
                     <label for="address">Indirizzo</label>
-                    <input type="text" class="form-control" name="address" id="address" placeholder="Indirizzo">
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Indirizzo" required minlength="5">
                   </div>
                   <div class="form-group">
                     <label for="phone_num">Numero di telefono</label>
-                    <input type="text" class="form-control" id="phone_num" name="phone_num" value="" placeholder="Numero di telefono">
-                  </div>   
+                    <input type="text" class="form-control" id="phone_num" name="phone_num" value="" placeholder="Numero di telefono" required minlength="10">
+                  </div>
                   <div class="form-group" hidden>
                     <label for="discount">Sconto</label>
                     <input type="text" class="form-control" name="discount" id="discount" value="" placeholder="Sconto">
@@ -61,10 +65,23 @@
                     <label for="final_price">Totale</label>
                     <input type="text" class="form-control" name="final_price" id="final_price" value="" placeholder="Totale">
                   </div>
-                                 
+
+                  {{-- @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                  @endif --}}
+
+                  <div class="bt-drop-in-wrapper">
+                     <div id="bt-dropin"></div>
+                  </div>
+
                 <input id="client_token" name="token" type="hidden" value="{{ $token }}">
                 <input id="nonce" name="payment_method_nonce" type="hidden" >
-                <input id="sponsor_plan" name="sponsor_plan" type="hidden" value="51" >
                 <div class="pay-button">
                 <button class="btn btn-success" type="submit">
                   Paga
