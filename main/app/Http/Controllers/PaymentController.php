@@ -69,7 +69,12 @@ class PaymentController extends Controller
       $order -> final_price = $data['final_price'];
       $order -> save();
       $order -> items() -> attach($data['dishes']);
-      DB::update('update item_order set quantity =' . $data['quantities'] . ' where order_id =' . $order -> id);
+      // dd($data['quantities']);
+      for ($i=0; $i < count($data['quantities']); $i++) { 
+        DB::update('update item_order set quantity =' . $data['quantities'][$i]. ' where order_id =' . $order -> id);
+      }
+      
+      return view('pages.index');
 
     }
 }
