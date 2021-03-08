@@ -1,5 +1,10 @@
 @extends('layouts.app')
 {{-- DASHBOARD (user area) --}}
+@push('scriptStatistics')
+    <script src="{{asset('js/statistics.js')}}" defer></script>
+    <script src="{{asset('js/dashboard.js')}}" defer></script>
+@endpush
+
 @section('content')
     {{-- USER'S MENU CONTAINER --}}
     <div class="row justify-content-center">
@@ -44,19 +49,21 @@
     </div>
 
     {{-- CHART.JS --}}
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><h4>Chart</h4></div>
+    <div id="angelo">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"><h4>Chart</h4></div>
 
-                <div class="card-body">
-                   
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                    
+                    <div class="card-body">                    
+                        <canvas id="myChart" width="400" height="400"></canvas>                                                
+                    </div>
+
+                    </div>
                 </div>
-                </div>
-            </div>
         </div>
+    </div>
+
     </div>
 @endsection
 
