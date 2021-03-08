@@ -52,7 +52,15 @@ const statistics = new Vue({
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: true,
+                                min: 0,
+                                stepSize: 1
+                            }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                min: 0,
+                                stepSize: 1
                             }
                         }]
                     }
@@ -69,10 +77,11 @@ const statistics = new Vue({
                     orderCreatedAt.push(element.created_at.slice(0, 7));
                 });
                 let arr = [];
+                let m;
                 for (let y = 1; y <= 12; y++) {
+                    y > 9 ? m = y : m = "0" + y.toString();
                     let count = 0;
                     for (let i = 0; i < orderCreatedAt.length; i++) {
-                        y > 11 ? m = y : m = "0" + y.toString();
                         if (orderCreatedAt[i] == year + m)
                             count++
                     }
