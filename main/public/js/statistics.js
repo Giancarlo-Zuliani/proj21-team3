@@ -46,7 +46,10 @@ const statistics = new Vue({
                 }
             }
             });
-        }
+        },
+        getTime (id) {
+            
+        },
     },
 });
 

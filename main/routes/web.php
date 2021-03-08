@@ -93,3 +93,7 @@ Route::post('/checkout', 'PaymentController@checkout')
 // SEND EMAIL ORDER SUCCESS
 Route::get('/order-success' , 'HomeController@successOrder')
     ->name('success');
+
+// api: GET DATAS BY TIME (CHART)
+Route::get('/get-time/{id}' , 'ApiController@getTime')
+    ->name('get-time');
