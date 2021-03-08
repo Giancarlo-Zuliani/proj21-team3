@@ -61,7 +61,6 @@ const statistics = new Vue({
         },
         getStatistics() {
             let year = document.getElementById('yearSelector').value;
-            console.log(year);
             let id = document.getElementById('vendorId').value;
             let url = 'http://127.0.0.1:8000/get-time/' + id;
             axios.get(url).then(response => {
@@ -73,20 +72,12 @@ const statistics = new Vue({
                 for (let y = 1; y <= 12; y++) {
                     let count = 0;
                     for (let i = 0; i < orderCreatedAt.length; i++) {
-                        if (y >= 10) {
-                            m = y;
-                            m.toString();
-                        } else {
-                            m = "0" + y.toString();
-
-                        }
-                        if (orderCreatedAt[i] == year + m) {
+                        y > 11 ? m = y : m = "0" + y.toString();
+                        if (orderCreatedAt[i] == year + m)
                             count++
-                        }
                     }
                     arr.push(count);
                 }
-                console.log(arr);
                 this.canvas.destroy();
                 this.initChart(arr);
             });
