@@ -60,8 +60,8 @@
                 <div class="card">
                     <div class="card-header"><h4>Chart</h4> 
                         <select name="" id="yearSelector" @change="getStatistics()">
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>    
+                            <option value="2021-">2021</option>
+                            <option value="2020-">2020</option>    
                         </select>
                     </div>
 

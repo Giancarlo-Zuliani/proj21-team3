@@ -1,15 +1,14 @@
 const statistics = new Vue({
     el: '#angelo',
     data: {
-        dataset: [],
-        canvas: '',
+        canvas: null
     },
     mounted: function() {
         this.initChart();
         this.getStatistics();
     },
     methods: {
-        initChart() {
+        initChart(arr) {
             var ctx = document.getElementById('myChart').getContext('2d');
             this.canvas = new Chart(ctx, {
                 type: 'bar',
@@ -17,7 +16,7 @@ const statistics = new Vue({
                     labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
                     datasets: [{
                         label: 'Ordini',
-                        data: this.dataset,
+                        data: arr,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -61,17 +60,16 @@ const statistics = new Vue({
             });
         },
         getStatistics() {
-            this.dataset = [];
-            let year = document.getElementById('yearSelector').value.toString() + "-";
+            let year = document.getElementById('yearSelector').value;
             console.log(year);
             let id = document.getElementById('vendorId').value;
             let url = 'http://127.0.0.1:8000/get-time/' + id;
             axios.get(url).then(response => {
                 let orderCreatedAt = [];
-                console.log(response.data);
                 response.data.forEach(element => {
                     orderCreatedAt.push(element.created_at.slice(0, 7));
                 });
+                let arr = [];
                 for (let y = 1; y <= 12; y++) {
                     let count = 0;
                     for (let i = 0; i < orderCreatedAt.length; i++) {
@@ -82,14 +80,15 @@ const statistics = new Vue({
                             m = "0" + y.toString();
 
                         }
-                        console.log(m);
                         if (orderCreatedAt[i] == year + m) {
                             count++
                         }
                     }
-                    this.dataset.push(count);
+                    arr.push(count);
                 }
-                this.initChart(this.dataset);
+                console.log(arr);
+                this.canvas.destroy();
+                this.initChart(arr);
             });
         },
     },
