@@ -20,6 +20,6 @@ class MainController extends Controller
 
     // REDIRECT SUCCESS ORDER PAGE
     public function successOrder() {
-      return view('pages.order_success');
+        return view('pages.order_success');
     }
 }

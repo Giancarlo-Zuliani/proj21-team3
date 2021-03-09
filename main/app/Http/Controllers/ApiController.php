@@ -6,19 +6,15 @@ use App\Typology;
 use App\User;
 use App\Item;
 
-
-
 class ApiController extends Controller
 {
     // (INDEX) GET ALL TYPOLOGIES
-
     public function getAllTypologies(){
         $typo = Typology::all();
         return response() -> json($typo);
     }
 
     // (INDEX) FILTER RESTAURANTS BY TYPOLOGIES
-
     public function getTypologyRestaurants($firstType ,$secondType = '',$thirdType = ''){
         $rests = User::all();
         $arr = [];
@@ -32,7 +28,6 @@ class ApiController extends Controller
     }
 
     // (INDEX) GET COUNT RESTAURANTS FILTERED BY TYPOLOGY
-
     public function getCountRestaurants($firstType ,$secondType = '',$thirdType = ''){
         $rests = User::all();
         $arr = [];
@@ -69,12 +64,12 @@ class ApiController extends Controller
         return response() ->json($orderArr);
     }
     
+    //CHART - GET ITEMS SELLS DATA
     public function getItemsStats($id){
         $user = User::findOrFail($id);
         $items = $user -> items;
         $countArr = [];
-        foreach ($items as $item) {
-            $orderArr = $item -> orders; 
+        foreach ($items as $item) { 
             $itemsNames[] = $item -> name;
           };
           foreach($items as $item){

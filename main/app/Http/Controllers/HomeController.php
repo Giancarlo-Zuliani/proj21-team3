@@ -15,173 +15,160 @@ use App\Typology;
 class HomeController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
 
     // (DASHBOARD (user area) - HOME) GET ALL USER'S ITEMS
+  public function index() {
+      $user = Auth::user() -> id;
+      $items = Item::where('user_id', $user) -> get();
+      return view('home', compact('items'));
+  }
 
-    public function index() {
-        $user = Auth::user() -> id;
-        $items = Item::where('user_id', $user) -> get();
-        return view('home', compact('items'));
-    }
+  // (ITEM-CREATE) FORM TO CREATE NEW ITEM
+  public function createItem() {
+    return view('pages.item-create');
+  }
 
-    // (ITEM-CREATE) FORM TO CREATE NEW ITEM
+  // STORE NEW ITEM
+  public function storeItem(Request $request) {
+    $pr = $request -> get('price') * 100;
+    $price = intval($pr);
+    $request -> merge(['price' => $price]);
+    $data = $request -> all();
 
-    public function createItem() {
-      return view('pages.item-create');
-    }
+    Validator::make($data,
+      [
+          'name' => 'required|string|min:5',
+          'description' => 'required|string',
+          'ingredients' => 'required|string',
+          'price' => 'required|integer',
+      ],[
+          'name.min' => 'Minimo 5 caratteri per il nome',
+          'name.required' => 'Campo obbligatorio',
+          'description.required' => 'Campo obbligatorio',
+          'ingredients.required' => 'Campo obbligatorio',
+          'price.required' => 'Campo obbligatorio',
+          'price.integer' => 'Inserire un valore numerico',
+      ])->validate();
 
-    // STORE NEW ITEM
-    public function storeItem(Request $request) {
-      $pr = $request -> get('price') * 100;
-      $price = intval($pr);
-      $request -> merge(['price' => $price]);
-      $data = $request -> all();
+    $user = User::findOrFail($request -> get('user_id'));
+    $item = Item::make($request -> all());
+    $item -> user() -> associate($user);
+    $item -> save();
 
-      Validator::make($data,
-        [
-            'name' => 'required|string|min:5',
-            'description' => 'required|string',
-            'ingredients' => 'required|string',
-            'price' => 'required|integer',
-        ],
-        [
-            'name.min' => 'Minimo 5 caratteri per il nome',
-            'name.required' => 'Campo obbligatorio',
-            'description.required' => 'Campo obbligatorio',
-            'ingredients.required' => 'Campo obbligatorio',
-            'price.required' => 'Campo obbligatorio',
-            'price.integer' => 'Inserire un valore numerico',
-
-        ])
-        ->validate();
-
-      $user = User::findOrFail($request -> get('user_id'));
-      $item = Item::make($request -> all());
-      $item -> user() -> associate($user);
-      $item -> save();
-
-      return redirect() -> route('home');
-    }
+    return redirect() -> route('home');
+  }
 
     // (ITEM-EDIT) FORM TO EDIT ITEM
+  public function editItem($id) {
+    $item = Item::findOrFail($id);
+    return view('pages.item-edit', compact('item'));
+  }
 
-    public function editItem($id) {
-      $item = Item::findOrFail($id);
-      return view('pages.item-edit', compact('item'));
-    }
+  // UPDATE ITEM
+  public function updateItem(Request $request, $id) {
+    $pr = $request -> get('price') * 100;
+    $price = intval($pr);
+    $request -> merge(['price' => $price]);
+    $data = $request -> all();
 
-    // UPDATE ITEM
+    Validator::make($data,
+      [
+          'name' => 'required|string|min:5',
+          'description' => 'required|string',
+          'ingredients' => 'string',
+          'price' => 'required',
+      ],[
+          'name.min' => 'Minimo 5 caratteri per il nome',
+          'name.required' => 'Campo obbligatorio',
+          'description.required' => 'Campo obbligatorio',
+          'price.required' => 'Campo obbligatorio',
+      ])->validate();
 
-    public function updateItem(Request $request, $id) {
-      $pr = $request -> get('price') * 100;
+    $item = Item::findOrFail($id);
+    $item -> update($data);
+      
+    return redirect() -> route('home');
+  }
 
-      $price = intval($pr);
+  // DELETE ITEM (TOGGLE 1 AND 0)
+  public function deleteItem($id) {
+    $item = Item::findOrFail($id);
+    $item -> update(array('deleted' => 1));
+    return redirect() -> route('home');
+  }
 
-      $request -> merge(['price' => $price]);
+  // (USER-SHOW (area user)) USER'S PROFILE PAGE
+  public function userShow() {
+    $user = Auth::user();
+    return view('pages.user-show', compact('user'));
+  }
 
-      $data = $request -> all();
+  // (USER-EDIT) EDIT USER PAGE
+  public function userEdit() {
+    $user = Auth::user();
+    $typos = Typology::all();
+    return view('pages.user-edit', compact('user' , 'typos'));
+  }
 
-      Validator::make($data,
-        [
-            'name' => 'required|string|min:5',
-            'description' => 'required|string',
-            'ingredients' => 'string',
-            'price' => 'required',
-        ],
-        [
-            'name.min' => 'Minimo 5 caratteri per il nome',
-            'name.required' => 'Campo obbligatorio',
-            'description.required' => 'Campo obbligatorio',
-            'price.required' => 'Campo obbligatorio',
-        ])
-        ->validate();
+  // UPDATE USER INFO
+  public function updateUser(Request $request, $id) {
+    $data = $request -> all();
+    $restTypo = $request -> typologies;
+    $startDelivery = $data['start_delivery'];
+    $endDelivery = $data['end_delivery'];
+    $price = $data['price_delivery'] * 100;
+    $user = User::findOrFail($id);
+    $user -> update
+    (array(
+      'start_delivery' => $startDelivery,
+      'end_delivery' => $endDelivery,
+      'price_delivery' => $price,
+    ));
 
-      $item = Item::findOrFail($id);
-      $item -> update($data);
-      return redirect() -> route('home');
-    }
-
-    // DELETE ITEM (TOGGLE 1 AND 0)
-    public function deleteItem($id) {
-      $item = Item::findOrFail($id);
-      $item -> update(array('deleted' => 1));
-      return redirect() -> route('home');
-    }
-
-    // (USER-SHOW (area user)) USER'S PROFILE PAGE
-
-    public function userShow() {
-      $user = Auth::user();
-      return view('pages.user-show', compact('user'));
-    }
-
-    // (USER-EDIT) EDIT USER PAGE
-    public function userEdit() {
-      $user = Auth::user();
-      $typos = Typology::all();
-      return view('pages.user-edit', compact('user' , 'typos'));
-    }
-
-    // UPDATE USER INFO
-
-    public function updateUser(Request $request, $id) {
-      $data = $request -> all();
-      $restTypo = $request -> typologies;
-      $startDelivery = $data['start_delivery'];
-      $endDelivery = $data['end_delivery'];
-      $price = $data['price_delivery'] * 100;
-      $user = User::findOrFail($id);
-      $user -> update
-      (array(
-        'start_delivery' => $startDelivery,
-        'end_delivery' => $endDelivery,
-        'price_delivery' => $price,
-      ));
-
-      // UPDATE USER IMAGE
-      $image = $request -> file('img');
-      $user = Auth::user();
-      if($image !== null){
-        $this -> deleteUserImg();
-        $ext = $image -> getClientOriginalExtension();
-        $name = rand(100000, 999999).'_'.time();
-        $destFile = $name.'.'.$ext;
-        $file = $image -> storeAs('img', $destFile, 'public');
-        $user -> img = $destFile;
-        $user -> save();
-      }
-
-      /// TYPOLOGIES SYNC (associate typologies to user);
-      $typos = Typology::findOrFail($restTypo);
-      $user -> typologies() -> sync($typos);
-      return redirect() -> route('user-show', $user -> id);
-    }
-
-    // REMOVE USER'S IMAGE
-    public function clearUserImg() {
+    // UPDATE USER IMAGE
+    $image = $request -> file('img');
+    $user = Auth::user();
+    if($image !== null){
       $this -> deleteUserImg();
-      $user = Auth::user();
-      $user -> img = null;
+      $ext = $image -> getClientOriginalExtension();
+      $name = rand(100000, 999999).'_'.time();
+      $destFile = $name.'.'.$ext;
+      $file = $image -> storeAs('img', $destFile, 'public');
+      $user -> img = $destFile;
       $user -> save();
-      return redirect() -> route('user-show', $user -> id);
     }
 
-    // DELETE IMAGE FROM FOLDER
-    private function deleteUserImg() {
-      $user = Auth::user();
-      try {
-        $filename = $user -> img;
-        $file = storage_path('app/public/img/' . $filename);
-        $res = File::delete($file);
-      } catch (\Exception $e) {}
-    }
+    /// TYPOLOGIES SYNC (associate typologies to user);
+    $typos = Typology::findOrFail($restTypo);
+    $user -> typologies() -> sync($typos);
+    return redirect() -> route('user-show', $user -> id);
+  }
 
-    // CHECK OUT PAGE
-    public function payment() {
-      return view('pages.checkout');
-    }    
+  // REMOVE USER'S IMAGE
+  public function clearUserImg() {
+    $this -> deleteUserImg();
+    $user = Auth::user();
+    $user -> img = null;
+    $user -> save();
+    return redirect() -> route('user-show', $user -> id);
+  }
+
+  // DELETE IMAGE FROM FOLDER
+  private function deleteUserImg() {
+    $user = Auth::user();
+    try {
+      $filename = $user -> img;
+      $file = storage_path('app/public/img/' . $filename);
+      $res = File::delete($file);
+    } catch (\Exception $e) {}
+  }
+
+  // CHECK OUT PAGE
+  public function payment() {
+    return view('pages.checkout');
+  }    
 }
