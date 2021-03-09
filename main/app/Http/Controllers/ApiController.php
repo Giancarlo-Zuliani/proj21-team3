@@ -66,11 +66,16 @@ class ApiController extends Controller
         $orderArr = [];
         $user = User::findOrFail($id);
         $items = $user -> items;
+        $idFilter= [];
         foreach ($items as $item) {
          foreach ( $item ->orders as $ord ){
-             $orderArr[] = $ord; 
+             if(!in_array( $ord->id,$idFilter)){
+                $idFilter[] = $ord -> id;
+                $orderArr[] = $ord;
+            }
          } 
         }
+        
         return response() ->json($orderArr);
 
     }

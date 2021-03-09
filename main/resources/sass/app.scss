@@ -14,7 +14,6 @@
 @import 'partials/pages/index.scss';
 @import 'partials/pages/login.scss';
 @import 'partials/pages/app-layout.scss';
-
 body {
     background-color: white;
 }
@@ -26,10 +25,6 @@ body {
 }
 
 // CARD BODY 
-.card-body {
-
-}
-
 // these selectors will be moved to a proper place
 .delete-banner {
     background-color: red;
@@ -57,7 +52,7 @@ body {
     color: $pink;
 }
 
-ul li  {
+ul li {
     list-style: none;
 }
 

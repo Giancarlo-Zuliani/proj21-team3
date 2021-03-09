@@ -2,9 +2,14 @@ const statistics = new Vue({
     el: '#angelo',
     data: {
         canvas: null,
-        canvasPie: null
+        canvasPie: null,
+        chartsColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+        chartsBorder: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+
+
     },
     mounted: function() {
+        this.initChart();
         this.getStatistics();
         this.getItemsStats();
     },
@@ -18,53 +23,13 @@ const statistics = new Vue({
                     datasets: [{
                         label: 'Ordini',
                         data: arr,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
+                        backgroundColor: this.chartsColor,
+                        borderColor: this.chartsBorder,
                         borderWidth: 1
                     }]
                 },
                 options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                                min: 0,
-                                stepSize: 1
-                            }
-                        }],
-                        xAxes: [{
-                            ticks: {
-                                min: 0,
-                                stepSize: 1
-                            }
-                        }]
-                    }
+
                 }
             });
         },
@@ -77,54 +42,12 @@ const statistics = new Vue({
                     datasets: [{
                         label: 'Ordini',
                         data: countArr,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
+                        backgroundColor: this.chartsColor,
+                        borderColor: this.chartsBorder,
                         borderWidth: 1
                     }]
                 },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                                min: 0,
-                                stepSize: 1
-                            }
-                        }],
-                        xAxes: [{
-                            ticks: {
-                                min: 0,
-                                stepSize: 1
-                            }
-                        }]
-                    }
-                }
+                options: {}
             });
         },
         getStatistics() {
@@ -133,6 +56,7 @@ const statistics = new Vue({
             let url = 'http://127.0.0.1:8000/get-time/' + id;
             axios.get(url).then(response => {
                 let orderCreatedAt = [];
+                console.log(response.data);
                 response.data.forEach(element => {
                     orderCreatedAt.push(element.created_at.slice(0, 7));
                 });
@@ -141,13 +65,13 @@ const statistics = new Vue({
                 for (let y = 1; y <= 12; y++) {
                     y > 9 ? m = y : m = "0" + y.toString();
                     let count = 0;
-                    console.log(year + m)
                     for (let i = 0; i < orderCreatedAt.length; i++) {
                         if (orderCreatedAt[i] == year + m)
                             count++
                     }
                     arr.push(count);
                 }
+                this.canvas.destroy();
                 this.initChart(arr);
             });
         },
