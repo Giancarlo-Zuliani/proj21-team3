@@ -66,8 +66,6 @@
                     <input type="number" class="form-control" name="final_price" id="final_price" value="" placeholder="Totale">
                   </div>
 
-                  <label for="final_price">Importo finale</label>
-                  <input type="text" class="form-control" id="final_price" name="final_price" value="{{$fixedPrice}}">
 
                   @foreach ($dishes as $dish)
                     <input type="checkbox" name="dishes[]"value="{{$dish}}" checked hidden>
