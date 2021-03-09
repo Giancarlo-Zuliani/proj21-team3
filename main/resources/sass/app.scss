@@ -12,7 +12,7 @@
 @import 'partials/_footer.scss';
 @import 'partials/_animations.scss';
 @import 'partials/pages/index.scss';
-@import 'partials/pages/login.scss';
+@import 'partials/pages/form.scss';
 @import 'partials/pages/app-layout.scss';
 body {
     background-color: white;
@@ -70,7 +70,8 @@ ul li {
     font-weight: bolder;
 }
 
-input[type="text"]:focus , select:focus {
+input[type="text"]:focus,
+select:focus {
     outline: none !important;
 }
 

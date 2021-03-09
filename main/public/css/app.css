@@ -11030,14 +11030,6 @@ body .typologybox .img-container .typology-img {
   height: 100%;
 }
 
-.form-control:focus {
-  color: #E7257D;
-  background-color: #FCC15D;
-  border-color: #FCC15D;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem #FCC15D;
-}
-
 #nav-bar {
   background-color: #FCC15D;
 }
