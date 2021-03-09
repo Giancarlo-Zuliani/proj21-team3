@@ -62,7 +62,6 @@ const statistics = new Vue({
             let url = 'http://127.0.0.1:8000/get-time/' + id;
             axios.get(url).then(response => {
                 let orderCreatedAt = [];
-                console.log(response.data);
                 response.data.forEach(element => {
                     orderCreatedAt.push(element.created_at.slice(0, 7));
                 });

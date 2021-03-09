@@ -29,6 +29,7 @@
         <input type="checkbox" name="items[]" :value="[item.id,item.quantity]" hidden checked>
       </div>
       <br>
+      <input type="number" name="user_id" hidden value="{{$rest ->  id}}" >
       <input class="btn btn-success" type="submit" name="" value="Checkout">
   </form>
 

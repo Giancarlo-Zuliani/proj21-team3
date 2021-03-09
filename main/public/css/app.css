@@ -11027,14 +11027,7 @@ body .typologybox .img-container {
 
 body .typologybox .img-container .typology-img {
   width: 100%;
-}
-
-.form-control:focus {
-  color: #E7257D;
-  background-color: #FCC15D;
-  border-color: #FCC15D;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem #FCC15D;
+  height: 100%;
 }
 
 #nav-bar {
@@ -11105,5 +11098,14 @@ ul li {
   text-align: center;
   color: #FCC15D;
   font-weight: bolder;
+}
+
+input[type=text]:focus,
+select:focus {
+  outline: none !important;
+}
+
+.form-control:focus {
+  outline: none !important;
 }
 
