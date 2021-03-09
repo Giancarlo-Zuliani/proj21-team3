@@ -48,7 +48,7 @@ class PaymentController extends Controller
     $order -> phone_num = $data['phone_num'];
     $order -> email = $data['email'];
     $order -> payment_status = $result -> success;
-    $order -> final_price = $data['final_price'];
+    $order -> final_price = $this ->  getFinalPrice($data['dishes'] , $data['quantities'] ,$deliveryPrice) ;
     $order -> save();
     $order -> items() -> attach($data['dishes']);
     for ($i=0; $i < count($data['quantities']); $i++) { 
