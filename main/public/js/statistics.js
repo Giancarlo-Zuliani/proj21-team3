@@ -17,7 +17,7 @@ const statistics = new Vue({
         initChart(arr) {
             var ctx = document.getElementById('myChart').getContext('2d');
             this.canvas = new Chart(ctx, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
                     datasets: [{
@@ -25,11 +25,17 @@ const statistics = new Vue({
                         data: arr,
                         backgroundColor: this.chartsColor,
                         borderColor: this.chartsBorder,
-                        borderWidth: 1
+                        borderWidth: 5
                     }]
                 },
                 options: {
-
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                suggestedMax: 10
+                            }
+                        }]
+                    }
                 }
             });
         },
@@ -75,6 +81,7 @@ const statistics = new Vue({
                 this.initChart(arr);
             });
         },
+
         getItemsStats() {
             let id = document.getElementById('vendorId').value;
             let url = 'http://127.0.0.1:8000/getItemStats/' + id;
