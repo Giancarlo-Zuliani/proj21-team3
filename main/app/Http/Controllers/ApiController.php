@@ -49,18 +49,7 @@ class ApiController extends Controller
 
     // CHART - GET TIME ORDERS
     public function getTime($id) {
-        $orderArr = [];
-        $user = User::findOrFail($id);
-        $items = $user -> items;
-        $idFilter= [];
-        foreach ($items as $item) {
-         foreach ( $item -> orders as $ord ){
-            if(!in_array( $ord->id,$idFilter)){
-               $idFilter[] = $ord -> id;
-               $orderArr[] = $ord;
-            }
-         } 
-       }
+        $orderArr = $this -> getUniqueOrderArr($id);
         return response() ->json($orderArr);
     }
     
@@ -83,6 +72,23 @@ class ApiController extends Controller
               };
               $countArr[] = $sellcount;
           };
+          $delivery = count($this ->getUniqueOrderArr($id));
+          $total_sales += $delivery * $user -> price_delivery; 
         return response() -> json(['countArr' => $countArr, "nameArr" => $itemsNames , "total_sales" => $total_sales / 100]);
+    }
+    private function getUniqueOrderArr($id){
+        $orderArr = [];
+        $user = User::findOrFail($id);
+        $items = $user -> items;
+        $idFilter= [];
+        foreach ($items as $item) {
+         foreach ( $item -> orders as $ord ){
+            if(!in_array( $ord->id,$idFilter)){
+               $idFilter[] = $ord -> id;
+               $orderArr[] = $ord;
+            }
+         } 
+       }
+       return $orderArr;
     }
 }
