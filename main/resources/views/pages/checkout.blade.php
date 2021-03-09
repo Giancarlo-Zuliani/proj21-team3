@@ -77,16 +77,6 @@
                     <input type="checkbox" name="quantities[]"value="{{$quantity}}" checked hidden>
                   @endforeach
 
-                  {{-- @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                  @endif --}}
-
                   <div class="bt-drop-in-wrapper">
                      <div id="bt-dropin"></div>
                   </div>
