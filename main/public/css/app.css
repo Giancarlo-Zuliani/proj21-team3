@@ -11030,6 +11030,11 @@ body .typologybox .img-container .typology-img {
   height: 100%;
 }
 
+.checkbox-typology {
+  display: flex;
+  justify-content: space-between;
+}
+
 #nav-bar {
   background-color: #FCC15D;
 }
