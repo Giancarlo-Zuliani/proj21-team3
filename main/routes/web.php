@@ -36,6 +36,7 @@ Route::post('/item/store', 'HomeController@storeItem')
 // FORM EDIT ITEM
 Route::get('/item-edit/{id}', 'HomeController@editItem')
     ->name('item-edit');
+
 // UPDATE ITEM
 Route::post('/item/update/{id}', 'HomeController@updateItem')
     ->name('item-update');
@@ -67,6 +68,7 @@ Route::get('/pagamento', 'HomeController@payment')
 /*****
 API ROUTES
 ******/
+
 // CALL GET ALL TYPOLOGIES
 Route::get('/gettypo' , 'ApiController@getAllTypologies')
 ->name('get-all-typology');
