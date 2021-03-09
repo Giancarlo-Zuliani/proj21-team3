@@ -69,17 +69,20 @@ class ApiController extends Controller
         $user = User::findOrFail($id);
         $items = $user -> items;
         $countArr = [];
-        foreach ($items as $item) { 
+        $total_sales = 0;
+         foreach ($items as $item) { 
             $itemsNames[] = $item -> name;
           };
-          foreach($items as $item){
+         foreach($items as $item){
               $sellcount= 0;
               $ord = $item -> orders;
               foreach($ord as $order){
-                  $sellcount += $order -> pivot -> quantity;  
+                $qnt = $order -> pivot -> quantity; 
+                $sellcount += $qnt;  
+                $total_sales +=  $item -> price * $qnt;
               };
               $countArr[] = $sellcount;
           };
-        return response() -> json(['countArr' => $countArr, "nameArr" => $itemsNames]);
+        return response() -> json(['countArr' => $countArr, "nameArr" => $itemsNames , "total_sales" => $total_sales / 100]);
     }
 }
