@@ -77,35 +77,42 @@
 
 
                           <div class="form-group row">
-                            <label  class="col-md-4 col-form-label text-md-right">{{ __('Lattosio') }}</label>
+                            <label  class="col-md-4 col-form-label text-md-right">
+                              {{ __('Lattosio') }}
+                            </label>
 
-                            
-                            <input type="radio" id="lactose" name="lactose" value="1">
-                            <label for="lactose">Si</label>
-                            <input type="radio" id="nolactose" name="lactose" value="0">
-                            <label for="nolactose">No</label>
+                            <div class="text-center" style="margin:8px 16px">
+                              <label  for="lactose">SI</label>
+                              <input type="radio" id="lactose" name="lactose" value="1">
 
+                              <label  for="nolactose">NO</label>
+                              <input type="radio" id="nolactose" name="lactose" value="0">
+
+                            </div>
                           </div>
 
                           <div class="form-group row">
 
-                            <label  class="col-md-4 col-form-label text-md-right">{{ __('Glutine') }}</label>
+                            <label  class="col-md-4 col-form-label text-md-right">
+                              {{ __('Glutine') }}
+                            </label>
+                            <div class="text-center" style="margin:8px 16px">
 
+                              <label for="gluten">SI</label>
                               <input type="radio" id="gluten"   name="gluten" value="1">
-                              <label for="gluten">Si</label>
 
+                              <label  for="nogluten">NO</label>
                               <input type="radio" id="nogluten"  name="gluten" value="0">
-                              <label for="nogluten">No</label>
-
+                            </div>
                           </div>
 
                           <div class="form-group row">
-
-                            <input type="hidden" name="user_id" value="{{Auth::user() -> id}}">
-                            <input type="hidden" name="available" value="1">
-                            <input type="hidden" name="deleted" value="0">
-                            <input type="submit" class="btn btn-outline-warning" value="Crea piatto">
-
+                            <div class="col-md-12 text-center" >
+                              <input type="hidden" name="user_id" value="{{Auth::user() -> id}}">
+                              <input type="hidden" name="available" value="1">
+                              <input type="hidden" name="deleted" value="0">
+                              <input type="submit" class="btn btn-outline-warning" value="Crea piatto">
+                            </div>
                           </div>
 
 
