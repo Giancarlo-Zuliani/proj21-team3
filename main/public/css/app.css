@@ -11100,3 +11100,12 @@ ul li {
   font-weight: bolder;
 }
 
+input[type=text]:focus,
+select:focus {
+  outline: none !important;
+}
+
+.form-control:focus {
+  outline: none !important;
+}
+
