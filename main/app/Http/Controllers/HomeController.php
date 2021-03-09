@@ -85,13 +85,6 @@ class HomeController extends Controller
 
       $data = $request -> all();
 
-      // Validator::make($data, [
-      //   'name' => 'required|string',
-      //   'description' => 'required',
-      //   'ingredients' => 'string',
-      //   'price' => 'required',
-      // ]) -> validate();
-
       Validator::make($data,
         [
             'name' => 'required|string|min:5',
@@ -109,19 +102,14 @@ class HomeController extends Controller
 
       $item = Item::findOrFail($id);
       $item -> update($data);
-
-      // return redirect() -> route('item-edit', $item -> id);
       return redirect() -> route('home');
-
     }
 
     // DELETE ITEM (TOGGLE 1 AND 0)
     public function deleteItem($id) {
       $item = Item::findOrFail($id);
       $item -> update(array('deleted' => 1));
-
       return redirect() -> route('home');
-
     }
 
     // (USER-SHOW (area user)) USER'S PROFILE PAGE
@@ -146,7 +134,6 @@ class HomeController extends Controller
       $startDelivery = $data['start_delivery'];
       $endDelivery = $data['end_delivery'];
       $price = $data['price_delivery'] * 100;
-
       $user = User::findOrFail($id);
       $user -> update
       (array(
@@ -158,7 +145,6 @@ class HomeController extends Controller
       // UPDATE USER IMAGE
       $image = $request -> file('img');
       $user = Auth::user();
-
       if($image !== null){
         $this -> deleteUserImg();
         $ext = $image -> getClientOriginalExtension();
@@ -176,7 +162,6 @@ class HomeController extends Controller
     }
 
     // REMOVE USER'S IMAGE
-
     public function clearUserImg() {
       $this -> deleteUserImg();
       $user = Auth::user();
@@ -186,10 +171,8 @@ class HomeController extends Controller
     }
 
     // DELETE IMAGE FROM FOLDER
-
     private function deleteUserImg() {
       $user = Auth::user();
-
       try {
         $filename = $user -> img;
         $file = storage_path('app/public/img/' . $filename);
@@ -198,11 +181,7 @@ class HomeController extends Controller
     }
 
     // CHECK OUT PAGE
-
     public function payment() {
       return view('pages.checkout');
-    }
-
-    
-
+    }    
 }

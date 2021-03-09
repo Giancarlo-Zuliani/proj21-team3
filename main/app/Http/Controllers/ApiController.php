@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Typology;
 use App\User;
 use App\Item;
-use App\Order;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 
 class ApiController extends Controller
@@ -51,26 +49,20 @@ class ApiController extends Controller
     // GET ITEM BY ID FROM BE
     public function getItem($id) {
         $item = Item::findOrFail($id);
-        // dd($item);
         return response() ->json($item);
     }
 
     // CHART - GET TIME ORDERS
-
-    // Pagina Statistiche Ordini
-    // permette di visualizzare le statistiche degli ordini.
-    // Nello specifico i grafici mostrano il numero di ordini per mesi/anni e
-    // l’ammontare delle vendite
     public function getTime($id) {
         $orderArr = [];
         $user = User::findOrFail($id);
         $items = $user -> items;
         $idFilter= [];
         foreach ($items as $item) {
-         foreach ( $item ->orders as $ord ){
-             if(!in_array( $ord->id,$idFilter)){
-                $idFilter[] = $ord -> id;
-                $orderArr[] = $ord;
+         foreach ( $item -> orders as $ord ){
+            if(!in_array( $ord->id,$idFilter)){
+               $idFilter[] = $ord -> id;
+               $orderArr[] = $ord;
             }
          } 
        }
@@ -80,7 +72,6 @@ class ApiController extends Controller
     public function getItemsStats($id){
         $user = User::findOrFail($id);
         $items = $user -> items;
-        $itemsNamesS = [];
         $countArr = [];
         foreach ($items as $item) {
             $orderArr = $item -> orders; 
@@ -94,8 +85,6 @@ class ApiController extends Controller
               };
               $countArr[] = $sellcount;
           };
-          
-         
         return response() -> json(['countArr' => $countArr, "nameArr" => $itemsNames]);
     }
 }
