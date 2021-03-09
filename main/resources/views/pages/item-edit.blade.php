@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">{{ __('Edit item:') }}</div>
+                  <div class="card-header">{{ __('Modifica Piatto') }}</div>
 
                   <div class="card-body">
                       <form method="POST" action="{{route('item-update', $item -> id)}}">
@@ -76,69 +76,84 @@
 
 
                           <div class="form-group row">
-                            <label  class="col-md-4 col-form-label text-md-right">{{ __('Lattosio') }}</label>
+                            <label  class="col-md-4 col-form-label text-md-right">
+                              {{ __('Lattosio') }}
+                            </label>
 
-
-                              <input type="radio" id="lactose" name="lactose" value="1"
-                              @if ($item -> lactose === 1)
-                                  checked
-                              @endif
-                              >
-                              <label for="lactose">Si</label>
-                              <input type="radio" id="nolactose" name="lactose" value="0"
-                              @if ($item -> lactose === 0)
-                                  checked
-                              @endif
-                              >
-                              <label for="nolactose">No</label>
-
+                            <div class="text-center" style="margin:8px 16px">
+                                  <label for="lactose">SI</label>
+                                  <input type="radio" id="lactose" name="lactose" value="1"
+                                  @if ($item -> lactose === 1)
+                                      checked
+                                  @endif
+                                  >
+                                  <label for="nolactose">NO</label>
+                                  <input type="radio" id="nolactose" name="lactose" value="0"
+                                  @if ($item -> lactose === 0)
+                                      checked
+                                  @endif
+                                  >
+                             </div>
                           </div>
 
                           <div class="form-group row">
 
-                            <label  class="col-md-4 col-form-label text-md-right">{{ __('Glutine') }}</label>
+                            <label  class="col-md-4 col-form-label text-md-right">
+                              {{ __('Glutine') }}
+                            </label>
 
-                            <span>Glutine</span>
-                            <input type="radio" id="gluten" name="gluten" value="1"
-                            @if ($item -> gluten === 1)
-                                checked
-                            @endif
-                            >
-                            <label for="gluten">Si</label>
-                            <input type="radio" id="nogluten" name="gluten" value="0"
-                            @if ($item -> gluten === 0)
-                                checked
-                            @endif
-                            >
-                            <label for="nogluten">No</label>
-                            <br><br>
-
+                            <div class="text-center" style="margin:8px 16px">
+                               <label for="gluten">SI</label>
+                                <input type="radio" id="gluten" name="gluten" value="1"
+                                @if ($item -> gluten === 1)
+                                    checked
+                                @endif
+                                >
+                                <label for="nogluten">NO</label>
+                                <input type="radio" id="nogluten" name="gluten" value="0"
+                                @if ($item -> gluten === 0)
+                                    checked
+                                @endif
+                                >
+                                <br><br>
+                              </div>
                           </div>
 
                           <div class="form-group row">
 
                             {{-- available --}}
-                            <span>Disponibile</span>
-                            <input type="radio" id="available" name="available" value="1"
-                            @if ($item -> available === 1)
-                                checked
-                            @endif
-                            >
-                            <label for="available">Si</label>
-                            <input type="radio" id="notavailable" name="available" value="0"
-                            @if ($item -> available === 0)
-                                checked
-                            @endif
-                            >
-                            <label for="notavailable">No</label>
+                            <label  class="col-md-4 col-form-label text-md-right" style="margin-top: -20px;">
+                              {{ __('Disponibile') }}
+                            </label>
 
-                            {{-- deleted --}}
-                            <input type="hidden" name="deleted" value="0">
-                            {{-- user id --}}
-                            <input type="hidden" name="user_id" value="{{Auth::user() -> id}}">
-                            {{-- submit --}}
-                            <input type="submit" value="UPDATE"> <br><br>
+                            <div class="text-center" style="margin:-10px 16px">
+                                 <label for="available">SI</label>
+                                 <input type="radio" id="available" name="available" value="1"
+                                  @if ($item -> available === 1)
+                                      checked
+                                  @endif
+                                  >
+                                  <label for="notavailable">NO</label>
 
+                                  <input type="radio" id="notavailable" name="available" value="0"
+                                  @if ($item -> available === 0)
+                                      checked
+                                  @endif
+                                  >
+
+                                  {{-- deleted --}}
+                                  <input type="hidden" name="deleted" value="0">
+                                  {{-- user id --}}
+                                  <input type="hidden" name="user_id" value="{{Auth::user() -> id}}">
+                              </div>
+
+                          </div>
+                          {{-- submit --}}
+
+                          <div class="form-group row">
+                            <div class="col-md-12 text-center" >
+                              <input class="btn btn-outline-warning" type="submit" value="AGGIORNA">
+                            </div>
                           </div>
 
 

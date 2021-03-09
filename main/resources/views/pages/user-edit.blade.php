@@ -54,11 +54,10 @@
                               <label for="vat_num" class="col-md-4 col-form-label text-md-right">{{ __('Prezzo di consegna') }}</label>
 
                               <div class="col-md-6">
-
                                 <input type="number" min="0" max="20" step="0.50"
                                        value="{{$user -> price_delivery / 100}}"
-                                       name="price_delivery" placeholder="price">
-
+                                       name="price_delivery" placeholder="price"
+                                >
                               </div>
                           </div>
 
@@ -79,21 +78,23 @@
 
                            <div class="form-group row">
 
-                                    <label for="typologies[]" class="col-md-4 col-form-label text-md-right">Scegli una o più tipologie:</label>
-                                    <div class="col-md-6">
+                                  <label for="typologies[]" class="col-md-4 col-form-label text-md-right">Scegli una o più tipologie:</label>
+                                  <div class="col-md-6">
 
-                                        @foreach ($typos as $typo)
-                                            <input type="checkbox"  value="{{$typo -> id }}" name="typologies[]"
-                                                @if($user -> typologies -> contains($typo -> id))
-                                                    checked
-                                                @endif
-                                            >
-                                            <span style="margin-right: 9px;">{{$typo -> typology}}</span>
+                                      @foreach ($typos as $typo)
+                                          <input type="checkbox"   value="{{$typo -> id }}" name="typologies[]"
+                                              @if($user -> typologies -> contains($typo -> id))
+                                                  checked
+                                              @endif
+                                          >
+                                          <div class="custom-control-inline" style="margin:4px 8px;">
+                                            {{$typo -> typology}}
+                                          </div>
 
-                                        @endforeach
+                                      @endforeach
 
-                                    </div>
-                           </div>
+                                   </div>
+                            </div>
 
                           <div class="form-group row">
                             <div class="col-md-12 text-center" >
