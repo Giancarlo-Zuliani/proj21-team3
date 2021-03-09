@@ -62,7 +62,6 @@ class ApiController extends Controller
     // Nello specifico i grafici mostrano il numero di ordini per mesi/anni e
     // l’ammontare delle vendite
     public function getTime($id) {
-
         $orderArr = [];
         $user = User::findOrFail($id);
         $items = $user -> items;
@@ -74,11 +73,10 @@ class ApiController extends Controller
                 $orderArr[] = $ord;
             }
          } 
-        }
-        
+       }
         return response() ->json($orderArr);
-
     }
+    
     public function getItemsStats($id){
         $user = User::findOrFail($id);
         $items = $user -> items;
