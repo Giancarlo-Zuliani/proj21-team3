@@ -25,7 +25,7 @@ const statistics = new Vue({
                         data: arr,
                         backgroundColor: this.chartsColor,
                         borderColor: this.chartsBorder,
-                        borderWidth: 2
+                        borderWidth: 5
                     }]
                 },
                 options: {
