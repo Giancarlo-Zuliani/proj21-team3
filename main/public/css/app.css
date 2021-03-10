@@ -10987,31 +10987,21 @@ section .typologybox {
   transform: translate(-50%, -50%);
 }
 
-header {
-  background-image: url(/images/header.svg?366a3914ff499d123c1b0002790523ab);
+header .curva {
+  background-image: url(/images/header.svg?bdbb820658e8df5164a9af09b241d307);
   background-repeat: no-repeat;
-  height: 340px;
-  display: flex;
-  justify-content: space-between;
+  height: 33vh;
 }
 
-header .logo img {
-  height: 50px;
-}
-
-header div {
-  padding: 35px;
-}
-
-header div .fa-user-circle {
-  font-size: 2rem;
-  color: #E7257D;
-  vertical-align: middle;
-}
-
-header div .btn {
+.btn-header {
   background-color: #E7257D;
-  border: none;
+  margin: 0 4px;
+  color: white !important;
+}
+
+.btn-header:hover {
+  background-color: white;
+  color: #E7257D !important;
 }
 
 body .typologybox {
