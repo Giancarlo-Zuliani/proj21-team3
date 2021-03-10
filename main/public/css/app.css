@@ -11020,6 +11020,19 @@ body .typologybox .img-container .typology-img {
   height: 100%;
 }
 
+body .hr-index {
+  width: 80%;
+  border: solid 1px #2F294D;
+}
+
+body .show {
+  visibility: visible;
+}
+
+body .hide {
+  visibility: hidden;
+}
+
 .checkbox-typology {
   display: flex;
   justify-content: space-between;

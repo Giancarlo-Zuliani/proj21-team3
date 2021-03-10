@@ -12,4 +12,14 @@ body {
             }
         }            
     }
+    .hr-index {
+        width: 80%;
+        border: solid 1px $darkblue;
+    }
+    .show {
+        visibility: visible;
+    }
+    .hide {
+        visibility: hidden;
+    }
 }

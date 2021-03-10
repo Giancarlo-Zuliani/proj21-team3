@@ -3,21 +3,68 @@
 @section('content')
     <div class="container">
 
-         {{-- SEARCH COUNT CONTAINER --}}
-        <div class="ricerca" v-if="searchResultNum != undefined">
-            <h4 v-if="searchResultNum > 0">
+        {{-- NO RESTAURANTS FOUND --}}
+        {{-- <div v-if="restaurantArray.length < 1 && showRestaurant">
+         <h1>
+               Nessun ristorante è stato trovato.
+         </h1>
+        </div>   --}}
+
+        {{-- WELCOME PAGE TEXT  --}}
+        <span v-if="!showRestaurant">
+            <h1 class="font-weight-bold text-center">In evidenza a Milano</h1>
+            <h3 class="text-center">Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio.</h3>
+            <hr class="hr-index">
+        </span>
+
+        {{-- SEARCH COUNT CONTAINER --}}
+        <div   
+            class="ricerca text-center" 
+            :class="searchResultNum != undefined ? 'show' : 'hide'"
+            {{-- v-if="searchResultNum != undefined" --}}
+            >
+
+            <h4 
+                {{-- v-if="searchResultNum > 1" --}}
+                :class="searchResultNum > 1 && searchResultNum != 1 ? 'show' : 'hide'"
+                >
                 La tua ricerca ha prodotto @{{searchResultNum}} risultati.
             </h4>
-            <h4 v-if="searchResultNum === 0">
+            <h4 
+                {{-- v-if="searchResultNum === 1" --}}
+                :class="searchResultNum === 1 ? 'show' : 'hide'"
+                >
+                La tua ricerca ha prodotto 1 risultato.
+            </h4>
+            <h4 
+                v-if="searchResultNum === 0"
+                {{-- :class="searchResultNum === 0 ? 'show' : 'hide'" --}}
+                >
                 La tua ricerca non ha prodotto risultati.
             </h4>
+            <h4>
+                <i 
+                    {{-- v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" --}}
+                    class="fas fa-search btn btn-primary"
+                    {{-- :class="selectedTypologies.length > 0 
+                            && selectedTypologies !== null
+                            && selectedTypologies !== undefined
+                            ? 'show' : 'hide'
+                            " --}}
+                    @click="getRestaurants">                 
+                    Vai ai risultati
+                </i>
+            </h4>            
         </div>
-
-        {{-- SEARCH ICON --}}
-        <div class="search">
-            <i v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" class="fas fa-search-dollar" @click="getRestaurants"></i>
+    
+        {{-- SEARCH BUTTON --}}
+        <div class="row">
+            <div class="col-md-12 search">
+                
+            </div>
         </div>
-
+        
+    
         {{-- BACK TO TYPOLOGIES BUTTON --}}
         <span 
             v-if="showRestaurant"
@@ -25,13 +72,6 @@
             @click="showRestaurant = !showRestaurant">
                 <i class="fas fa-arrow-left"></i>
         </span>
-
-        {{-- NO RESTAURANTS FOUND --}}
-        <div v-if="restaurantArray.length < 1 && showRestaurant">
-         <h1>
-               Nessun ristorante è stato trovato.
-         </h1>
-        </div>  
 
         {{-- TYPOLOGIES --}}
         <div class="row" v-if="!showRestaurant">                
