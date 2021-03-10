@@ -68,7 +68,7 @@ class ApiController extends Controller
               foreach($ord as $order){
                 $qnt = $order -> pivot -> quantity; 
                 $sellcount += $qnt;  
-                $total_sales +=  $item -> price * $qnt;
+                $total_sales += $order -> final_price;
               };
               $countArr[] = $sellcount;
           };
