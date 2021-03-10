@@ -11052,6 +11052,56 @@ body .typologybox .img-container .typology-img {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28231, 37, 125, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+.background-title {
+  background-color: #E7257D;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 5px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.title {
+  font-weight: 900;
+}
+
+.card {
+  margin: 30px 15px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px #f5f5f0, -10px -10px 5px #f5f5f0, 10px -10px 5px #f5f5f0, -10px 10px 5px #f5f5f0;
+}
+
+.title-card {
+  color: #E7257D;
+}
+
+p {
+  font-size: 18px;
+}
+
+h4 {
+  color: #E7257D;
+}
+
+.button-up i {
+  position: fixed;
+  bottom: 10px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  background-color: #FCC15D;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.button-up:hover {
+  cursor: pointer;
+}
+
 body {
   background-color: white;
 }

@@ -14,6 +14,9 @@
 @import 'partials/pages/index.scss';
 @import 'partials/pages/form.scss';
 @import 'partials/pages/app-layout.scss';
+@import 'partials/pages/dashboard.scss';
+
+
 body {
     background-color: white;
 }
@@ -24,7 +27,7 @@ body {
     color: $pink;
 }
 
-// CARD BODY 
+// CARD BODY
 // these selectors will be moved to a proper place
 .delete-banner {
     background-color: red;
