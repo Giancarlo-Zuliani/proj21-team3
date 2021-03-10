@@ -1,5 +1,4 @@
 @extends('layouts.main-layout')
-<a href="{{route('index')}}">Torna alla home!</a>
 {{-- FORM TO EDIT USER INFO --}}
 @section('content')
 
@@ -22,10 +21,10 @@
                               <div class="col-md-6">
                                 <select name="start_delivery" id="">
                                     <option value="" disabled>Seleziona un orario</option>
-                                    <option value="10:30">12:00</option>
-                                    <option value="11:00">13:00</option>
-                                    <option value="11:30">14:00</option>
-                                    <option value="11:30">15:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
                                 </select>
                               </div>
                           </div>
@@ -38,12 +37,12 @@
                               <div class="col-md-6">
                                 <select name="end_delivery" id="">
                                     <option value="" disabled>Seleziona un orario</option>
-                                    <option value="10:30">19:00</option>
-                                    <option value="11:00">20:00</option>
-                                    <option value="11:30">21:00</option>
-                                    <option value="11:30">22:00</option>
-                                    <option value="11:30">23:00</option>
-                                    <option value="11:30">00:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="22:00">22:00</option>
+                                    <option value="23:00">23:00</option>
+                                    <option value="00:00">00:00</option>
                                 </select>
                               </div>
                           </div>
@@ -51,7 +50,7 @@
                           {{-- PREZZO DI CONSEGNA --}}
 
                            <div class="form-group row">
-                              <label for="vat_num" class="col-md-4 col-form-label text-md-right">{{ __('Prezzo di consegna') }}</label>
+                              <label for="vat_num" class="col-md-4 col-form-label text-md-right" style="content: \20AC;">{{ __('Prezzo di consegna') }}</label>
 
                               <div class="col-md-6">
                                 <input type="number" min="0" max="20" step="0.50"
@@ -89,8 +88,8 @@
                                                 checked
                                             @endif
                                         >
-                                          {{$typo -> typology}}                                      
-                                      </div>                                         
+                                          {{$typo -> typology}}
+                                      </div>
                                       @endforeach
                                    </div>
                             </div>
