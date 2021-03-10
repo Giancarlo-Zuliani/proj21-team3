@@ -11,7 +11,7 @@
     <h1>Pagamento avvenuto con successo</h1>
     {{-- dati dell'ordine --}}
     <p>Gentile {{$order['buyer_name']}} {{$order['buyer_lastname']}} </p>    
-    <p>Il tuo ordine del totale di {{$order['total_price']}}€ sta arrivando a questo indirizzo {{$order['address']}}.</p>
+    <p>Il tuo ordine del totale di {{$order['final_price']}}€ sta arrivando a questo indirizzo {{$order['address']}}.</p>
     <h3>Buon appetito dallo staff di Fooduro, speriamo di vederci nel prossimo fooduro.</h3>
         
 </body>
