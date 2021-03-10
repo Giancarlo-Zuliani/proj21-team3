@@ -11108,13 +11108,15 @@ body .typologybox .img-container .typology-img {
 }
 
 #waitBanner {
-  position: absolute;
+  position: fixed;
   width: 100%;
+  display: none;
   height: 100%;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 999;
+  translate: opacity ease 0.3;
 }
 
 #waitBanner img {
@@ -11123,6 +11125,26 @@ body .typologybox .img-container .typology-img {
   top: 50%;
   transform: translate(-50%, -50%);
   min-width: 40%;
+}
+
+#waitBanner #bannerstringcontainer {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  bottom: 2%;
+  color: #e15b64;
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+#waitBanner #bannerstringcontainer span {
+  text-align: left;
+}
+
+#waitBanner #bannerstringcontainer h2 {
+  text-align: right;
 }
 
 body {

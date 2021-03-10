@@ -96,6 +96,10 @@
 </div>
 <div id= "waitBanner">
   <img src="{{asset('storage/assets/pac-man.svg')}}" alt="">
+  <div id= "bannerstringcontainer">
+    <h2 >stiamo processando il suo ordine </h2>
+    <span id = "processingAnimation"></span>
+  </div>
 </div>
 @endsection
 <script src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js"></script>
