@@ -1,5 +1,4 @@
 @extends('layouts.main-layout')
-<a href="{{route('index')}}">Torna alla home!</a>
 {{-- RESTAURANT MENU PAGE  --}}
 @section('content')
 

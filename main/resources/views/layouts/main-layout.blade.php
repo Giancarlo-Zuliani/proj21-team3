@@ -17,19 +17,16 @@
 
   <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
-        {{-- <div class="top-right links"> --}}
+
             @auth
-                {{-- <a href="{{ url('/home') }}">Area utente</a> --}}
-                @include('components.logged-header')
-
+                {{-- @include('components.logged-header') --}}
+                @include('components.header')
             @else
-              @include('components.header')
 
-                {{-- @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif --}}
+              @include('components.header')
+                                                
             @endauth
-        {{-- </div> --}}
+
     @endif
 
 </div>

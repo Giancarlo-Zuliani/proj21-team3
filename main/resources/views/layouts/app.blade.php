@@ -17,6 +17,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Chart js --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    {{-- FAVICON --}}
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
     @stack('scriptPayment')
     @stack('scriptStatistics')
 </head>
@@ -65,7 +67,7 @@
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('user-show')}}">                                     
-                                        Dashboard
+                                        Il tuo profilo
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
