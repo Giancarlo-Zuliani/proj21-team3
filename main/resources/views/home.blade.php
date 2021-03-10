@@ -25,7 +25,7 @@
          <button type="button" class="btn btn-outline-warning">
            <h4>
               <i class='add fas fa-plus'>
-                Aggiungi piatto
+                Aggiungi Piatto
               </i>
            </h4>
          </button>
@@ -92,8 +92,6 @@
                      </button> --}}
                   </div>
                </div>
-
-
              </div>
             {{-- @endif --}}
 
