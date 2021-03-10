@@ -64,10 +64,12 @@
                             <option value="2020-">2020</option>    
                         </select>
                     </div>
-
+                    
                     <div class="card-body">
                         <canvas id="myChart"  width="200" height="200"></canvas>
-      
+                        
+                        <h5 class="text-center">Totale incasso ordini : @{{totalSales}} €</h5>
+                        
                         <canvas id="myPie" width="200" height="200"></canvas>
                     </div>
 

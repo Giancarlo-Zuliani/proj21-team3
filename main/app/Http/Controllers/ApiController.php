@@ -49,6 +49,34 @@ class ApiController extends Controller
 
     // CHART - GET TIME ORDERS
     public function getTime($id) {
+        $orderArr = $this -> getUniqueOrderArr($id);
+        return response() ->json($orderArr);
+    }
+    
+    //CHART - GET ITEMS SELLS DATA
+    public function getItemsStats($id){
+        $user = User::findOrFail($id);
+        $items = $user -> items;
+        $countArr = [];
+        $total_sales = 0;
+         foreach ($items as $item) { 
+            $itemsNames[] = $item -> name;
+          };
+         foreach($items as $item){
+              $sellcount= 0;
+              $ord = $item -> orders;
+              foreach($ord as $order){
+                $qnt = $order -> pivot -> quantity; 
+                $sellcount += $qnt;  
+                $total_sales += $order -> final_price;
+              };
+              $countArr[] = $sellcount;
+          };
+          $delivery = count($this ->getUniqueOrderArr($id));
+          $total_sales += $delivery * $user -> price_delivery; 
+        return response() -> json(['countArr' => $countArr, "nameArr" => $itemsNames , "total_sales" => $total_sales / 100]);
+    }
+    private function getUniqueOrderArr($id){
         $orderArr = [];
         $user = User::findOrFail($id);
         $items = $user -> items;
@@ -61,25 +89,6 @@ class ApiController extends Controller
             }
          } 
        }
-        return response() ->json($orderArr);
-    }
-    
-    //CHART - GET ITEMS SELLS DATA
-    public function getItemsStats($id){
-        $user = User::findOrFail($id);
-        $items = $user -> items;
-        $countArr = [];
-        foreach ($items as $item) { 
-            $itemsNames[] = $item -> name;
-          };
-          foreach($items as $item){
-              $sellcount= 0;
-              $ord = $item -> orders;
-              foreach($ord as $order){
-                  $sellcount += $order -> pivot -> quantity;  
-              };
-              $countArr[] = $sellcount;
-          };
-        return response() -> json(['countArr' => $countArr, "nameArr" => $itemsNames]);
+       return $orderArr;
     }
 }

@@ -91,5 +91,5 @@
             </form>
 
         </div>
-<script src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js"></script>
-@endsection
+        @endsection
+        <script src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js"></script>
