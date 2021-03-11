@@ -3,12 +3,22 @@
 @section('content')
     <div class="container">
 
-        {{-- WELCOME PAGE TEXT  --}}
+        {{-- TYPOLOGIES MAIN TEXT  --}}
         <div class="row">
             <div class="col-md-12">
                 <div v-if="!showRestaurant">
                     <h1 class="font-weight-bold text-center">In evidenza a Milano</h1>
                     <h3 class="text-center">Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio.</h3>
+                    <hr class="hr-index">
+                </div>
+            </div>
+        </div>
+
+        {{-- RESTAURANTS MAIN TEXT --}}
+        <div class="row">
+            <div class="col-md-12">
+                <div v-if="showRestaurant">
+                    <h1 class="font-weight-bold text-center">Ristoranti con le tue tipologie</h1>
                     <hr class="hr-index">
                 </div>
             </div>
@@ -46,28 +56,30 @@
                 class="col-md-12 search text-center"
                 :class="!showRestaurant && searchResultNum > 0 ? 'show' : 'hide'"
                 >
-                {{-- <h4 class="mx-auto"> --}}
-                    <button class="btn btn-primary rounded" @click="getRestaurants">   
-                        <i class="fas fa-search "></i>
-                        <span>Vai ai risultati</span>                                            
-                    </button>
-                    
-                {{-- </h4>       --}}
+                <button class="btn btn-primary btn-results border-0 " @click="getRestaurants">   
+                    <i class="fas fa-search"></i>
+                    <span>Vai ai risultati</span>                                            
+                </button>
             </div>
         </div>
         
-        {{-- BACK TO TYPOLOGIES BUTTON --}}
-        <span 
-            v-if="showRestaurant"
-            class="console"        
-            @click="showRestaurant = !showRestaurant">
-                <i class="fas fa-arrow-left"></i>
-        </span>
+        {{-- RETURN TO HOME --}}
+        <div class="row">
+            <div
+                class="col-md-12 search text-center"
+                {{-- :class="showRestaurant ? 'show' : 'hide'" --}}
+                v-if="showRestaurant"
+                >
+                <button class="btn btn-primary btn-results border-0 " @click="showRestaurant = !showRestaurant">   
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Torna alle tipologie</span>                                            
+                </button>
+            </div>
+        </div>
 
         {{-- TYPOLOGIES --}}
-        <div class="row" v-if="!showRestaurant">                
+        <div class="row my-4" v-if="!showRestaurant">                
             <h1 class="test">Scegli una o più tipologie</h1>
-
             <div                 
                 v-for="type in typologyArray"
                 class="col-md-6 col-lg-4" 
@@ -86,7 +98,7 @@
         </div>
 
         {{-- RESTAURANTS --}}
-        <div class="row" v-if="showRestaurant">                
+        <div class="row my-4" v-if="showRestaurant">                
             <h1 class="test">Scegli il tuo ristorante</h1>
             <div                 
                 v-for="rest in restaurantArray"

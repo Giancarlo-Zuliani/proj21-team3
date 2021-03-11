@@ -11037,6 +11037,10 @@ body .search-count h4 {
   padding: 0;
 }
 
+body .btn-results {
+  background-color: #2F294D;
+}
+
 .checkbox-typology {
   display: flex;
   justify-content: space-between;

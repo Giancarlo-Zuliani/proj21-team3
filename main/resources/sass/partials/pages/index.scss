@@ -27,4 +27,10 @@ body {
             padding: 0;
         }
     }
+    .btn-results {
+        background-color: $darkblue;
+        :hover {
+            // background-color: $black;            
+        }
+    }
 }
