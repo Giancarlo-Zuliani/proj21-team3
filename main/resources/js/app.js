@@ -10,7 +10,7 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 
 // VUE INSTANCE
 const app = new Vue({
-    el: '#app',
+    el: '#vueapp',
     data: {
         totalSales: '',
         // INDEX FLAGS

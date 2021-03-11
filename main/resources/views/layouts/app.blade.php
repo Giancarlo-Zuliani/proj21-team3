@@ -23,6 +23,7 @@
     @stack('scriptStatistics')
 </head>
 <body>    
+    <div id="vueapp"></div>
     <div id="app">
         @if (Route::has('login'))
 

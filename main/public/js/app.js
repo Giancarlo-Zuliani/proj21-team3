@@ -49625,7 +49625,7 @@ files.keys().map(function (key) {
 }); // VUE INSTANCE
 
 var app = new Vue({
-  el: '#app',
+  el: '#vueapp',
   data: {
     totalSales: '',
     // INDEX FLAGS
@@ -49829,8 +49829,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
