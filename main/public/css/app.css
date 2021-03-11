@@ -10988,7 +10988,7 @@ section .typologybox {
 }
 
 header .curva {
-  background-image: url(/images/header.svg?bdbb820658e8df5164a9af09b241d307);
+  background-image: url(/images/header.svg?bb6d97eba38495d35c47d827f59fc06e);
   background-repeat: no-repeat;
   height: 33vh;
 }
@@ -11102,6 +11102,7 @@ body .hide {
   flex-direction: row;
   justify-content: space-between;
   border-bottom: solid #FCC15D 1px;
+  padding-top: 80px;
 }
 
 .stick .card #carttotal {
