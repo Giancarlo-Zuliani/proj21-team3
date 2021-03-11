@@ -7,12 +7,13 @@
 
 @section('content')
     {{-- DASHBOARD USER--}}
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-md-6 col-lg-4 text-center">
         <div class="background-title">
-          <h1 class="title">Il Tuo Menù</h1>
+          <h1 class="title">
+            Il Tuo Menù
+          </h1>
         </div>
      </div>
   </div>
@@ -20,7 +21,7 @@
 {{-- BUTTON ADD ITEM --}}
  <div class="container">
    <div class="row justify-content-center">
-     <div class="col-xs-12 col-md-3 col-lg-2 text-center">
+     <div class=" col-sm-4 col-md-3 col-lg-2 text-center">
        <div class="button-up">
          <a href="{{route('item-create')}}">
            <i class='add fas fa-plus'>
@@ -43,7 +44,6 @@
              </div>
          @endif
          @foreach ($items as $item)
-            {{-- @if ($item -> available === 1) --}}
              @if ($item -> deleted === 0)
              <div class="card-box shadow col-xs-12 col-lg-3 " >
                <h3 class="title-card text-center text-capitalize">
@@ -70,6 +70,11 @@
                     @endif
 
                   </p>
+                  @if ($item -> available === 0)
+                    <p class="text-danger">
+                      Non Disponibile
+                    </p>
+                  @endif
                <div class="card-icon text-center" style="margin-bottom: 15px;">
                  <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit text-muted">
                      Modifica
@@ -93,15 +98,12 @@
                   </div>
                </div>
              </div>
-            {{-- @endif --}}
-
             @endif
          @endforeach
        </div>
    </div>
 
-   {{-- STATISTICHE --}}
-
+   {{-- STATISTIC --}}
    <div class="container">
      <div class="row justify-content-center">
        <div class="col-xs-12 col-md-6 col-lg-4 text-center">
@@ -115,7 +117,6 @@
     </div>
 
 
-    {{-- GRAPHIC --}}
     @php
      $user = Auth::user() -> id;
     @endphp
@@ -124,7 +125,7 @@
     @endsection
     @section('charts')
 
-    {{-- CHART.JS --}}
+    {{-- GRAPHIC --}}
     <div id="angelo" class="container">
       <div class="row justify-content-center">
         <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
