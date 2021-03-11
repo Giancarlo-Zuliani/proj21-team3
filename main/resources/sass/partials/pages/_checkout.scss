@@ -18,7 +18,8 @@
     }
 }
 
-.stick {
+.stick,
+.stick-min-width {
     padding: 25px;
     position: sticky;
     top: 0;
@@ -70,7 +71,7 @@
         align-items: baseline;
         justify-content: center;
         bottom: 2%;
-        color: #e15b64;
+        color: $yellow;
         font-size: 2.5rem;
         text-align: center;
         width: 100%;
@@ -80,5 +81,34 @@
         #processingAnimation {
             width: 0%;
         }
+    }
+}
+
+.stick-min-width {
+    display: none;
+    padding: 25px;
+}
+
+@media screen and (max-width:992px) {
+    .stick {
+        display: none;
+    }
+    .stick-min-width {
+        display: block;
+    }
+    #payment-form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .form-group {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:576) {
+    .form-group {
+        width: 100%;
     }
 }

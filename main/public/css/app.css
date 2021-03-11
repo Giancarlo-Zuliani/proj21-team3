@@ -10988,7 +10988,7 @@ section .typologybox {
 }
 
 header .curva {
-  background-image: url(/images/header.svg?bdbb820658e8df5164a9af09b241d307);
+  background-image: url(/images/header.svg?bb6d97eba38495d35c47d827f59fc06e);
   background-repeat: no-repeat;
   height: 33vh;
 }
@@ -11077,7 +11077,8 @@ body .hide {
   cursor: pointer;
 }
 
-.stick {
+.stick,
+.stick-min-width {
   padding: 25px;
   position: -webkit-sticky;
   position: sticky;
@@ -11086,17 +11087,20 @@ body .hide {
   padding-top: 70px;
 }
 
-.stick img {
+.stick img,
+.stick-min-width img {
   max-width: 2rem;
   margin: 5px auto;
 }
 
-.stick .card {
+.stick .card,
+.stick-min-width .card {
   padding: 25px;
   border-color: #FCC15D;
 }
 
-.stick .card .card-body {
+.stick .card .card-body,
+.stick-min-width .card .card-body {
   padding: 3px;
   margin-top: 5px;
   display: flex;
@@ -11105,7 +11109,8 @@ body .hide {
   border-bottom: solid #FCC15D 1px;
 }
 
-.stick .card #carttotal {
+.stick .card #carttotal,
+.stick-min-width .card #carttotal {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
@@ -11137,7 +11142,7 @@ body .hide {
   align-items: baseline;
   justify-content: center;
   bottom: 2%;
-  color: #e15b64;
+  color: #FCC15D;
   font-size: 2.5rem;
   text-align: center;
   width: 100%;
@@ -11149,6 +11154,37 @@ body .hide {
 
 #waitBanner #bannerstringcontainer #processingAnimation {
   width: 0%;
+}
+
+.stick-min-width {
+  display: none;
+  padding: 25px;
+}
+
+@media screen and (max-width: 992px) {
+  .stick {
+    display: none;
+  }
+
+  .stick-min-width {
+    display: block;
+  }
+
+  #payment-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-group {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576) {
+  .form-group {
+    width: 100%;
+  }
 }
 
 .background-title {
