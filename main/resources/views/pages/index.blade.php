@@ -3,68 +3,59 @@
 @section('content')
     <div class="container">
 
-        {{-- NO RESTAURANTS FOUND --}}
-        {{-- <div v-if="restaurantArray.length < 1 && showRestaurant">
-         <h1>
-               Nessun ristorante è stato trovato.
-         </h1>
-        </div>   --}}
-
         {{-- WELCOME PAGE TEXT  --}}
-        <span v-if="!showRestaurant">
-            <h1 class="font-weight-bold text-center">In evidenza a Milano</h1>
-            <h3 class="text-center">Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio.</h3>
-            <hr class="hr-index">
-        </span>
+        <div class="row">
+            <div class="col-md-12">
+                <div v-if="!showRestaurant">
+                    <h1 class="font-weight-bold text-center">In evidenza a Milano</h1>
+                    <h3 class="text-center">Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio.</h3>
+                    <hr class="hr-index">
+                </div>
+            </div>
+        </div>
 
         {{-- SEARCH COUNT CONTAINER --}}
-        <div   
-            class="text-center" 
-            :class="searchResultNum != undefined ? 'show' : 'hide'"
-            {{-- v-if="searchResultNum != undefined" --}}
-            >
-
-            <h4 
-                {{-- v-if="searchResultNum > 2" --}}
-                :class="searchResultNum > 2 && searchResultNum != 1 ? 'show' : 'hide'"
+        <div class="row">
+            <div   
+                class="text-center search-count col-md-12" 
+                :class="searchResultNum != undefined ? 'show' : 'hide'"
                 >
-                La tua ricerca ha prodotto @{{searchResultNum}} risultati.
-            </h4>
-            <h4 
-                v-if="searchResultNum === 1"
-                {{-- :class="searchResultNum == 1 ? 'show' : 'hide'" --}}
-                >
-                La tua ricerca ha prodotto 1 risultato.
-            </h4>
-            <h4 
-                v-if="searchResultNum === 0"
-                {{-- :class="searchResultNum === 0 ? 'show' : 'hide'" --}}
-                >
-                La tua ricerca non ha prodotto risultati.
-            </h4>
-            <h4>
-                <i 
-                    {{-- v-if="selectedTypologies.length > 0 && selectedTypologies !== null && selectedTypologies !== undefined" --}}
-                    class="fas fa-search btn btn-primary"
-                    {{-- :class="selectedTypologies.length > 0 
-                            && selectedTypologies !== null
-                            && selectedTypologies !== undefined
-                            ? 'show' : 'hide'
-                            " --}}
-                    @click="getRestaurants">                 
-                    Vai ai risultati
-                </i>
-            </h4>            
+                <h4 
+                    v-if="searchResultNum >= 2 && searchResultNum != 1"
+                    >
+                    La tua ricerca ha prodotto @{{searchResultNum}} risultati.
+                </h4>
+                <h4 
+                    v-if="searchResultNum === 1"
+                    >
+                    La tua ricerca ha prodotto 1 risultato.
+                </h4>
+                <h4 
+                    v-if="searchResultNum === 0
+                    || searchResultNum === undefined
+                    || searchResultNum === null"
+                    >
+                    La tua ricerca non ha prodotto risultati.
+                </h4>                        
+            </div>
         </div>
-    
+            
         {{-- SEARCH BUTTON --}}
         <div class="row">
-            <div class="col-md-12 search">
-                
+            <div 
+                class="col-md-12 search text-center"
+                :class="!showRestaurant && searchResultNum > 0 ? 'show' : 'hide'"
+                >
+                {{-- <h4 class="mx-auto"> --}}
+                    <button class="btn btn-primary rounded" @click="getRestaurants">   
+                        <i class="fas fa-search "></i>
+                        <span>Vai ai risultati</span>                                            
+                    </button>
+                    
+                {{-- </h4>       --}}
             </div>
         </div>
         
-    
         {{-- BACK TO TYPOLOGIES BUTTON --}}
         <span 
             v-if="showRestaurant"

@@ -11033,6 +11033,10 @@ body .hide {
   visibility: hidden;
 }
 
+body .search-count h4 {
+  padding: 0;
+}
+
 .checkbox-typology {
   display: flex;
   justify-content: space-between;
