@@ -70,7 +70,7 @@
                 {{-- :class="showRestaurant ? 'show' : 'hide'" --}}
                 v-if="showRestaurant"
                 >
-                <button class="btn btn-primary btn-results border-0 " @click="showRestaurant = !showRestaurant">   
+                <button class="btn btn-primary btn-results border-0 " @click="backTypology()">   
                     <i class="fas fa-arrow-left"></i>
                     <span>Torna alle tipologie</span>                                            
                 </button>
@@ -78,16 +78,17 @@
         </div>
 
         {{-- TYPOLOGIES --}}
-        <div class="row my-4" v-if="!showRestaurant">                
+        <div class="row my-4 " v-if="!showRestaurant">                
             <h1 class="test">Scegli una o più tipologie</h1>
             <div                 
-                v-for="type in typologyArray"
+                v-for="type, index in typologyArray"
                 class="col-md-6 col-lg-4" 
                 >
                 <div
-                    class="card mx-auto shadow " style="width: 18rem; margin: 20px;"
-                    :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"                                                
-                    @click="typologySelection( type.id )"
+                    class="tilt card mx-auto shadow" style="width: 18rem; margin: 20px;"
+                    ref="myCard"
+                    :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"             
+                    @click="typologySelection( type.id )"    
                 >
                     <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
                     <div class="card-body">
@@ -104,7 +105,9 @@
                 v-for="rest in restaurantArray"
                 class="col-md-6 col-lg-4"
                 >                
-                <div class="card shadow mx-auto" style="width: 18rem; margin: 20px;">       
+                <div class="tilt card shadow mx-auto" style="width: 18rem; margin: 20px;"
+                    ref="myCard"
+                >                           
                     <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/users/', '')}}/${rest.img}.webp`>
                     <div class="card-body">
                         <a :href=`{{route('show-menu','')}}/${rest.id}`>
@@ -114,6 +117,6 @@
                 </div>
             </div>                        
         </div>
-
+    
     </div>
 @endsection

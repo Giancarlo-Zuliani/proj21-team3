@@ -11059,6 +11059,10 @@ body .selected {
   transform: scale(1.1);
 }
 
+.tilt:hover {
+  cursor: pointer;
+}
+
 .checkbox-typology {
   display: flex;
   justify-content: space-between;
