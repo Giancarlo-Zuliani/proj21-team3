@@ -11139,12 +11139,12 @@ body .typologybox .img-container .typology-img {
   width: 100%;
 }
 
-#waitBanner #bannerstringcontainer span {
-  text-align: left;
-}
-
 #waitBanner #bannerstringcontainer h2 {
   text-align: right;
+}
+
+#waitBanner #bannerstringcontainer #processingAnimation {
+  width: 0%;
 }
 
 body {

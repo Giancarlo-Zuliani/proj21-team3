@@ -74,7 +74,7 @@
      {{-- MENU ITEMS --}}
       <div id="checkoutcart" class=" col-lg-5 text-center">
         <div class= "stick">
-          <div class="card">
+          <div class="card shadow">
             <h1>Il tuo ordine</h1>
             <img class="center" src="{{asset('storage/assets/delivery.svg')}}" alt="">
             <h5>{{$deliveryPrice / 100}}€</h5>
@@ -98,7 +98,7 @@
   <img src="{{asset('storage/assets/pac-man.svg')}}" alt="">
   <div id= "bannerstringcontainer">
     <h2 >stiamo processando il suo ordine </h2>
-    <span id = "processingAnimation"></span>
+    <div id = "processingAnimation"></div>
   </div>
 </div>
 @endsection

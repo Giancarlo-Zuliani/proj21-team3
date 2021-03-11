@@ -24,11 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     form.submit();
                 });
             });
-            const TXT = document.getElementById('processingAnimation');
         });
-
-
-
 });
 
 function processingAnimation() {
