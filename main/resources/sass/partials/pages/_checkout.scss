@@ -1,0 +1,85 @@
+#payment-form {
+    width: 70%;
+    margin: 0;
+    position: relative;
+    padding-bottom: 15%;
+    button {
+        background-color: $pink;
+        color: #fff;
+        width: 80%;
+        margin: 15px auto;
+        padding: 10px 10px;
+        border-radius: 15px;
+        font-size: 1.2rem;
+        &:hover {
+            background-color: $yellow;
+            cursor: pointer;
+        }
+    }
+}
+
+#checkoutcart {}
+
+.stick {
+    padding: 25px;
+    position: sticky;
+    top: 0;
+    right: 0;
+    img {
+        max-width: 2rem;
+        margin: 5px auto;
+    }
+    .card {
+        padding: 25px;
+        border-color: $yellow;
+        .card-body {
+            padding: 3px;
+            margin-top: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: solid $yellow 1px;
+        }
+        #carttotal {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+    }
+}
+
+#waitBanner {
+    position: fixed;
+    width: 100%;
+    display: none;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 999;
+    translate: opacity ease .3;
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 40%;
+    }
+    #bannerstringcontainer {
+        position: absolute;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        bottom: 2%;
+        color: #e15b64;
+        font-size: 2.5rem;
+        text-align: center;
+        width: 100%;
+        h2 {
+            text-align: right;
+        }
+        #processingAnimation {
+            width: 0%;
+        }
+    }
+}

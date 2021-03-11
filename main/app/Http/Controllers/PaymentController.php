@@ -28,7 +28,7 @@ class PaymentController extends Controller
     $fixedPrice = $this -> getFinalPrice($dishes , $quantities,$deliveryPrice);
     $gateway = new Braintree\Gateway(config('braintree'));
       $token = $gateway -> clientToken() -> generate();
-      return view('pages.checkout' , compact('token','fixedPrice', 'dishes','quantities','orderedItems'));
+      return view('pages.checkout' , compact('token','fixedPrice', 'dishes','quantities','orderedItems' ,'deliveryPrice'));
   }
 
   public function checkout(Request $request){

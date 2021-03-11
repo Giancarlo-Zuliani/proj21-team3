@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var form = document.querySelector('#payment-form');
     var client_token = document.querySelector('#client_token').value;
-    var inputs = document.querySelectorAll('input');
+
 
     braintree.dropin.create({
             authorization: client_token,
@@ -19,9 +19,27 @@ document.addEventListener("DOMContentLoaded", function() {
                         console.log('Request Payment Method Error', err);
                         return;
                     }
+                    wait();
                     document.querySelector('#nonce').value = payload.nonce;
                     form.submit();
                 });
             });
         });
 });
+
+function processingAnimation() {
+    let i = 0;
+    let processingString = document.getElementById('processingAnimation');
+    processingString.textContent.length === 5 ?
+        processingString.innerHTML = "." :
+        processingString.innerHTML += '.';
+};
+
+function wait() {
+    let banner = document.getElementById('waitBanner');
+    banner.style.display = "block";
+    banner.style.opacity = "1";
+    setInterval(() => {
+        processingAnimation()
+    }, 300);
+}
