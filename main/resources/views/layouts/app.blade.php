@@ -40,10 +40,11 @@
         <main class="py-4">
             @yield('content')
         </main>
-        @include('components.footer')
     </div>
-
-     {{-- Toggle delete banner script --}}
-     <script src="{{ asset('js/dashboard.js') }}"></script>
+    
+    <section>
+        @yield('charts')
+    </section>
+    @include('components.footer')
 </body>
 </html>

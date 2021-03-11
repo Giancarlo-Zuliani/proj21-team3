@@ -123,6 +123,7 @@
      $user = Auth::user() -> id;
     @endphp
     <input id="vendorId" type="text" name="" value="{{$user}}" hidden>
+<<<<<<< HEAD
 
     {{-- CHART.JS --}}
     <div id="angelo">
@@ -156,3 +157,42 @@
          </div>
     </div>
 @endsection
+=======
+    
+    @endsection
+    @section('charts')
+        
+    {{-- CHART.JS --}}
+    <div id="angelo">
+      <div class="row justify-content-center">
+        <div class="card-box col-xs-12 col-md-6 col-lg-4">
+          <div class="card-header">
+            <h4>Chart</h4>
+            <select name="" id="yearSelector" @change="getStatistics()">
+              <option value="2021-">
+                2021
+              </option>
+              <option value="2020-">
+                2020
+              </option>
+            </select>
+          </div>
+          <div class="card-body">
+            <canvas id="myChart"  width="200" height="200"></canvas>
+            {{-- <h5 class="text-center">Totale incasso ordini : @{{totalSales}} €</h5> --}}
+          </div>
+        </div>
+        <div class="card-box col-xs-12 col-md-6 col-lg-4">
+          <div class="card-body">
+            {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
+            <h5 class="text-center">
+              Totale incasso ordini : @{{totalSales}} €
+            </h5>
+            <canvas id="myPie" width="200" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    @endsection
+    
+>>>>>>> parent of 912bb9d... back
