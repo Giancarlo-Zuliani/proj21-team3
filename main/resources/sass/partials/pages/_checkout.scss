@@ -23,6 +23,7 @@
     position: sticky;
     top: 0;
     right: 0;
+    padding-top: 70px;
     img {
         max-width: 2rem;
         margin: 5px auto;
@@ -37,7 +38,6 @@
             flex-direction: row;
             justify-content: space-between;
             border-bottom: solid $yellow 1px;
-            padding-top: 80px;
         }
         #carttotal {
             display: flex;
