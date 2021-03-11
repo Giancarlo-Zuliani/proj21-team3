@@ -30,7 +30,6 @@ const app = new Vue({
     mounted: function() {
         axios.get('http://127.0.0.1:8000/gettypo')
             .then(response => {
-                console.log(response.data);
                 this.typologyArray = response.data;
             });
     },
@@ -120,5 +119,3 @@ const app = new Vue({
     }
 
 });
-
-

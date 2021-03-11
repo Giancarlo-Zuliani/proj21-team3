@@ -11004,6 +11004,17 @@ header .curva {
   color: #E7257D !important;
 }
 
+footer {
+  background-image: url("");
+}
+
+footer img {
+  max-width: 100vw;
+  min-height: 25vh;
+  position: absolute;
+  bottom: 0;
+}
+
 body .typologybox {
   background-color: white;
   text-align: center;

@@ -49646,7 +49646,6 @@ var app = new Vue({
     var _this = this;
 
     axios.get('http://127.0.0.1:8000/gettypo').then(function (response) {
-      console.log(response.data);
       _this.typologyArray = response.data;
     });
   },
