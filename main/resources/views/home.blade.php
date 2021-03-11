@@ -45,7 +45,7 @@
          @foreach ($items as $item)
             {{-- @if ($item -> available === 1) --}}
              @if ($item -> deleted === 0)
-             <div class="card col-xs-12 col-lg-3 ">
+             <div class="card-box col-xs-12 col-lg-3 " >
                <h3 class="title-card text-center text-capitalize">
                  {{$item -> name}}
                </h3>
@@ -127,7 +127,7 @@
     {{-- CHART.JS --}}
     <div id="angelo">
         <div class="row justify-content-center">
-            <div class="card col-xs-12 col-md-6 col-lg-4">
+            <div class="card-box col-xs-12 col-md-6 col-lg-4">
                 <div class="card-header">
                   <h4>Chart</h4>
                     <select name="" id="yearSelector" @change="getStatistics()">
@@ -144,7 +144,7 @@
                     {{-- <h5 class="text-center">Totale incasso ordini : @{{totalSales}} €</h5> --}}
                 </div>
               </div>
-              <div class="card col-xs-12 col-md-6 col-lg-4">
+              <div class="card-box col-xs-12 col-md-6 col-lg-4">
                   <div class="card-body">
                       {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
                       <h5 class="text-center">
