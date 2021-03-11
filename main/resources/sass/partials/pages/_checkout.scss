@@ -18,8 +18,6 @@
     }
 }
 
-#checkoutcart {}
-
 .stick {
     padding: 25px;
     position: sticky;
@@ -39,6 +37,7 @@
             flex-direction: row;
             justify-content: space-between;
             border-bottom: solid $yellow 1px;
+            padding-top: 80px;
         }
         #carttotal {
             display: flex;
