@@ -11183,33 +11183,43 @@ p {
 }
 
 h4 {
-  color: #2F294D;
+  color: #E7257D;
 }
 
 #angelo {
-  margin-top: -35px;
+  margin-top: -30px;
 }
 
 .card-graphic {
-  margin: 0px 15px;
+  margin: 30px 15px;
 }
 
-.button-up i {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 55px;
-  height: 55px;
+.button-up {
+  width: 150px;
+  height: 50px;
   background-color: #FCC15D;
-  border-radius: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  font-size: 22px;
+  transition: all 0.65s cubic-bezier(0.51, 0.04, 0.63, 1.4);
 }
 
 .button-up:hover {
   cursor: pointer;
+  background-color: #2F294D;
+  transition-duration: 0.4s;
+  border-radius: 100%;
+  box-shadow: 0 0 15px 0px #2F294D;
+}
+
+.add:hover {
+  color: #E7257D;
+}
+
+.text-button {
+  margin-left: 6px;
+  font-size: 26px;
 }
 
 body {

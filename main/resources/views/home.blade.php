@@ -17,22 +17,22 @@
      </div>
   </div>
  </div>
-
- {{-- <div class="container">
+{{-- BUTTON ADD ITEM --}}
+ <div class="container">
    <div class="row justify-content-center">
-     <div class="col-xs-12 col-md-6 col-lg-4 text-center">
-       <a href="{{route('item-create')}}">
-         <button type="button" class="btn btn-outline-warning">
-           <h4>
-              <i class='add fas fa-plus'>
-                Aggiungi Piatto
-              </i>
-           </h4>
-         </button>
-       </a>
+     <div class="col-xs-12 col-md-3 col-lg-2 text-center">
+       <div class="button-up">
+         <a href="{{route('item-create')}}">
+           <i class='add fas fa-plus'>
+              <span class="text-button">
+                  Piatto
+              </span>
+           </i>
+         </a>
+       </div>
      </div>
    </div>
- </div> --}}
+ </div>
 
  {{-- CARD ITEM --}}
  <div class="container">
@@ -114,17 +114,8 @@
      </div>
     </div>
 
-    {{-- BUTTON --}}
-    <div class="button-up">
-      <a href="{{route('item-create')}}">
-          <h4>
-             <i class='add fas fa-plus'>
-             </i>
-          </h4>
-      </a>
-    </div>
 
-    {{-- GRAFICI --}}
+    {{-- GRAPHIC --}}
     @php
      $user = Auth::user() -> id;
     @endphp
@@ -157,7 +148,7 @@
           <div class="card-body ">
             {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
             <h5 class="text-center">
-              Totale incasso ordini : @{{totalSales}} €
+              Totale Incasso Ordini: @{{totalSales}} €
             </h5>
             <canvas id="myPie" width="200" height="200"></canvas>
           </div>
