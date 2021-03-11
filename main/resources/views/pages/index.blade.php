@@ -19,20 +19,20 @@
 
         {{-- SEARCH COUNT CONTAINER --}}
         <div   
-            class="ricerca text-center" 
+            class="text-center" 
             :class="searchResultNum != undefined ? 'show' : 'hide'"
             {{-- v-if="searchResultNum != undefined" --}}
             >
 
             <h4 
-                {{-- v-if="searchResultNum > 1" --}}
-                :class="searchResultNum > 1 && searchResultNum != 1 ? 'show' : 'hide'"
+                {{-- v-if="searchResultNum > 2" --}}
+                :class="searchResultNum > 2 && searchResultNum != 1 ? 'show' : 'hide'"
                 >
                 La tua ricerca ha prodotto @{{searchResultNum}} risultati.
             </h4>
             <h4 
-                {{-- v-if="searchResultNum === 1" --}}
-                :class="searchResultNum === 1 ? 'show' : 'hide'"
+                v-if="searchResultNum === 1"
+                {{-- :class="searchResultNum == 1 ? 'show' : 'hide'" --}}
                 >
                 La tua ricerca ha prodotto 1 risultato.
             </h4>
