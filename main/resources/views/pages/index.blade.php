@@ -67,7 +67,9 @@
                 v-for="rest in restaurantArray"
             >       
                 {{-- AGGIUNGERE IMMAGINI RISTORANTI --}}
-                {{-- <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`> --}}
+                <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/users/', '')}}/${rest.img}.webp`>
+                {{-- <img class="card-img-top" style="height:180px; width:286px;" src="{{asset('storage/assets/users/' . Auth::user() -> img . '.webp')}}"> --}}
+
                 <div class="card-body">
                     <a :href=`{{route('show-menu','')}}/${rest.id}`>
                         <h6 class="card-title text-center font-weight-bold">@{{rest.name}}</h6>                            
