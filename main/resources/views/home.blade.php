@@ -12,13 +12,13 @@
   <div class="row justify-content-center">
     <div class="col-xs-12 col-md-6 col-lg-4 text-center">
         <div class="background-title">
-          <h1 class="title">Il tuo menù</h1>
+          <h1 class="title">Il Tuo Menù</h1>
         </div>
      </div>
   </div>
  </div>
 
- <div class="container">
+ {{-- <div class="container">
    <div class="row justify-content-center">
      <div class="col-xs-12 col-md-6 col-lg-4 text-center">
        <a href="{{route('item-create')}}">
@@ -32,7 +32,7 @@
        </a>
      </div>
    </div>
- </div>
+ </div> --}}
 
  {{-- CARD ITEM --}}
  <div class="container">
@@ -113,9 +113,15 @@
         </div>
      </div>
     </div>
+
     {{-- BUTTON --}}
     <div class="button-up">
-        <a href="#"><i class="fas fa-arrow-up"></i></a>
+      <a href="{{route('item-create')}}">
+          <h4>
+             <i class='add fas fa-plus'>
+             </i>
+          </h4>
+      </a>
     </div>
 
     {{-- GRAFICI --}}
@@ -130,7 +136,7 @@
     {{-- CHART.JS --}}
     <div id="angelo" class="container">
       <div class="row justify-content-center">
-        <div class="card-box col-xs-12 col-md-6 col-lg-5">
+        <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
           <div class="card-header">
             <h4>Chart</h4>
             <select name="" id="yearSelector" @change="getStatistics()">
@@ -147,7 +153,7 @@
             {{-- <h5 class="text-center">Totale incasso ordini : @{{totalSales}} €</h5> --}}
           </div>
         </div>
-        <div class="card-box col-xs-12 col-md-6 col-lg-5">
+        <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
           <div class="card-body ">
             {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
             <h5 class="text-center">

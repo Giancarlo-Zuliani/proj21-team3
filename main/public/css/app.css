@@ -11172,7 +11172,6 @@ body .search-count h4 {
   margin: 30px 15px;
   padding: 7px 14px;
   border-radius: 20px;
-  box-shadow: 10px 10px 5px #f5f5f0, -10px -10px 5px #f5f5f0, 10px -10px 5px #f5f5f0, -10px 10px 5px #f5f5f0;
 }
 
 .title-card {
@@ -11180,21 +11179,29 @@ body .search-count h4 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h4 {
   color: #2F294D;
 }
 
+#angelo {
+  margin-top: -35px;
+}
+
+.card-graphic {
+  margin: 0px 15px;
+}
+
 .button-up i {
   position: fixed;
-  bottom: 10px;
-  right: 18px;
-  width: 40px;
-  height: 40px;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
   background-color: #FCC15D;
-  border-radius: 100%;
+  border-radius: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
