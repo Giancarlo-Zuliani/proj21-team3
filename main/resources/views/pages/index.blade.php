@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        {{-- TYPOLOGIES MAIN TEXT  --}}
+        {{-- TYPOLOGIES MAIN TEXT --}}
         <div class="row">
             <div class="col-md-12">
                 <div v-if="!showRestaurant">
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        {{-- SEARCH COUNT CONTAINER --}}
+        {{-- FILTER RESULT TOTAL --}}
         <div class="row">
             <div   
                 class="text-center search-count col-md-12" 
@@ -63,7 +63,7 @@
             </div>
         </div>
         
-        {{-- RETURN TO HOME --}}
+        {{-- RETURN HOME BUTTON --}}
         <div class="row">
             <div
                 class="col-md-12 search text-center"
@@ -85,13 +85,13 @@
                 class="col-md-6 col-lg-4" 
                 >
                 <div
-                    class="card mx-auto" style="width: 18rem; margin: 20px;"
+                    class="card mx-auto shadow " style="width: 18rem; margin: 20px;"
                     :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"                                                
                     @click="typologySelection( type.id )"
                 >
                     <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
                     <div class="card-body">
-                        <h6 class="card-title text-center font-weight-bold">@{{type.typology}}</h6>
+                        <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{type.typology}}</h6>
                     </div>
                 </div>
             </div>
@@ -104,11 +104,11 @@
                 v-for="rest in restaurantArray"
                 class="col-md-6 col-lg-4"
                 >                
-                <div class="card mx-auto" style="width: 18rem; margin: 20px;">       
+                <div class="card shadow mx-auto" style="width: 18rem; margin: 20px;">       
                     <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/users/', '')}}/${rest.img}.webp`>
                     <div class="card-body">
                         <a :href=`{{route('show-menu','')}}/${rest.id}`>
-                            <h6 class="card-title text-center font-weight-bold">@{{rest.name}}</h6>                            
+                            <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{rest.name}}</h6>                            
                         </a>
                     </div>
                 </div>

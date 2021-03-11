@@ -16,18 +16,11 @@
 @import 'partials/pages/app-layout.scss';
 @import 'partials/pages/_checkout.scss';
 @import 'partials/pages/dashboard.scss';
+
 body {
-    background-color: white;
+    background-color: rgb(255, 254, 250);
 }
 
-// CARD HEADER
-.card-header {
-    background-color: $yellow;
-    color: $pink;
-}
-
-// CARD BODY
-// these selectors will be moved to a proper place
 .delete-banner {
     background-color: red;
     height: 10px;
@@ -38,38 +31,8 @@ body {
     display: inline-block;
 }
 
-.selected {
-    filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
-    transform: scale(1.1);
-}
-
-.restaurant-name {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    text-transform: capitalize;
-}
-
-.rest-name {
-    text-transform: capitalize;
-    color: $pink;
-}
-
 ul li {
     list-style: none;
-}
-
-.typolo-name {
-    text-transform: capitalize;
-    color: $pink;
-    font-weight: bolder;
-}
-
-.test {
-    display: block;
-    width: 100%;
-    text-align: center;
-    color: $yellow;
-    font-weight: bolder;
 }
 
 input[type="text"]:focus,
