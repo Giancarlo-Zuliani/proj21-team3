@@ -68,9 +68,9 @@
         <div class="row" v-if="!showRestaurant">                
             <h1 class="test">Scegli una o più tipologie</h1>
 
-            <div                 
+            <div             
                 v-for="type in typologyArray"
-                class="col-md-6 col-lg-4" 
+                class="typobox col-md-6 col-lg-4" 
                 >
                 <div
                     class="card mx-auto" style="width: 18rem; margin: 20px;"
