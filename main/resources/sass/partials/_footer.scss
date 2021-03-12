@@ -8,9 +8,8 @@ footer {
 
 .flip-card {
     background-color: transparent;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
     perspective: 1000px;
 }
 
@@ -34,21 +33,47 @@ footer {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 50%;
     img {
         width: 80%;
         height: 80%;
     }
+    border-radius: 5px;
 }
 
 .flip-card-front {
-    background-color: lightblue;
-    border-radius: 50%;
+    background-color: #65c9ff;
     color: black;
 }
 
 .flip-card-back {
-    background-color: #2980b9;
-    color: white;
+    background-color: $pink;
+    color: $yellow;
+    padding: 15px;
     transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* @media screen and(max-width:1270px) {
+    .flip-card {
+        width: 180px;
+        height: 180px;
+    }
+}
+ */
+
+
+/* 
+@media screen and(max-width:1200px) {
+    .flip-card {
+        width: 160px;
+        height: 160px;
+    }
+} */
+
+.footer_avatar {
+    margin: 15px;
 }
