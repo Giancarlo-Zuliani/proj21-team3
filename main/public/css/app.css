@@ -11228,7 +11228,7 @@ body .tilt.card {
   text-transform: capitalize;
 }
 
-.card {
+.cardRadius {
   border-radius: 1.5rem;
 }
 
