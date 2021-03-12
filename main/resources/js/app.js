@@ -31,8 +31,6 @@ const app = new Vue({
         typologyBox: null,
         // MAX 3 TYPOLOGY BANNER
         bannerMax: '',
-        // USER TYPOLOGIES PRINT FE
-        usersTypologies: []
     },
     // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
     mounted: function() {
@@ -63,18 +61,11 @@ const app = new Vue({
 
             axios.get(url)
                 .then(response => {
-                    this.restaurantArray = response.data;
-                    this.backTypology();
-                    this.getTypology();
+                    this.restaurantArray = response.data;                  
+                    this.backTypology();                
                 });
 
 
-        },
-        // GET RESTAURANTS TYPOLOGIES
-        getTypology() {
-            
-            console.log(this.restaurantArray);
-                
         },
         // SCRIPT TO SELECT TYPOLOGY CARD
         typologySelection(id) {

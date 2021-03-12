@@ -104,7 +104,7 @@
         <div class="row my-4" v-if="showRestaurant">                
             <h1 class="test">Scegli il tuo ristorante</h1>
             <div                 
-                v-for="rest in restaurantArray"
+                v-for="(rest, index) in restaurantArray"
                 class="col-md-6 col-lg-4"
                 >          
                 <a :href=`{{route('show-menu','')}}/${rest.id}`>      
@@ -116,11 +116,11 @@
                         <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{rest.name}}</h6>                            
                     </div>
                 
-                {{-- TYPOLOGIES CENTER --}}
-                <span>                                            
-                    @{{rest.typologies[0].typology}}   
-                </span>
-
+                {{-- // GET RESTAURANTS TYPOLOGIES  --}}
+                <span v-for="typology in restaurantArray[index].typologies">
+                    @{{typology.typology}}   
+                </span>                               
+                
                 </div>
             </a>
             </div>                        
