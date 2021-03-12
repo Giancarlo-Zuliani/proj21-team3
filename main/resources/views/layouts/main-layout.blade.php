@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   {{-- FAVICON --}}
   <link rel="icon" type="image/png" href="/images/favicon.png"/>
-  
+
   @stack('scriptPayment')
   @stack('scriptStatistics')
   </head>
@@ -24,7 +24,7 @@
             @else
 
               @include('components.header')
-                                                
+
             @endauth
 
     @endif
@@ -36,7 +36,11 @@
     <main id="app">
       @yield('content')
 
+
+
     </main>
+
+    
 
     {{-- <div id="prova">
       @yield('content')

@@ -10988,9 +10988,13 @@ section .typologybox {
 }
 
 header .curva {
+<<<<<<< HEAD
   background-image: url(/images/header.svg?bb6d97eba38495d35c47d827f59fc06e);
   background-repeat: no-repeat;
   height: 33vh;
+=======
+  height: 13vh;
+>>>>>>> main
 }
 
 .btn-header {
@@ -11046,6 +11050,32 @@ body .hide {
 
 body .search-count h4 {
   padding: 0;
+}
+
+body .btn-results {
+  background-color: #2F294D;
+}
+
+body #card-text {
+  font-size: 1.2rem;
+  color: #2F294D;
+}
+
+body .test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
+}
+
+body .selected {
+  filter: grayscale(90%);
+  transform: scale(1.1);
+}
+
+.tilt:hover {
+  cursor: pointer;
 }
 
 .checkbox-typology {
@@ -11219,7 +11249,6 @@ body .search-count h4 {
   margin: 30px 15px;
   padding: 7px 14px;
   border-radius: 20px;
-  box-shadow: 10px 10px 5px #f5f5f0, -10px -10px 5px #f5f5f0, 10px -10px 5px #f5f5f0, -10px 10px 5px #f5f5f0;
 }
 
 .title-card {
@@ -11227,38 +11256,106 @@ body .search-count h4 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h4 {
-  color: #2F294D;
+  color: #E7257D;
 }
 
-.button-up i {
-  position: fixed;
-  bottom: 10px;
-  right: 18px;
-  width: 40px;
-  height: 40px;
+#angelo {
+  margin-top: -30px;
+}
+
+.card-graphic {
+  margin: 30px 15px;
+}
+
+.mod-a {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0px 40px;
+}
+
+.mod-a:hover {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+#nav #ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav #ul .li {
+  color: #FCC15D;
+  font-size: 16px;
+  border: 0.3em solid #FCC15D;
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+
+#ul .li .onda {
+  position: absolute;
+  width: 25%;
+  height: 100%;
   background-color: #FCC15D;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
 }
 
-.button-up:hover {
-  cursor: pointer;
+#nav #ul .li:hover {
+  color: #E7257D;
+}
+
+#nav #ul .li:hover .onda {
+  transform: translateY(0) scale(2);
+}
+
+#nav #ul .li .onda:nth-child(1) {
+  --n: 1;
+}
+
+#nav #ul .li .onda:nth-child(2) {
+  --n: 2;
+}
+
+#nav #ul .li .onda:nth-child(3) {
+  --n: 3;
+}
+
+#nav #ul .li .onda:nth-child(4) {
+  --n: 4;
+}
+
+.add:hover {
+  color: #E7257D;
+}
+
+.text-button {
+  margin-left: 6px;
+  font-size: 26px;
 }
 
 body {
-  background-color: white;
-}
-
-.card-header {
-  background-color: #FCC15D;
-  color: #E7257D;
+  background-color: #fffefa;
 }
 
 .delete-banner {
@@ -11271,38 +11368,8 @@ body {
   display: inline-block;
 }
 
-.selected {
-  filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
-  transform: scale(1.1);
-}
-
-.restaurant-name {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  text-transform: capitalize;
-}
-
-.rest-name {
-  text-transform: capitalize;
-  color: #E7257D;
-}
-
 ul li {
   list-style: none;
-}
-
-.typolo-name {
-  text-transform: capitalize;
-  color: #E7257D;
-  font-weight: bolder;
-}
-
-.test {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #FCC15D;
-  font-weight: bolder;
 }
 
 input[type=text]:focus,

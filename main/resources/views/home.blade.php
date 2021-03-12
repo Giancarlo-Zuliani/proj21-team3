@@ -7,30 +7,32 @@
 
 @section('content')
     {{-- DASHBOARD USER--}}
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-md-6 col-lg-4 text-center">
         <div class="background-title">
-          <h1 class="title">Il tuo menù</h1>
+          <h1 class="title">
+            Il Tuo Menù
+          </h1>
         </div>
      </div>
   </div>
  </div>
-
+{{-- BUTTON ADD ITEM --}}
  <div class="container">
    <div class="row justify-content-center">
-     <div class="col-xs-12 col-md-6 col-lg-4 text-center">
-       <a href="{{route('item-create')}}">
-         <button type="button" class="btn btn-outline-warning">
-           <h4>
-              <i class='add fas fa-plus'>
-                Aggiungi Piatto
-              </i>
-           </h4>
-         </button>
-       </a>
-     </div>
+     {{-- <div class=" col-sm-4 col-md-3 col-lg-3"> --}}
+         <a class="mod-a col-sm-4 col-md-3 col-lg-3 text-center" href="{{route('item-create')}}" >
+           <nav id="nav">
+              <ul id="ul" >
+                <li class="li">
+                  Aggiungi Piatto
+                  <span class="onda"></span><span class="onda"></span><span class="onda"></span><span class="onda"></span>
+                </li>
+              </ul>
+            </nav>
+         </a>
+     {{-- </div> --}}
    </div>
  </div>
 
@@ -43,9 +45,8 @@
              </div>
          @endif
          @foreach ($items as $item)
-            {{-- @if ($item -> available === 1) --}}
              @if ($item -> deleted === 0)
-             <div class="card-box col-xs-12 col-lg-3 " >
+             <div class="card-box shadow col-xs-12 col-lg-3 " >
                <h3 class="title-card text-center text-capitalize">
                  {{$item -> name}}
                </h3>
@@ -70,13 +71,22 @@
                     @endif
 
                   </p>
+                  @if ($item -> available === 0)
+                    <p class="text-danger">
+                      Non Disponibile
+                    </p>
+                  @endif
                <div class="card-icon text-center" style="margin-bottom: 15px;">
                  <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit text-muted">
-                     Modifica
+                     <span>
+                       Modifica
+                     </span>
                  </i>
                  </a>
                  <a href="#" ><i class="far fa-trash-alt text-muted" >
-                   Elimina
+                   <span>
+                     Elimina
+                   </span>
                  </i>
                  </a>
                  {{-- DELETE BANNER--}}
@@ -93,15 +103,12 @@
                   </div>
                </div>
              </div>
-            {{-- @endif --}}
-
             @endif
          @endforeach
        </div>
    </div>
 
-   {{-- STATISTICHE --}}
-
+   {{-- STATISTIC --}}
    <div class="container">
      <div class="row justify-content-center">
        <div class="col-xs-12 col-md-6 col-lg-4 text-center">
@@ -113,46 +120,45 @@
         </div>
      </div>
     </div>
-    {{-- BUTTON --}}
-    <div class="button-up">
-        <a href="#"><i class="fas fa-arrow-up"></i></a>
-    </div>
 
-    {{-- GRAFICI --}}
+
     @php
      $user = Auth::user() -> id;
     @endphp
     <input id="vendorId" type="text" name="" value="{{$user}}" hidden>
 
-    {{-- CHART.JS --}}
-    <div id="angelo">
-        <div class="row justify-content-center">
-            <div class="card-box col-xs-12 col-md-6 col-lg-4">
-                <div class="card-header">
-                  <h4>Chart</h4>
-                    <select name="" id="yearSelector" @change="getStatistics()">
-                        <option value="2021-">
-                          2021
-                        </option>
-                        <option value="2020-">
-                          2020
-                        </option>
-                    </select>
-                </div>
-                <div class="card-body">
-                    <canvas id="myChart"  width="200" height="200"></canvas>
-                    {{-- <h5 class="text-center">Totale incasso ordini : @{{totalSales}} €</h5> --}}
-                </div>
-              </div>
-              <div class="card-box col-xs-12 col-md-6 col-lg-4">
-                  <div class="card-body">
-                      {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
-                      <h5 class="text-center">
-                        Totale incasso ordini : @{{totalSales}} €
-                      </h5>
-                      <canvas id="myPie" width="200" height="200"></canvas>
-                  </div>
-               </div>
-         </div>
+    @endsection
+    @section('charts')
+
+    {{-- GRAPHIC --}}
+    <div id="angelo" class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
+          <div class="card-header">
+            <h4>Chart</h4>
+            <select name="" id="yearSelector" @change="getStatistics()">
+              <option value="2021-">
+                2021
+              </option>
+              <option value="2020-">
+                2020
+              </option>
+            </select>
+          </div>
+          <div class="card-body">
+            <canvas id="myChart"  width="200" height="200"></canvas>
+            {{-- <h5 class="text-center">Totale incasso ordini : @{{totalSales}} €</h5> --}}
+          </div>
+        </div>
+        <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
+          <div class="card-body ">
+            {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
+            <h5 class="text-center">
+              Totale Incasso Ordini: @{{totalSales}} €
+            </h5>
+            <canvas id="myPie" width="200" height="200"></canvas>
+          </div>
+        </div>
+      </div>
     </div>
-@endsection
+    @endsection
