@@ -1,15 +1,16 @@
 footer {
-    img {}
+    min-height: 250px;
 }
 
 #footersvg {
-    width: 100%;
+    max-width: 100%;
 }
 
 .flip-card {
     background-color: transparent;
-    width: 100%;
-    max-height: 100px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     perspective: 1000px;
 }
 
@@ -20,7 +21,6 @@ footer {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .flip-card:hover .flip-card-inner {
@@ -34,10 +34,16 @@ footer {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: 50%;
+    img {
+        width: 80%;
+        height: 80%;
+    }
 }
 
 .flip-card-front {
-    background-color: #bbb;
+    background-color: lightblue;
+    border-radius: 50%;
     color: black;
 }
 
