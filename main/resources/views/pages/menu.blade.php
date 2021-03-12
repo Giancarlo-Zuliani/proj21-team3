@@ -13,7 +13,7 @@
   <h1 class="darkBlue" > <strong>Menu</strong> </h1>
   <div id="carTxs" class="row">
     <div class="col-12 my-2" v-if="cartArray.length !== 0">
-      <div class="card shadow">
+      <div class="card shadow cardRadius">
         <div class="card-body">
           <div class="itemFlex cartAlign">
             <h5 class="darkBlue"><strong>Il tuo carrello</strong></h5>
@@ -77,7 +77,7 @@
       <div class="row">
         @foreach ($rest -> items as $item)
             <div v-if="{{$item -> deleted}} === 0" class="col-xs-12 col-lg-6 my-2">
-              <div class="card shadow itemHover">
+              <div class="card shadow itemHover cardRadius">
                 <div class="card-body">
                   <h5 class="card-title itemName"><strong>{{$item -> name}}</strong></h5>
                   <p class="card-text itemDescription darkBlue" style="height: 30px; margin-bottom: 30px;">{{$item -> description}}</p>
@@ -106,7 +106,7 @@
       <div class="row justify-content-center">
         @foreach ($rest -> items as $item)
             <div v-if="{{$item -> deleted}} === 0" class="col-xs-12 col-md-6 col-lg-4 my-2">
-              <div class="card shadow itemHover">
+              <div class="card shadow itemHover cardRadius">
                 <div class="card-body">
                   <h5 class="card-title itemName"><strong>{{$item -> name}}</strong></h5>
                   <p class="card-text itemDescription darkBlue" style="height: 30px; margin-bottom: 30px;">{{$item -> description}}</p>
@@ -136,7 +136,7 @@
 
 
     <div id="cartLat" class="col-xs-12 col-md-6 col-lg-4 my-2" v-if="cartArray.length !== 0">
-      <div class="card shadow">
+      <div class="card shadow cardRadius">
         <div class="card-body">
           <div class="itemFlex cartAlign">
             <h5 class="darkBlue"><strong>Il tuo carrello</strong></h5>
