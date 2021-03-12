@@ -106,12 +106,14 @@ const app = new Vue({
             }
         },
         removeFromCart(index) {
-            console.log(index);
             if (this.cartArray[index].quantity === 1) {
                 this.cartArray.splice(index, 1);
             } else {
                 this.cartArray[index].quantity--;
             }
+        },
+        addItemCart(index) {
+                this.cartArray[index].quantity++;
         },
         showPayment() {
             this.pay = true;
@@ -120,5 +122,3 @@ const app = new Vue({
     }
 
 });
-
-
