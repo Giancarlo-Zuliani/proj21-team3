@@ -9,7 +9,7 @@
     {{-- DASHBOARD USER--}}
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-xs-12 col-md-6 col-lg-4 text-center">
+    <div class="col-xs-12  col-lg-3 text-center">
         <div class="background-title">
           <h1 class="title">
             Il Tuo Menù
@@ -21,8 +21,8 @@
 {{-- BUTTON ADD ITEM --}}
  <div class="container">
    <div class="row justify-content-center">
-     {{-- <div class=" col-sm-4 col-md-3 col-lg-3"> --}}
-         <a class="mod-a col-sm-4 col-md-3 col-lg-3 text-center" href="{{route('item-create')}}" >
+     <div class="container-mod col-sm-12 col-md-5 col-lg-3 text-center">
+         <a class="mod-a" href="{{route('item-create')}}" >
            <nav id="nav">
               <ul id="ul" >
                 <li class="li">
@@ -32,12 +32,12 @@
               </ul>
             </nav>
          </a>
-     {{-- </div> --}}
+     </div>
    </div>
  </div>
 
  {{-- CARD ITEM --}}
- <div class="container">
+ <div class="container-fluid">
    <div class="row justify-content-center">
          @if (session('status'))
              <div class="alert alert-success" role="alert" >
@@ -57,15 +57,15 @@
                    {{$item -> ingredients}}
                  </p>
                   <p class="font-weight-bold">
-                    <i class="fa">&#xf153;</i>
+                    <i class="fa"> &#xf153;</i>
                     {{$item -> price  }}
 
-                    Lattosio
+                      Lattosio
                     @if ($item -> lactose === 1 )
                           SI
                     @endif
 
-                    Glutine
+                     Glutine
                     @if ($item -> gluten === 1)
                       SI
                     @endif
@@ -78,16 +78,18 @@
                   @endif
                <div class="card-icon text-center" style="margin-bottom: 15px;">
                  <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit text-muted">
-                     <span>
-                       Modifica
-                     </span>
+                   <span class="text-modifica-elimina">
+                     Modifica
+                   </span>
                  </i>
+
                  </a>
                  <a href="#" ><i class="far fa-trash-alt text-muted" >
-                   <span>
+                   <span class="text-modifica-elimina">
                      Elimina
                    </span>
                  </i>
+
                  </a>
                  {{-- DELETE BANNER--}}
                  <div class="delete-banner" >
@@ -111,7 +113,7 @@
    {{-- STATISTIC --}}
    <div class="container">
      <div class="row justify-content-center">
-       <div class="col-xs-12 col-md-6 col-lg-4 text-center">
+       <div class="col-xs-12 col-lg-3 text-center">
            <div class="background-title">
              <h1 class="title">
                Statistiche
@@ -133,9 +135,9 @@
     {{-- GRAPHIC --}}
     <div id="angelo" class="container-fluid">
       <div class="row justify-content-center">
-        <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
+        <div class="card-graphic  shadow col-xs-12 col-md-6 col-lg-5">
           <div class="card-header">
-            <h4>Chart</h4>
+            <h4 class="title-graphic">Grafico Ordini</h4>
             <select name="" id="yearSelector" @change="getStatistics()">
               <option value="2021-">
                 2021
@@ -153,7 +155,7 @@
         <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
           <div class="card-body ">
             {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
-            <h5 class="text-center">
+            <h5 class=" title-incassi text-center">
               Totale Incasso Ordini: @{{totalSales}} €
             </h5>
             <canvas id="myPie" width="200" height="200"></canvas>

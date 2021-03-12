@@ -11079,6 +11079,14 @@ body .typologybox .img-container .typology-img {
   height: 100%;
 }
 
+body * {
+  text-decoration: none;
+}
+
+body * :hover {
+  text-decoration: none;
+}
+
 body .hr-index {
   width: 80%;
   border: solid 1px #2F294D;
@@ -11114,12 +11122,76 @@ body .test {
 }
 
 body .selected {
-  filter: grayscale(90%);
-  transform: scale(1.1);
+  position: relative;
+  border: solid 4px #2db12d;
 }
 
-.tilt:hover {
-  cursor: pointer;
+body .selected ::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 35px;
+  height: 35px;
+  background: url(/images/check.svg?be1813fe101d59c2a573c6179a20e33a) no-repeat bottom;
+}
+
+body .selected img {
+  width: 280px !important;
+}
+
+body h5 {
+  font-size: 1.4rem;
+  color: #2F294D;
+}
+
+body .card-body.card-index {
+  padding: 0.5rem;
+}
+
+body .card-body.card-index h6 {
+  margin: 0;
+}
+
+body .modal .modal-content {
+  background-color: #fff;
+  color: #2F294D;
+  border: 0;
+}
+
+body .modal .modal-content .modal-title {
+  color: #2F294D;
+}
+
+body .modal .modal-content button {
+  color: #E7257D;
+  opacity: 1;
+}
+
+body .modal .modal-content button :hover {
+  opacity: 1;
+}
+
+body .modal .modal-content button .fa-times-circle {
+  font-size: 1.5rem;
+}
+
+body .modal .modal-content .fa-exclamation-triangle {
+  color: #FCC15D;
+  font-size: 3rem;
+  margin: 5px 0;
+}
+
+body .modal .modal-content .modal-header .close {
+  padding: 0.5rem 0.5rem;
+}
+
+body .modal .modal-header {
+  border: 0;
+}
+
+body .tilt.card {
+  position: relative;
 }
 
 .checkbox-typology {
@@ -11303,51 +11375,71 @@ body .selected {
 .background-title {
   background-color: #E7257D;
   color: white;
-  border-radius: 15px;
   padding: 10px 5px;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .title {
   font-weight: 900;
+  padding: 2px 12px;
 }
 
 .card-box {
-  margin: 30px 15px;
+  margin: 30px 23px;
   padding: 7px 14px;
   border-radius: 20px;
+  font-size: 18px;
 }
 
 .title-card {
   color: #E7257D;
 }
 
-p {
+.font-weight-bold {
   font-size: 16px;
 }
 
-h4 {
+.title-graphic {
   color: #E7257D;
+  font-weight: 600;
+}
+
+.title-incassi {
+  font-weight: 600;
+  color: #2F294D;
 }
 
 #angelo {
-  margin-top: -30px;
+  margin-top: -50px;
 }
 
 .card-graphic {
-  margin: 30px 15px;
+  margin: 30px 45px;
+}
+
+.card-header {
+  margin-top: 15px;
+  background-color: #FCC15D;
+}
+
+.container-mod {
+  margin-left: 30px;
 }
 
 .mod-a {
   list-style-type: none;
   text-decoration: none;
-  margin: 0px 40px;
 }
 
 .mod-a:hover {
   list-style-type: none;
   text-decoration: none;
+}
+
+.text-modifica-elimina {
+  color: #6c757d;
 }
 
 #nav #ul {
@@ -11422,11 +11514,54 @@ h4 {
   font-size: 26px;
 }
 
+<<<<<<< HEAD
 #mail_body {
   margin: 25px auto;
   border: solid #FCC15D 2px;
   width: 80%;
   padding: 35px 25px;
+=======
+.btn {
+  background-color: #E7257D;
+}
+
+.btn:hover {
+  background-color: #E7257D;
+}
+
+.btn:focus {
+  background-color: #E7257D;
+  border-color: #E7257D;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #E7257D;
+}
+
+.img-user-show {
+  max-height: 400px;
+}
+
+.text-user-show {
+  font-weight: 600;
+  color: #2F294D;
+}
+
+.title-show {
+  font-weight: 800;
+  color: #E7257D;
+}
+
+.container-btn {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.button-fashion {
+  background-color: #FCC15D;
+  color: #2F294D;
+  border: 3px solid #FCC15D;
+  border-radius: 8px;
+  font-size: 18px;
+>>>>>>> main
 }
 
 body {
@@ -11441,17 +11576,6 @@ body {
 
 .show {
   display: inline-block;
-}
-
-.selected {
-  filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
-  transform: scale(1.1);
-}
-
-.restaurant-name {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  text-transform: capitalize;
 }
 
 .test {

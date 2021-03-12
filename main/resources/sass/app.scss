@@ -18,6 +18,9 @@
 @import 'partials/pages/_checkout.scss';
 @import 'partials/pages/dashboard.scss';
 @import 'partials/pages/_mail.scss';
+@import 'partials/pages/usershow.scss';
+
+
 body {
     background-color: rgb(255, 254, 250);
 }
@@ -30,17 +33,6 @@ body {
 
 .show {
     display: inline-block;
-}
-
-.selected {
-    filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
-    transform: scale(1.1);
-}
-
-.restaurant-name {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    text-transform: capitalize;
 }
 
 .test {

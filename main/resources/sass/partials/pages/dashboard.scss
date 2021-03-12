@@ -1,22 +1,23 @@
 .background-title{
   background-color: $pink;
   color: white;
-  border-radius: 15px;
   padding: 10px 5px;
-  margin-bottom: 40px;
-  margin-top: 40px;
-
+  border-radius: 15px;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .title{
   font-weight: 900;
+  padding: 2px  12px;
 }
 
 // CARD
 .card-box{
-  margin: 30px 15px;
+  margin: 30px 23px;
   padding: 7px 14px;
   border-radius: 20px;
+  font-size: 18px;
 
 }
 
@@ -24,34 +25,58 @@
   color:$pink;
 }
 
-p{
+.font-weight-bold{
   font-size: 16px;
 }
 
-h4{
+.title-graphic {
   color: $pink;
+  font-weight: 600;
+
+}
+
+.title-incassi{
+  font-weight: 600;
+  color: $darkblue;
+
 }
 
 // graphic
 #angelo{
-  margin-top: -30px;
+  margin-top: -50px;
 }
 
 .card-graphic{
-  margin: 30px 15px;
+  margin: 30px 45px;
+
 }
 
-// button
+.card-header{
+  margin-top: 15px;
+  background-color: $yellow;
+}
+
+
+
+// button effetto nuvola
+.container-mod{
+  margin-left: 30px;
+
+}
 .mod-a{
   list-style-type: none;
   text-decoration: none;
-  margin:0px  40px;
-
 }
+
+
 
 .mod-a:hover{
   list-style-type: none;
   text-decoration: none;
+}
+
+.text-modifica-elimina{
+  color: #6c757d;
 }
 
 
@@ -119,7 +144,6 @@ h4{
 #nav #ul .li .onda:nth-child(4) {
     --n: 4;
 }
-
 
 .add:hover{
   color:$pink;
