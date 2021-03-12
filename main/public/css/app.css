@@ -10988,9 +10988,7 @@ section .typologybox {
 }
 
 header .curva {
-  background-image: url(/images/header.svg?bdbb820658e8df5164a9af09b241d307);
-  background-repeat: no-repeat;
-  height: 33vh;
+  height: 13vh;
 }
 
 .btn-header {
