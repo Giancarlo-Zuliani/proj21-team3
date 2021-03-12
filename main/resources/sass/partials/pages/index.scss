@@ -12,6 +12,14 @@ body {
             }
         }            
     }
+
+    * {
+        text-decoration: none;                
+        :hover {
+            text-decoration: none;        
+        }
+    }
+
     .hr-index {
         width: 80%;
         border: solid 1px $darkblue;
@@ -30,9 +38,7 @@ body {
     }
     .btn-results {
         background-color: $darkblue;
-        // :hover {
-        //     // background-color: $black;            
-        // }
+
     }
     #card-text {
         font-size: 1.2rem;
@@ -49,14 +55,73 @@ body {
 
     // SELECTED TYPOLOGY
     .selected {
-        filter: grayscale(90%);
-        transform: scale(1.1);
+        position: relative;
+        border: solid 4px rgb(45, 177, 45);
+        ::after {
+            content: "";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 35px;            
+            height: 35px ;
+            background: url('assets/check.svg') no-repeat bottom;
+          }
+          img {
+              width: 280px !important;
+          }
     }
+
+    h5 {
+        font-size: 1.4rem;
+        color: $darkblue;
+    }
+
+    .card-body.card-index {
+        padding: .5rem;
+        h6 {
+            margin: 0;
+        }
+            
+    }
+    
+    // MAX 3 TYPOLOGIES BANNER
+    .modal {
+        .modal-content {        
+            background-color: $white;
+            color: $darkblue;
+            border: 0;
+            .modal-title {
+                color: $darkblue;
+            }         
+            button {
+                color: $pink;
+                opacity: 1;                
+                :hover {
+                    opacity: 1;
+                }
+                .fa-times-circle {
+                    font-size: 1.5rem;
+                }
+            }   
+            .fa-exclamation-triangle {
+                color: $yellow;
+                font-size: 3rem;
+                margin: 5px 0;
+            }
+            .modal-header .close {
+                padding: 0.5rem 0.5rem;
+            }
+
+        }
+        .modal-header {
+            border: 0;
+        }
+    }
+
+    // RISTORANTI CARD
+    .tilt.card {
+        position: relative;
+    }
+
 }
 
-// 
-//////////// HOVER EFFECT LMM
-// 
-.tilt:hover {
-  cursor: pointer;
-}
