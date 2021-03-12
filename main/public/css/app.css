@@ -11197,22 +11197,23 @@ body .selected {
   margin: 30px 23px;
   padding: 7px 14px;
   border-radius: 20px;
+  font-size: 16px;
 }
 
 .title-card {
   color: #E7257D;
 }
 
-p {
+.font-weight-bold {
   font-size: 16px;
 }
 
-h4 {
+.title-graphic {
   color: #E7257D;
   font-weight: 600;
 }
 
-h5 {
+.title-incassi {
   font-weight: 600;
   color: #2F294D;
 }
@@ -11344,15 +11345,20 @@ h5 {
   color: #2F294D;
 }
 
+.title-show {
+  font-weight: 800;
+  color: #E7257D;
+}
+
 .container-btn {
   margin-top: 25px;
   margin-bottom: 25px;
 }
 
 .button-fashion {
-  background-color: #E7257D;
-  color: #FCC15D;
-  border: 3px solid #E7257D;
+  background-color: #FCC15D;
+  color: #2F294D;
+  border: 3px solid #FCC15D;
   border-radius: 8px;
   font-size: 18px;
 }

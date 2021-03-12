@@ -18,26 +18,26 @@
     <div class="row justify-content-center">
           <div class="card shadow col-md-5">
               <div class="card-header text-capitalize text-center">
-                <h3>
+                <h3 class="title-show">
                   Informazioni personali
                 </h3>
               </div>
               <div class="card-body">
                 <ul class="text-user-show">
-                  <li>
-                    Nome: {{$user->name}}
+                  <li class="text-li-user-show">
+                    &bull; Nome: {{$user->name}}
                   </li>
-                  <li>
-                    Codice fiscale:  {{$user->vat_num}}
+                  <li class="text-li-user-show">
+                    &bull; Codice fiscale:  {{$user->vat_num}}
                   </li>
-                  <li>
-                    Indirizzo:  {{$user->address}}
+                  <li class="text-li-user-show">
+                    &bull; Indirizzo:  {{$user->address}}
                   </li>
-                  <li>
-                    Numero di telefono:  {{$user->phone_num}}
+                  <li class="text-li-user-show">
+                    &bull; Numero di telefono:  {{$user->phone_num}}
                   </li>
-                  <li>
-                    E-mail: {{$user->email}}
+                  <li class="text-li-user-show">
+                    &bull; E-mail: {{$user->email}}
                   </li>
                 </ul>
 
@@ -63,28 +63,28 @@
 
           <div class="card shadow col-md-5">
               <div class="card-header  text-center">
-                <h3>
+                <h3 class="title-show">
                   Informazioni e Orari
                 </h3>
               </div>
               <div class="card-body">
                 <ul class="text-user-show">
                   <li>
-                    Orario di apertura:
+                    &bull; Orario di apertura:
                   </li>
-                  <li>
+                  <li class="text-li-user-show">
                     {{$user->start_delivery}}
                   </li>
-                  <li>
-                    Orario di chiusura:
+                  <li class="text-li-user-show">
+                    &bull; Orario di chiusura:
                   </li>
                   <li>
                     {{$user->end_delivery}}
                   </li>
                   <li>
-                    Prezzo delle consegne:
+                    &bull;  Prezzo delle consegne:
                   </li>
-                  <li>
+                  <li class="text-li-user-show">
                     {{$user->price_delivery / 100}}€
                   </li>
                 </ul>

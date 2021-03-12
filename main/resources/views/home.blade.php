@@ -57,7 +57,7 @@
                    {{$item -> ingredients}}
                  </p>
                   <p class="font-weight-bold">
-                    <i class="fa">&#xf153;</i>
+                    <i class="fa"> &#xf153;</i>
                     {{$item -> price  }}
 
                       Lattosio
@@ -137,7 +137,7 @@
       <div class="row justify-content-center">
         <div class="card-graphic  shadow col-xs-12 col-md-6 col-lg-5">
           <div class="card-header">
-            <h4>Grafico Ordini</h4>
+            <h4 class="title-graphic">Grafico Ordini</h4>
             <select name="" id="yearSelector" @change="getStatistics()">
               <option value="2021-">
                 2021
@@ -155,7 +155,7 @@
         <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
           <div class="card-body ">
             {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
-            <h5 class="text-center">
+            <h5 class=" title-incassi text-center">
               Totale Incasso Ordini: @{{totalSales}} €
             </h5>
             <canvas id="myPie" width="200" height="200"></canvas>
