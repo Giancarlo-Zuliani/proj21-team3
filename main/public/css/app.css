@@ -11182,18 +11182,19 @@ body .selected {
 .background-title {
   background-color: #E7257D;
   color: white;
-  border-radius: 15px;
   padding: 10px 5px;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .title {
   font-weight: 900;
+  padding: 2px 12px;
 }
 
 .card-box {
-  margin: 30px 15px;
+  margin: 30px 23px;
   padding: 7px 14px;
   border-radius: 20px;
 }
@@ -11208,6 +11209,12 @@ p {
 
 h4 {
   color: #E7257D;
+  font-weight: 600;
+}
+
+h5 {
+  font-weight: 600;
+  color: #2F294D;
 }
 
 #angelo {
@@ -11215,13 +11222,17 @@ h4 {
 }
 
 .card-graphic {
-  margin: 30px 15px;
+  margin: 30px 45px;
+}
+
+.card-header {
+  margin-top: 15px;
+  background-color: #FCC15D;
 }
 
 .mod-a {
   list-style-type: none;
   text-decoration: none;
-  margin: 0px 40px;
 }
 
 .mod-a:hover {
