@@ -11194,23 +11194,78 @@ h4 {
   margin: 30px 15px;
 }
 
-.button-up {
-  width: 150px;
-  height: 50px;
-  background-color: #FCC15D;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  transition: all 0.65s cubic-bezier(0.51, 0.04, 0.63, 1.4);
+.mod-a {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0px 40px;
 }
 
-.button-up:hover {
-  cursor: pointer;
-  background-color: #2F294D;
-  transition-duration: 0.4s;
-  border-radius: 100%;
-  box-shadow: 0 0 15px 0px #2F294D;
+.mod-a:hover {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+#nav #ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav #ul .li {
+  color: #FCC15D;
+  font-size: 16px;
+  border: 0.3em solid #FCC15D;
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+
+#ul .li .onda {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #FCC15D;
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+#nav #ul .li:hover {
+  color: #E7257D;
+}
+
+#nav #ul .li:hover .onda {
+  transform: translateY(0) scale(2);
+}
+
+#nav #ul .li .onda:nth-child(1) {
+  --n: 1;
+}
+
+#nav #ul .li .onda:nth-child(2) {
+  --n: 2;
+}
+
+#nav #ul .li .onda:nth-child(3) {
+  --n: 3;
+}
+
+#nav #ul .li .onda:nth-child(4) {
+  --n: 4;
 }
 
 .add:hover {

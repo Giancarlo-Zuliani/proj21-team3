@@ -21,17 +21,18 @@
 {{-- BUTTON ADD ITEM --}}
  <div class="container">
    <div class="row justify-content-center">
-     <div class=" col-sm-4 col-md-3 col-lg-2 text-center">
-       <div class="button-up">
-         <a href="{{route('item-create')}}">
-           <i class='add fas fa-plus'>
-              <span class="text-button">
-                  Piatto
-              </span>
-           </i>
+     {{-- <div class=" col-sm-4 col-md-3 col-lg-3"> --}}
+         <a class="mod-a col-sm-4 col-md-3 col-lg-3 text-center" href="{{route('item-create')}}" >
+           <nav id="nav">
+              <ul id="ul" >
+                <li class="li">
+                  Aggiungi Piatto
+                  <span class="onda"></span><span class="onda"></span><span class="onda"></span><span class="onda"></span>
+                </li>
+              </ul>
+            </nav>
          </a>
-       </div>
-     </div>
+     {{-- </div> --}}
    </div>
  </div>
 
@@ -77,11 +78,15 @@
                   @endif
                <div class="card-icon text-center" style="margin-bottom: 15px;">
                  <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit text-muted">
-                     Modifica
+                     <span>
+                       Modifica
+                     </span>
                  </i>
                  </a>
                  <a href="#" ><i class="far fa-trash-alt text-muted" >
-                   Elimina
+                   <span>
+                     Elimina
+                   </span>
                  </i>
                  </a>
                  {{-- DELETE BANNER--}}
@@ -126,7 +131,7 @@
     @section('charts')
 
     {{-- GRAPHIC --}}
-    <div id="angelo" class="container">
+    <div id="angelo" class="container-fluid">
       <div class="row justify-content-center">
         <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
           <div class="card-header">
