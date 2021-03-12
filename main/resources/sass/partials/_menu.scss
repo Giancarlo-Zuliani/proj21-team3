@@ -1,17 +1,3 @@
-#col-12-menu {
-  background-color: yellow;
-}
-
-#col-8-menu {
-  background-color: yellow;
-}
-
-#col-4-menu {
-  background-color: green;
-}
-
-
-
 #restaurant-name {
   background-color: $yellow;
   text-align: center;
@@ -21,5 +7,93 @@
 #rest-name {
   color: white;
   font-size: 50px;
-  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.card {
+  border-radius: 1.5rem;
+}
+
+.fixHeight {
+  height: 250px;
+}
+
+.roundColor {
+  border: 1px solid $yellow;
+  color: #fffff0;
+  border-radius: 50%;
+  background-color: $yellow;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.itemFlex {
+  display: flex;
+}
+
+.justifySpace {
+  justify-content: space-between;
+}
+
+.itemName {
+  text-align: center;
+  color: $pink;
+}
+
+.cartAlign {
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemName::first-letter, .itemDescription::first-letter{
+  text-transform: uppercase;
+}
+
+.darkBlue {
+  color: $darkblue;
+}
+
+.imgDel {
+  width: 25px;
+}
+
+.imgDel img {
+  width: 100%;
+  height: auto;
+}
+
+.cartDel {
+  font-size: 10px;
+}
+
+p.cartDel {
+  margin-bottom: 0;
+}
+
+#notAvailable {
+  font-size: 11px;
+  color: red;
+}
+
+.itemHover:hover {
+  transform: scale(1.1);
+  transition: all 0.9s ease 0s;
+}
+
+.cartInfo {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.cartInfo div.darkBlue {
+  margin: 0px 10px;
+}
+
+#pagamento {
+  background-color: $pink;
+  color: white;
+  border-radius: 20px;
+  border-color: $pink;
 }

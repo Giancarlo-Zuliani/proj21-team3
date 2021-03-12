@@ -27,6 +27,8 @@ const app = new Vue({
         // NUMBER OF RESTAURANTS AFTER SELECTED
         searchResultNum: undefined,
         cartArray: [],
+        finalPrice: 0,
+        deliveryPrice: parseInt(document.getElementById('deliveryPrice').value),
         pay: false,
         typologyBox: null,
         // MAX 3 TYPOLOGY BANNER
@@ -37,13 +39,13 @@ const app = new Vue({
         axios.get('http://127.0.0.1:8000/gettypo')
             .then(response => {
                 this.typologyArray = response.data;
-            
+
             // FOCUS EFFECT
             this.$nextTick(() => {
                 this.focusEffect()
             })
 
-});      
+});
         },
     // },
     methods: {
@@ -117,17 +119,28 @@ const app = new Vue({
             } else {
                 item.quantity = 1;
                 this.cartArray.push(item);
-            }
+            };
+            this.getCartTotal();
         },
         removeFromCart(index) {
             if (this.cartArray[index].quantity === 1) {
                 this.cartArray.splice(index, 1);
             } else {
                 this.cartArray[index].quantity--;
-            }
+            };
+            this.getCartTotal();
         },
         addItemCart(index) {
                 this.cartArray[index].quantity++;
+                this.getCartTotal();
+        },
+        getCartTotal(){
+          this.finalPrice = 0;
+          this.cartArray.forEach((item) => {
+            this.finalPrice += item.price * item.quantity;
+          });
+          this.finalPrice += this.deliveryPrice;
+          console.log(this.deliveryPrice);
         },
         showPayment() {
             this.pay = true;
@@ -153,12 +166,12 @@ const app = new Vue({
                 el.addEventListener('mouseout', function() {
                 el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
                 })
-                
+
                 /* Add listener for mousedown event, to simulate click */
                 el.addEventListener('mousedown', function() {
                 el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
                 })
-                
+
                 /* Add listener for mouseup, simulate release of mouse click */
                 el.addEventListener('mouseup', function() {
                 el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
@@ -172,7 +185,7 @@ const app = new Vue({
                 this.focusEffect()
             })
         }
-    },                    
+    },
 });
 
 // CUSTOM CURSOR

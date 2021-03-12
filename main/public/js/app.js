@@ -49643,6 +49643,8 @@ var app = new Vue({
     // NUMBER OF RESTAURANTS AFTER SELECTED
     searchResultNum: undefined,
     cartArray: [],
+    finalPrice: 0,
+    deliveryPrice: parseInt(document.getElementById('deliveryPrice').value),
     pay: false,
     typologyBox: null,
     // MAX 3 TYPOLOGY BANNER
@@ -49734,6 +49736,9 @@ var app = new Vue({
         item.quantity = 1;
         this.cartArray.push(item);
       }
+
+      ;
+      this.getCartTotal();
     },
     removeFromCart: function removeFromCart(index) {
       if (this.cartArray[index].quantity === 1) {
@@ -49741,19 +49746,33 @@ var app = new Vue({
       } else {
         this.cartArray[index].quantity--;
       }
+
+      ;
+      this.getCartTotal();
     },
     addItemCart: function addItemCart(index) {
       this.cartArray[index].quantity++;
+      this.getCartTotal();
+    },
+    getCartTotal: function getCartTotal() {
+      var _this4 = this;
+
+      this.finalPrice = 0;
+      this.cartArray.forEach(function (item) {
+        _this4.finalPrice += item.price * item.quantity;
+      });
+      this.finalPrice += this.deliveryPrice;
+      console.log(this.deliveryPrice);
     },
     showPayment: function showPayment() {
       this.pay = true;
     },
     // FOCUS EFFECT ON CARD
     focusEffect: function focusEffect() {
-      var _this4 = this;
+      var _this5 = this;
 
       var _loop = function _loop(i) {
-        var el = _this4.$refs.myCard[i];
+        var el = _this5.$refs.myCard[i];
         var height = el.clientHeight;
         var width = el.clientWidth;
         el.addEventListener('mousemove', handleMove);
@@ -49789,12 +49808,12 @@ var app = new Vue({
       }
     },
     backTypology: function backTypology() {
-      var _this5 = this;
+      var _this6 = this;
 
       this.showRestaurant = !this.showRestaurant; // FOCUS EFFECT
 
       this.$nextTick(function () {
-        _this5.focusEffect();
+        _this6.focusEffect();
       });
     }
   }
@@ -49898,12 +49917,17 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 __webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
 =======
 __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
 >>>>>>> main
+=======
+__webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
+>>>>>>> a8184a43d3d2a0b2f93d7eba47f6a51059808ab4
 
 
 /***/ })
