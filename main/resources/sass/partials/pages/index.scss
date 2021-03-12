@@ -49,14 +49,144 @@ body {
 
     // SELECTED TYPOLOGY
     .selected {
-        filter: grayscale(90%);
-        transform: scale(1.1);
+        position: relative;
+        border: solid 4px rgb(45, 177, 45);
+        ::after {
+            content: "";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 35px;            
+            height: 35px ;
+            background: url('assets/check-circle-solid.svg') no-repeat bottom;
+          }
+          img {
+              width: 280px !important;
+          }
+    }
+
+    h5 {
+        font-size: 1.4rem;
+        color: $darkblue;
+    }
+
+    .card-body.card-index {
+        padding: .5rem;
+        h6 {
+            margin: 0;
+        }
     }
 }
 
-// 
-//////////// HOVER EFFECT LMM
-// 
 .tilt:hover {
   cursor: pointer;
 }
+
+// CLOUD BUTTON
+// button
+.mod-a{
+list-style-type: none;
+text-decoration: none;
+margin:0px  40px;
+
+}
+
+.mod-a:hover{
+list-style-type: none;
+text-decoration: none;
+}
+
+
+#nav #ul  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#nav #ul .li {
+    // --c: $darkblue;
+    color: $yellow;
+    font-size: 16px;
+    border: 0.3em solid $yellow;
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+
+#ul .li .onda {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: $yellow;
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+#nav #ul .li:hover {
+    color: $pink;
+}
+
+#nav #ul .li:hover .onda {
+    transform: translateY(0) scale(2);
+}
+
+#nav #ul .li .onda:nth-child(1) {
+    --n: 1;
+}
+
+#nav #ul .li .onda:nth-child(2) {
+    --n: 2;
+}
+
+#nav #ul .li .onda:nth-child(3) {
+    --n: 3;
+}
+
+#nav #ul .li .onda:nth-child(4) {
+    --n: 4;
+}
+
+
+.add:hover{
+color:$pink;
+}
+
+.text-button{
+margin-left:6px;
+font-size: 26px;
+}
+  
+
+  /* 
+        {{-- BUTTON ADD ITEM --}}        
+        <div class="row justify-content-center">
+        {{-- <div class=" col-sm-4 col-md-3 col-lg-3"> --}}
+            <a class="mod-a col-sm-4 col-md-3 col-lg-3 text-center" href="{{route('item-create')}}" >
+                <nav id="nav">
+                <ul id="ul" >
+                    <li class="li">
+                    Aggiungi Piatto
+                    <span class="onda"></span><span class="onda"></span><span class="onda"></span><span class="onda"></span>
+                    </li>
+                </ul>
+                </nav>
+            </a>
+        {{-- </div> --}}
+        </div>
+  */

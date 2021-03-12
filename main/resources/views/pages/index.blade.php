@@ -30,23 +30,23 @@
                 class="text-center search-count col-md-12" 
                 :class="searchResultNum != undefined ? 'show' : 'hide'"
                 >
-                <h4 
+                <h5 
                     v-if="searchResultNum >= 2 && searchResultNum != 1"
                     >
                     La tua ricerca ha prodotto @{{searchResultNum}} risultati.
-                </h4>
-                <h4 
+                </h5>
+                <h5 
                     v-if="searchResultNum === 1"
                     >
                     La tua ricerca ha prodotto 1 risultato.
-                </h4>
-                <h4 
+                </h5>
+                <h5 
                     v-if="searchResultNum === 0
                     || searchResultNum === undefined
                     || searchResultNum === null"
                     >
                     La tua ricerca non ha prodotto risultati.
-                </h4>                        
+                </h5>                        
             </div>
         </div>
             
@@ -62,12 +62,11 @@
                 </button>
             </div>
         </div>
-        
+                      
         {{-- RETURN HOME BUTTON --}}
         <div class="row">
             <div
                 class="col-md-12 search text-center"
-                {{-- :class="showRestaurant ? 'show' : 'hide'" --}}
                 v-if="showRestaurant"
                 >
                 <button class="btn btn-primary btn-results border-0 " @click="backTypology()">   
@@ -92,7 +91,7 @@
                     @click="typologySelection( type.id )"    
                 >
                     <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/typologies/', '')}}/${type.image}.webp`>
-                    <div class="card-body">
+                    <div class="card-body card-index">
                         <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{type.typology}}</h6>
                     </div>
                 </div>

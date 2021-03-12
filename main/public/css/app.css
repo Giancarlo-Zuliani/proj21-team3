@@ -11064,13 +11064,141 @@ body .test {
 }
 
 body .selected {
-  filter: grayscale(90%);
-  transform: scale(1.1);
+  position: relative;
+  border: solid 4px #2db12d;
+}
+
+body .selected ::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 35px;
+  height: 35px;
+  background: url(/images/check-circle-solid.svg?6cfd470a7e4ffdff7d047a18f6fb2cf0) no-repeat bottom;
+}
+
+body .selected img {
+  width: 280px !important;
+}
+
+body h5 {
+  font-size: 1.4rem;
+  color: #2F294D;
+}
+
+body .card-body.card-index {
+  padding: 0.5rem;
+}
+
+body .card-body.card-index h6 {
+  margin: 0;
 }
 
 .tilt:hover {
   cursor: pointer;
 }
+
+.mod-a {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0px 40px;
+}
+
+.mod-a:hover {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+#nav #ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav #ul .li {
+  color: #FCC15D;
+  font-size: 16px;
+  border: 0.3em solid #FCC15D;
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+
+#ul .li .onda {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #FCC15D;
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+#nav #ul .li:hover {
+  color: #E7257D;
+}
+
+#nav #ul .li:hover .onda {
+  transform: translateY(0) scale(2);
+}
+
+#nav #ul .li .onda:nth-child(1) {
+  --n: 1;
+}
+
+#nav #ul .li .onda:nth-child(2) {
+  --n: 2;
+}
+
+#nav #ul .li .onda:nth-child(3) {
+  --n: 3;
+}
+
+#nav #ul .li .onda:nth-child(4) {
+  --n: 4;
+}
+
+.add:hover {
+  color: #E7257D;
+}
+
+.text-button {
+  margin-left: 6px;
+  font-size: 26px;
+}
+
+/* 
+      {{-- BUTTON ADD ITEM --}}        
+      <div class="row justify-content-center">
+      {{-- <div class=" col-sm-4 col-md-3 col-lg-3"> --}}
+          <a class="mod-a col-sm-4 col-md-3 col-lg-3 text-center" href="{{route('item-create')}}" >
+              <nav id="nav">
+              <ul id="ul" >
+                  <li class="li">
+                  Aggiungi Piatto
+                  <span class="onda"></span><span class="onda"></span><span class="onda"></span><span class="onda"></span>
+                  </li>
+              </ul>
+              </nav>
+          </a>
+      {{-- </div> --}}
+      </div>
+*/
 
 .checkbox-typology {
   display: flex;
@@ -11384,17 +11512,6 @@ body {
 
 .show {
   display: inline-block;
-}
-
-.selected {
-  filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
-  transform: scale(1.1);
-}
-
-.restaurant-name {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  text-transform: capitalize;
 }
 
 .test {

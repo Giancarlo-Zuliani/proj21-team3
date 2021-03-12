@@ -32,17 +32,6 @@ body {
     display: inline-block;
 }
 
-.selected {
-    filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
-    transform: scale(1.1);
-}
-
-.restaurant-name {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    text-transform: capitalize;
-}
-
 .test {
     display: block;
     width: 100%;
