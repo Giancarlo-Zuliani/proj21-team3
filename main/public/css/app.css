@@ -11422,6 +11422,13 @@ h4 {
   font-size: 26px;
 }
 
+#mail_body {
+  margin: 25px auto;
+  border: solid #FCC15D 2px;
+  width: 80%;
+  padding: 35px 25px;
+}
+
 body {
   background-color: #fffefa;
 }
