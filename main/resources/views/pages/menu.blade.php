@@ -11,7 +11,7 @@
     </div>
   </div>
   <h1 class="darkBlue" > <strong>Menu</strong> </h1>
-  <div class="row">
+  <div id="carTxs" class="row">
     <div class="col-12 my-2" v-if="cartArray.length !== 0">
       <div class="card shadow">
         <div class="card-body">
@@ -135,7 +135,7 @@
     {{-- CARRELLO --}}
 
 
-    <div class="col-xs-12 col-md-6 col-lg-4 my-2" v-if="cartArray.length !== 0">
+    <div id="cartLat" class="col-xs-12 col-md-6 col-lg-4 my-2" v-if="cartArray.length !== 0">
       <div class="card shadow">
         <div class="card-body">
           <div class="itemFlex cartAlign">

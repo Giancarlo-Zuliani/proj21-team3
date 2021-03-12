@@ -97,3 +97,19 @@ p.cartDel {
   border-radius: 20px;
   border-color: $pink;
 }
+
+#carTxs {
+  display: none;
+}
+
+
+
+@media screen and (max-width:767px) {
+  #carTxs {
+    display: block;
+  }
+
+  #cartLat {
+    display: none; 
+  }
+}
