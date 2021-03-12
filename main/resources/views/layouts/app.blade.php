@@ -18,7 +18,11 @@
     {{-- Chart js --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     {{-- FAVICON --}}
-    <link rel="icon" type="image/png" href="/images/favicon.png"/>
+    <link rel="icon" type="image/png" href="{{asset('storage/assets/favicon.png')}}"/>
+    {{-- CUSTOM CURSOR --}}
+    <script src="https://cdn.jsdelivr.net/npm/kursor"></script>
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css"/>
+
     @stack('scriptPayment')
     @stack('scriptStatistics')
 </head>
@@ -48,5 +52,7 @@
     </section>
     
     @include('components.footer')
+
+    <script src="https://cdn.jsdelivr.net/npm/kursor"></script>
 </body>
 </html>
