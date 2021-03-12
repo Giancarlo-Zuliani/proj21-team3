@@ -17,10 +17,6 @@
   margin: 30px 15px;
   padding: 7px 14px;
   border-radius: 20px;
-  box-shadow:  10px  10px 5px #f5f5f0,
-                -10px -10px 5px #f5f5f0,
-                 10px -10px 5px #f5f5f0,
-                -10px  10px 5px #f5f5f0;
 
 }
 
@@ -29,29 +25,107 @@
 }
 
 p{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h4{
-  color: $darkblue;
+  color: $pink;
 }
 
+// graphic
+#angelo{
+  margin-top: -30px;
+}
+
+.card-graphic{
+  margin: 30px 15px;
+}
 
 // button
-.button-up i{
-  position: fixed;
-  bottom: 10px;
-  right: 18px;
-  width: 40px;
-  height: 40px;
-  background-color: $yellow;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+.mod-a{
+  list-style-type: none;
+  text-decoration: none;
+  margin:0px  40px;
+
 }
 
-.button-up:hover {
-  cursor: pointer;
+.mod-a:hover{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+
+#nav #ul  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#nav #ul .li {
+    // --c: $darkblue;
+    color: $yellow;
+    font-size: 16px;
+    border: 0.3em solid $yellow;
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+
+ #ul .li .onda {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: $yellow;
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+#nav #ul .li:hover {
+    color: $pink;
+}
+
+#nav #ul .li:hover .onda {
+    transform: translateY(0) scale(2);
+}
+
+#nav #ul .li .onda:nth-child(1) {
+    --n: 1;
+}
+
+#nav #ul .li .onda:nth-child(2) {
+    --n: 2;
+}
+
+#nav #ul .li .onda:nth-child(3) {
+    --n: 3;
+}
+
+#nav #ul .li .onda:nth-child(4) {
+    --n: 4;
+}
+
+
+.add:hover{
+  color:$pink;
+}
+
+.text-button{
+  margin-left:6px;
+  font-size: 26px;
 }

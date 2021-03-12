@@ -42,9 +42,11 @@
         </main>
     </div>
 
+    {{-- dashboard totalSales --}}
     <section>
         @yield('charts')
     </section>
+    
     @include('components.footer')
 </body>
 </html>
