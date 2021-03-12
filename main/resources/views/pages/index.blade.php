@@ -106,17 +106,23 @@
             <div                 
                 v-for="rest in restaurantArray"
                 class="col-md-6 col-lg-4"
-                >                
+                >          
+                <a :href=`{{route('show-menu','')}}/${rest.id}`>      
                 <div class="tilt card shadow mx-auto" style="width: 18rem; margin: 20px;"
                     ref="myCard"
-                >                           
+                >
                     <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/users/', '')}}/${rest.img}.webp`>
-                    <div class="card-body">
-                        <a :href=`{{route('show-menu','')}}/${rest.id}`>
-                            <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{rest.name}}</h6>                            
-                        </a>
+                    <div class="card-body card-index">
+                        <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{rest.name}}</h6>                            
                     </div>
+                
+                {{-- TYPOLOGIES CENTER --}}
+                <span>                                            
+                    @{{rest.typologies[0].typology}}   
+                </span>
+
                 </div>
+            </a>
             </div>                        
         </div>
     

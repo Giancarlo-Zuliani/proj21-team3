@@ -12,6 +12,14 @@ body {
             }
         }            
     }
+
+    * {
+        text-decoration: none;                
+        :hover {
+            text-decoration: none;        
+        }
+    }
+
     .hr-index {
         width: 80%;
         border: solid 1px $darkblue;
@@ -30,9 +38,7 @@ body {
     }
     .btn-results {
         background-color: $darkblue;
-        // :hover {
-        //     background-color: $black !important;            
-        // }
+
     }
     #card-text {
         font-size: 1.2rem;
@@ -75,12 +81,12 @@ body {
         h6 {
             margin: 0;
         }
+            
     }
-
+    
     // MAX 3 TYPOLOGIES BANNER
     .modal {
-        .modal-content {
-            // background-color: #FA5353;
+        .modal-content {        
             background-color: $white;
             color: $darkblue;
             border: 0;
@@ -110,6 +116,11 @@ body {
         .modal-header {
             border: 0;
         }
+    }
+
+    // RISTORANTI CARD
+    .tilt.card {
+        position: relative;
     }
 
 }

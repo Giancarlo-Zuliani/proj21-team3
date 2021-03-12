@@ -49646,7 +49646,9 @@ var app = new Vue({
     pay: false,
     typologyBox: null,
     // MAX 3 TYPOLOGY BANNER
-    bannerMax: ''
+    bannerMax: '',
+    // USER TYPOLOGIES PRINT FE
+    usersTypologies: []
   },
   // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
   mounted: function mounted() {
@@ -49681,7 +49683,13 @@ var app = new Vue({
         _this2.restaurantArray = response.data;
 
         _this2.backTypology();
+
+        _this2.getTypology();
       });
+    },
+    // GET RESTAURANTS TYPOLOGIES
+    getTypology: function getTypology() {
+      console.log(this.restaurantArray);
     },
     // SCRIPT TO SELECT TYPOLOGY CARD
     typologySelection: function typologySelection(id) {
