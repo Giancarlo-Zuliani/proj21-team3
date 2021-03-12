@@ -28,9 +28,9 @@ const app = new Vue({
         searchResultNum: undefined,
         cartArray: [],
         finalPrice: 0,
-        deliveryPrice: parseInt(document.getElementById('deliveryPrice').value),
         pay: false,
         typologyBox: null,
+        deliveryPrice: undefined,
         // MAX 3 TYPOLOGY BANNER
         bannerMax: '',
     },
@@ -40,14 +40,13 @@ const app = new Vue({
             .then(response => {
                 this.typologyArray = response.data;
 
-            // FOCUS EFFECT
-            this.$nextTick(() => {
-                this.focusEffect()
-            })
+                // FOCUS EFFECT
+                this.$nextTick(() => {
+                    this.focusEffect()
+                })
 
-});
-        },
-    // },
+            });
+    },
     methods: {
         // API CALL TO GET ALL RESTAURANTS FILTERED BY TYPOLOGY
         getRestaurants() {
@@ -63,8 +62,8 @@ const app = new Vue({
 
             axios.get(url)
                 .then(response => {
-                    this.restaurantArray = response.data;                  
-                    this.backTypology();                
+                    this.restaurantArray = response.data;
+                    this.backTypology();
                 });
 
 
@@ -76,14 +75,14 @@ const app = new Vue({
                     this.selectedTypologies.splice(
                         this.selectedTypologies.indexOf(id), 1) :
                     this.selectedTypologies.push(id);
-                    this.bannerMax = ''
-                // console.log(this.selectedTypologies);
+                this.bannerMax = ''
+                    // console.log(this.selectedTypologies);
             } else if (this.selectedTypologies.includes(id)) {
                 this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1)
                 this.bannerMax = ''
             } else if (this.selectedTypologies.length <= 3) {
                 this.bannerMax = 'modal'
-                console.log(this.bannerMax);          
+                console.log(this.bannerMax);
             };
             this.getRestaurantCount(id);
         },
@@ -131,16 +130,19 @@ const app = new Vue({
             this.getCartTotal();
         },
         addItemCart(index) {
-                this.cartArray[index].quantity++;
-                this.getCartTotal();
+            this.cartArray[index].quantity++;
+            this.getCartTotal();
         },
-        getCartTotal(){
-          this.finalPrice = 0;
-          this.cartArray.forEach((item) => {
-            this.finalPrice += item.price * item.quantity;
-          });
-          this.finalPrice += this.deliveryPrice;
-          console.log(this.deliveryPrice);
+        getCartTotal() {
+            this.finalPrice = 0;
+            this.cartArray.forEach((item) => {
+                this.finalPrice += item.price * item.quantity;
+            });
+            this.$nextTick(function() {
+                this.deliveryPrice = parseInt(document.getElementById('deliveryPrice').value);
+                this.finalPrice += this.deliveryPrice;
+                console.log(this.deliveryPrice);
+            })
         },
         showPayment() {
             this.pay = true;
@@ -148,34 +150,35 @@ const app = new Vue({
         // FOCUS EFFECT ON CARD
         focusEffect() {
             for (let i = 0; i < this.$refs.myCard.length; i++) {
-                let el = this.$refs.myCard[i];                
+                let el = this.$refs.myCard[i];
                 const height = el.clientHeight
                 const width = el.clientWidth
-                
-                el.addEventListener('mousemove', handleMove)                
+
+                el.addEventListener('mousemove', handleMove)
+
                 function handleMove(e) {
-                const xVal = e.layerX
-                const yVal = e.layerY                
-                const yRotation = 20 * ((xVal - width / 2) / width)                
-                const xRotation = -20 * ((yVal - height / 2) / height)                
-                const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'                
-                el.style.transform = string
+                    const xVal = e.layerX
+                    const yVal = e.layerY
+                    const yRotation = 20 * ((xVal - width / 2) / width)
+                    const xRotation = -20 * ((yVal - height / 2) / height)
+                    const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+                    el.style.transform = string
                 }
-                                
+
                 /* Add listener for mouseout event, remove the rotation */
                 el.addEventListener('mouseout', function() {
-                el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
+                    el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
                 })
 
                 /* Add listener for mousedown event, to simulate click */
                 el.addEventListener('mousedown', function() {
-                el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
+                    el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
                 })
 
                 /* Add listener for mouseup, simulate release of mouse click */
                 el.addEventListener('mouseup', function() {
-                el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
-                })                
+                    el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
+                })
             }
         },
         backTypology() {
@@ -189,7 +192,7 @@ const app = new Vue({
 });
 
 // CUSTOM CURSOR
-new kursor ({
+new kursor({
     type: 1,
     color: '#d30d66',
     removeDefaultCursor: true
