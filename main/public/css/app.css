@@ -11003,14 +11003,64 @@ header .curva {
 }
 
 footer {
-  background-image: url("");
+  min-height: 250px;
 }
 
-footer img {
-  max-width: 100vw;
-  min-height: 25vh;
+#footersvg {
+  max-width: 100%;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  padding: 5px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
   position: absolute;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  width: 80%;
+  height: 80%;
+}
+
+.flip-card-front {
+  background-color: #65c9ff;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #E7257D;
+  color: #FCC15D;
+  padding: 15px;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 body .typologybox {
@@ -11296,7 +11346,7 @@ p.cartDel {
   position: sticky;
   top: 0;
   right: 0;
-  padding-top: 70px;
+  padding-top: 90px;
 }
 
 .stick img,
@@ -11541,6 +11591,13 @@ p.cartDel {
   font-size: 26px;
 }
 
+<<<<<<< HEAD
+#mail_body {
+  margin: 25px auto;
+  border: solid #FCC15D 2px;
+  width: 80%;
+  padding: 35px 25px;
+=======
 .btn {
   background-color: #E7257D;
 }
@@ -11581,6 +11638,7 @@ p.cartDel {
   border: 3px solid #FCC15D;
   border-radius: 8px;
   font-size: 18px;
+>>>>>>> main
 }
 
 body {
