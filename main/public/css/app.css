@@ -11320,6 +11320,43 @@ h5 {
   font-size: 26px;
 }
 
+.btn {
+  background-color: #E7257D;
+}
+
+.btn:hover {
+  background-color: #E7257D;
+}
+
+.btn:focus {
+  background-color: #E7257D;
+  border-color: #E7257D;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #E7257D;
+}
+
+.img-user-show {
+  max-height: 400px;
+}
+
+.text-user-show {
+  font-weight: 600;
+  color: #2F294D;
+}
+
+.container-btn {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.button-fashion {
+  background-color: #E7257D;
+  color: #FCC15D;
+  border: 3px solid #E7257D;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
 body {
   background-color: #fffefa;
 }

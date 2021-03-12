@@ -1,0 +1,38 @@
+.btn{
+  background-color: $pink;
+}
+
+.btn:hover{
+  background-color: $pink;
+}
+
+.btn:focus {
+  background-color: $pink;
+  border-color: $pink;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem $pink;
+ }
+
+ .img-user-show{
+   max-height: 400px;
+ }
+
+.text-user-show{
+  font-weight: 600;
+  color: $darkblue;
+}
+
+.container-btn{
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+}
+
+.button-fashion{
+  background-color: $pink;
+  color: $yellow;
+  border: 3px solid $pink;
+  border-radius: 8px;
+  font-size: 18px;
+
+}
