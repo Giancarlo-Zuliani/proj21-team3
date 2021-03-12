@@ -10988,9 +10988,7 @@ section .typologybox {
 }
 
 header .curva {
-  background-image: url(/images/header.svg?bb6d97eba38495d35c47d827f59fc06e);
-  background-repeat: no-repeat;
-  height: 33vh;
+  height: 13vh;
 }
 
 .btn-header {
@@ -11035,6 +11033,32 @@ body .hide {
 
 body .search-count h4 {
   padding: 0;
+}
+
+body .btn-results {
+  background-color: #2F294D;
+}
+
+body #card-text {
+  font-size: 1.2rem;
+  color: #2F294D;
+}
+
+body .test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
+}
+
+body .selected {
+  filter: grayscale(90%);
+  transform: scale(1.1);
+}
+
+.tilt:hover {
+  cursor: pointer;
 }
 
 .checkbox-typology {
@@ -11278,12 +11302,7 @@ h4 {
 }
 
 body {
-  background-color: white;
-}
-
-.card-header {
-  background-color: #FCC15D;
-  color: #E7257D;
+  background-color: #fffefa;
 }
 
 .delete-banner {
@@ -11296,38 +11315,8 @@ body {
   display: inline-block;
 }
 
-.selected {
-  filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
-  transform: scale(1.1);
-}
-
-.restaurant-name {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  text-transform: capitalize;
-}
-
-.rest-name {
-  text-transform: capitalize;
-  color: #E7257D;
-}
-
 ul li {
   list-style: none;
-}
-
-.typolo-name {
-  text-transform: capitalize;
-  color: #E7257D;
-  font-weight: bolder;
-}
-
-.test {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #FCC15D;
-  font-weight: bolder;
 }
 
 input[type=text]:focus,
