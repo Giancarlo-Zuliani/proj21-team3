@@ -28,7 +28,9 @@ const app = new Vue({
         searchResultNum: undefined,
         cartArray: [],
         pay: false,
-        typologyBox: null,        
+        typologyBox: null,
+        // MAX 3 TYPOLOGY BANNER
+        bannerMax: ''   
     },
     // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
     mounted: function() {
@@ -71,15 +73,16 @@ const app = new Vue({
                     this.selectedTypologies.splice(
                         this.selectedTypologies.indexOf(id), 1) :
                     this.selectedTypologies.push(id);
-                console.log(this.selectedTypologies);
-            } else if (
-                this.selectedTypologies.includes(id)) {
-                this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1)
+                    this.bannerMax = ''
                 // console.log(this.selectedTypologies);
+            } else if (this.selectedTypologies.includes(id)) {
+                this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1)
+                this.bannerMax = ''
+            } else if (this.selectedTypologies.length <= 3) {
+                this.bannerMax = 'modal'
+                console.log(this.bannerMax);          
             };
             this.getRestaurantCount(id);
-
-            // console.log(this.selectedTypologies);
         },
         // SCRIPT PRINT NUMBER OF TOTAL RESTAURANTS AFTER FILTER
         getRestaurantCount(id) {
@@ -128,32 +131,23 @@ const app = new Vue({
         showPayment() {
             this.pay = true;
         },
-        // FOCUS EFFECT
+        // FOCUS EFFECT ON CARD
         focusEffect() {
-
             for (let i = 0; i < this.$refs.myCard.length; i++) {
-
-                let el = this.$refs.myCard[i];
-                
+                let el = this.$refs.myCard[i];                
                 const height = el.clientHeight
                 const width = el.clientWidth
                 
-                el.addEventListener('mousemove', handleMove)
-                
+                el.addEventListener('mousemove', handleMove)                
                 function handleMove(e) {
                 const xVal = e.layerX
-                const yVal = e.layerY
-                
-                const yRotation = 20 * ((xVal - width / 2) / width)
-                
-                const xRotation = -20 * ((yVal - height / 2) / height)
-                
-                const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
-                
+                const yVal = e.layerY                
+                const yRotation = 20 * ((xVal - width / 2) / width)                
+                const xRotation = -20 * ((yVal - height / 2) / height)                
+                const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'                
                 el.style.transform = string
                 }
-                
-                
+                                
                 /* Add listener for mouseout event, remove the rotation */
                 el.addEventListener('mouseout', function() {
                 el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
@@ -167,10 +161,8 @@ const app = new Vue({
                 /* Add listener for mouseup, simulate release of mouse click */
                 el.addEventListener('mouseup', function() {
                 el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
-                })
-                
-                }
-
+                })                
+            }
         },
         backTypology() {
             this.showRestaurant = !this.showRestaurant;
@@ -180,4 +172,11 @@ const app = new Vue({
             })
         }
     },                    
+});
+
+// CUSTOM CURSOR
+new kursor ({
+    type: 1,
+    color: '#d30d66',
+    removeDefaultCursor: true
 });

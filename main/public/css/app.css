@@ -11075,7 +11075,7 @@ body .selected ::after {
   right: -15px;
   width: 35px;
   height: 35px;
-  background: url(/images/check-circle-solid.svg?6cfd470a7e4ffdff7d047a18f6fb2cf0) no-repeat bottom;
+  background: url(/images/check.svg?be1813fe101d59c2a573c6179a20e33a) no-repeat bottom;
 }
 
 body .selected img {
@@ -11093,10 +11093,6 @@ body .card-body.card-index {
 
 body .card-body.card-index h6 {
   margin: 0;
-}
-
-.tilt:hover {
-  cursor: pointer;
 }
 
 .mod-a {

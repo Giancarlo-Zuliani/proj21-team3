@@ -31,7 +31,7 @@ body {
     .btn-results {
         background-color: $darkblue;
         // :hover {
-        //     // background-color: $black;            
+        //     background-color: $black !important;            
         // }
     }
     #card-text {
@@ -58,7 +58,7 @@ body {
             right: -15px;
             width: 35px;            
             height: 35px ;
-            background: url('assets/check-circle-solid.svg') no-repeat bottom;
+            background: url('assets/check.svg') no-repeat bottom;
           }
           img {
               width: 280px !important;
@@ -76,10 +76,6 @@ body {
             margin: 0;
         }
     }
-}
-
-.tilt:hover {
-  cursor: pointer;
 }
 
 // CLOUD BUTTON

@@ -87,6 +87,8 @@
                 <div
                     class="tilt card mx-auto shadow" style="width: 18rem; margin: 20px;"
                     ref="myCard"
+                    :data-toggle="bannerMax"
+                    data-target="#maxThree"
                     :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"             
                     @click="typologySelection( type.id )"    
                 >
@@ -118,5 +120,25 @@
             </div>                        
         </div>
     
+  
+        <!-- SELECT MAX 3 TYPOLOGIES WARNING -->
+        <div class="modal fade" id="maxThree" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header mx-auto">
+                <h5 class="modal-title text-center"
+                        id="exampleModalLongTitle">
+                        Seleziona al massimo 3 tipologie.
+                        <br>
+                        <i class="far fa-hand-paper"></i>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
     </div>
 @endsection
