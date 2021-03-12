@@ -1,8 +1,8 @@
 
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
-    <img src="{{asset('storage/assets/footer.svg')}}" alt="footer">
-    <!-- Grid container -->
+{{--     <img src="{{asset('storage/assets/footer.svg')}}" alt="footer">
+ --}}    <!-- Grid container -->
     <div class="container p-4">
       <!-- Section: Social media -->
       <section class="mb-4">
