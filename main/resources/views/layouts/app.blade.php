@@ -22,7 +22,7 @@
     @stack('scriptPayment')
     @stack('scriptStatistics')
 </head>
-<body>    
+<body>
     <div id="app">
         @if (Route::has('login'))
 
@@ -32,7 +32,7 @@
         @else
 
           @include('components.header')
-                                            
+
         @endauth
 
 @endif
@@ -41,7 +41,7 @@
             @yield('content')
         </main>
     </div>
-    
+
     <section>
         @yield('charts')
     </section>
