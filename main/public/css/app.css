@@ -11267,6 +11267,20 @@ p.cartDel {
   border-color: #E7257D;
 }
 
+#carTxs {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  #carTxs {
+    display: block;
+  }
+
+  #cartLat {
+    display: none;
+  }
+}
+
 #payment-form {
   width: 70%;
   margin: 0;
