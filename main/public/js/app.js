@@ -49644,9 +49644,9 @@ var app = new Vue({
     searchResultNum: undefined,
     cartArray: [],
     finalPrice: 0,
-    deliveryPrice: parseInt(document.getElementById('deliveryPrice').value),
     pay: false,
     typologyBox: null,
+    deliveryPrice: undefined,
     // MAX 3 TYPOLOGY BANNER
     bannerMax: ''
   },
@@ -49662,7 +49662,6 @@ var app = new Vue({
       });
     });
   },
-  // },
   methods: {
     // API CALL TO GET ALL RESTAURANTS FILTERED BY TYPOLOGY
     getRestaurants: function getRestaurants() {
@@ -49761,8 +49760,11 @@ var app = new Vue({
       this.cartArray.forEach(function (item) {
         _this4.finalPrice += item.price * item.quantity;
       });
-      this.finalPrice += this.deliveryPrice;
-      console.log(this.deliveryPrice);
+      this.$nextTick(function () {
+        this.deliveryPrice = parseInt(document.getElementById('deliveryPrice').value);
+        this.finalPrice += this.deliveryPrice;
+        console.log(this.deliveryPrice);
+      });
     },
     showPayment: function showPayment() {
       this.pay = true;
@@ -49916,8 +49918,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
