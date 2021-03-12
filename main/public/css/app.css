@@ -10988,13 +10988,7 @@ section .typologybox {
 }
 
 header .curva {
-<<<<<<< HEAD
-  background-image: url(/images/header.svg?bb6d97eba38495d35c47d827f59fc06e);
-  background-repeat: no-repeat;
-  height: 33vh;
-=======
   height: 13vh;
->>>>>>> main
 }
 
 .btn-header {
@@ -11100,7 +11094,6 @@ body .selected {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28231, 37, 125, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-<<<<<<< HEAD
 #col-12-menu {
   background-color: yellow;
 }
@@ -11125,15 +11118,11 @@ body .selected {
   font-weight: bold;
 }
 
-body {
-  background-color: white;
-=======
 #payment-form {
   width: 70%;
   margin: 0;
   position: relative;
   padding-bottom: 15%;
->>>>>>> main
 }
 
 #payment-form button {
@@ -11226,14 +11215,6 @@ body {
   text-align: right;
 }
 
-<<<<<<< HEAD
-.test {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #FCC15D;
-  font-weight: bolder;
-=======
 #waitBanner #bannerstringcontainer #processingAnimation {
   width: 0%;
 }
@@ -11290,7 +11271,6 @@ body {
 
 .title-card {
   color: #E7257D;
->>>>>>> main
 }
 
 p {
@@ -11301,8 +11281,6 @@ h4 {
   color: #E7257D;
 }
 
-<<<<<<< HEAD
-=======
 #angelo {
   margin-top: -30px;
 }
@@ -11408,11 +11386,29 @@ body {
   display: inline-block;
 }
 
+.selected {
+  filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
+  transform: scale(1.1);
+}
+
+.restaurant-name {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+.test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
+}
+
 ul li {
   list-style: none;
 }
 
->>>>>>> main
 input[type=text]:focus,
 select:focus {
   outline: none !important;
@@ -11420,10 +11416,5 @@ select:focus {
 
 .form-control:focus {
   outline: none !important;
-}
-
-.rest-name {
-  text-transform: capitalize;
-  color: #E7257D;
 }
 
