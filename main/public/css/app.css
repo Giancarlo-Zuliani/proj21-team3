@@ -11052,6 +11052,30 @@ body .typologybox .img-container .typology-img {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28231, 37, 125, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+#col-12-menu {
+  background-color: yellow;
+}
+
+#col-8-menu {
+  background-color: yellow;
+}
+
+#col-4-menu {
+  background-color: green;
+}
+
+#restaurant-name {
+  background-color: #FCC15D;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#rest-name {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
 body {
   background-color: white;
 }
@@ -11082,9 +11106,12 @@ body {
   text-transform: capitalize;
 }
 
-.rest-name {
-  text-transform: capitalize;
-  color: #E7257D;
+.test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
 }
 
 ul li {
@@ -11097,14 +11124,6 @@ ul li {
   font-weight: bolder;
 }
 
-.test {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #FCC15D;
-  font-weight: bolder;
-}
-
 input[type=text]:focus,
 select:focus {
   outline: none !important;
@@ -11112,5 +11131,10 @@ select:focus {
 
 .form-control:focus {
   outline: none !important;
+}
+
+.rest-name {
+  text-transform: capitalize;
+  color: #E7257D;
 }
 
