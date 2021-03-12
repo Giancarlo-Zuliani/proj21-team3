@@ -11,6 +11,7 @@ footer {
     width: 200px;
     height: 200px;
     perspective: 1000px;
+    padding: 5px;
 }
 
 .flip-card-inner {
@@ -54,26 +55,4 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}
-
-
-/* @media screen and(max-width:1270px) {
-    .flip-card {
-        width: 180px;
-        height: 180px;
-    }
-}
- */
-
-
-/* 
-@media screen and(max-width:1200px) {
-    .flip-card {
-        width: 160px;
-        height: 160px;
-    }
-} */
-
-.footer_avatar {
-    margin: 15px;
 }
