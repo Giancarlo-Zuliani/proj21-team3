@@ -11182,51 +11182,71 @@ body .selected {
 .background-title {
   background-color: #E7257D;
   color: white;
-  border-radius: 15px;
   padding: 10px 5px;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .title {
   font-weight: 900;
+  padding: 2px 12px;
 }
 
 .card-box {
-  margin: 30px 15px;
+  margin: 30px 23px;
   padding: 7px 14px;
   border-radius: 20px;
+  font-size: 18px;
 }
 
 .title-card {
   color: #E7257D;
 }
 
-p {
+.font-weight-bold {
   font-size: 16px;
 }
 
-h4 {
+.title-graphic {
   color: #E7257D;
+  font-weight: 600;
+}
+
+.title-incassi {
+  font-weight: 600;
+  color: #2F294D;
 }
 
 #angelo {
-  margin-top: -30px;
+  margin-top: -50px;
 }
 
 .card-graphic {
-  margin: 30px 15px;
+  margin: 30px 45px;
+}
+
+.card-header {
+  margin-top: 15px;
+  background-color: #FCC15D;
+}
+
+.container-mod {
+  margin-left: 30px;
 }
 
 .mod-a {
   list-style-type: none;
   text-decoration: none;
-  margin: 0px 40px;
 }
 
 .mod-a:hover {
   list-style-type: none;
   text-decoration: none;
+}
+
+.text-modifica-elimina {
+  color: #6c757d;
 }
 
 #nav #ul {
@@ -11299,6 +11319,48 @@ h4 {
 .text-button {
   margin-left: 6px;
   font-size: 26px;
+}
+
+.btn {
+  background-color: #E7257D;
+}
+
+.btn:hover {
+  background-color: #E7257D;
+}
+
+.btn:focus {
+  background-color: #E7257D;
+  border-color: #E7257D;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #E7257D;
+}
+
+.img-user-show {
+  max-height: 400px;
+}
+
+.text-user-show {
+  font-weight: 600;
+  color: #2F294D;
+}
+
+.title-show {
+  font-weight: 800;
+  color: #E7257D;
+}
+
+.container-btn {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.button-fashion {
+  background-color: #FCC15D;
+  color: #2F294D;
+  border: 3px solid #FCC15D;
+  border-radius: 8px;
+  font-size: 18px;
 }
 
 body {
