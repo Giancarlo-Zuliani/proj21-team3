@@ -80,9 +80,10 @@
         {{-- TYPOLOGIES --}}
         <div class="row my-4 " v-if="!showRestaurant">                
             <h1 class="test">Scegli una o più tipologie</h1>
-            <div                 
-                v-for="type, index in typologyArray"
-                class="col-md-6 col-lg-4" 
+
+            <div             
+                v-for="type in typologyArray"
+                class="typobox col-md-6 col-lg-4" 
                 >
                 <div
                     class="tilt card mx-auto shadow" style="width: 18rem; margin: 20px;"

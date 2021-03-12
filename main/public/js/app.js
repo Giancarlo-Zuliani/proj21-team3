@@ -49651,11 +49651,15 @@ var app = new Vue({
     var _this = this;
 
     axios.get('http://127.0.0.1:8000/gettypo').then(function (response) {
+<<<<<<< HEAD
+      _this.typologyArray = response.data;
+=======
       _this.typologyArray = response.data; // FOCUS EFFECT
 
       _this.$nextTick(function () {
         _this.focusEffect();
       });
+>>>>>>> main
     });
   },
   // },
@@ -49889,8 +49893,18 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
+=======
+<<<<<<< HEAD
+__webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\laravel\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laravel\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> main
+>>>>>>> main
 
 
 /***/ })

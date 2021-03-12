@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 });
-
+//UGLY ANIMATIONS
 function processingAnimation() {
     let i = 0;
     let processingString = document.getElementById('processingAnimation');
@@ -42,4 +42,5 @@ function wait() {
     setInterval(() => {
         processingAnimation()
     }, 300);
-}
+    window.addEventListener("wheel", e => e.preventDefault(), { passive: false })
+};
