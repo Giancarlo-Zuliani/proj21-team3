@@ -11591,13 +11591,13 @@ p.cartDel {
   font-size: 26px;
 }
 
-<<<<<<< HEAD
 #mail_body {
   margin: 25px auto;
   border: solid #FCC15D 2px;
   width: 80%;
   padding: 35px 25px;
-=======
+}
+
 .btn {
   background-color: #E7257D;
 }
@@ -11638,7 +11638,6 @@ p.cartDel {
   border: 3px solid #FCC15D;
   border-radius: 8px;
   font-size: 18px;
->>>>>>> main
 }
 
 body {
