@@ -1,27 +1,19 @@
 header {
-    background-image: url('storage/assets/header.svg');
-    background-repeat: no-repeat;
-    height: 340px;
-    display: flex;
-    justify-content: space-between;
-    // LOGO
-    .logo {
-        img {
-            height: 50px;
-        }         
+    .curva {
+        // background-image: url('storage/assets/header.svg');
+        // background-repeat: no-repeat;
+        height: 13vh;
     }
-    // CONTAINERS 
-    div {
-        padding: 35px;
-        .fa-user-circle {
-            font-size: 2rem;
-            color: $pink;
-            vertical-align: middle;
-        }
-        // BUTTONS 
-        .btn {
-            background-color: $pink;
-            border: none;
-        }
-    }
+  
+}
+
+.btn-header {
+    background-color: $pink;
+    margin: 0 4px;
+    color: white !important;
+}
+
+.btn-header:hover {
+    background-color: white;
+    color: $pink !important;
 }

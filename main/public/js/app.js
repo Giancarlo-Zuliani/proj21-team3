@@ -49612,6 +49612,9 @@ webpackEmptyContext.id = "./resources/js sync recursive \\.vue$/";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var _require = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
+    type = _require.type;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./dashboard */ "./resources/js/dashboard.js");
@@ -49627,6 +49630,7 @@ files.keys().map(function (key) {
 var app = new Vue({
   el: '#app',
   data: {
+    totalSales: '',
     // INDEX FLAGS
     showtypo: true,
     showRestaurant: false,
@@ -49639,17 +49643,22 @@ var app = new Vue({
     // NUMBER OF RESTAURANTS AFTER SELECTED
     searchResultNum: undefined,
     cartArray: [],
-    pay: false
+    pay: false,
+    typologyBox: null
   },
   // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
   mounted: function mounted() {
     var _this = this;
 
     axios.get('http://127.0.0.1:8000/gettypo').then(function (response) {
-      console.log(response.data);
-      _this.typologyArray = response.data;
+      _this.typologyArray = response.data; // FOCUS EFFECT
+
+      _this.$nextTick(function () {
+        _this.focusEffect();
+      });
     });
   },
+  // },
   methods: {
     // API CALL TO GET ALL RESTAURANTS FILTERED BY TYPOLOGY
     getRestaurants: function getRestaurants() {
@@ -49667,9 +49676,9 @@ var app = new Vue({
       }
 
       axios.get(url).then(function (response) {
-        console.log(response.data);
         _this2.restaurantArray = response.data;
-        _this2.showRestaurant = !_this2.showRestaurant;
+
+        _this2.backTypology();
       });
     },
     // SCRIPT TO SELECT TYPOLOGY CARD
@@ -49678,8 +49687,7 @@ var app = new Vue({
         this.selectedTypologies.includes(id) ? this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1) : this.selectedTypologies.push(id);
         console.log(this.selectedTypologies);
       } else if (this.selectedTypologies.includes(id)) {
-        this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1);
-        console.log(this.selectedTypologies);
+        this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1); // console.log(this.selectedTypologies);
       }
 
       ;
@@ -49701,8 +49709,7 @@ var app = new Vue({
         }
 
         axios.get(url).then(function (response) {
-          _this3.searchResultNum = response.data;
-          console.log(response.data);
+          _this3.searchResultNum = response.data; // console.log(response.data);
         });
       } else {
         this.searchResultNum = undefined;
@@ -49723,6 +49730,10 @@ var app = new Vue({
       }
     },
     removeFromCart: function removeFromCart(index) {
+<<<<<<< HEAD
+=======
+      // console.log(index);
+>>>>>>> main
       if (this.cartArray[index].quantity === 1) {
         this.cartArray.splice(index, 1);
       } else {
@@ -49734,6 +49745,55 @@ var app = new Vue({
     },
     showPayment: function showPayment() {
       this.pay = true;
+    },
+    // FOCUS EFFECT
+    focusEffect: function focusEffect() {
+      var _this4 = this;
+
+      var _loop = function _loop(i) {
+        var el = _this4.$refs.myCard[i];
+        var height = el.clientHeight;
+        var width = el.clientWidth;
+        el.addEventListener('mousemove', handleMove);
+
+        function handleMove(e) {
+          var xVal = e.layerX;
+          var yVal = e.layerY;
+          var yRotation = 20 * ((xVal - width / 2) / width);
+          var xRotation = -20 * ((yVal - height / 2) / height);
+          var string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
+          el.style.transform = string;
+        }
+        /* Add listener for mouseout event, remove the rotation */
+
+
+        el.addEventListener('mouseout', function () {
+          el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
+        });
+        /* Add listener for mousedown event, to simulate click */
+
+        el.addEventListener('mousedown', function () {
+          el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)';
+        });
+        /* Add listener for mouseup, simulate release of mouse click */
+
+        el.addEventListener('mouseup', function () {
+          el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)';
+        });
+      };
+
+      for (var i = 0; i < this.$refs.myCard.length; i++) {
+        _loop(i);
+      }
+    },
+    backTypology: function backTypology() {
+      var _this5 = this;
+
+      this.showRestaurant = !this.showRestaurant; // FOCUS EFFECT
+
+      this.$nextTick(function () {
+        _this5.focusEffect();
+      });
     }
   }
 });

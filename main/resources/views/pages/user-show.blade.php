@@ -1,5 +1,4 @@
 @extends('layouts.main-layout')
-<a href="{{route('index')}}">Torna alla home!</a>
 {{-- USER PROFILE PAGE --}}
 @section('content')
 
@@ -31,7 +30,7 @@
             @if (Auth::user() -> img != null)
               <div class="card-body">
                 <h3>Immagine aggiunta:</h3>
-                <img src="{{asset('storage/img/' . Auth::user() -> img)}}">
+                <img src="{{asset('storage/assets/users/' . Auth::user() -> img . '.webp')}}">
               </div>
             @endif
 

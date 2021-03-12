@@ -10987,31 +10987,19 @@ section .typologybox {
   transform: translate(-50%, -50%);
 }
 
-header {
-  background-image: url(/images/header.svg?366a3914ff499d123c1b0002790523ab);
-  background-repeat: no-repeat;
-  height: 340px;
-  display: flex;
-  justify-content: space-between;
+header .curva {
+  height: 13vh;
 }
 
-header .logo img {
-  height: 50px;
-}
-
-header div {
-  padding: 35px;
-}
-
-header div .fa-user-circle {
-  font-size: 2rem;
-  color: #E7257D;
-  vertical-align: middle;
-}
-
-header div .btn {
+.btn-header {
   background-color: #E7257D;
-  border: none;
+  margin: 0 4px;
+  color: white !important;
+}
+
+.btn-header:hover {
+  background-color: white;
+  color: #E7257D !important;
 }
 
 body .typologybox {
@@ -11028,6 +11016,49 @@ body .typologybox .img-container {
 body .typologybox .img-container .typology-img {
   width: 100%;
   height: 100%;
+}
+
+body .hr-index {
+  width: 80%;
+  border: solid 1px #2F294D;
+}
+
+body .show {
+  visibility: visible;
+}
+
+body .hide {
+  visibility: hidden;
+}
+
+body .search-count h4 {
+  padding: 0;
+}
+
+body .btn-results {
+  background-color: #2F294D;
+}
+
+body #card-text {
+  font-size: 1.2rem;
+  color: #2F294D;
+}
+
+body .test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
+}
+
+body .selected {
+  filter: grayscale(90%);
+  transform: scale(1.1);
+}
+
+.tilt:hover {
+  cursor: pointer;
 }
 
 .checkbox-typology {
@@ -11052,6 +11083,7 @@ body .typologybox .img-container .typology-img {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28231, 37, 125, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+<<<<<<< HEAD
 #col-12-menu {
   background-color: yellow;
 }
@@ -11078,11 +11110,239 @@ body .typologybox .img-container .typology-img {
 
 body {
   background-color: white;
+=======
+#payment-form {
+  width: 70%;
+  margin: 0;
+  position: relative;
+  padding-bottom: 15%;
+>>>>>>> main
 }
 
-.card-header {
+#payment-form button {
+  background-color: #E7257D;
+  color: #fff;
+  width: 80%;
+  margin: 15px auto;
+  padding: 10px 10px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+}
+
+#payment-form button:hover {
   background-color: #FCC15D;
+  cursor: pointer;
+}
+
+.stick {
+  padding: 25px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  padding-top: 70px;
+}
+
+.stick img {
+  max-width: 2rem;
+  margin: 5px auto;
+}
+
+.stick .card {
+  padding: 25px;
+  border-color: #FCC15D;
+}
+
+.stick .card .card-body {
+  padding: 3px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid #FCC15D 1px;
+}
+
+.stick .card #carttotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+#waitBanner {
+  position: fixed;
+  width: 100%;
+  display: none;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  translate: opacity ease 0.3;
+}
+
+#waitBanner img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 40%;
+}
+
+#waitBanner #bannerstringcontainer {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  bottom: 2%;
+  color: #e15b64;
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+#waitBanner #bannerstringcontainer h2 {
+  text-align: right;
+}
+
+<<<<<<< HEAD
+.test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
+=======
+#waitBanner #bannerstringcontainer #processingAnimation {
+  width: 0%;
+}
+
+.background-title {
+  background-color: #E7257D;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 5px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.title {
+  font-weight: 900;
+}
+
+.card-box {
+  margin: 30px 15px;
+  padding: 7px 14px;
+  border-radius: 20px;
+}
+
+.title-card {
   color: #E7257D;
+>>>>>>> main
+}
+
+p {
+  font-size: 16px;
+}
+
+h4 {
+  color: #E7257D;
+}
+
+<<<<<<< HEAD
+=======
+#angelo {
+  margin-top: -30px;
+}
+
+.card-graphic {
+  margin: 30px 15px;
+}
+
+.mod-a {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0px 40px;
+}
+
+.mod-a:hover {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+#nav #ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav #ul .li {
+  color: #FCC15D;
+  font-size: 16px;
+  border: 0.3em solid #FCC15D;
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+
+#ul .li .onda {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #FCC15D;
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+#nav #ul .li:hover {
+  color: #E7257D;
+}
+
+#nav #ul .li:hover .onda {
+  transform: translateY(0) scale(2);
+}
+
+#nav #ul .li .onda:nth-child(1) {
+  --n: 1;
+}
+
+#nav #ul .li .onda:nth-child(2) {
+  --n: 2;
+}
+
+#nav #ul .li .onda:nth-child(3) {
+  --n: 3;
+}
+
+#nav #ul .li .onda:nth-child(4) {
+  --n: 4;
+}
+
+.add:hover {
+  color: #E7257D;
+}
+
+.text-button {
+  margin-left: 6px;
+  font-size: 26px;
+}
+
+body {
+  background-color: #fffefa;
 }
 
 .delete-banner {
@@ -11095,35 +11355,11 @@ body {
   display: inline-block;
 }
 
-.selected {
-  filter: drop-shadow(3px 3px 5px grey) grayscale(90%);
-  transform: scale(1.1);
-}
-
-.restaurant-name {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  text-transform: capitalize;
-}
-
-.test {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #FCC15D;
-  font-weight: bolder;
-}
-
 ul li {
   list-style: none;
 }
 
-.typolo-name {
-  text-transform: capitalize;
-  color: #E7257D;
-  font-weight: bolder;
-}
-
+>>>>>>> main
 input[type=text]:focus,
 select:focus {
   outline: none !important;

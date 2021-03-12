@@ -12,4 +12,51 @@ body {
             }
         }            
     }
+    .hr-index {
+        width: 80%;
+        border: solid 1px $darkblue;
+    }
+    .show {
+        visibility: visible;    
+    }
+
+    .hide {
+        visibility: hidden;
+    }
+    .search-count {
+        h4 {
+            padding: 0;
+        }
+    }
+    .btn-results {
+        background-color: $darkblue;
+        // :hover {
+        //     // background-color: $black;            
+        // }
+    }
+    #card-text {
+        font-size: 1.2rem;
+        color: $darkblue;
+    }
+
+    .test {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: $yellow;
+        font-weight: bolder;
+    }
+
+    // SELECTED TYPOLOGY
+    .selected {
+        filter: grayscale(90%);
+        transform: scale(1.1);
+    }
+}
+
+// 
+//////////// HOVER EFFECT LMM
+// 
+.tilt:hover {
+  cursor: pointer;
 }
