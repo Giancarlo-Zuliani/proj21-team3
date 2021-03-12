@@ -49644,7 +49644,9 @@ var app = new Vue({
     searchResultNum: undefined,
     cartArray: [],
     pay: false,
-    typologyBox: null
+    typologyBox: null,
+    // MAX 3 TYPOLOGY BANNER
+    bannerMax: ''
   },
   // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
   mounted: function mounted() {
@@ -49685,13 +49687,17 @@ var app = new Vue({
     typologySelection: function typologySelection(id) {
       if (this.selectedTypologies === undefined || this.selectedTypologies.length < 3) {
         this.selectedTypologies.includes(id) ? this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1) : this.selectedTypologies.push(id);
-        console.log(this.selectedTypologies);
+        this.bannerMax = ''; // console.log(this.selectedTypologies);
       } else if (this.selectedTypologies.includes(id)) {
-        this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1); // console.log(this.selectedTypologies);
+        this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1);
+        this.bannerMax = '';
+      } else if (this.selectedTypologies.length <= 3) {
+        this.bannerMax = 'modal';
+        console.log(this.bannerMax);
       }
 
       ;
-      this.getRestaurantCount(id); // console.log(this.selectedTypologies);
+      this.getRestaurantCount(id);
     },
     // SCRIPT PRINT NUMBER OF TOTAL RESTAURANTS AFTER FILTER
     getRestaurantCount: function getRestaurantCount(id) {
@@ -49730,17 +49736,19 @@ var app = new Vue({
       }
     },
     removeFromCart: function removeFromCart(index) {
-      // console.log(index);
       if (this.cartArray[index].quantity === 1) {
         this.cartArray.splice(index, 1);
       } else {
         this.cartArray[index].quantity--;
       }
     },
+    addItemCart: function addItemCart(index) {
+      this.cartArray[index].quantity++;
+    },
     showPayment: function showPayment() {
       this.pay = true;
     },
-    // FOCUS EFFECT
+    // FOCUS EFFECT ON CARD
     focusEffect: function focusEffect() {
       var _this4 = this;
 
@@ -49790,6 +49798,12 @@ var app = new Vue({
       });
     }
   }
+}); // CUSTOM CURSOR
+
+new kursor({
+  type: 1,
+  color: '#d30d66',
+  removeDefaultCursor: true
 });
 
 /***/ }),
@@ -49883,8 +49897,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laravel\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laravel\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

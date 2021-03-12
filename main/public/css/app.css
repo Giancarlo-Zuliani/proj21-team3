@@ -11002,6 +11002,17 @@ header .curva {
   color: #E7257D !important;
 }
 
+footer {
+  background-image: url("");
+}
+
+footer img {
+  max-width: 100vw;
+  min-height: 25vh;
+  position: absolute;
+  bottom: 0;
+}
+
 body .typologybox {
   background-color: white;
   text-align: center;
@@ -11016,6 +11027,14 @@ body .typologybox .img-container {
 body .typologybox .img-container .typology-img {
   width: 100%;
   height: 100%;
+}
+
+body * {
+  text-decoration: none;
+}
+
+body * :hover {
+  text-decoration: none;
 }
 
 body .hr-index {
@@ -11053,12 +11072,76 @@ body .test {
 }
 
 body .selected {
-  filter: grayscale(90%);
-  transform: scale(1.1);
+  position: relative;
+  border: solid 4px #2db12d;
 }
 
-.tilt:hover {
-  cursor: pointer;
+body .selected ::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 35px;
+  height: 35px;
+  background: url(/images/check.svg?be1813fe101d59c2a573c6179a20e33a) no-repeat bottom;
+}
+
+body .selected img {
+  width: 280px !important;
+}
+
+body h5 {
+  font-size: 1.4rem;
+  color: #2F294D;
+}
+
+body .card-body.card-index {
+  padding: 0.5rem;
+}
+
+body .card-body.card-index h6 {
+  margin: 0;
+}
+
+body .modal .modal-content {
+  background-color: #fff;
+  color: #2F294D;
+  border: 0;
+}
+
+body .modal .modal-content .modal-title {
+  color: #2F294D;
+}
+
+body .modal .modal-content button {
+  color: #E7257D;
+  opacity: 1;
+}
+
+body .modal .modal-content button :hover {
+  opacity: 1;
+}
+
+body .modal .modal-content button .fa-times-circle {
+  font-size: 1.5rem;
+}
+
+body .modal .modal-content .fa-exclamation-triangle {
+  color: #FCC15D;
+  font-size: 3rem;
+  margin: 5px 0;
+}
+
+body .modal .modal-content .modal-header .close {
+  padding: 0.5rem 0.5rem;
+}
+
+body .modal .modal-header {
+  border: 0;
+}
+
+body .tilt.card {
+  position: relative;
 }
 
 .checkbox-typology {
@@ -11083,6 +11166,30 @@ body .selected {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28231, 37, 125, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+#col-12-menu {
+  background-color: yellow;
+}
+
+#col-8-menu {
+  background-color: yellow;
+}
+
+#col-4-menu {
+  background-color: green;
+}
+
+#restaurant-name {
+  background-color: #FCC15D;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#rest-name {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
 #payment-form {
   width: 70%;
   margin: 0;
@@ -11105,7 +11212,8 @@ body .selected {
   cursor: pointer;
 }
 
-.stick {
+.stick,
+.stick-min-width {
   padding: 25px;
   position: -webkit-sticky;
   position: sticky;
@@ -11114,17 +11222,20 @@ body .selected {
   padding-top: 70px;
 }
 
-.stick img {
+.stick img,
+.stick-min-width img {
   max-width: 2rem;
   margin: 5px auto;
 }
 
-.stick .card {
+.stick .card,
+.stick-min-width .card {
   padding: 25px;
   border-color: #FCC15D;
 }
 
-.stick .card .card-body {
+.stick .card .card-body,
+.stick-min-width .card .card-body {
   padding: 3px;
   margin-top: 5px;
   display: flex;
@@ -11133,7 +11244,8 @@ body .selected {
   border-bottom: solid #FCC15D 1px;
 }
 
-.stick .card #carttotal {
+.stick .card #carttotal,
+.stick-min-width .card #carttotal {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
@@ -11165,7 +11277,7 @@ body .selected {
   align-items: baseline;
   justify-content: center;
   bottom: 2%;
-  color: #e15b64;
+  color: #FCC15D;
   font-size: 2.5rem;
   text-align: center;
   width: 100%;
@@ -11177,6 +11289,37 @@ body .selected {
 
 #waitBanner #bannerstringcontainer #processingAnimation {
   width: 0%;
+}
+
+.stick-min-width {
+  display: none;
+  padding: 25px;
+}
+
+@media screen and (max-width: 992px) {
+  .stick {
+    display: none;
+  }
+
+  .stick-min-width {
+    display: block;
+  }
+
+  #payment-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-group {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576) {
+  .form-group {
+    width: 100%;
+  }
 }
 
 .background-title {
@@ -11375,6 +11518,14 @@ body {
 
 .show {
   display: inline-block;
+}
+
+.test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
 }
 
 ul li {
