@@ -11095,106 +11095,42 @@ body .card-body.card-index h6 {
   margin: 0;
 }
 
-.mod-a {
-  list-style-type: none;
-  text-decoration: none;
-  margin: 0px 40px;
+body .modal .modal-content {
+  background-color: #fff;
+  color: #2F294D;
+  border: 0;
 }
 
-.mod-a:hover {
-  list-style-type: none;
-  text-decoration: none;
+body .modal .modal-content .modal-title {
+  color: #2F294D;
 }
 
-#nav #ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+body .modal .modal-content button {
+  color: #E7257D;
+  opacity: 1;
 }
 
-#nav #ul .li {
+body .modal .modal-content button :hover {
+  opacity: 1;
+}
+
+body .modal .modal-content button .fa-times-circle {
+  font-size: 1.5rem;
+}
+
+body .modal .modal-content .fa-exclamation-triangle {
   color: #FCC15D;
-  font-size: 16px;
-  border: 0.3em solid #FCC15D;
-  border-radius: 0.5em;
-  width: 12em;
-  height: 3em;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: sans-serif;
-  letter-spacing: 0.1em;
-  text-align: center;
-  line-height: 3em;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: 0.5s;
-  margin: 1em;
+  font-size: 3rem;
+  margin: 5px 0;
 }
 
-#ul .li .onda {
-  position: absolute;
-  width: 25%;
-  height: 100%;
-  background-color: #FCC15D;
-  transform: translateY(150%);
-  border-radius: 50%;
-  left: calc((var(--n) - 1) * 25%);
-  transition: 0.5s;
-  transition-delay: calc((var(--n) - 1) * 0.1s);
-  z-index: -1;
+body .modal .modal-content .modal-header .close {
+  padding: 0.5rem 0.5rem;
 }
 
-#nav #ul .li:hover {
-  color: #E7257D;
+body .modal .modal-header {
+  border: 0;
 }
-
-#nav #ul .li:hover .onda {
-  transform: translateY(0) scale(2);
-}
-
-#nav #ul .li .onda:nth-child(1) {
-  --n: 1;
-}
-
-#nav #ul .li .onda:nth-child(2) {
-  --n: 2;
-}
-
-#nav #ul .li .onda:nth-child(3) {
-  --n: 3;
-}
-
-#nav #ul .li .onda:nth-child(4) {
-  --n: 4;
-}
-
-.add:hover {
-  color: #E7257D;
-}
-
-.text-button {
-  margin-left: 6px;
-  font-size: 26px;
-}
-
-/* 
-      {{-- BUTTON ADD ITEM --}}        
-      <div class="row justify-content-center">
-      {{-- <div class=" col-sm-4 col-md-3 col-lg-3"> --}}
-          <a class="mod-a col-sm-4 col-md-3 col-lg-3 text-center" href="{{route('item-create')}}" >
-              <nav id="nav">
-              <ul id="ul" >
-                  <li class="li">
-                  Aggiungi Piatto
-                  <span class="onda"></span><span class="onda"></span><span class="onda"></span><span class="onda"></span>
-                  </li>
-              </ul>
-              </nav>
-          </a>
-      {{-- </div> --}}
-      </div>
-*/
 
 .checkbox-typology {
   display: flex;

@@ -128,12 +128,12 @@
                 <div class="modal-header mx-auto">
                 <h5 class="modal-title text-center"
                         id="exampleModalLongTitle">
-                        Seleziona al massimo 3 tipologie.
+                        Spiacente, seleziona al massimo 3 tipologie.
                         <br>
-                        <i class="far fa-hand-paper"></i>
+                        <i class="fas fa-exclamation-triangle"></i>
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <i class="far fa-times-circle"></i>
                 </button>
                 </div>
             </div>
