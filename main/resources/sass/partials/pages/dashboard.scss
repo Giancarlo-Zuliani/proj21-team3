@@ -5,7 +5,6 @@
   border-radius: 15px;
   margin-bottom: 25px;
   margin-top: 25px;
-
 }
 
 .title{
@@ -43,7 +42,7 @@ h5{
 
 // graphic
 #angelo{
-  margin-top: -30px;
+  margin-top: -50px;
 }
 
 .card-graphic{
@@ -56,7 +55,13 @@ h5{
   background-color: $yellow;
 }
 
+
+
 // button effetto nuvola
+.container-mod{
+  margin-left: 30px;
+
+}
 .mod-a{
   list-style-type: none;
   text-decoration: none;
@@ -67,6 +72,10 @@ h5{
 .mod-a:hover{
   list-style-type: none;
   text-decoration: none;
+}
+
+.text-modifica-elimina{
+  color: #6c757d;
 }
 
 

@@ -9,7 +9,7 @@
     {{-- DASHBOARD USER--}}
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-xs-12 col-md-6 col-lg-3 text-center">
+    <div class="col-xs-12  col-lg-3 text-center">
         <div class="background-title">
           <h1 class="title">
             Il Tuo Menù
@@ -21,7 +21,7 @@
 {{-- BUTTON ADD ITEM --}}
  <div class="container">
    <div class="row justify-content-center">
-     <div class=" col-sm-12 col-md-5 col-lg-3 text-center">
+     <div class="container-mod col-sm-12 col-md-5 col-lg-3 text-center">
          <a class="mod-a" href="{{route('item-create')}}" >
            <nav id="nav">
               <ul id="ul" >
@@ -78,16 +78,18 @@
                   @endif
                <div class="card-icon text-center" style="margin-bottom: 15px;">
                  <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit text-muted">
-                     <span>
-                       Modifica
-                     </span>
+                   <span class="text-modifica-elimina">
+                     Modifica
+                   </span>
                  </i>
+
                  </a>
                  <a href="#" ><i class="far fa-trash-alt text-muted" >
-                   <span>
+                   <span class="text-modifica-elimina">
                      Elimina
                    </span>
                  </i>
+
                  </a>
                  {{-- DELETE BANNER--}}
                  <div class="delete-banner" >
@@ -111,7 +113,7 @@
    {{-- STATISTIC --}}
    <div class="container">
      <div class="row justify-content-center">
-       <div class="col-xs-12 col-md-6 col-lg-3 text-center">
+       <div class="col-xs-12 col-lg-3 text-center">
            <div class="background-title">
              <h1 class="title">
                Statistiche
