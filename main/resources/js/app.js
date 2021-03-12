@@ -27,21 +27,23 @@ const app = new Vue({
         // NUMBER OF RESTAURANTS AFTER SELECTED
         searchResultNum: undefined,
         cartArray: [],
+        finalPrice: 0,
+        deliveryPrice: parseInt(document.getElementById('deliveryPrice').value),
         pay: false,
-        typologyBox: null,        
+        typologyBox: null,
     },
     // (INDEX) PAGE LOADED GET ALL TYPOLOGIES FROM DB
     mounted: function() {
         axios.get('http://127.0.0.1:8000/gettypo')
             .then(response => {
                 this.typologyArray = response.data;
-            
+
             // FOCUS EFFECT
             this.$nextTick(() => {
                 this.focusEffect()
             })
 
-});      
+});
         },
     // },
     methods: {
@@ -113,17 +115,28 @@ const app = new Vue({
             } else {
                 item.quantity = 1;
                 this.cartArray.push(item);
-            }
+            };
+            this.getCartTotal();
         },
         removeFromCart(index) {
             if (this.cartArray[index].quantity === 1) {
                 this.cartArray.splice(index, 1);
             } else {
                 this.cartArray[index].quantity--;
-            }
+            };
+            this.getCartTotal();
         },
         addItemCart(index) {
                 this.cartArray[index].quantity++;
+                this.getCartTotal();
+        },
+        getCartTotal(){
+          this.finalPrice = 0;
+          this.cartArray.forEach((item) => {
+            this.finalPrice += item.price * item.quantity;
+          });
+          this.finalPrice += this.deliveryPrice;
+          console.log(this.deliveryPrice);
         },
         showPayment() {
             this.pay = true;
@@ -134,41 +147,41 @@ const app = new Vue({
             for (let i = 0; i < this.$refs.myCard.length; i++) {
 
                 let el = this.$refs.myCard[i];
-                
+
                 const height = el.clientHeight
                 const width = el.clientWidth
-                
+
                 el.addEventListener('mousemove', handleMove)
-                
+
                 function handleMove(e) {
                 const xVal = e.layerX
                 const yVal = e.layerY
-                
+
                 const yRotation = 20 * ((xVal - width / 2) / width)
-                
+
                 const xRotation = -20 * ((yVal - height / 2) / height)
-                
+
                 const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
-                
+
                 el.style.transform = string
                 }
-                
-                
+
+
                 /* Add listener for mouseout event, remove the rotation */
                 el.addEventListener('mouseout', function() {
                 el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
                 })
-                
+
                 /* Add listener for mousedown event, to simulate click */
                 el.addEventListener('mousedown', function() {
                 el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
                 })
-                
+
                 /* Add listener for mouseup, simulate release of mouse click */
                 el.addEventListener('mouseup', function() {
                 el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
                 })
-                
+
                 }
 
         },
@@ -179,5 +192,5 @@ const app = new Vue({
                 this.focusEffect()
             })
         }
-    },                    
+    },
 });

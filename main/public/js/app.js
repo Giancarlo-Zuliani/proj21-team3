@@ -49643,6 +49643,8 @@ var app = new Vue({
     // NUMBER OF RESTAURANTS AFTER SELECTED
     searchResultNum: undefined,
     cartArray: [],
+    finalPrice: 0,
+    deliveryPrice: parseInt(document.getElementById('deliveryPrice').value),
     pay: false,
     typologyBox: null
   },
@@ -49728,6 +49730,9 @@ var app = new Vue({
         item.quantity = 1;
         this.cartArray.push(item);
       }
+
+      ;
+      this.getCartTotal();
     },
     removeFromCart: function removeFromCart(index) {
       if (this.cartArray[index].quantity === 1) {
@@ -49735,19 +49740,33 @@ var app = new Vue({
       } else {
         this.cartArray[index].quantity--;
       }
+
+      ;
+      this.getCartTotal();
     },
     addItemCart: function addItemCart(index) {
       this.cartArray[index].quantity++;
+      this.getCartTotal();
+    },
+    getCartTotal: function getCartTotal() {
+      var _this4 = this;
+
+      this.finalPrice = 0;
+      this.cartArray.forEach(function (item) {
+        _this4.finalPrice += item.price * item.quantity;
+      });
+      this.finalPrice += this.deliveryPrice;
+      console.log(this.deliveryPrice);
     },
     showPayment: function showPayment() {
       this.pay = true;
     },
     // FOCUS EFFECT
     focusEffect: function focusEffect() {
-      var _this4 = this;
+      var _this5 = this;
 
       var _loop = function _loop(i) {
-        var el = _this4.$refs.myCard[i];
+        var el = _this5.$refs.myCard[i];
         var height = el.clientHeight;
         var width = el.clientWidth;
         el.addEventListener('mousemove', handleMove);
@@ -49783,12 +49802,12 @@ var app = new Vue({
       }
     },
     backTypology: function backTypology() {
-      var _this5 = this;
+      var _this6 = this;
 
       this.showRestaurant = !this.showRestaurant; // FOCUS EFFECT
 
       this.$nextTick(function () {
-        _this5.focusEffect();
+        _this6.focusEffect();
       });
     }
   }

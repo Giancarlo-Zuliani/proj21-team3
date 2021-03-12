@@ -11094,18 +11094,6 @@ body .selected {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28231, 37, 125, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-#col-12-menu {
-  background-color: yellow;
-}
-
-#col-8-menu {
-  background-color: yellow;
-}
-
-#col-4-menu {
-  background-color: green;
-}
-
 #restaurant-name {
   background-color: #FCC15D;
   text-align: center;
@@ -11115,7 +11103,96 @@ body .selected {
 #rest-name {
   color: white;
   font-size: 50px;
-  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.card {
+  border-radius: 1.5rem;
+}
+
+.fixHeight {
+  height: 250px;
+}
+
+.roundColor {
+  border: 1px solid #FCC15D;
+  color: #fffff0;
+  border-radius: 50%;
+  background-color: #FCC15D;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.itemFlex {
+  display: flex;
+}
+
+.justifySpace {
+  justify-content: space-between;
+}
+
+.itemName {
+  text-align: center;
+  color: #E7257D;
+}
+
+.cartAlign {
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemName::first-letter,
+.itemDescription::first-letter {
+  text-transform: uppercase;
+}
+
+.darkBlue {
+  color: #2F294D;
+}
+
+.imgDel {
+  width: 25px;
+}
+
+.imgDel img {
+  width: 100%;
+  height: auto;
+}
+
+.cartDel {
+  font-size: 10px;
+}
+
+p.cartDel {
+  margin-bottom: 0;
+}
+
+#notAvailable {
+  font-size: 11px;
+  color: red;
+}
+
+.itemHover:hover {
+  transform: scale(1.1);
+  transition: all 0.9s ease 0s;
+}
+
+.cartInfo {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.cartInfo div.darkBlue {
+  margin: 0px 10px;
+}
+
+#pagamento {
+  background-color: #E7257D;
+  color: white;
+  border-radius: 20px;
+  border-color: #E7257D;
 }
 
 #payment-form {
@@ -11270,14 +11347,6 @@ body .selected {
 }
 
 .title-card {
-  color: #E7257D;
-}
-
-p {
-  font-size: 16px;
-}
-
-h4 {
   color: #E7257D;
 }
 
