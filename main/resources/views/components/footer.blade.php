@@ -5,7 +5,7 @@
  --}}    <!-- Grid container -->
     <div class="container-fluid p-4">  
         <div class="row align-items-center">
-          <div class="col-lg-2 col-md-11 mb-4 mb-md-0">
+          <div class="col-lg-2 col-md-2 col-sm-3 mb-4 mb-md-0">
             <img id="footersvg" src="{{asset('storage/assets/logo-yellow.svg')}}" alt="">          
           </div>
         </div>
