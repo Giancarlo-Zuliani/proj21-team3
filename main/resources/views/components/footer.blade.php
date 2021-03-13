@@ -1,5 +1,5 @@
 <footer class="text-center text-white">
-    <div class="container-fluid p-4">  
+    <div class="container-fluid ">  
         <div class="row align-items-center">
           <div class="col-sm-3 ">
             <img id="footersvg" src="{{asset('storage/assets/logo-yellow.svg')}}" alt="">          
@@ -7,7 +7,7 @@
           <div class="col-sm-3 offset-sm-6">
             <a class="github-button" href="https://github.com/Giancarlo-Zuliani/proj21-team3/archive/main.zip" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Download Giancarlo-Zuliani/proj21-team3 on GitHub">Download</a>
           </div>
-        <div class="row justify-content-center  p-4">
+        <div class="row justify-content-center avatar_container">
           {{-- FIRST AVATAR --}}
           <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 my-4">
             <ul class="list-unstyled mb-0">

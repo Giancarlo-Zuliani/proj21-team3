@@ -11024,6 +11024,10 @@ footer {
   padding: 5px;
 }
 
+.avatar_container {
+  margin: 5px auto;
+}
+
 .flip-card-inner {
   position: relative;
   width: 100%;
