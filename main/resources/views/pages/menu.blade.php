@@ -6,9 +6,13 @@
 
 <div class="container">
   <div class="row justify-content-center align-items-stretch">
-    <div class="col-6 my-2" >
-      <h2  id="restaurant-name"><span id="rest-name"> <strong>{{$rest -> name}}</strong> </span></h2>
+    <div class="col-12">
+      <div class="jumboTron">
+        <img src="{{asset('storage/assets/users/' . $rest -> img . '.webp')}}" alt="">
+        <h2  id="restaurant-name"><span id="rest-name"><strong>{{$rest -> name}}</strong> </span></h2>
+      </div>
     </div>
+
   </div>
   <h1 class="darkBlue" > <strong>Menu</strong> </h1>
   <div id="carTxs" class="row">
