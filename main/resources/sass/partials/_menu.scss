@@ -22,11 +22,12 @@
   top: 50%;
   transform: translate(-50%, -50%);
   height: 60px;
+  line-height: 60px;
 }
 
 span#rest-name {
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: capitalize;
   padding: 20px;
 }
@@ -72,7 +73,7 @@ span#rest-name {
 
 h2.darkBlue {
   margin-top: 2rem;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .darkBlue {
@@ -159,13 +160,15 @@ p.cartDel {
 @media screen and (min-width:790px) and (max-width:1199px) {
   #restaurant-name {
     height: 40px;
+    line-height: 30px;
   }
 
   span#rest-name {
-    font-size: 2rem;
+    font-size: 1rem;
+    padding: 10px;
   }
 
   h2.darkBlue {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 }
