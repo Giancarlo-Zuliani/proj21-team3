@@ -8,7 +8,7 @@
   <div class="row justify-content-center align-items-stretch">
     <div class="col-12">
       <div class="jumboTron">
-        <img src="{{asset('storage/img/' . $rest -> img . '.webp')}}" alt="">
+        <img src="{{asset('storage/img/' . $rest -> img)}}" alt="">
         <h2  id="restaurant-name"><span id="rest-name"><strong>{{$rest -> name}}</strong> </span></h2>
       </div>
     </div>
