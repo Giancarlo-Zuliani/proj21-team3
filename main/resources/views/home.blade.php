@@ -58,7 +58,7 @@
                  </p>
                   <p class="font-weight-bold">
                     <i class="fa"> &#xf153;</i>
-                    {{$item -> price  }}
+                    {{$item -> price / 100 }}
 
                       Lattosio
                     @if ($item -> lactose === 1 )
