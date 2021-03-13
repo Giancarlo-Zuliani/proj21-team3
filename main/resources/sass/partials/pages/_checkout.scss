@@ -51,7 +51,7 @@
 #waitBanner {
     position: fixed;
     width: 100%;
-    display: none;
+    display: block;
     height: 100%;
     top: 0;
     left: 0;
@@ -61,16 +61,16 @@
     img {
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 40%;
         transform: translate(-50%, -50%);
-        min-width: 40%;
+        width: 250px;
     }
     #bannerstringcontainer {
         position: absolute;
         display: flex;
         align-items: baseline;
         justify-content: center;
-        bottom: 2%;
+        top: 50%;
         color: $yellow;
         font-size: 2.5rem;
         text-align: center;
