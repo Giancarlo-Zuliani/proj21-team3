@@ -1,0 +1,97 @@
+#container404{
+  #image404{
+
+    min-width: 50%;
+    position: relative;
+    top: 25px;
+ }
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: $darkblue;
+
+  .logo{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 135px;
+    height: 50px;
+    img{
+      position: absolute;
+      top: 5%;
+      left: 100%;
+
+    }
+  }
+  #text-logo{
+    color: white;
+    position: absolute;
+  }
+  #logo-white-xs{
+    display: none;
+  }
+
+   #text404{
+  position: absolute;
+  color: white;
+  top:10%;
+  left: 30%;
+  text-align: center;
+  font-size: 4vw;
+  font-weight: bold;
+  }
+  #home{
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    position: absolute;
+    text-decoration: none;
+    bottom: 7%;
+  }
+
+   #home:hover{
+    color: $pink;
+  }
+
+}
+
+
+@media (max-width: 1200px) {
+  #home{
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    text-decoration: none;
+    bottom: 5%;
+  }
+}
+
+@media (max-width: 992px) {
+
+  #text-logo{
+    display: none;
+  }
+
+  .logo{
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 250px;
+
+    img{
+      position: absolute;
+      top: 5%;
+      left: 2%;
+    }
+  }
+
+  #home{
+    bottom: 3%;
+    font-size: 20px;
+  }
+}
