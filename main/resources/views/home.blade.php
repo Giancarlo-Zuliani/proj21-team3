@@ -82,19 +82,13 @@
                      Modifica
                    </span>
                  </i>
-
                  </a>
                  <a  href="{{route('item-delete', $item -> id)}}" ><i class="far fa-trash-alt text-muted" >
-
                    <span class="text-modifica-elimina">
                      Elimina
                    </span>
-                   
                  </i>
-
                  </a>
-                 {{-- DELETE BANNER--}}
-
                </div>
              </div>
             @endif
@@ -114,7 +108,6 @@
         </div>
      </div>
     </div>
-
 
     @php
      $user = Auth::user() -> id;

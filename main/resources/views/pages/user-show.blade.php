@@ -5,11 +5,15 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class=" card shadow col-xl-10  text-center" >
-          @if (Auth::user() -> img != null)
-            {{-- <div class="card-body"> --}}
-              <img class="img-user-show" src="{{asset('storage/assets/users/' . Auth::user() -> img . '.webp')}}">
-            {{-- </div> --}}
+          @if (Auth::user() -> img)
+            <div class="card-body">
+              {{-- <img class="img-user-show"  src="{{asset('storage/assets/users/' . Auth::user() -> img . '.webp')}}"> --}}
+              <img class="img-user-show"  src="{{asset('storage/img/' . Auth::user() -> img )}}">
+
+            </div>
           @endif
+
+
       </div>
     </div>
   </div>

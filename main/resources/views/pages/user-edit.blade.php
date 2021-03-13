@@ -9,7 +9,7 @@
                   <div class="card-header">{{ __('Informazioni') }}</div>
 
                   <div class="card-body">
-                      <form method="POST" action="{{route('user-update', $user -> id)}}" enctype='multipart/form-data'>
+                      <form  action="{{route('user-update', $user -> id)}}"  method="POST" enctype='multipart/form-data'>
                           @csrf
                           @method('post')
 
