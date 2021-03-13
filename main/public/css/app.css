@@ -11457,7 +11457,23 @@ p.cartDel {
   }
 }
 
-@media screen and (max-width: 789px) {
+@media screen and (max-width: 459px) {
+  #restaurant-name {
+    height: 20px;
+    line-height: 0.4;
+  }
+
+  span#rest-name {
+    font-size: 0.8rem;
+    padding: 2px;
+  }
+
+  h2.darkBlue {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 460px) and (max-width: 789px) {
   #restaurant-name {
     height: 30px;
     line-height: 0.9;
@@ -11480,12 +11496,12 @@ p.cartDel {
   }
 
   span#rest-name {
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 10px;
   }
 
   h2.darkBlue {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
