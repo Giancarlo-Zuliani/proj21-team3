@@ -58,6 +58,16 @@ footer {
     align-items: center;
 }
 
+.footer_links {
+    a {
+        i {
+            color: $yellow;
+            font-size: 2.8rem;
+            margin: 15px;
+        }
+    }
+}
+
 @media screen and(max-width:576px) {
     #footersvg {
         max-width: 50%;

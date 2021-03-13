@@ -19,7 +19,10 @@
                     </div>
                     <div class="flip-card-back">
                       <h5>Dario Alessio</h5>
-                      <a class="github-button footer_git_link" href="https://github.com/DarioAlessio" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @Giancarlo-Zuliani on GitHub">Follow @DarioAlessio</a>
+                      <div class="footer_links">
+                        <a target="_blank" href="https://github.com/DarioAlessio"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/dario-alessio-670637207/"><i class="fab fa-linkedin"></i></a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -36,8 +39,11 @@
                       <img src="{{asset('storage/assets/av-gz.svg')}}" alt="Avatar">
                     </div>
                     <div class="flip-card-back">
-                      <h5>Angelo Cina</h5>
-                      <a class="github-button" href="https://github.com/AngeloCinaWD" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @Giancarlo-Zuliani on GitHub">Follow @AngeloCinaWD</a>
+                      <h5>Angelo Cinà</h5>
+                      <div class="footer_links">
+                        <a target="_blank" href="https://github.com/AngeloCinaWD"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/angelo-cina/"><i class="fab fa-linkedin"></i></a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -55,7 +61,10 @@
                     </div>
                     <div class="flip-card-back">
                       <h5>Andrea Sansica</h5>
-                      <a class="github-button footer_git_link" href="https://github.com/andreasansica" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @Giancarlo-Zuliani on GitHub">Follow @andreasansica</a>
+                      <div class="footer_links">
+                        <a target="_blank" href="https://github.com/andreasansica"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/andrea-sansica/"><i class="fab fa-linkedin"></i></a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -73,7 +82,10 @@
                     </div>
                     <div class="flip-card-back">
                       <h5>Natalia Veras</h5>
-                      <a class="github-button" href="https://github.com/nataliavrs" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @Giancarlo-Zuliani on GitHub">Follow @nataliavrs</a>
+                      <div class="footer_links">
+                        <a target="_blank" href="https://github.com/nataliavrs/nataliavrs"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/nataliaveras/"><i class="fab fa-linkedin"></i></a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -91,7 +103,10 @@
                     </div>
                     <div class="flip-card-back">
                       <h5>Giacarlo Zuliani</h5>
-                      <a class="github-button footer_git_link" href="https://github.com/Giancarlo-Zuliani" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @Giancarlo-Zuliani on GitHub">Follow @Giancarlo-Zuliani</a>
+                      <div class="footer_links">
+                         <a target="_blank" href="https://github.com/Giancarlo-Zuliani"><i class="fab fa-github"> </i></a>
+                         <a target="_blank" href="https://www.linkedin.com/in/giancarlo-zuliani"><i class="fab fa-linkedin"> </i></a>
+                      </div>     
                     </div>
                   </div>
                 </div>
