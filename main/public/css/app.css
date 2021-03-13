@@ -10944,6 +10944,11 @@ a.text-dark:focus {
   }
 }
 
+main {
+  padding-top: 25px;
+  padding-bottom: 45px;
+}
+
 .console {
   margin: 25px 50px 25px;
 }
@@ -11004,7 +11009,6 @@ header .curva {
 
 footer {
   padding: 25px;
-  margin-top: 500px;
   background-color: #2F294D;
 }
 
