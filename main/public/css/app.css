@@ -11002,6 +11002,16 @@ header .curva {
   color: #E7257D !important;
 }
 
+#nav-bar nav-item button :hover {
+  color: yellow !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #E7257D !important;
+  background-color: #fff;
+}
+
 footer {
   padding: 25px;
   margin-top: 500px;
@@ -11193,6 +11203,27 @@ body .modal .modal-header {
 
 body .tilt.card {
   position: relative;
+}
+
+body #menu #list {
+  max-height: 0;
+  transition: max-height 2s ease-out !important;
+  overflow: hidden;
+  margin: auto;
+}
+
+body #menu #list a {
+  color: #2F294D !important;
+}
+
+body #menu:hover #list {
+  max-height: 500px;
+  transition: max-height 2s ease-in !important;
+  display: inline;
+}
+
+body #menu:hover #list a {
+  color: #2F294D !important;
 }
 
 .checkbox-typology {
@@ -11606,10 +11637,6 @@ p.cartDel {
   color: #E7257D;
 }
 
-.font-weight-bold {
-  font-size: 16px;
-}
-
 .title-graphic {
   color: #E7257D;
   font-weight: 600;
@@ -11774,6 +11801,10 @@ p.cartDel {
 
 body {
   background-color: #fffefa;
+}
+
+a {
+  color: #2F294D !important;
 }
 
 .card-header {

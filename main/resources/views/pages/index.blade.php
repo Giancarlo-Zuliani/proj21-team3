@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div v-if="!showRestaurant">
-                    <h1 class="font-weight-bold text-center">In evidenza a Milano</h1>
+                    <h1 class="font-weight-bolder text-center">In evidenza a Milano</h1>
                     <h3 class="text-center">Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio.</h3>
                     <hr class="hr-index">
                 </div>
@@ -58,7 +58,7 @@
                 >
                 <button class="btn btn-primary btn-results border-0 " @click="getRestaurants">   
                     <i class="fas fa-search"></i>
-                    <span>Vai ai risultati</span>                                            
+                    <span class="font-weight-bold">Vai ai risultati</span>                                            
                 </button>
             </div>
         </div>
@@ -71,7 +71,7 @@
                 >
                 <button class="btn btn-primary btn-results border-0 " @click="backTypology()">   
                     <i class="fas fa-arrow-left"></i>
-                    <span>Torna alle tipologie</span>                                            
+                    <span class="font-weight-bold">Torna alle tipologie</span>                                            
                 </button>
             </div>
         </div>
@@ -108,21 +108,32 @@
                 class="col-md-6 col-lg-4"
                 >          
                 <a :href=`{{route('show-menu','')}}/${rest.id}`>      
-                <div class="tilt card shadow mx-auto" style="width: 18rem; margin: 20px;"
+                <div class="tilt restaurant-card card shadow mx-auto" style="width: 18rem; margin: 20px;"
                     ref="myCard"
+                    id="menu"
                 >
                     <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/users/', '')}}/${rest.img}.webp`>
                     <div class="card-body card-index">
-                        <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{rest.name}}</h6>                            
+                        <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{rest.name}}</h6>
                     </div>
+
+                    {{-- RESTAURANTS INFO  --}}
+                    <div id="list">                        
+                        <div style="display: flex; justify-content: center;">
+                            <img style="max-width:25px;" src="{{asset('storage/assets/delivery.svg')}}">
+                            <span>@{{rest.price_delivery / 100}}€</span>
+                        </div>
+                        <span 
+                            class="text-capitalize"
+                            v-for="typology in restaurantArray[index].typologies"
+                            >
+                            @{{typology.typology}}   
+                        </span>                                                                                                    
+                    </div>  
                 
-                {{-- // GET RESTAURANTS TYPOLOGIES  --}}
-                <span v-for="typology in restaurantArray[index].typologies">
-                    @{{typology.typology}}   
-                </span>                               
-                
+
                 </div>
-            </a>
+                </a>
             </div>                        
         </div>
     

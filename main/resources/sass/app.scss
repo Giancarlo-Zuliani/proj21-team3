@@ -26,6 +26,10 @@ body {
     background-color: rgb(255, 254, 250);
 }
 
+a {
+    color: $darkblue !important;
+}
+
 // CARD HEADER
 .card-header {
     background-color: $yellow;

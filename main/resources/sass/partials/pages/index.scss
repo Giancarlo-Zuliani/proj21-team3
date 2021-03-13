@@ -118,9 +118,41 @@ body {
         }
     }
 
-    // RISTORANTI CARD
+    // CARD HOVER EFFECT
     .tilt.card {
         position: relative;
+    }
+
+    // SHOW RESTAURANT INFO
+    // .restaurant-card {
+    //     :hover {
+    //         height: 300px;
+    //     }
+    // }
+
+    #list {
+        // display: flex;
+        // justify-content: center;
+    }
+
+    #menu #list {
+        max-height: 0;
+        transition: max-height 2s ease-out !important;
+        overflow: hidden;
+        margin: auto;
+        
+        a {
+            color: $darkblue !important;
+        }
+    }
+    
+    #menu:hover #list {
+        max-height: 500px;
+        transition: max-height 2s ease-in !important;
+        display: inline;
+        a {
+            color: $darkblue !important;
+        }        
     }
 
 }
