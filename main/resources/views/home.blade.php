@@ -84,25 +84,17 @@
                  </i>
 
                  </a>
-                 <a href="#" ><i class="far fa-trash-alt text-muted" >
+                 <a  href="{{route('item-delete', $item -> id)}}" ><i class="far fa-trash-alt text-muted" >
+
                    <span class="text-modifica-elimina">
                      Elimina
                    </span>
+                   
                  </i>
 
                  </a>
                  {{-- DELETE BANNER--}}
-                 <div class="delete-banner" >
-                     {{-- <span>Eliminare</span> --}}
-                     <a class="button-alert"  href="{{route('item-delete', $item -> id)}}">
-                         <button class="btn btn-danger">
-                           Sì
-                         </button>
-                     </a>
-                     {{-- <button class="btn btn-danger">
-                       No
-                     </button> --}}
-                  </div>
+
                </div>
              </div>
             @endif

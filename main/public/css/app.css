@@ -11730,21 +11730,6 @@ p.cartDel {
   padding: 35px 25px;
 }
 
-.btn {
-  background-color: #E7257D;
-}
-
-.btn:hover {
-  background-color: #E7257D;
-}
-
-.btn:focus {
-  background-color: #E7257D;
-  border-color: #E7257D;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem #E7257D;
-}
-
 .img-user-show {
   max-height: 400px;
 }
