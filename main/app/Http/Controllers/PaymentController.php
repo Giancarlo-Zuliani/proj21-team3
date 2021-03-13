@@ -17,18 +17,23 @@ class PaymentController extends Controller
     $data = $request -> all();
     $dishes = [];
     $quantities = [];
+    $cartArr=[];
     foreach($data['items'] as $item){
         $arr = explode(',' , $item);
         $dishes[] = $arr [0];
         $quantities[] = $arr[1];
-    };
+        $cartArr []= array('dish' => Item::findOrFail($arr[0]) -> name , 
+                        'quantity' => $arr[1],
+                        'price' => $arr[2]);
+      }; 
     $orderedItems = Item::findOrFail($dishes);
     $user = User::findOrFail($data['user_id']);
     $deliveryPrice = $user -> price_delivery;
     $fixedPrice = $this -> getFinalPrice($dishes , $quantities,$deliveryPrice);
     $gateway = new Braintree\Gateway(config('braintree'));
-      $token = $gateway -> clientToken() -> generate();
-      return view('pages.checkout' , compact('token','fixedPrice', 'dishes','quantities','orderedItems' ,'deliveryPrice'));
+    $token = $gateway -> clientToken() -> generate();
+    /* dd($cartArr); */
+    return view('pages.checkout' , compact('token','fixedPrice', 'dishes','quantities','cartArr','orderedItems' ,'deliveryPrice'));
   }
 
   public function checkout(Request $request){

@@ -12,11 +12,11 @@
         <h1>Il tuo ordine</h1>
         <img class="center" src="{{asset('storage/assets/delivery.svg')}}" alt="">
         <h5>{{$deliveryPrice / 100}}€</h5>
-        @foreach ($orderedItems as $item)
+        @foreach ($cartArr as $item)
         <div class="card-body">
-             <h6>{{$quantities[$loop -> index]}}x</h6>
-             <h5 class="text-capitalize">{{$item -> name}}</h5>
-             <h6>€{{$item -> price * $quantities [$loop -> index] / 100}} </h6>
+             <h6>{{$item['quantity'] }}x</h6>
+             <h5 class="text-capitalize">{{$item['dish']}}</h5>
+             <h6>€{{$item['price'] * $item['quantity'] / 100}} </h6>
         </div>
         @endforeach
         <div id="carttotal">

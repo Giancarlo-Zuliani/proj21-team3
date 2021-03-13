@@ -186,7 +186,7 @@
                 </span>
               </div>
               <div v-for="item in cartArray">
-                <input type="checkbox" name="items[]" :value="[item.id,item.quantity]" hidden checked>
+                <input type="checkbox" name="items[]" :value="[item.id,item.quantity,item.price]" hidden checked>
               </div>
               <br>
               <input type="number" name="user_id" hidden value="{{$rest ->  id}}" >
