@@ -11003,7 +11003,8 @@ header .curva {
 }
 
 footer {
-  min-height: 250px;
+  padding: 25px;
+  margin-top: 500px;
 }
 
 #footersvg {
@@ -11217,12 +11218,15 @@ body .tilt.card {
 }
 
 .jumboTron {
-  position: relative;
+  height: 40vh;
 }
 
 .jumboTron img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
 }
 
 #restaurant-name {
