@@ -15,7 +15,7 @@
                 <div class="flip-card mx-auto">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
-                      <img src="{{asset('storage/assets/av-gz.svg')}}" alt="Avatar">
+                      <img src="{{asset('storage/assets/Dario.svg')}}" alt="Avatar">
                     </div>
                     <div class="flip-card-back">
                       <h5>Dario Alessio</h5>
@@ -36,7 +36,7 @@
                 <div class="flip-card mx-auto pd-3">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
-                      <img src="{{asset('storage/assets/av-gz.svg')}}" alt="Avatar">
+                      <img src="{{asset('storage/assets/Angelo.svg')}}" alt="Avatar">
                     </div>
                     <div class="flip-card-back">
                       <h5>Angelo Cinà</h5>
@@ -57,7 +57,7 @@
                 <div class="flip-card mx-auto pd-3">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
-                      <img src="{{asset('storage/assets/av-gz.svg')}}" alt="Avatar">
+                      <img src="{{asset('storage/assets/Andrea.svg')}}" alt="Avatar">
                     </div>
                     <div class="flip-card-back">
                       <h5>Andrea Sansica</h5>
@@ -78,7 +78,7 @@
                 <div class="flip-card mx-auto pd-3">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
-                      <img src="{{asset('storage/assets/av-gz.svg')}}" alt="Avatar">
+                      <img src="{{asset('storage/assets/Natalia.svg')}}" alt="Avatar">
                     </div>
                     <div class="flip-card-back">
                       <h5>Natalia Veras</h5>
@@ -99,7 +99,7 @@
                 <div class="flip-card mx-auto pd-3">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
-                      <img src="{{asset('storage/assets/av-gz.svg')}}" alt="Avatar">
+                      <img src="{{asset('storage/assets/Gian.svg')}}" alt="Avatar">
                     </div>
                     <div class="flip-card-back">
                       <h5>Giacarlo Zuliani</h5>
