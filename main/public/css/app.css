@@ -10988,7 +10988,7 @@ section .typologybox {
 }
 
 header {
-  height: 20vh;
+  height: 14vh;
 }
 
 .btn-header {
@@ -11240,6 +11240,26 @@ body #menu:hover #list {
 
 body #menu:hover #list a {
   color: #2F294D !important;
+}
+
+.carousel-nav-icon {
+  height: 48px;
+  width: 48px;
+}
+
+.carousel-item .col,
+.carousel-item .col-sm,
+.carousel-item .col-md {
+  margin: 5px;
+  height: 370px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-item h4 {
+  background-color: rgba(30, 36, 68, 0.616);
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .checkbox-typology {
