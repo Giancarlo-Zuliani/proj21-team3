@@ -10987,29 +10987,27 @@ section .typologybox {
   transform: translate(-50%, -50%);
 }
 
-header .curva {
-  height: 13vh;
+header {
+  height: 20vh;
 }
 
 .btn-header {
   background-color: #E7257D;
   margin: 0 4px;
+}
+
+.nav-link {
+  color: #E7257D !important;
+}
+
+.btn-nav:hover {
+  color: #E7257D !important;
+  background-color: white !important;
+}
+
+.btn-nav {
+  text-transform: capitalize;
   color: white !important;
-}
-
-.btn-header:hover {
-  background-color: white;
-  color: #E7257D !important;
-}
-
-#nav-bar nav-item button :hover {
-  color: yellow !important;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link:focus {
-  color: #E7257D !important;
-  background-color: #fff;
 }
 
 footer {
@@ -11205,11 +11203,29 @@ body .tilt.card {
   position: relative;
 }
 
+body #list {
+  margin: 3px;
+}
+
+body #list .typology-name {
+  background-color: rgba(0, 0, 0, 0.116);
+  font-size: 0.9rem;
+  margin: 0 3px;
+  padding: 1px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+body #list .price-container {
+  text-align: center;
+  margin: 3px 0;
+}
+
 body #menu #list {
   max-height: 0;
   transition: max-height 2s ease-out !important;
   overflow: hidden;
-  margin: auto;
 }
 
 body #menu #list a {
@@ -11841,5 +11857,9 @@ select:focus {
 
 .form-control:focus {
   outline: none !important;
+}
+
+#main {
+  margin-bottom: 30px;
 }
 

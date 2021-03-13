@@ -1,35 +1,22 @@
 header {
-    .curva {
-        // background-image: url('storage/assets/header.svg');
-        // background-repeat: no-repeat;
-        height: 13vh;
-    }
-  
+    height: 20vh;      
 }
 
 .btn-header {
     background-color: $pink;
     margin: 0 4px;
-    color: white !important;
 }
 
-.btn-header:hover {
-    background-color: white;
+.nav-link {
+    color: $pink !important;    
+}
+
+.btn-nav:hover {
     color: $pink !important;
+    background-color: white !important;
 }
 
-#nav-bar {
-    nav-item {
-        button {
-            :hover {
-                color: yellow !important;
-            }
-        }
-        
-    }
-}
-
-.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-    color: $pink !important;
-    background-color: $white;
+.btn-nav {
+    text-transform: capitalize;
+    color: white !important;    
 }

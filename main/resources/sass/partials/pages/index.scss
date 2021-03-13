@@ -123,24 +123,27 @@ body {
         position: relative;
     }
 
-    // SHOW RESTAURANT INFO
-    // .restaurant-card {
-    //     :hover {
-    //         height: 300px;
-    //     }
-    // }
-
     #list {
-        // display: flex;
-        // justify-content: center;
+        margin: 3px;
+        .typology-name {
+            background-color: rgba(0, 0, 0, 0.116);
+            font-size: 0.9rem;
+            margin: 0 3px;
+            padding: 1px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .price-container {
+            text-align: center;
+            margin: 3px 0;
+        }
     }
 
     #menu #list {
         max-height: 0;
         transition: max-height 2s ease-out !important;
-        overflow: hidden;
-        margin: auto;
-        
+        overflow: hidden;    
         a {
             color: $darkblue !important;
         }

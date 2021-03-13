@@ -119,12 +119,12 @@
 
                     {{-- RESTAURANTS INFO  --}}
                     <div id="list">                        
-                        <div style="display: flex; justify-content: center;">
+                        <div class="price-container">
                             <img style="max-width:25px;" src="{{asset('storage/assets/delivery.svg')}}">
                             <span>@{{rest.price_delivery / 100}}€</span>
                         </div>
                         <span 
-                            class="text-capitalize"
+                            class="text-capitalize typology-name"
                             v-for="typology in restaurantArray[index].typologies"
                             >
                             @{{typology.typology}}   
