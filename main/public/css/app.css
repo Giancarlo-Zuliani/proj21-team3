@@ -11054,7 +11054,7 @@ footer {
 }
 
 .flip-card-front {
-  background-color: #65c9ff;
+  background-color: #2F294D;
   color: black;
 }
 
@@ -11067,6 +11067,12 @@ footer {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+  #footersvg {
+    max-width: 50%;
+  }
 }
 
 body .typologybox {
