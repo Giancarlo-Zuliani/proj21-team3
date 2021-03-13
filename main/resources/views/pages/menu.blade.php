@@ -14,7 +14,7 @@
     </div>
 
   </div>
-  <h1 class="darkBlue" > <strong>Menu</strong> </h1>
+  <h2 class="darkBlue" > <strong>Menu</strong> </h1>
   <div id="carTxs" class="row">
     <div class="col-12 my-2" v-if="cartArray.length !== 0">
       <div class="card shadow cardRadius">

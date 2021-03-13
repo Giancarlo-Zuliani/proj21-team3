@@ -1,5 +1,6 @@
 .jumboTron {
  height: 40vh;
+
 }
 
 .jumboTron img {
@@ -7,6 +8,7 @@
   height:100%;
   object-fit: cover;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 #restaurant-name {
@@ -24,7 +26,7 @@
 
 span#rest-name {
   color: white;
-  font-size: 50px;
+  font-size: 3rem;
   text-transform: capitalize;
   padding: 20px;
 }
@@ -68,8 +70,9 @@ span#rest-name {
   text-transform: uppercase;
 }
 
-h1.darkBlue {
+h2.darkBlue {
   margin-top: 2rem;
+  font-size: 3rem;
 }
 
 .darkBlue {
@@ -144,8 +147,12 @@ p.cartDel {
   }
 
   span#rest-name {
-    font-size: 20px;
+    font-size: 1rem;
     padding: 5px;
+  }
+
+  h2.darkBlue {
+    font-size: 1rem;
   }
 }
 
@@ -155,6 +162,10 @@ p.cartDel {
   }
 
   span#rest-name {
-    font-size: 30px;
+    font-size: 2rem;
+  }
+
+  h2.darkBlue {
+    font-size: 2rem;
   }
 }
