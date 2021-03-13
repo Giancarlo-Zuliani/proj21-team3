@@ -148,11 +148,13 @@ const app = new Vue({
         },
         // FOCUS EFFECT ON CARD
         focusEffect() {
-            if (this.$refs.myCard !== undefined) {
+            if (this.$refs.myCard != undefined) {
+
                 for (let i = 0; i < this.$refs.myCard.length; i++) {
                     let el = this.$refs.myCard[i];
                     const height = el.clientHeight
                     const width = el.clientWidth
+
                     el.addEventListener('mousemove', handleMove)
 
                     function handleMove(e) {
@@ -163,22 +165,22 @@ const app = new Vue({
                         const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
                         el.style.transform = string
                     }
+
+                    /* Add listener for mouseout event, remove the rotation */
+                    el.addEventListener('mouseout', function() {
+                        el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
+                    })
+
+                    /* Add listener for mousedown event, to simulate click */
+                    el.addEventListener('mousedown', function() {
+                        el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
+                    })
+
+                    /* Add listener for mouseup, simulate release of mouse click */
+                    el.addEventListener('mouseup', function() {
+                        el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
+                    })
                 }
-
-                /* Add listener for mouseout event, remove the rotation */
-                el.addEventListener('mouseout', function() {
-                    el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
-                })
-
-                /* Add listener for mousedown event, to simulate click */
-                el.addEventListener('mousedown', function() {
-                    el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
-                })
-
-                /* Add listener for mouseup, simulate release of mouse click */
-                el.addEventListener('mouseup', function() {
-                    el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
-                })
             }
         },
         backTypology() {

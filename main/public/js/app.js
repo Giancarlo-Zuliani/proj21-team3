@@ -49772,7 +49772,7 @@ var app = new Vue({
     focusEffect: function focusEffect() {
       var _this5 = this;
 
-      if (this.$refs.myCard !== undefined) {
+      if (this.$refs.myCard != undefined) {
         var _loop = function _loop(i) {
           var el = _this5.$refs.myCard[i];
           var height = el.clientHeight;
@@ -49787,27 +49787,27 @@ var app = new Vue({
             var string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
             el.style.transform = string;
           }
+          /* Add listener for mouseout event, remove the rotation */
+
+
+          el.addEventListener('mouseout', function () {
+            el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
+          });
+          /* Add listener for mousedown event, to simulate click */
+
+          el.addEventListener('mousedown', function () {
+            el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)';
+          });
+          /* Add listener for mouseup, simulate release of mouse click */
+
+          el.addEventListener('mouseup', function () {
+            el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)';
+          });
         };
 
         for (var i = 0; i < this.$refs.myCard.length; i++) {
           _loop(i);
         }
-        /* Add listener for mouseout event, remove the rotation */
-
-
-        el.addEventListener('mouseout', function () {
-          el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
-        });
-        /* Add listener for mousedown event, to simulate click */
-
-        el.addEventListener('mousedown', function () {
-          el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)';
-        });
-        /* Add listener for mouseup, simulate release of mouse click */
-
-        el.addEventListener('mouseup', function () {
-          el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)';
-        });
       }
     },
     backTypology: function backTypology() {
