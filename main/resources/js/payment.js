@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 //UGLY ANIMATIONS
 function processingAnimation() {
-    let i = 0;
     let processingString = document.getElementById('processingAnimation');
     processingString.textContent.length === 5 ?
         processingString.innerHTML = "." :
