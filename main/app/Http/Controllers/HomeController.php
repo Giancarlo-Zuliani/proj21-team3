@@ -38,24 +38,30 @@ class HomeController extends Controller
     $price = intval($pr);
     $request -> merge(['price' => $price]);
     $data = $request -> all();
-
     Validator::make($data,
       [
           'name' => 'required|string|min:5',
           'description' => 'required|string',
           'ingredients' => 'required|string',
-          'price' => 'required|integer',
+          'price' => 'required|numeric|gt:0',
+          'lactose' => 'required|in:1,0',
+          'gluten' => 'required|in:1,0'
       ],[
           'name.min' => 'Minimo 5 caratteri per il nome',
           'name.required' => 'Campo obbligatorio',
           'description.required' => 'Campo obbligatorio',
           'ingredients.required' => 'Campo obbligatorio',
           'price.required' => 'Campo obbligatorio',
-          'price.integer' => 'Inserire un valore numerico',
-      ])->validate();
+          'price.numeric' => 'Inserire un valore numerico',
+          'price.gt' => 'prezzo deve essere superiore a 0',
+          'lactose.in' => 'inserire valore lattosio',
+          'gluten.in' => 'inserire valore glutine',
+          'lactose.required' => 'inserire valore lattosio',
+          'gluten.required' => 'inserire valore glutine'
+          ])->validate();
 
     $user = User::findOrFail($request -> get('user_id'));
-    $item = Item::make($request -> all());
+    $item = Item::make($data);
     $item -> user() -> associate($user);
     $item -> save();
 
@@ -118,6 +124,13 @@ class HomeController extends Controller
   public function updateUser(Request $request, $id) {
     $data = $request -> all();
     $restTypo = $request -> typologies;
+    Validator::make($data,
+      [
+        'typologies' => 'required'
+      ],[
+        'typologies.required' => 'scegli almeno una tipologia per il tuo ristorante'
+      ])->validate();
+
     $startDelivery = $data['start_delivery'];
     $endDelivery = $data['end_delivery'];
     $price = $data['price_delivery'] * 100;
