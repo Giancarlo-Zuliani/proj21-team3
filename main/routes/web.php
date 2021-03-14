@@ -57,9 +57,12 @@ Route::get('/user-show/edit/{id}', 'HomeController@userEdit')
 Route::post('/user-show/update/{id}', 'HomeController@updateUser')
     ->name('user-update');
 
+
 // CLEAR USER IMG
 Route::get('/clear-user-img', 'HomeController@clearUserImg')
     ->name('clear-user-img');
+
+
 
 // CHECK OUT PAGE
 Route::get('/pagamento', 'HomeController@payment')

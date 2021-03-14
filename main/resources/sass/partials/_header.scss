@@ -1,19 +1,22 @@
 header {
-    .curva {
-        // background-image: url('storage/assets/header.svg');
-        // background-repeat: no-repeat;
-        height: 13vh;
-    }
-  
+    height: 14vh;      
 }
 
 .btn-header {
     background-color: $pink;
     margin: 0 4px;
-    color: white !important;
 }
 
-.btn-header:hover {
-    background-color: white;
+.nav-link {
+    color: $pink !important;    
+}
+
+.btn-nav:hover {
     color: $pink !important;
+    background-color: white !important;
+}
+
+.btn-nav {
+    text-transform: capitalize;
+    color: white !important;    
 }

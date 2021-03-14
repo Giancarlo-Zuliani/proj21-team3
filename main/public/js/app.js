@@ -49772,6 +49772,7 @@ var app = new Vue({
     focusEffect: function focusEffect() {
       var _this5 = this;
 
+<<<<<<< HEAD
       if (this.$refs.myCard != undefined) {
         var _loop = function _loop(i) {
           var el = _this5.$refs.myCard[i];
@@ -49788,6 +49789,23 @@ var app = new Vue({
             el.style.transform = string;
           }
           /* Add listener for mouseout event, remove the rotation */
+=======
+      var _loop = function _loop(i) {
+        var el = _this5.$refs.myCard[i];
+        var height = el.clientHeight;
+        var width = el.clientWidth;
+        el.addEventListener('mousemove', handleMove);
+
+        function handleMove(e) {
+          var xVal = e.layerX;
+          var yVal = e.layerY;
+          var yRotation = 15 * ((xVal - width / 2) / width);
+          var xRotation = -15 * ((yVal - height / 2) / height);
+          var string = 'perspective(500px) scale(1.05) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
+          el.style.transform = string;
+        }
+        /* Add listener for mouseout event, remove the rotation */
+>>>>>>> main
 
 
           el.addEventListener('mouseout', function () {
@@ -49919,8 +49937,13 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
+>>>>>>> main
 
 
 /***/ })

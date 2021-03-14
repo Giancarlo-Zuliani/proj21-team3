@@ -199,3 +199,4 @@ new kursor({
     color: '#d30d66',
     removeDefaultCursor: true
 });
+

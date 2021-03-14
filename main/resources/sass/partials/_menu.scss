@@ -1,5 +1,6 @@
 .jumboTron {
  height: 40vh;
+
 }
 
 .jumboTron img {
@@ -7,25 +8,28 @@
   height:100%;
   object-fit: cover;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 #restaurant-name {
-  background-color: $yellow;
+  background-color: $darkblue;
+  opacity: 0.7;
   text-align: center;
   border-radius: 20px;
   position: absolute;
   bottom: 100px;
   left: 50%;
-  bottom: 40px;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   height: 60px;
   line-height: 60px;
 }
 
-#rest-name {
+span#rest-name {
   color: white;
-  font-size: 50px;
+  font-size: 2rem;
   text-transform: capitalize;
+  padding: 20px;
 }
 
 .cardRadius {
@@ -65,6 +69,11 @@
 
 .itemName::first-letter, .itemDescription::first-letter{
   text-transform: uppercase;
+}
+
+h2.darkBlue {
+  margin-top: 2rem;
+  font-size: 2rem;
 }
 
 .darkBlue {
@@ -129,5 +138,53 @@ p.cartDel {
 
   #cartLat {
     display: none;
+  }
+}
+
+@media screen and (max-width:459px) {
+  #restaurant-name {
+    height: 20px;
+    line-height: 0.4;
+  }
+
+  span#rest-name {
+    font-size: 0.8rem;
+    padding: 2px;
+  }
+
+  h2.darkBlue {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width:460px) and (max-width:789px) {
+  #restaurant-name {
+    height: 30px;
+    line-height: 0.9;
+  }
+
+  span#rest-name {
+    font-size: 1rem;
+    padding: 5px;
+  }
+
+  h2.darkBlue {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width:790px) and (max-width:1199px) {
+  #restaurant-name {
+    height: 40px;
+    line-height: 30px;
+  }
+
+  span#rest-name {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+
+  h2.darkBlue {
+    font-size: 1.3rem;
   }
 }
