@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">{{ __('Informazioni') }}</div>
+                  <div class="card-header text-center font-weight-bolder">{{ __('Aggiorna informazioni') }}</div>
 
                   <div class="card-body">
                       <form  action="{{route('user-update', $user -> id)}}"  method="POST" enctype='multipart/form-data'>
@@ -100,7 +100,7 @@
 
                           <div class="form-group row">
                             <div class="col-md-12 text-center" >
-                              <input class="btn btn-outline-warning" type="submit" value="Salva dati">
+                              <input class="btn btn-outline-warning" type="submit" value="Salva informazioni">
                             </div>
                           </div>
 
