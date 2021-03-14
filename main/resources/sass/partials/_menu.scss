@@ -1,6 +1,6 @@
 .jumboTron {
  height: 40vh;
-
+ position: relative;
 }
 
 .jumboTron img {
@@ -17,19 +17,12 @@
   text-align: center;
   border-radius: 20px;
   position: absolute;
-  bottom: 100px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 60px;
-  line-height: 60px;
-}
-
-span#rest-name {
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
   text-transform: capitalize;
-  padding: 20px;
 }
 
 .cardRadius {
@@ -71,9 +64,9 @@ span#rest-name {
   text-transform: uppercase;
 }
 
-h2.darkBlue {
+#menu-name {
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .darkBlue {
@@ -141,50 +134,24 @@ p.cartDel {
   }
 }
 
-@media screen and (max-width:459px) {
-  #restaurant-name {
-    height: 20px;
-    line-height: 0.4;
-  }
-
-  span#rest-name {
-    font-size: 0.8rem;
-    padding: 2px;
-  }
-
-  h2.darkBlue {
-    font-size: 0.8rem;
-  }
-}
-
 @media screen and (min-width:460px) and (max-width:789px) {
   #restaurant-name {
-    height: 30px;
-    line-height: 0.9;
-  }
-
-  span#rest-name {
     font-size: 1rem;
     padding: 5px;
   }
 
-  h2.darkBlue {
+  #menu-name {
     font-size: 1rem;
   }
 }
 
 @media screen and (min-width:790px) and (max-width:1199px) {
   #restaurant-name {
-    height: 40px;
-    line-height: 30px;
-  }
-
-  span#rest-name {
-    font-size: 1.3rem;
+    font-size: 2rem;
     padding: 10px;
   }
 
-  h2.darkBlue {
-    font-size: 1.3rem;
+  #menu-name {
+    font-size: 2rem;
   }
 }
