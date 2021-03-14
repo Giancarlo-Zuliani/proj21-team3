@@ -11128,6 +11128,7 @@ body .test {
   text-align: center;
   color: #FCC15D;
   font-weight: bolder;
+  margin: 5px;
 }
 
 body .selected {

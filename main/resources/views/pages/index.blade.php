@@ -81,8 +81,16 @@
             </div>
         </div>
 
-        {{-- FILTER RESULT TOTAL --}}
-        <div id="tipologie" class="row">
+       
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="test"  v-if="!showRestaurant">Scegli una o più tipologie</h1>
+            </div>
+        </div>
+
+         {{-- FILTER RESULT TOTAL --}}
+         <div id="tipologie" class="row">
             <div   
                 class="text-center search-count col-md-12" 
                 :class="searchResultNum != undefined ? 'show' : 'hide'"
@@ -106,7 +114,7 @@
                 </h5>                        
             </div>
         </div>
-        <h1 class="test"  v-if="!showRestaurant">Scegli una o più tipologie</h1>
+        
         {{-- SEARCH BUTTON --}}
         <div class="row">
             <div 
