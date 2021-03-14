@@ -82,7 +82,7 @@
         </div>
 
         {{-- FILTER RESULT TOTAL --}}
-        <div class="row">
+        <div id="tipologie" class="row">
             <div   
                 class="text-center search-count col-md-12" 
                 :class="searchResultNum != undefined ? 'show' : 'hide'"
@@ -106,7 +106,7 @@
                 </h5>                        
             </div>
         </div>
-        <h1 class="test" v-if="!showRestaurant">Scegli una o più tipologie</h1>
+        <h1 class="test"  v-if="!showRestaurant">Scegli una o più tipologie</h1>
         {{-- SEARCH BUTTON --}}
         <div class="row">
             <div 
@@ -126,10 +126,12 @@
                 class="col-md-12 search text-center"
                 v-if="showRestaurant"
                 >
+                <a href="#tipologie">
                 <button class="btn btn-primary btn-results border-0 " @click="backTypology()">   
                     <i class="fas fa-arrow-left"></i>
                     <span class="font-weight-bold">Torna alle tipologie</span>                                            
                 </button>
+                </a>
             </div>
         </div>
 
@@ -144,6 +146,7 @@
                 <div
                     class="tilt card mx-auto shadow" style="width: 18rem; margin: 20px;"
                     ref="myCard"
+                    
                     :data-toggle="bannerMax"
                     data-target="#maxThree"
                     :class="[selectedTypologies.includes(type.id) ? 'selected' : '']"             
