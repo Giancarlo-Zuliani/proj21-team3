@@ -118,7 +118,7 @@
     </div>
   
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Copyright: Made With &#10084;&#65039; By Team3-Classe21
+     Made With &#10084;&#65039; By Team3-Classe21
     </div>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </footer>
