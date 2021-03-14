@@ -10987,19 +10987,27 @@ section .typologybox {
   transform: translate(-50%, -50%);
 }
 
-header .curva {
-  height: 13vh;
+header {
+  height: 14vh;
 }
 
 .btn-header {
   background-color: #E7257D;
   margin: 0 4px;
-  color: white !important;
 }
 
-.btn-header:hover {
-  background-color: white;
+.nav-link {
   color: #E7257D !important;
+}
+
+.btn-nav:hover {
+  color: #E7257D !important;
+  background-color: white !important;
+}
+
+.btn-nav {
+  text-transform: capitalize;
+  color: white !important;
 }
 
 footer {
@@ -11120,6 +11128,7 @@ body .test {
   text-align: center;
   color: #FCC15D;
   font-weight: bolder;
+  margin: 5px;
 }
 
 body .selected {
@@ -11193,6 +11202,65 @@ body .modal .modal-header {
 
 body .tilt.card {
   position: relative;
+}
+
+body #list {
+  margin: 3px;
+}
+
+body #list .typology-name {
+  background-color: rgba(0, 0, 0, 0.116);
+  font-size: 0.9rem;
+  margin: 0 3px;
+  padding: 1px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+body #list .price-container {
+  text-align: center;
+  margin: 3px 0;
+}
+
+body #menu #list {
+  max-height: 0;
+  transition: max-height 2s ease-out !important;
+  overflow: hidden;
+}
+
+body #menu #list a {
+  color: #2F294D !important;
+}
+
+body #menu:hover #list {
+  max-height: 500px;
+  transition: max-height 2s ease-in !important;
+  display: inline;
+}
+
+body #menu:hover #list a {
+  color: #2F294D !important;
+}
+
+.carousel-nav-icon {
+  height: 48px;
+  width: 48px;
+}
+
+.carousel-item .col,
+.carousel-item .col-sm,
+.carousel-item .col-md {
+  margin: 5px;
+  height: 370px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-item h4 {
+  background-color: rgba(30, 36, 68, 0.616);
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .checkbox-typology {
@@ -11606,10 +11674,6 @@ p.cartDel {
   color: #E7257D;
 }
 
-.font-weight-bold {
-  font-size: 16px;
-}
-
 .title-graphic {
   color: #E7257D;
   font-weight: 600;
@@ -11776,6 +11840,10 @@ body {
   background-color: #fffefa;
 }
 
+a {
+  color: #2F294D !important;
+}
+
 .card-header {
   background-color: #FCC15D;
   color: #E7257D;
@@ -11810,5 +11878,9 @@ select:focus {
 
 .form-control:focus {
   outline: none !important;
+}
+
+#main {
+  margin-bottom: 30px;
 }
 
