@@ -5,16 +5,14 @@
 
 
 <div class="container">
-  <div class="row justify-content-center align-items-stretch">
-    <div class="col-12">
-      <div class="jumboTron">
-        <img src="{{asset('storage/img/' . $rest -> img)}}" alt="">
-        <h2  id="restaurant-name"><span id="rest-name"><strong>{{$rest -> name}}</strong> </span></h2>
-      </div>
+  <div class="jumboTron">
+    <img src="{{asset('storage/img/' . $rest -> img)}}">
+    <div id="restaurant-name" class="text-center mx-auto">
+      <p>{{$rest -> name}}</p>
     </div>
-
   </div>
-  <h2 class="darkBlue" > <strong>Menu</strong> </h1>
+
+  <div id="menu-name" class="darkBlue" > <strong>Menu</strong> </div>
   <div id="carTxs" class="row">
     <div class="col-12 my-2" v-if="cartArray.length !== 0">
       <div class="card shadow cardRadius">

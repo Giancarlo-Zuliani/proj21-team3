@@ -11284,9 +11284,52 @@ body #menu:hover #list a {
   padding: 5px;
 }
 
+.carousel-item .test {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FCC15D;
+  font-weight: bolder;
+}
+
+.form-control:focus {
+  background-color: rgba(248, 248, 200, 0.5);
+  border-color: #FCC15D;
+  border: 0.5px;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #FCC15D;
+}
+
+.form-control:valid {
+  background-color: rgba(248, 248, 200, 0.5);
+}
+
 .checkbox-typology {
   display: flex;
   justify-content: space-between;
+}
+
+.card-header {
+  color: #FCC15D;
+  font-size: 1.5rem;
+  background-color: white;
+}
+
+input[type=text]:focus,
+select:focus {
+  outline: none !important;
+}
+
+.form-control:focus {
+  outline: none !important;
+}
+
+.form-group {
+  color: #2F294D;
+}
+
+.form-group input {
+  color: #2F294D;
 }
 
 #nav-bar {
@@ -11344,6 +11387,7 @@ body #menu:hover #list a {
 
 .jumboTron {
   height: 40vh;
+  position: relative;
 }
 
 .jumboTron img {
@@ -11361,17 +11405,11 @@ body #menu:hover #list a {
   text-align: center;
   border-radius: 20px;
   position: absolute;
-  bottom: 100px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 60px;
-  line-height: 60px;
-}
-
-span#rest-name {
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
   text-transform: capitalize;
   padding: 20px;
 }
@@ -11416,9 +11454,9 @@ span#rest-name {
   text-transform: uppercase;
 }
 
-h2.darkBlue {
+#menu-name {
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .darkBlue {
@@ -11484,51 +11522,25 @@ p.cartDel {
   }
 }
 
-@media screen and (max-width: 459px) {
-  #restaurant-name {
-    height: 20px;
-    line-height: 0.4;
-  }
-
-  span#rest-name {
-    font-size: 0.8rem;
-    padding: 2px;
-  }
-
-  h2.darkBlue {
-    font-size: 0.8rem;
-  }
-}
-
 @media screen and (min-width: 460px) and (max-width: 789px) {
   #restaurant-name {
-    height: 30px;
-    line-height: 0.9;
+    font-size: 1.5rem;
+    padding: 10px;
   }
 
-  span#rest-name {
-    font-size: 1rem;
-    padding: 5px;
-  }
-
-  h2.darkBlue {
-    font-size: 1rem;
+  #menu-name {
+    font-size: 1.5rem;
   }
 }
 
 @media screen and (min-width: 790px) and (max-width: 1199px) {
   #restaurant-name {
-    height: 40px;
-    line-height: 30px;
+    font-size: 2rem;
+    padding: 15px;
   }
 
-  span#rest-name {
-    font-size: 1.3rem;
-    padding: 10px;
-  }
-
-  h2.darkBlue {
-    font-size: 1.3rem;
+  #menu-name {
+    font-size: 2rem;
   }
 }
 
@@ -11665,38 +11677,35 @@ p.cartDel {
 }
 
 .background-title {
-  background-color: #E7257D;
-  color: white;
-  padding: 10px 5px;
+  color: #FCC15D;
+  width: 80%;
+  margin: auto;
   border-radius: 15px;
-  margin-bottom: 25px;
-  margin-top: 25px;
+  margin-bottom: 20px;
+  padding: 5px;
 }
 
 .title {
-  font-weight: 900;
-  padding: 2px 12px;
+  font-size: 2.5rem;
+}
+
+.dashboard {
+  color: #2F294D;
 }
 
 .card-box {
   margin: 30px 23px;
   padding: 7px 14px;
   border-radius: 20px;
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
-.title-card {
-  color: #E7257D;
-}
-
-.title-graphic {
-  color: #E7257D;
-  font-weight: 600;
-}
-
-.title-incassi {
-  font-weight: 600;
+#yearSelector {
+  font-size: 1rem;
   color: #2F294D;
+  font-family: "Nunito", sans-serif;
+  border: solid 0.5px #2F294D;
+  border-radius: 10px;
 }
 
 #angelo {
@@ -11704,103 +11713,31 @@ p.cartDel {
 }
 
 .card-graphic {
-  margin: 30px 45px;
-}
-
-.card-header {
-  margin-top: 15px;
-  background-color: #FCC15D;
-}
-
-.container-mod {
-  margin-left: 30px;
-}
-
-.mod-a {
-  list-style-type: none;
-  text-decoration: none;
-}
-
-.mod-a:hover {
-  list-style-type: none;
-  text-decoration: none;
+  margin: 0px 30px;
+  border-radius: 20px;
 }
 
 .text-modifica-elimina {
-  color: #6c757d;
-  font-family: "Nunito", sans-serif !important;
+  font-family: "Nunito", sans-serif;
 }
 
-#nav #ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.new-dish {
+  font-size: 1.3rem;
+  border: solid 1px #2F294D;
 }
 
-#nav #ul .li {
-  color: #FCC15D;
-  font-size: 16px;
-  border: 0.3em solid #FCC15D;
-  border-radius: 0.5em;
-  width: 12em;
-  height: 3em;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: sans-serif;
-  letter-spacing: 0.1em;
-  text-align: center;
-  line-height: 3em;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: 0.5s;
-  margin: 1em;
+.hr-index.dashboard-hr {
+  border-color: transparent;
 }
 
-#ul .li .onda {
-  position: absolute;
-  width: 25%;
-  height: 100%;
-  background-color: #FCC15D;
-  transform: translateY(150%);
-  border-radius: 50%;
-  left: calc((var(--n) - 1) * 25%);
-  transition: 0.5s;
-  transition-delay: calc((var(--n) - 1) * 0.1s);
-  z-index: -1;
+@media only screen and (max-width: 600px) {
+  .card-graphic {
+    margin: 10px 0px;
+  }
 }
 
-#nav #ul .li:hover {
+.title-card {
   color: #E7257D;
-}
-
-#nav #ul .li:hover .onda {
-  transform: translateY(0) scale(2);
-}
-
-#nav #ul .li .onda:nth-child(1) {
-  --n: 1;
-}
-
-#nav #ul .li .onda:nth-child(2) {
-  --n: 2;
-}
-
-#nav #ul .li .onda:nth-child(3) {
-  --n: 3;
-}
-
-#nav #ul .li .onda:nth-child(4) {
-  --n: 4;
-}
-
-.add:hover {
-  color: #E7257D;
-}
-
-.text-button {
-  margin-left: 6px;
-  font-size: 26px;
 }
 
 #mail_body {
@@ -11845,43 +11782,29 @@ a {
   color: #2F294D !important;
 }
 
-.card-header {
-  background-color: #FCC15D;
-  color: #E7257D;
-}
-
-.delete-banner {
-  background-color: red;
-  height: 10px;
-  display: none;
-}
-
-.show {
-  display: inline-block;
-}
-
-.test {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #FCC15D;
-  font-weight: bolder;
-}
-
 ul li {
   list-style: none;
 }
 
-input[type=text]:focus,
-select:focus {
-  outline: none !important;
-}
-
-.form-control:focus {
-  outline: none !important;
-}
-
 #main {
   margin-bottom: 30px;
+}
+
+.btn-results {
+  background-color: #2F294D;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #E7257D;
+  border-color: #E7257D;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+  background-color: #E7257D;
+  border-color: #E7257D;
+  box-shadow: 0 0 0 0.2rem rgba(207, 60, 97, 0.5);
 }
 

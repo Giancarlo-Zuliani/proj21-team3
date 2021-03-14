@@ -1,23 +1,10 @@
 @extends('layouts.main-layout')
 {{-- USER PROFILE PAGE --}}
 @section('content')
-
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class=" card shadow col-xl-10  text-center" >
-            <div class="card-body">
-              @if (Auth::user() -> img)
-                <img class="img-user-show"  src="{{asset('storage/img/' . Auth::user() -> img )}}">
-              @endif
-            </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-          <div class="card shadow col-md-5">
-              <div class="card-header text-capitalize text-center">
+          <div class="card shadow col-md-6">
+              <div class="card-header text-center">
                 <h3 class="title-show">
                   Informazioni personali
                 </h3>
@@ -25,112 +12,70 @@
               <div class="card-body">
                 <ul class="text-user-show">
                   <li class="text-li-user-show">
-                    &bull; Nome:
-                  </li>
-                  <li>
+                     Nome:
                     {{$user->name}}
-                  </li>
+                  </li>                                                    
                   <li class="text-li-user-show">
-                    &bull; Codice fiscale:
-                  </li>
-                  <li>
+                     Codice fiscale:
                     {{$user->vat_num}}
-                  </li>
+                  </li>                                                        
                   <li class="text-li-user-show">
-                    &bull; Indirizzo:
-                  </li>
-
-                  <li>
+                     Indirizzo:
                     {{$user->address}}
                   </li>
                   <li class="text-li-user-show">
-                    &bull; Numero di telefono:
-                  </li>
-                  <li>
+                     Numero di telefono:
                     {{$user->phone_num}}
                   </li>
                   <li class="text-li-user-show">
-                    &bull; E-mail:
-                  </li>
-                  <li>
+                     E-mail:
                     {{$user->email}}
                   </li>
                 </ul>
-
-                {{-- @if ($user->start_delivery && end_delivery != '')     --}}
-                {{-- <h2>Orari e informazioni</h2>
-                <ul>
-                  <li>Orario di apertura:</li>
-                  <li>{{$user->start_delivery}}</li>
-                  <li>Orario di chiusura:</li>
-                  <li>{{$user->end_delivery}}</li>
-                  <li>Prezzo delle consegne:</li>
-                  <li>{{$user->price_delivery / 100}}€</li>
-                </ul> --}}
-                {{-- @endif --}}
-
-
-
-                {{-- <a href="{{route('user-edit', $user -> id)}}">
-                    <button class="btn btn-primary">Aggiorna e aggiungi altre informazioni</button>
-                </a> --}}
-              </div>
-          </div>
-
-          <div class="card shadow col-md-5">
-              <div class="card-header  text-center">
-                <h3 class="title-show">
-                  Informazioni e Orari
-                </h3>
-              </div>
+                <div class="card-header text-center">
+                  <h3 class="title-show">
+                    Orari e consegna
+                  </h3>
+                </div>                            
               <div class="card-body">
                 <ul class="text-user-show">
                   <li>
-                    &bull; Orario di apertura:
-                  </li>
-                  <li class="text-li-user-show">
+                    Orario di apertura:
                     {{$user->start_delivery}}
                   </li>
                   <li class="text-li-user-show">
-                    &bull; Orario di chiusura:
-                  </li>
-                  <li>
+                     Orario di chiusura:
                     {{$user->end_delivery}}
                   </li>
                   <li>
-                    &bull;  Prezzo delle consegne:
-                  </li>
-                  <li class="text-li-user-show">
+                    Prezzo delle consegne:
                     {{$user->price_delivery / 100}}€
-                  </li>
-                </ul>
-                {{-- @endif --}}
-
-
-
-                {{-- <a href="{{route('user-edit', $user -> id)}}">
-                    <button class="btn btn-primary">Aggiorna e aggiungi altre informazioni</button>
-                </a> --}}
+                  </li>        
+                </ul>                                  
               </div>
+
+                <div class="text-center">
+                  @if (Auth::user() -> img)
+                    <img class="rounded img-user-show" style="max-width: 80%;"  src="{{asset('storage/img/' . Auth::user() -> img )}}">
+                  @endif
+                </div>
+
+                <div class="container">
+                  <div class="row justify-content-center text-center">
+                    <div class="container-btn col-xs-5 col-sm-5 col-md-3 col-lg-5">
+                      <a href="{{route('user-edit', $user -> id)}}" >
+                          <button class="btn btn-outline-warning text-capitalize text-center">
+                            Aggiorna informazioni
+                          </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
           </div>
     </div>
-
   </div>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="container-btn col-es-2 col-sm-5 col-md-3 col-lg-2 ">
-        <a href="{{route('user-edit', $user -> id)}}" >
-            <button class="button-fashion text-capitalize text-center">
-              Aggiorna informazioni
-            </button>
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
+  
+<div>
 @endsection

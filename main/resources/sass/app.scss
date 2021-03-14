@@ -28,45 +28,31 @@ a {
     color: $darkblue !important;
 }
 
-// CARD HEADER
-.card-header {
-    background-color: $yellow;
-    color: $pink;
-}
-
-// CARD BODY
-// these selectors will be moved to a proper place
-.delete-banner {
-    background-color: red;
-    height: 10px;
-    display: none;
-}
-
-.show {
-    display: inline-block;
-}
-
-.test {
-    display: block;
-    width: 100%;
-    text-align: center;
-    color: $yellow;
-    font-weight: bolder;
-}
-
 ul li {
     list-style: none;
-}
-
-input[type="text"]:focus,
-select:focus {
-    outline: none !important;
-}
-
-.form-control:focus {
-    outline: none !important;
 }
 
 #main {
     margin-bottom: 30px;
 }
+
+.btn-results {
+    background-color: $darkblue;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: $pink;
+    border-color: $pink;
+#main {
+    margin-bottom: 30px;
+}
+  
+.btn-primary:focus,
+.btn-primary.focus {
+    color: #fff;
+    background-color: $pink;
+    border-color: $pink;
+    box-shadow: 0 0 0 0.2rem rgba(207, 60, 97, 0.5);
+}
+  

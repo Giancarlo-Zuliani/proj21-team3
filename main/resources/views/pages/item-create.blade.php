@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">{{ __('Aggiungi un nuovo piatto al tuo menù:') }}</div>
+                  <div class="card-header text-center font-weight-bolder">{{ __('Aggiungi un nuovo piatto') }}</div>
 
                   <div class="card-body">
                       <form method="POST" action="{{route('item-store')}}">

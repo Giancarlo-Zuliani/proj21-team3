@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">{{ __('Modifica Piatto') }}</div>
+                  <div class="card-header text-center font-weight-bolder">{{ __('Modifica piatto') }}</div>
 
                   <div class="card-body">
                       <form method="POST" action="{{route('item-update', $item -> id)}}">
@@ -14,10 +14,8 @@
                           @method('post')
 
                           {{-- NOME --}}
-
                           <div class="form-group row">
                               <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
-
                               <div class="col-md-6">
                                 <input type="text" name="name" value="{{$item -> name}}" class=" @error('name') is-invalid @enderror">
                                 @error('name')
@@ -148,16 +146,15 @@
                               </div>
 
                           </div>
+                          
                           {{-- submit --}}
-
                           <div class="form-group row">
                             <div class="col-md-12 text-center" >
-                              <input class="btn btn-outline-warning" type="submit" value="AGGIORNA">
+                              <button class="btn btn-outline-warning" type="submit" value="AGGIORNA">
+                                Aggiorna piatto
+                              </button>
                             </div>
                           </div>
-
-
-
 
                       </form>
                   </div>
