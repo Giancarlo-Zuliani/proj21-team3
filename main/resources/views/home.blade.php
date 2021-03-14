@@ -6,34 +6,16 @@
 @endpush
 
 @section('content')
-    {{-- DASHBOARD USER--}}
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-xs-12  col-lg-3 text-center">
-        <div class="background-title">
-          <h1 class="title">
-            Il Tuo Menù
+    <div class="col-xs-12 col-lg-5 text-center">
+        <div class="text-center">
+          <h1 class="title background-title font-weight-bolder text-center">
+            Il tuo menù
           </h1>
         </div>
      </div>
   </div>
- </div>
-{{-- BUTTON ADD ITEM --}}
- <div class="container">
-   <div class="row justify-content-center">
-     <div class="container-mod col-sm-12 col-md-5 col-lg-3 text-center">
-         <a class="mod-a" href="{{route('item-create')}}" >
-           <nav id="nav">
-              <ul id="ul" >
-                <li class="li">
-                  Aggiungi Piatto
-                  <span class="onda"></span><span class="onda"></span><span class="onda"></span><span class="onda"></span>
-                </li>
-              </ul>
-            </nav>
-         </a>
-     </div>
-   </div>
  </div>
 
  {{-- CARD ITEM --}}
@@ -47,35 +29,42 @@
          @foreach ($items as $item)
              @if ($item -> deleted === 0)
              <div class="card-box shadow col-xs-12 col-lg-3 " >
-               <h3 class="title-card text-center text-capitalize">
+               <h3 class="title-card text-center text-capitalize ">
                  {{$item -> name}}
                </h3>
-                 <p class="text-muted text-capitalize">
+               @if ($item -> available === 0)
+                    <p class="text-danger font-weight-bolder text-center text-uppercase">
+                      Non Disponibile
+                    </p>
+                  @endif
+                 <p class="text-muted ">
                     {{$item -> description}}
                  </p>
-                 <p class="text-muted text-capitalize">
+                 <p class="text-muted ">
                    {{$item -> ingredients}}
                  </p>
-                  <p class="font-weight-bold">
+                  <p class="font-weight-bold text-center">
                     <i class="fa"> &#xf153;</i>
                     {{$item -> price / 100 }}
-
                       Lattosio
                     @if ($item -> lactose === 1 )
                           SI
+                    @endif
+
+                    @if ($item -> lactose === 0 )
+                          NO
                     @endif
 
                      Glutine
                     @if ($item -> gluten === 1)
                       SI
                     @endif
+                    @if ($item -> gluten === 0)
+                      NO
+                    @endif
 
                   </p>
-                  @if ($item -> available === 0)
-                    <p class="text-danger">
-                      Non Disponibile
-                    </p>
-                  @endif
+                  
                <div class="card-icon text-center" style="margin-bottom: 15px;">
                  <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit text-muted">
                    <span class="text-modifica-elimina">
@@ -96,12 +85,27 @@
        </div>
    </div>
 
+  {{-- ADD NEW DISH --}}
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-md-6">
+        <a href="{{route('item-create')}}" class="mx-auto">
+          <button class="btn btn-primary new-dish btn-results btn-lg font-weight-bolder" style="margin: auto;">
+            <i class="fas fa-plus"></i>	&#160;Aggiungi nuovo piatto
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="hr-index dashboard-hr">
+
    {{-- STATISTIC --}}
    <div class="container">
      <div class="row justify-content-center">
        <div class="col-xs-12 col-lg-3 text-center">
-           <div class="background-title">
-             <h1 class="title">
+           <div class="text-center">
+             <h1 class="title background-title font-weight-bolder">
                Statistiche
              </h1>
            </div>
@@ -117,13 +121,14 @@
     @endsection
     @section('charts')
 
-    {{-- GRAPHIC --}}
+    {{-- GRAFICO MESI --}}
     <div id="angelo" class="container-fluid">
       <div class="row justify-content-center">
-        <div class="card-graphic  shadow col-xs-12 col-md-6 col-lg-5">
-          <div class="card-header">
-            <h4 class="title-graphic">Grafico Ordini</h4>
-            <select name="" id="yearSelector" @change="getStatistics()">
+
+        <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
+          <div class="card-body">
+            <h4 class="title-incassi text-center font-weight-bold">Analisi vendite</h4>
+            <select id="yearSelector" @change="getStatistics()">
               <option value="2021-">
                 2021
               </option>
@@ -131,21 +136,20 @@
                 2020
               </option>
             </select>
-          </div>
-          <div class="card-body">
             <canvas id="myChart"  width="200" height="200"></canvas>
-            {{-- <h5 class="text-center">Totale incasso ordini : @{{totalSales}} €</h5> --}}
           </div>
         </div>
+
+        {{-- GRAFICO A TORTA --}}
         <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
-          <div class="card-body ">
-            {{-- <canvas id="myChart"  width="200" height="200"></canvas> --}}
-            <h5 class=" title-incassi text-center">
-              Totale Incasso Ordini: @{{totalSales}} €
+          <div class="card-body">
+            <h5 class="title-incassi font-weight-bold text-center">
+              Totale incasso: @{{totalSales}}€
             </h5>
             <canvas id="myPie" width="200" height="200"></canvas>
           </div>
         </div>
+
       </div>
     </div>
     @endsection

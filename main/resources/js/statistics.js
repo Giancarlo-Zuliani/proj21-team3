@@ -16,11 +16,11 @@ const statistics = new Vue({
         initChart(arr) {
             var ctx = document.getElementById('myChart').getContext('2d');
             this.canvas = new Chart(ctx, {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
                     datasets: [{
-                        label: 'Ordini',
+                        label: 'Piatti venduti',
                         data: arr,
                         backgroundColor: this.chartsColor,
                         borderColor: this.chartsBorder,
@@ -45,7 +45,7 @@ const statistics = new Vue({
                 data: {
                     labels: nameArr,
                     datasets: [{
-                        label: 'Ordini',
+                        label: 'Piatti venduti',
                         data: countArr,
                         backgroundColor: this.chartsColor,
                         borderColor: this.chartsBorder,

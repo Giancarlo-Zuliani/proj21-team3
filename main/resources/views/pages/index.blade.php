@@ -9,7 +9,6 @@
                <div class="col text-center">
                 <h1 class="font-weight-bolder text-center">I tuoi piatti preferiti, consegnati da noi.</h1>
                 <h3 class="text-center">Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio.</h3>
-
                </div>
             </div>
             <div class="row d-flex align-items-center">
@@ -23,9 +22,7 @@
                   </a>
                </div>
                <div class="col-10">
-                  <!--Start carousel-->
                   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
                      <div class="carousel-inner">
                         <div class="carousel-item active">
                            <div class="row">
@@ -56,7 +53,6 @@
                         </div>
                      </div>
                   </div>
-                  <!--End carousel-->
                </div>
                <div class="col-1 d-flex align-items-center justify-content-center"><a  href="#carouselExampleIndicators" data-slide="next">
                   <div class="carousel-nav-icon">
@@ -69,8 +65,6 @@
             </div>
          </div>
 
-
-
         {{-- RESTAURANTS MAIN TEXT --}}
         <div class="row">
             <div class="col-md-12">
@@ -80,8 +74,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="row">
             <div class="col-md-12">
@@ -145,8 +137,6 @@
 
         {{-- TYPOLOGIES --}}
         <div class="row my-4 " v-if="!showRestaurant">
-            {{-- <h1 class="test">Scegli una o più tipologie</h1> --}}
-
             <div
                 v-for="type in typologyArray"
                 class="typobox col-md-6 col-lg-4"
@@ -198,13 +188,10 @@
                             @{{typology.typology}}
                         </span>
                     </div>
-
-
                 </div>
                 </a>
             </div>
         </div>
-
 
         <!-- SELECT MAX 3 TYPOLOGIES WARNING -->
         <div class="modal fade" id="maxThree" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -224,6 +211,5 @@
             </div>
             </div>
         </div>
-
     </div>
 @endsection

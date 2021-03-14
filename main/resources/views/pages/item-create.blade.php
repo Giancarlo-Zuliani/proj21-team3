@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">{{ __('Aggiungi un nuovo piatto al tuo menù:') }}</div>
+                  <div class="card-header text-center font-weight-bolder">{{ __('Aggiungi un nuovo piatto') }}</div>
 
                   <div class="card-body">
                       <form method="POST" action="{{route('item-store')}}">
@@ -64,7 +64,7 @@
                               <label for="phone_num" class="col-md-4 col-form-label text-md-right">{{ __('Prezzo') }}</label>
 
                               <div class="col-md-6">
-                                <input type="text" name="price" value="" class=" @error('price') is-invalid @enderror">
+                                <input type="number" name="price" value="" class=" @error('price') is-invalid @enderror">
                                 @error('price')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -83,12 +83,17 @@
 
                             <div class="text-center" style="margin:8px 16px">
                               <label  for="lactose">SI</label>
-                              <input type="radio" id="lactose" name="lactose" value="1">
-
+                              <input type="radio" id="lactose" name="lactose" value="1" @error('lactose') is-invalid @enderror>
                               <label  for="nolactose">NO</label>
-                              <input type="radio" id="nolactose" name="lactose" value="0">
-
+                              <input type="radio" id="nolactose" name="lactose" value="0" @error('lactose') is-invalid @enderror>
+                              @error('lactose')
+                              <br>
+                               <span style="color:red;" role="alert">
+                                    <strong>{{ $message }}</strong>
+                               </span>
+                              @enderror
                             </div>
+                            
                           </div>
 
                           <div class="form-group row">
@@ -99,10 +104,16 @@
                             <div class="text-center" style="margin:8px 16px">
 
                               <label for="gluten">SI</label>
-                              <input type="radio" id="gluten"   name="gluten" value="1">
+                              <input type="radio" id="gluten"   name="gluten" value="1" @error('gluten') is-invalid @enderror>
 
                               <label  for="nogluten">NO</label>
-                              <input type="radio" id="nogluten"  name="gluten" value="0">
+                              <input type="radio" id="nogluten"  name="gluten" value="0" @error('gluten') is-invalid @enderror>
+                              @error('gluten')
+                                <br>
+                                <span style="color:red;"role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                               @enderror
                             </div>
                           </div>
 

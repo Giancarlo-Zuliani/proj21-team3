@@ -1,13 +1,39 @@
-//
-// .form-control:focus {
-//   color: $pink;
-//   background-color: $yellow;
-//   border-color: $yellow;
-//   outline: 0;
-//   box-shadow: 0 0 0 0.2rem $yellow;
-// }
+.form-control:focus {
+  background-color: rgba(248, 248, 200, 0.5);
+  border-color: $yellow;
+  border: .5px;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem $yellow;
+}
+
+.form-control:valid {
+  background-color: rgba(248, 248, 200, 0.5);
+}
 
 .checkbox-typology{
   display: flex;
   justify-content: space-between;
+}
+
+// CARD HEADER
+.card-header {
+  color: $yellow;
+  font-size: 1.5rem;
+  background-color: white;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none !important;
+}
+
+.form-control:focus {
+    outline: none !important;
+}
+
+.form-group {
+  color: $darkblue;
+  input {
+    color: $darkblue;
+  }
 }
