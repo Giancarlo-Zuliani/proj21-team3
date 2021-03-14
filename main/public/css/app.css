@@ -11611,12 +11611,12 @@ p.cartDel {
 
 @media screen and (min-width: 460px) and (max-width: 789px) {
   #restaurant-name {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 5px;
   }
 
   #menu-name {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
