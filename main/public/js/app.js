@@ -49781,9 +49781,9 @@ var app = new Vue({
         function handleMove(e) {
           var xVal = e.layerX;
           var yVal = e.layerY;
-          var yRotation = 20 * ((xVal - width / 2) / width);
-          var xRotation = -20 * ((yVal - height / 2) / height);
-          var string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
+          var yRotation = 15 * ((xVal - width / 2) / width);
+          var xRotation = -15 * ((yVal - height / 2) / height);
+          var string = 'perspective(500px) scale(1.05) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
           el.style.transform = string;
         }
         /* Add listener for mouseout event, remove the rotation */
