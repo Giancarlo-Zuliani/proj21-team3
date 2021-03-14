@@ -61,7 +61,7 @@
                           </div>
 
                           {{-- IMMAGINE --}}
-
+                          
                           <div class="form-group row">
                               <label for="phone_num" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
 

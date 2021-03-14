@@ -5,14 +5,17 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class=" card shadow col-xl-10  text-center" >
-          @if (Auth::user() -> img)
             <div class="card-body">
-              {{-- <img class="img-user-show"  src="{{asset('storage/assets/users/' . Auth::user() -> img . '.webp')}}"> --}}
-              <img class="img-user-show"  src="{{asset('storage/img/' . Auth::user() -> img )}}">
+              @if (Auth::user() -> img)
+                <img class="img-user-show"  src="{{asset('storage/assets/users/' . Auth::user() -> img . '.webp')}}">
+                <img class="img-user-show"  src="{{asset('storage/img/' . Auth::user() -> img )}}">
+
+             @endif
+
+
+
 
             </div>
-          @endif
-
 
       </div>
     </div>
@@ -29,19 +32,35 @@
               <div class="card-body">
                 <ul class="text-user-show">
                   <li class="text-li-user-show">
-                    &bull; Nome: {{$user->name}}
+                    &bull; Nome:
+                  </li>
+                  <li>
+                    {{$user->name}}
                   </li>
                   <li class="text-li-user-show">
-                    &bull; Codice fiscale:  {{$user->vat_num}}
+                    &bull; Codice fiscale:
+                  </li>
+                  <li>
+                    {{$user->vat_num}}
                   </li>
                   <li class="text-li-user-show">
-                    &bull; Indirizzo:  {{$user->address}}
+                    &bull; Indirizzo:
+                  </li>
+
+                  <li>
+                    {{$user->address}}
                   </li>
                   <li class="text-li-user-show">
-                    &bull; Numero di telefono:  {{$user->phone_num}}
+                    &bull; Numero di telefono:
+                  </li>
+                  <li>
+                    {{$user->phone_num}}
                   </li>
                   <li class="text-li-user-show">
-                    &bull; E-mail: {{$user->email}}
+                    &bull; E-mail:
+                  </li>
+                  <li>
+                    {{$user->email}}
                   </li>
                 </ul>
 
