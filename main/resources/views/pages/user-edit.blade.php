@@ -76,14 +76,18 @@
                            </div>
 
                            <div class="form-group row">
-
+                             @error('typologies')
+                               <span style="color:red;margin:12px auto;" role="alert">
+                                  <strong>{{ $message }}</strong>
+                                </span>
+                              @enderror
                                   <label for="typologies[]" class="col-md-4 col-form-label text-md-right">Scegli una o più tipologie:</label>
                                   <div class="col-md-6" style="display: flex; flex-wrap: wrap; text-transform: capitalize;">
 
                                       @foreach ($typos as $typo)
                                       <div class="input-container" style=" width: calc(100% / 4 + 30px);">
 
-                                            <input type="checkbox"   value="{{$typo -> id }}" name="typologies[]"
+                                            <input type="checkbox"  @error('typologies') is-invalid @enderror value="{{$typo -> id }}" name="typologies[]"
                                             @if($user -> typologies -> contains($typo -> id))
                                                 checked
                                             @endif
