@@ -11606,9 +11606,9 @@ p.cartDel {
 }
 
 #waitBanner {
+  display: none;
   position: fixed;
   width: 100%;
-  display: block;
   height: 100%;
   top: 0;
   left: 0;
@@ -11630,7 +11630,7 @@ p.cartDel {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  top: 50%;
+  top: 55%;
   color: #FCC15D;
   font-size: 2.5rem;
   text-align: center;
