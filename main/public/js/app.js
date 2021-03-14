@@ -49687,7 +49687,7 @@ var app = new Vue({
     typologySelection: function typologySelection(id) {
       if (this.selectedTypologies === undefined || this.selectedTypologies.length < 3) {
         this.selectedTypologies.includes(id) ? this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1) : this.selectedTypologies.push(id);
-        this.bannerMax = ''; // console.log(this.selectedTypologies);
+        this.bannerMax = '';
       } else if (this.selectedTypologies.includes(id)) {
         this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1);
         this.bannerMax = '';
@@ -49721,6 +49721,7 @@ var app = new Vue({
         this.searchResultNum = undefined;
       }
     },
+    //ADD ITEMS TO CART FUNCTION
     addToCart: function addToCart(item) {
       if (this.cartArray.some(function (obj) {
         return obj.id === item.id;
@@ -49738,6 +49739,7 @@ var app = new Vue({
       ;
       this.getCartTotal();
     },
+    //REMOVE ITEMS FROM CART
     removeFromCart: function removeFromCart(index) {
       if (this.cartArray[index].quantity === 1) {
         this.cartArray.splice(index, 1);
@@ -49752,6 +49754,7 @@ var app = new Vue({
       this.cartArray[index].quantity++;
       this.getCartTotal();
     },
+    //GET ORDER COST
     getCartTotal: function getCartTotal() {
       var _this4 = this;
 
@@ -49787,19 +49790,13 @@ var app = new Vue({
             var string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
             el.style.transform = string;
           }
-          /* Add listener for mouseout event, remove the rotation */
-
 
           el.addEventListener('mouseout', function () {
             el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
           });
-          /* Add listener for mousedown event, to simulate click */
-
           el.addEventListener('mousedown', function () {
             el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)';
           });
-          /* Add listener for mouseup, simulate release of mouse click */
-
           el.addEventListener('mouseup', function () {
             el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)';
           });
@@ -49810,6 +49807,7 @@ var app = new Vue({
         }
       }
     },
+    //SWITCH TYPOLOGIES AND RESTAURANT SHOW IN INDEX
     backTypology: function backTypology() {
       var _this6 = this;
 
@@ -49883,8 +49881,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 document.addEventListener('DOMContentLoaded', function () {
-  // banner div
-  var deleteBanner = document.getElementsByClassName("delete-banner"); // trash icon
+  //BANNER ID
+  var deleteBanner = document.getElementsByClassName("delete-banner"); // TRASH ICON
 
   var trash = document.getElementsByClassName("fa-trash-alt");
 
@@ -49919,8 +49917,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\proj21-team3\main\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\proj21-team3\main\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
