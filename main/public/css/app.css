@@ -11800,8 +11800,12 @@ ul li {
   border-color: #E7257D;
 }
 
-.btn-primary:focus,
-.btn-primary.focus {
+.btn-primary:hover #main {
+  margin-bottom: 30px;
+}
+
+.btn-primary:hover .btn-primary:focus,
+.btn-primary:hover .btn-primary.focus {
   color: #fff;
   background-color: #E7257D;
   border-color: #E7257D;
