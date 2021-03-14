@@ -1,7 +1,7 @@
 <footer class="text-center text-white">
     <div class="container-fluid ">  
         <div class="row align-items-center">
-          <div class="col-sm-3 ">
+          <div class="col-sm-3 mb-3">
             <img id="footersvg" src="{{asset('storage/assets/logo-yellow.svg')}}" alt="">          
           </div>
           <div class="col-sm-3 offset-sm-6">

@@ -11306,171 +11306,40 @@ body #menu:hover #list a {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28231, 37, 125, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-#container404 {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  background-color: #2F294D;
+#container_404 {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
 }
 
-#container404 #image404 {
-  min-width: 50%;
-  position: relative;
-  top: 25px;
-}
-
-#container404 .logo {
+#container_404 #notfound {
   position: absolute;
-  top: 5%;
-  left: 5%;
-  width: 135px;
-  height: 50px;
-}
-
-#container404 .logo img {
-  position: absolute;
-  top: 5%;
-  left: 100%;
-}
-
-#container404 #text-logo {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
-  position: absolute;
 }
 
-#container404 #logo-white-xs {
-  display: none;
+#container_404 #notfound h1 {
+  font-size: 2.8rem;
 }
 
-#container404 #text404 {
+#container_404 #error_404_button {
   position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FCC15D;
+  padding: 25px 35px;
+  border-radius: 25px;
   color: white;
-  top: 10%;
-  left: 30%;
-  text-align: center;
-  font-size: 4vw;
-  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-#container404 #home {
-  color: white;
-  font-weight: bold;
-  font-size: 2vw;
-  position: absolute;
-  text-decoration: none;
-  bottom: 7%;
-}
-
-#container404 #home:hover {
-  color: #E7257D;
-}
-
-@media (max-width: 1200px) {
-  #container404 #text404 {
-    left: 30%;
-    font-size: 7vh;
-    font-weight: bold;
-  }
-
-  #container404 #image404 {
-    min-width: 70%;
-  }
-
-  #container404 #home {
-    color: white;
-    font-weight: bold;
-    font-size: 2vw;
-    position: absolute;
-    text-decoration: none;
-    bottom: 8%;
-  }
-}
-
-@media (max-width: 992px) {
-  #container404 #text-logo {
-    display: none;
-  }
-
-  #container404 #text404 {
-    left: 30%;
-    font-size: 7vh;
-    font-weight: bold;
-  }
-
-  #container404 .logo {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-  }
-
-  #container404 .logo img {
-    position: absolute;
-    top: 5%;
-    left: 2%;
-  }
-
-  #container404 #image404 {
-    min-width: 75%;
-  }
-
-  #container404 #home {
-    bottom: 8%;
-    font-size: 3vw;
-  }
-}
-
-@media (min-width: 767px) and (max-width: 840px) {
-  #container404 #text404 {
-    font-size: 7vw;
-    margin-top: 30px;
-  }
-
-  #container404 #image404 {
-    min-width: 95%;
-  }
-
-  #container404 #home {
-    bottom: 4%;
-    font-size: 3vw;
-  }
-}
-
-@media screen and (max-device-width: 600px) {
-  #container404 #text404 {
-    font-size: 7vw;
-    margin-top: 30px;
-    left: 20%;
-  }
-
-  #container404 #image404 {
-    min-width: 95%;
-  }
-
-  #container404 #home {
-    bottom: 5%;
-    font-size: 4vw;
-  }
-}
-
-@media screen and (max-device-width: 420px) {
-  #container404 #text404 {
-    font-size: 9vw;
-    margin-top: 50px;
-    left: 10%;
-  }
-
-  #container404 #image404 {
-    min-width: 100%;
-  }
-
-  #container404 #home {
-    bottom: 4%;
-    font-size: 4vw;
-  }
+#container_404 #error_404_button:hover {
+  cursor: pointer;
 }
 
 .jumboTron {
