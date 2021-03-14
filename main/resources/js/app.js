@@ -158,9 +158,9 @@ const app = new Vue({
                 function handleMove(e) {
                     const xVal = e.layerX
                     const yVal = e.layerY
-                    const yRotation = 20 * ((xVal - width / 2) / width)
-                    const xRotation = -20 * ((yVal - height / 2) / height)
-                    const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+                    const yRotation = 15 * ((xVal - width / 2) / width)
+                    const xRotation = -15 * ((yVal - height / 2) / height)
+                    const string = 'perspective(500px) scale(1.05) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
                     el.style.transform = string
                 }
 
@@ -196,3 +196,4 @@ new kursor({
     color: '#d30d66',
     removeDefaultCursor: true
 });
+

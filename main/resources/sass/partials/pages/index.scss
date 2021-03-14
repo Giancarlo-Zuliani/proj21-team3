@@ -51,6 +51,7 @@ body {
         text-align: center;
         color: $yellow;
         font-weight: bolder;
+        margin: 5px;
     }
 
     // SELECTED TYPOLOGY
@@ -118,10 +119,66 @@ body {
         }
     }
 
-    // RISTORANTI CARD
+    // CARD HOVER EFFECT
     .tilt.card {
         position: relative;
     }
 
+    #list {
+        margin: 3px;
+        .typology-name {
+            background-color: rgba(0, 0, 0, 0.116);
+            font-size: 0.9rem;
+            margin: 0 3px;
+            padding: 1px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .price-container {
+            text-align: center;
+            margin: 3px 0;
+        }
+    }
+
+    #menu #list {
+        max-height: 0;
+        transition: max-height 2s ease-out !important;
+        overflow: hidden;    
+        a {
+            color: $darkblue !important;
+        }
+    }
+    
+    #menu:hover #list {
+        max-height: 500px;
+        transition: max-height 2s ease-in !important;
+        display: inline;
+        a {
+            color: $darkblue !important;
+        }        
+    }
+
 }
 
+.carousel-nav-icon {
+    height: 48px;
+    width: 48px;
+ }
+ .carousel-item {
+    .col, .col-sm, .col-md {
+       margin: 5px;
+       height: 370px;
+       background-size: cover;
+       background-position: center center;
+    }
+    h4 {
+
+        background-color: rgba(30, 36, 68, 0.616);
+        border-radius: 20px;
+        padding: 5px;
+    }
+ }
+ 
+ 
+ 
