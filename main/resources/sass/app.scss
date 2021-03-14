@@ -14,13 +14,12 @@
 @import 'partials/pages/index.scss';
 @import 'partials/pages/form.scss';
 @import 'partials/pages/app-layout.scss';
-@import 'partials/pages/404.scss';
+@import 'partials/pages/_error.scss';
 @import 'partials/_menu.scss';
 @import 'partials/pages/_checkout.scss';
 @import 'partials/pages/dashboard.scss';
 @import 'partials/pages/_mail.scss';
 @import 'partials/pages/usershow.scss';
-
 body {
     background-color: rgb(255, 254, 250);
 }
@@ -67,7 +66,6 @@ select:focus {
 .form-control:focus {
     outline: none !important;
 }
-
 
 #main {
     margin-bottom: 30px;
