@@ -11649,6 +11649,7 @@ p.cartDel {
 
 .text-modifica-elimina {
   color: #6c757d;
+  font-family: "Nunito", sans-serif !important;
 }
 
 #nav #ul {
@@ -11728,21 +11729,6 @@ p.cartDel {
   border: solid #FCC15D 2px;
   width: 80%;
   padding: 35px 25px;
-}
-
-.btn {
-  background-color: #E7257D;
-}
-
-.btn:hover {
-  background-color: #E7257D;
-}
-
-.btn:focus {
-  background-color: #E7257D;
-  border-color: #E7257D;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem #E7257D;
 }
 
 .img-user-show {
