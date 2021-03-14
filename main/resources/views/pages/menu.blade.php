@@ -32,9 +32,9 @@
                     <span class="darkBlue">
                       @{{item.quantity}}x
                     </span>
-                    <span class="darkBlue">
+                    <div class="darkBlue">
                       @{{item.name}}
-                    </span>
+                    </div>
                     <span class="darkBlue">
                       @{{item.price * item.quantity / 100}}€
                     </span>
@@ -155,9 +155,9 @@
                     <span class="darkBlue">
                       @{{item.quantity}}x
                     </span>
-                    <span class="darkBlue">
+                    <div class="darkBlue">
                       @{{item.name}}
-                    </span>
+                    </div>
                     <span class="darkBlue">
                       @{{item.price * item.quantity / 100}}€
                     </span>
