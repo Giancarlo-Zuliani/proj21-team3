@@ -24,6 +24,7 @@ class TestMail extends Mailable
     {
         return $this->
         from('fooduro@fooduro.com') ->
+        subject('Conferma ordine | FooDuro') ->
         view('mail.mail');
         
     }

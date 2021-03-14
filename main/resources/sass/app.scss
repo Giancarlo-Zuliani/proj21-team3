@@ -21,9 +21,12 @@
 @import 'partials/pages/_mail.scss';
 @import 'partials/pages/usershow.scss';
 
-
 body {
     background-color: rgb(255, 254, 250);
+}
+
+a {
+    color: $darkblue !important;
 }
 
 // CARD HEADER
@@ -63,4 +66,9 @@ select:focus {
 
 .form-control:focus {
     outline: none !important;
+}
+
+
+#main {
+    margin-bottom: 30px;
 }
