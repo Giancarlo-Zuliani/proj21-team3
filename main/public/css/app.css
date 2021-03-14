@@ -11499,6 +11499,7 @@ body #menu:hover #list a {
   color: white;
   font-size: 3rem;
   text-transform: capitalize;
+  padding: 20px;
 }
 
 .cardRadius {
@@ -11612,7 +11613,7 @@ p.cartDel {
 @media screen and (min-width: 460px) and (max-width: 789px) {
   #restaurant-name {
     font-size: 1.5rem;
-    padding: 5px;
+    padding: 10px;
   }
 
   #menu-name {
@@ -11623,7 +11624,7 @@ p.cartDel {
 @media screen and (min-width: 790px) and (max-width: 1199px) {
   #restaurant-name {
     font-size: 2rem;
-    padding: 10px;
+    padding: 15px;
   }
 
   #menu-name {
