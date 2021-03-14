@@ -7,16 +7,9 @@
       <div class=" card shadow col-xl-10  text-center" >
             <div class="card-body">
               @if (Auth::user() -> img)
-                <img class="img-user-show"  src="{{asset('storage/assets/users/' . Auth::user() -> img . '.webp')}}">
                 <img class="img-user-show"  src="{{asset('storage/img/' . Auth::user() -> img )}}">
-
-             @endif
-
-
-
-
+              @endif
             </div>
-
       </div>
     </div>
   </div>
