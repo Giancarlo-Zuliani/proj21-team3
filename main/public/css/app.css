@@ -11281,37 +11281,106 @@ body .tilt.card {
 }
 
 @media (max-width: 1200px) {
-  #home {
+  #container404 #text404 {
+    left: 30%;
+    font-size: 7vh;
+    font-weight: bold;
+  }
+
+  #container404 #image404 {
+    min-width: 70%;
+  }
+
+  #container404 #home {
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2vw;
     position: absolute;
     text-decoration: none;
-    bottom: 5%;
+    bottom: 8%;
   }
 }
 
 @media (max-width: 992px) {
-  #text-logo {
+  #container404 #text-logo {
     display: none;
   }
 
-  .logo {
+  #container404 #text404 {
+    left: 30%;
+    font-size: 7vh;
+    font-weight: bold;
+  }
+
+  #container404 .logo {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+
+  #container404 .logo img {
     position: absolute;
     top: 5%;
     left: 2%;
-    width: 250px;
   }
 
-  .logo img {
-    position: absolute;
-    top: 5%;
-    left: 2%;
+  #container404 #image404 {
+    min-width: 75%;
   }
 
-  #home {
-    bottom: 3%;
-    font-size: 20px;
+  #container404 #home {
+    bottom: 8%;
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 840px) {
+  #container404 #text404 {
+    font-size: 7vw;
+    margin-top: 30px;
+  }
+
+  #container404 #image404 {
+    min-width: 95%;
+  }
+
+  #container404 #home {
+    bottom: 4%;
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-device-width: 600px) {
+  #container404 #text404 {
+    font-size: 7vw;
+    margin-top: 30px;
+    left: 20%;
+  }
+
+  #container404 #image404 {
+    min-width: 95%;
+  }
+
+  #container404 #home {
+    bottom: 5%;
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-device-width: 420px) {
+  #container404 #text404 {
+    font-size: 9vw;
+    margin-top: 50px;
+    left: 10%;
+  }
+
+  #container404 #image404 {
+    min-width: 100%;
+  }
+
+  #container404 #home {
+    bottom: 4%;
+    font-size: 4vw;
   }
 }
 
