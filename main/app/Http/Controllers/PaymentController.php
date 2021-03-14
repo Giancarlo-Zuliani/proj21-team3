@@ -22,10 +22,10 @@ class PaymentController extends Controller
         $arr = explode(',' , $item);
         $dishes[] = $arr [0];
         $quantities[] = $arr[1];
-        $cartArr []= array('dish' => Item::findOrFail($arr[0]) -> name , 
+        $cartArr []= array('dish' => Item::findOrFail($arr[0]) -> name ,
                         'quantity' => $arr[1],
                         'price' => $arr[2]);
-      }; 
+      };
     $orderedItems = Item::findOrFail($dishes);
     $user = User::findOrFail($data['user_id']);
     $deliveryPrice = $user -> price_delivery;
@@ -56,15 +56,15 @@ class PaymentController extends Controller
     $order -> final_price = $this ->  getFinalPrice($data['dishes'] , $data['quantities'] ,$deliveryPrice) * 100 ;
     $order -> save();
     $order -> items() -> attach($data['dishes']);
-    for ($i=0; $i < count($data['quantities']); $i++) { 
+    for ($i=0; $i < count($data['quantities']); $i++) {
       DB::update('update item_order set quantity =' . $data['quantities'][$i]. ' where order_id =' . $order -> id);
     }
-      
+
       // invio email
     Mail::to($order -> email)->send(new TestMail($order));
     return redirect() -> route('success');
   }
-    
+
   private function getFinalPrice($dishArr , $quantityArr , $deliveryPrice){
     $total_price = 0;
     $index = 0;
