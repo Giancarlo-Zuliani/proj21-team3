@@ -11,7 +11,6 @@
     <div class="container-fluid" id="container404">
 			<div class="logo">
 				<h1 id="text-logo">Fooduro </h1><img height="50"; width="50"; src="{{asset('storage/assets/logo-white-xs.svg')}}">
-				{{-- <img id="logo-white-xs" height="50"; width="50"; src="{{asset('storage/assets/logo-white-xs.svg')}}"> --}}
 			</div>
         <div class="ops">
           <h1 id="text404">404 <br> Ops, page not found! </h1>
