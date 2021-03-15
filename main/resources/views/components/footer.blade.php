@@ -5,7 +5,7 @@
             <img id="footersvg" src="{{asset('storage/assets/logo-yellow.svg')}}" alt="">          
           </div>
           <div class="col-sm-3 offset-sm-6">
-            <a class="github-button" href="https://github.com/Giancarlo-Zuliani/proj21-team3/archive/main.zip" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Download Giancarlo-Zuliani/proj21-team3 on GitHub">Download</a>
+            <a class="github-button" href="https://github.com/Giancarlo-Zuliani/proj21-team3/archive/main.zip" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Download Giancarlo-Zuliani/proj21-team3 on GitHub">Download me!</a>
           </div>
         <div class="row justify-content-center avatar_container">
           {{-- FIRST AVATAR --}}
@@ -81,7 +81,7 @@
                       <img src="{{asset('storage/assets/Natalia.svg')}}" alt="Avatar">
                     </div>
                     <div class="flip-card-back">
-                      <h5>Natalia Veras</h5>
+                      <h5>Natália Veras</h5>
                       <div class="footer_links">
                         <a target="_blank" href="https://github.com/nataliavrs/nataliavrs"><i class="fab fa-github"></i></a>
                         <a target="_blank" href="https://www.linkedin.com/in/nataliaveras/"><i class="fab fa-linkedin"></i></a>
@@ -102,7 +102,7 @@
                       <img src="{{asset('storage/assets/Gian.svg')}}" alt="Avatar">
                     </div>
                     <div class="flip-card-back">
-                      <h5>Giacarlo Zuliani</h5>
+                      <h5>Giancarlo Zuliani</h5>
                       <div class="footer_links">
                          <a target="_blank" href="https://github.com/Giancarlo-Zuliani"><i class="fab fa-github"> </i></a>
                          <a target="_blank" href="https://www.linkedin.com/in/giancarlo-zuliani"><i class="fab fa-linkedin"> </i></a>
@@ -117,8 +117,8 @@
         </div>
     </div>
   
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-     Made With &#10084;&#65039; By Team3-Classe21
+    <div class="text-center made-with" style="background-color: rgba(0, 0, 0, 0.2);">
+     Made with &#10084;&#65039; &nbsp; by Team3 - Classe21
     </div>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </footer>
