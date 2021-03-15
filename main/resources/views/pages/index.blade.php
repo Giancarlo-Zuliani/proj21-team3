@@ -170,7 +170,7 @@
                     ref="myCard"
                     id="menu"
                 >
-                    <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/assets/users/', '')}}/${rest.img}`>
+                    <img class="card-img-top" style="height:180px; width:286px;" :src=`{{asset('storage/img/', '')}}/${rest.img}`>
                     <div class="card-body card-index">
                         <h6 id="card-text" class="text-capitalize text-center font-weight-bold">@{{rest.name}}</h6>
                     </div>
