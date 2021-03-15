@@ -23,5 +23,5 @@
     setTimeout(function(){
         var autoBack = document.getElementById('backhome');
         autoBack.click();
-    },4000);
+    },7000);
 </script>
