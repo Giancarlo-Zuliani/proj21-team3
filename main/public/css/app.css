@@ -11778,12 +11778,8 @@ p.cartDel {
   margin-bottom: 25px;
 }
 
-.button-fashion {
-  background-color: #FCC15D;
-  color: #2F294D;
-  border: 3px solid #FCC15D;
-  border-radius: 8px;
-  font-size: 18px;
+.user-show {
+  font-size: 16px;
 }
 
 body {

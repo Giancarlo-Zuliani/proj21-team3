@@ -1,9 +1,9 @@
 @extends('layouts.main-layout')
 {{-- USER PROFILE PAGE --}}
 @section('content')
-  <div class="container-fluid">
+  <div class="container-fluid user-show">
     <div class="row justify-content-center">
-          <div class="card shadow col-md-6">
+          <div class="card shadow col-md-8">
               <div class="card-header text-center">
                 <h3 class="title-show">
                   Informazioni personali
@@ -55,6 +55,10 @@
               </div>
 
                 <div class="text-center">
+                  <h3 class="title-show">
+                    La tua immagine
+                  </h3>
+                  <hr>
                   @if (Auth::user() -> img)
                     <img class="rounded img-user-show" style="max-width: 80%;"  src="{{asset('storage/img/' . Auth::user() -> img )}}">
                   @endif
@@ -64,7 +68,7 @@
                   <div class="row justify-content-center text-center">
                     <div class="container-btn col-xs-5 col-sm-5 col-md-3 col-lg-5">
                       <a href="{{route('user-edit', $user -> id)}}" >
-                          <button class="btn btn-outline-warning text-capitalize text-center">
+                          <button class="btn btn-lg btn-outline-warning text-capitalize text-center">
                             Aggiorna informazioni
                           </button>
                       </a>

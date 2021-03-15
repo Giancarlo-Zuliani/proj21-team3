@@ -82,17 +82,16 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Eliminare Pietanza</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
-                            <h5>SEI SICURISSIMO DI ELIMINARE IL TUO MERAVIGLIOSO PIATTO ???</h5>
+                            <h4>Sei sicuro di voler eliminare questo piatto?</h4>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" ><a href="{{route('item-delete', $item -> id)}}">SI</a></button>
-                        <button type="button" class="btn btn-primary"><a href="{{route('home')}}">NO</button>
+                      <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-danger" ><a href="{{route('item-delete', $item -> id)}}">Elimina</a></button>
+                        <button type="button" class="btn btn-outline-warning"><a href="{{route('home')}}">Annulla</button>
                       </div>
                     </div>
                   </div>

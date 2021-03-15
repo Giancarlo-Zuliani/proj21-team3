@@ -17,11 +17,11 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="btn btn-nav btn-primary btn-header border-0 nav-link font-weight-bold" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="btn btn-nav btn-primary btn-header border-0 nav-link font-weight-bold" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="btn-nav btn btn-primary btn-header border-0 nav-link font-weight-bold" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="btn-nav btn btn-primary btn-header border-0 nav-link font-weight-bold" href="{{ route('register') }}">{{ __('Registra') }}</a>
                             </li>
                         @endif
                     @else
