@@ -1,16 +1,17 @@
 footer {
-    padding: 25px;
+    padding: 13px 0;
     background-color: $darkblue;
 }
 
 #footersvg {
-    max-width: 80%;
+    width: 180px;
+    padding-left: 10px;
 }
 
 .flip-card {
     background-color: transparent;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     perspective: 1000px;
     padding: 5px;
 }
@@ -46,6 +47,10 @@ footer {
     border-radius: 5px;
 }
 
+.made-with {
+    padding: 5px;
+}
+
 .flip-card-front {
     background-color: $darkblue;
     color: black;
@@ -67,13 +72,13 @@ footer {
         i {
             color: $yellow;
             font-size: 2.8rem;
-            margin: 15px;
+            margin: 5px;
         }
     }
 }
 
-@media screen and(max-width:576px) {
-    #footersvg {
-        max-width: 50%;
-    }
-}
+// @media screen and(max-width:576px) {
+//     #footersvg {
+//         max-width: 40%;
+//     }
+// }
