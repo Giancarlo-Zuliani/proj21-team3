@@ -8,7 +8,7 @@
   <div class="jumboTron">
     <img src="{{asset('storage/img/' . $rest -> img)}}">
     <div id="restaurant-name" class="text-center mx-auto">
-      <p>{{$rest -> name}}</p>
+      <span class="font-weight-bolder">{{$rest -> name}}</span>
     </div>
   </div>
 

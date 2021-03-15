@@ -11400,18 +11400,20 @@ select:focus {
 }
 
 #restaurant-name {
-  background-color: #2F294D;
-  opacity: 0.7;
+  background-color: rgba(30, 36, 68, 0.616);
   text-align: center;
   border-radius: 20px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 3rem;
+  font-size: 40px;
   text-transform: capitalize;
-  padding: 20px;
+  padding: 0 8px;
+}
+
+#restaurant-name span {
+  color: white;
 }
 
 .cardRadius {
@@ -11524,12 +11526,23 @@ p.cartDel {
 
 @media screen and (min-width: 460px) and (max-width: 789px) {
   #restaurant-name {
-    font-size: 1.5rem;
-    padding: 10px;
+    font-size: 1.7rem;
+    min-width: 65%;
   }
 
   #menu-name {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #restaurant-name {
+    font-size: 1.8rem;
+    min-width: 65%;
+  }
+
+  #menu-name {
+    font-size: 1.7rem;
   }
 }
 
