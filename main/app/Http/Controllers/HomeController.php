@@ -34,9 +34,11 @@ class HomeController extends Controller
 
   // STORE NEW ITEM
   public function storeItem(Request $request) {
-    $pr = $request -> get('price') * 100;
-    $price = intval($pr);
-    $request -> merge(['price' => $price]);
+    if(is_numeric($request -> price)){
+      $pr = $request -> get('price') * 100;
+      $price = intval($pr);
+      $request -> merge(['price' => $price]);
+    };
     $data = $request -> all();
     Validator::make($data,
       [
@@ -57,7 +59,8 @@ class HomeController extends Controller
           'lactose.in' => 'inserire valore lattosio',
           'gluten.in' => 'inserire valore glutine',
           'lactose.required' => 'inserire valore lattosio',
-          'gluten.required' => 'inserire valore glutine'
+          'gluten.required' => 'inserire valore glutine',
+          'price.numeric' => 'inserisci un valore numerico'
           ])->validate();
 
     $user = User::findOrFail($request -> get('user_id'));
@@ -76,9 +79,11 @@ class HomeController extends Controller
 
   // UPDATE ITEM
   public function updateItem(Request $request, $id) {
-    $pr = $request -> get('price') * 100;
-    $price = intval($pr);
-    $request -> merge(['price' => $price]);
+    if(is_Numeric($request -> price)){
+      $pr = $request -> get('price') * 100;
+      $price = intval($pr);
+      $request -> merge(['price' => $price]);
+    }
     $data = $request -> all();
 
     Validator::make($data,
@@ -86,12 +91,13 @@ class HomeController extends Controller
           'name' => 'required|string|min:5',
           'description' => 'required|string',
           'ingredients' => 'string',
-          'price' => 'required',
+          'price' => 'required|numeric',
       ],[
           'name.min' => 'Minimo 5 caratteri per il nome',
           'name.required' => 'Campo obbligatorio',
           'description.required' => 'Campo obbligatorio',
           'price.required' => 'Campo obbligatorio',
+          'price.numeric' => 'inserisci un valore numerico per il prezzo'
       ])->validate();
 
     $item = Item::findOrFail($id);

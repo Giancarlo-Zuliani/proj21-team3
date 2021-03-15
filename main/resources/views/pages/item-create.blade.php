@@ -64,7 +64,7 @@
                               <label for="phone_num" class="col-md-4 col-form-label text-md-right">{{ __('Prezzo') }}</label>
 
                               <div class="col-md-6">
-                                <input id="item_create_input_num" type="number" name="price" value="" class=" @error('price') is-invalid @enderror">
+                                <input type="text" name="price" value="" class=" @error('price') is-invalid @enderror">
                                 @error('price')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

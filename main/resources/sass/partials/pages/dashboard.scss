@@ -45,6 +45,7 @@
     font-family: 'Nunito', sans-serif;
 }
 
+
 .new-dish {
     font-size: 1.3rem;
     border: solid 1px $darkblue;
@@ -62,13 +63,4 @@
 
 .title-card {
     color: $pink;
-}
-
-#item_create_input_num {
-    -moz-appearance: textfield;
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
 }

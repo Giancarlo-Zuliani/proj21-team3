@@ -64,20 +64,39 @@
                     @endif
 
                   </p>
-                  
+
                <div class="card-icon text-center" style="margin-bottom: 15px;">
                  <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit text-muted">
-                   <span class="text-modifica-elimina">
-                     Modifica
-                   </span>
-                 </i>
+                     <span class="text-modifica-elimina">
+                       Modifica
+                     </span>
+                    </i>
                  </a>
-                 <a  href="{{route('item-delete', $item -> id)}}" ><i class="far fa-trash-alt text-muted" >
-                   <span class="text-modifica-elimina">
+                 <i class="far fa-trash-alt text-muted"  data-toggle="modal" data-target="#exampleModal">
+                   <span class="text-modifica-elimina ">
                      Elimina
                    </span>
                  </i>
-                 </a>
+                 {{-- MODEL DELETE --}}
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminare Pietanza</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                            <h5>SEI SICURISSIMO DI ELIMINARE IL TUO MERAVIGLIOSO PIATTO ???</h5>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" ><a href="{{route('item-delete', $item -> id)}}">SI</a></button>
+                        <button type="button" class="btn btn-primary"><a href="{{route('home')}}">NO</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                </div>
              </div>
             @endif

@@ -11752,16 +11752,6 @@ p.cartDel {
   color: #E7257D;
 }
 
-#item_create_input_num {
-  -moz-appearance: textfield;
-}
-
-#item_create_input_num input::-webkit-outer-spin-button,
-#item_create_input_num input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 #mail_body {
   margin: 25px auto;
   border: solid #FCC15D 2px;
