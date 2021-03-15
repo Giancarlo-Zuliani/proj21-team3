@@ -3,7 +3,7 @@
         <div class="container">
 
             <a class="navbar-brand" href="{{route('index')}}">
-                <img src="{{asset('storage/assets/logo.svg')}}" height="40" alt="Fooduro logo">
+                <img id="logo_header" src="{{asset('storage/assets/logo.svg')}}" height="40" alt="Fooduro logo">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

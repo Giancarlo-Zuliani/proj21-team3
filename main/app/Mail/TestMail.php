@@ -13,13 +13,13 @@ class TestMail extends Mailable
 
     public $order;
 
-    // DATI DELL'ORDINE
+    // ORDER DATA
     public function __construct($order)
     {   
         $this -> order = $order;
     }
 
-    //  EMAIL CHE INVIAMO
+    //  E-MAIL
     public function build()
     {
         return $this->

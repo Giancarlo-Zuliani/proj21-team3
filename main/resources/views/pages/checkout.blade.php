@@ -14,9 +14,9 @@
         <h5>{{$deliveryPrice / 100}}€</h5>
         @foreach ($cartArr as $item)
         <div class="card-body">
-             <h6>{{$item['quantity'] }}x</h6>
-             <h5 class="text-capitalize">{{$item['dish']}}</h5>
-             <h6>€{{$item['price'] * $item['quantity'] / 100}} </h6>
+          <h6>{{$item['quantity'] }}x</h6>
+          <h5 class="text-capitalize">{{$item['dish']}}</h5>
+          <h6>€{{$item['price'] * $item['quantity'] / 100}} </h6>
         </div>
         @endforeach
         <div id="carttotal">
@@ -63,33 +63,32 @@
       </div>
       <div class="form-group" >
             <input type="text" class="form-control" name="discount" id="discount" value="123" placeholder="Sconto" hidden>
-          </div>
-          <div class="form-group" hidden>
-            <label for="final_price">Totale</label>
-            <input type="number" class="form-control" name="final_price" id="final_price" value="" placeholder="Totale">
-          </div>
+      </div>
+      <div class="form-group" hidden>
+          <label for="final_price">Totale</label>
+          <input type="number" class="form-control" name="final_price" id="final_price" value="" placeholder="Totale">
+      </div>
 
+        @foreach ($dishes as $dish)
+        <input type="checkbox" name="dishes[]"value="{{$dish}}" checked hidden>
+        @endforeach
 
-          @foreach ($dishes as $dish)
-          <input type="checkbox" name="dishes[]"value="{{$dish}}" checked hidden>
-          @endforeach
-
-          @foreach ($quantities as $quantity)
-          <input type="checkbox" name="quantities[]"value="{{$quantity}}" checked hidden>
-          @endforeach
+        @foreach ($quantities as $quantity)
+        <input type="checkbox" name="quantities[]"value="{{$quantity}}" checked hidden>
+        @endforeach
         
-          <h1 class="my-4"> <strong>Dati di pagamento</strong> </h1>
-           <div class="bt-drop-in-wrapper">
-             <div id="bt-dropin"></div>
-           </div>
-           <input id="client_token" name="token" type="hidden" value="{{ $token }}">
-           <input id="nonce" name="payment_method_nonce" type="hidden" >
-           <div class="pay-button text-center">
-             <button class="btn" type="submit">
-              Conferma ordine
-             </button>
+        <h1 class="my-4"> <strong>Dati di pagamento</strong> </h1>
+          <div class="bt-drop-in-wrapper">
+            <div id="bt-dropin"></div>
+          </div>
+          <input id="client_token" name="token" type="hidden" value="{{ $token }}">
+          <input id="nonce" name="payment_method_nonce" type="hidden" >
+          <div class="pay-button text-center">
+            <button class="btn" type="submit">
+             Conferma ordine
+            </button>
          </div>
-       </form>
+      </form>
        <div class= "col-lg-2"></div>
        {{-- MENU ITEMS --}}
         <div id="checkoutcart" class=" col-lg-5 text-center">

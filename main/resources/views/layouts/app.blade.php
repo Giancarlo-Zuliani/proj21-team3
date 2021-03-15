@@ -22,7 +22,6 @@
     {{-- CUSTOM CURSOR --}}
     <script src="https://cdn.jsdelivr.net/npm/kursor"></script>
     <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css"/>
-
     @stack('scriptPayment')
     @stack('scriptStatistics')
 </head>
@@ -31,7 +30,6 @@
         @if (Route::has('login'))
 
         @auth
-            {{-- @include('components.logged-header') --}}
             @include('components.header')
         @else
 

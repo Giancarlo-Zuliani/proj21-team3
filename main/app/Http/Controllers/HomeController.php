@@ -130,7 +130,6 @@ class HomeController extends Controller
       ],[
         'typologies.required' => 'scegli almeno una tipologia per il tuo ristorante'
       ])->validate();
-
     $startDelivery = $data['start_delivery'];
     $endDelivery = $data['end_delivery'];
     $price = $data['price_delivery'] * 100;

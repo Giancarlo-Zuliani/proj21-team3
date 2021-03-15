@@ -1,66 +1,66 @@
-.background-title{
-  color:  $yellow;
-  width: 80%;
-  margin: auto;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  padding: 5px;
+.background-title {
+    color: $yellow;
+    width: 80%;
+    margin: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding: 5px;
 }
 
 .title {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 .dashboard {
-  color: $darkblue;
+    color: $darkblue;
 }
 
 // CARD
 .card-box {
-  margin: 30px 23px;
-  padding: 7px 14px;
-  border-radius: 20px;
-  font-size: 1.1rem;
+    margin: 30px 23px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 1.1rem;
 }
 
 #yearSelector {
-  font-size: 1rem;
-  color: $darkblue;
-  font-family: 'Nunito', sans-serif;
-  border: solid .5px $darkblue;
-  border-radius: 10px;
+    font-size: 1rem;
+    color: $darkblue;
+    font-family: 'Nunito', sans-serif;
+    border: solid .5px $darkblue;
+    border-radius: 10px;
 }
 
 // graphic
-#angelo{
-  margin-top: -50px;
+#angelo {
+    margin-top: -50px;
 }
 
-.card-graphic{
-  margin: 0px 30px;
-  border-radius: 20px;
+.card-graphic {
+    margin: 0px 30px;
+    border-radius: 20px;
 }
 
 .text-modifica-elimina {
-  font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 
 .new-dish {
-  font-size: 1.3rem;
-  border: solid 1px $darkblue;
+    font-size: 1.3rem;
+    border: solid 1px $darkblue;
 }
 
 .hr-index.dashboard-hr {
-  border-color: transparent;
+    border-color: transparent;
 }
 
 @media only screen and (max-width: 600px) {
-  .card-graphic{
-    margin: 10px 0px;
-  }
+    .card-graphic {
+        margin: 10px 0px;
+    }
 }
 
 .title-card {
-  color: $pink;
+    color: $pink;
 }

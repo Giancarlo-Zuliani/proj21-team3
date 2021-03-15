@@ -53,7 +53,7 @@ class ApiController extends Controller
         return response() ->json($orderArr);
     }
     
-    //CHART - GET ITEMS SELLS DATA
+    //CHART - GET ITEMS SALES DATA
     public function getItemsStats($id){
         $user = User::findOrFail($id);
         $items = $user -> items;
@@ -76,6 +76,8 @@ class ApiController extends Controller
           $total_sales += $delivery * $user -> price_delivery; 
         return response() -> json(['countArr' => $countArr, "nameArr" => $itemsNames , "total_sales" => $total_sales / 100]);
     }
+    
+    //THIS FUNCTION RETURN AN ARRAY OF UNIQUE ORDER BY GIVEN USER ID
     private function getUniqueOrderArr($id){
         $orderArr = [];
         $user = User::findOrFail($id);

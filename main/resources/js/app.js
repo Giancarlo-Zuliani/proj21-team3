@@ -74,13 +74,12 @@ const app = new Vue({
                     this.selectedTypologies.splice(
                         this.selectedTypologies.indexOf(id), 1) :
                     this.selectedTypologies.push(id);
-                this.bannerMax = ''
-                    // console.log(this.selectedTypologies);
+                this.bannerMax = '';
             } else if (this.selectedTypologies.includes(id)) {
                 this.selectedTypologies.splice(this.selectedTypologies.indexOf(id), 1)
-                this.bannerMax = ''
+                this.bannerMax = '';
             } else if (this.selectedTypologies.length <= 3) {
-                this.bannerMax = 'modal'
+                this.bannerMax = 'modal';
                 console.log(this.bannerMax);
             };
             this.getRestaurantCount(id);
@@ -89,7 +88,6 @@ const app = new Vue({
         getRestaurantCount(id) {
             let url = 'http://127.0.0.1:8000/getCountRestaurant'
             if (this.selectedTypologies.length > 0) {
-
                 for (let i = 0; i < this.searchLength; i++) {
                     if (this.selectedTypologies[i] == undefined) {
                         continue;
@@ -107,6 +105,7 @@ const app = new Vue({
                 this.searchResultNum = undefined;
             }
         },
+        //ADD ITEMS TO CART FUNCTION
         addToCart(item) {
             if (this.cartArray.some(obj => obj.id === item.id)) {
                 this.cartArray.forEach(elem => {
@@ -120,6 +119,7 @@ const app = new Vue({
             };
             this.getCartTotal();
         },
+        //REMOVE ITEMS FROM CART
         removeFromCart(index) {
             if (this.cartArray[index].quantity === 1) {
                 this.cartArray.splice(index, 1);
@@ -132,6 +132,7 @@ const app = new Vue({
             this.cartArray[index].quantity++;
             this.getCartTotal();
         },
+        //GET ORDER COST
         getCartTotal() {
             this.finalPrice = 0;
             this.cartArray.forEach((item) => {
@@ -146,6 +147,7 @@ const app = new Vue({
         showPayment() {
             this.pay = true;
         },
+
         // FOCUS EFFECT ON CARD
         focusEffect() {
             if (this.$refs.myCard != undefined) {
@@ -165,24 +167,19 @@ const app = new Vue({
                         const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
                         el.style.transform = string
                     }
-
-                    /* Add listener for mouseout event, remove the rotation */
                     el.addEventListener('mouseout', function() {
                         el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
                     })
-
-                    /* Add listener for mousedown event, to simulate click */
                     el.addEventListener('mousedown', function() {
                         el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
                     })
-
-                    /* Add listener for mouseup, simulate release of mouse click */
                     el.addEventListener('mouseup', function() {
                         el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
                     })
                 }
             }
         },
+        //SWITCH TYPOLOGIES AND RESTAURANT SHOW IN INDEX
         backTypology() {
             this.showRestaurant = !this.showRestaurant;
             // FOCUS EFFECT
@@ -199,4 +196,3 @@ new kursor({
     color: '#d30d66',
     removeDefaultCursor: true
 });
-
