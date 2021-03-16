@@ -196,3 +196,23 @@ new kursor({
     color: '#d30d66',
     removeDefaultCursor: true
 });
+
+// DELETE ITEM
+ // banner div
+ const deleteBanner = document.getElementsByClassName("delete-banner");
+ // trash can
+ const trash = document.getElementsByClassName("fa-trash-alt");
+ // annulla
+ const annulla = document.getElementsByClassName("annulla");
+
+ for(let i = 0; i < trash.length; i++) {
+     trash[i].addEventListener('click', function() {
+         deleteBanner[i].classList.toggle("show");
+     })
+ }
+
+ for(let j = 0; j < annulla.length; j++) {
+     annulla[j].addEventListener('click', function() {
+         deleteBanner[j].classList.toggle("show");
+     })
+ }

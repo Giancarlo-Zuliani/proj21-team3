@@ -65,37 +65,31 @@
 
                   </p>
 
-               <div class="card-icon text-center" style="margin-bottom: 15px;">
-                 <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}"><i class="far fa-edit text-muted">
+               <div class="card-icon edit-delete-container text-center" style="margin-bottom: 15px;">
+                 <a style="margin-right:7px;" href="{{route('item-edit', $item -> id)}}">
+                  <i class="far fa-edit text-muted">
                      <span class="text-modifica-elimina">
                        Modifica
                      </span>
                     </i>
                  </a>
-                 <i class="far fa-trash-alt text-muted"  data-toggle="modal" data-target="#exampleModal">
-                   <span class="text-modifica-elimina ">
-                     Elimina
-                   </span>
-                 </i>
-                 {{-- MODEL DELETE --}}
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                            <h4>Sei sicuro di voler eliminare questo piatto?</h4>
-                      </div>
-                      <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-danger" ><a href="{{route('item-delete', $item -> id)}}">Elimina</a></button>
-                        <button type="button" class="btn btn-outline-warning"><a href="{{route('home')}}">Annulla</button>
-                      </div>
-                    </div>
+                
+                  <i class="far fa-trash-alt text-muted">
+                    <span class="text-modifica-elimina">
+                      Elimina
+                    </span>
+                  </i>
+
+                  {{-- DELETE BANNER --}}                     
+                  <div class="delete-banner shadow">
+                      <span>Sicuro di voler eliminare questo piatto?</span>
+                      <br>
+                      <a class="button-alert" href="{{route('item-delete', $item -> id)}}">                            
+                          <button class="btn btn-danger">Elimina</button>
+                      </a>
+                      <button class="annulla btn btn-outline-warning">Annulla</button>
                   </div>
-                </div>
+
                </div>
              </div>
             @endif
@@ -145,7 +139,7 @@
 
         <div class="card-graphic shadow col-xs-12 col-md-6 col-lg-5">
           <div class="card-body">
-            <h4 class="title-incassi text-center font-weight-bold">Analisi vendite</h4>
+            <h4 class="text-center font-weight-bold">Analisi vendite</h4>
             <select id="yearSelector" @change="getStatistics()">
               <option value="2021-">
                 2021

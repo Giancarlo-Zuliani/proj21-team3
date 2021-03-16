@@ -45,7 +45,7 @@ class HomeController extends Controller
           'name' => 'required|string|min:5',
           'description' => 'required|string',
           'ingredients' => 'required|string',
-          'price' => 'required|numeric|gt:0',
+          'price' => 'required|numeric|gt:0|max:2000',
           'lactose' => 'required|in:1,0',
           'gluten' => 'required|in:1,0'
       ],[
@@ -56,6 +56,7 @@ class HomeController extends Controller
           'price.required' => 'Campo obbligatorio',
           'price.numeric' => 'Inserire un valore numerico',
           'price.gt' => 'prezzo deve essere superiore a 0',
+          'price.max' => 'Il prezzo non può superare 2.000€',
           'lactose.in' => 'inserire valore lattosio',
           'gluten.in' => 'inserire valore glutine',
           'lactose.required' => 'inserire valore lattosio',

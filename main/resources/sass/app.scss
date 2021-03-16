@@ -1,57 +1,58 @@
-    // Fonts
-    @import url('https://fonts.googleapis.com/css?family=Nunito');
-    // Variables
-    @import 'partials/_variables.scss';
-    // Bootstrap
-    @import '~bootstrap/scss/bootstrap';
-    // Partials
-    @import 'partials/_common.scss';
-    @import 'partials/_mixins.scss';
-    @import 'partials/_main.scss';
-    @import 'partials/_header.scss';
-    @import 'partials/_footer.scss';
-    @import 'partials/_animations.scss';
-    @import 'partials/pages/index.scss';
-    @import 'partials/pages/form.scss';
-    @import 'partials/pages/app-layout.scss';
-    @import 'partials/pages/_error.scss';
-    @import 'partials/_menu.scss';
-    @import 'partials/pages/_checkout.scss';
-    @import 'partials/pages/dashboard.scss';
-    @import 'partials/pages/_mail.scss';
-    @import 'partials/pages/usershow.scss';
-    body {
-        background-color: rgb(255, 254, 250);
-    }
-    
-    a {
-        color: $darkblue !important;
-    }
-    
-    ul li {
-        list-style: none;
-    }
-    
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Variables
+@import 'partials/_variables.scss';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+// Partials
+@import 'partials/_common.scss';
+@import 'partials/_mixins.scss';
+@import 'partials/_main.scss';
+@import 'partials/_header.scss';
+@import 'partials/_footer.scss';
+@import 'partials/_animations.scss';
+@import 'partials/pages/index.scss';
+@import 'partials/pages/form.scss';
+@import 'partials/pages/app-layout.scss';
+@import 'partials/pages/_error.scss';
+@import 'partials/_menu.scss';
+@import 'partials/pages/_checkout.scss';
+@import 'partials/pages/dashboard.scss';
+@import 'partials/pages/_mail.scss';
+@import 'partials/pages/usershow.scss';
+body {
+    background-color: rgb(255, 254, 250);
+}
+
+a {
+    color: $darkblue !important;
+}
+
+ul li {
+    list-style: none;
+}
+
+#main {
+    margin-bottom: 30px;
+}
+
+.btn-results {
+    background-color: $darkblue;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: $pink;
+    border-color: $pink;
     #main {
         margin-bottom: 30px;
     }
-    
-    .btn-results {
-        background-color: $darkblue;
-    }
-    
-    .btn-primary:hover {
+    .btn-primary:focus,
+    .btn-primary.focus {
         color: #fff;
         background-color: $pink;
         border-color: $pink;
-        #main {
-            margin-bottom: 30px;
-        }
-        .btn-primary:focus,
-        .btn-primary.focus {
-            color: #fff;
-            background-color: $pink;
-            border-color: $pink;
-            box-shadow: 0 0 0 0.2rem rgba(207, 60, 97, 0.5);
-        }
+        box-shadow: 0 0 0 0.2rem rgba(207, 60, 97, 0.5);
     }
+}
+

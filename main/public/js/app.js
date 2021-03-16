@@ -49824,7 +49824,34 @@ new kursor({
   type: 1,
   color: '#d30d66',
   removeDefaultCursor: true
-});
+}); // DELETE ITEM
+// banner div
+
+var deleteBanner = document.getElementsByClassName("delete-banner"); // trash can
+
+var trash = document.getElementsByClassName("fa-trash-alt"); // annulla
+
+var annulla = document.getElementsByClassName("annulla");
+
+var _loop2 = function _loop2(i) {
+  trash[i].addEventListener('click', function () {
+    deleteBanner[i].classList.toggle("show");
+  });
+};
+
+for (var i = 0; i < trash.length; i++) {
+  _loop2(i);
+}
+
+var _loop3 = function _loop3(j) {
+  annulla[j].addEventListener('click', function () {
+    deleteBanner[j].classList.toggle("show");
+  });
+};
+
+for (var j = 0; j < annulla.length; j++) {
+  _loop3(j);
+}
 
 /***/ }),
 
@@ -49880,21 +49907,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.addEventListener('DOMContentLoaded', function () {
-  // // banner div
-  // const deleteBanner = document.getElementsByClassName("delete-banner");
-  // // trash icon
-  // const trash = document.getElementsByClassName("fa-trash-alt");
-  //
-  // for(let i = 0; i < trash.length; i++) {
-  //     trash[i].addEventListener('click', function() {
-  //         deleteBanner[i].classList.toggle("show");
-  //     })
-  // }
-  $('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus');
-  });
-});
+// not working
 
 /***/ }),
 
@@ -49916,8 +49929,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/angelo/Corso/Progetto_finale/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/natalia/Desktop/Repos Laravel/proj21-team3/main/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

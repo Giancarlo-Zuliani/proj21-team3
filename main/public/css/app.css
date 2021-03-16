@@ -11752,6 +11752,35 @@ p.cartDel {
   color: #E7257D;
 }
 
+.title-incassi {
+  background-color: #2F294D;
+  border-radius: 10px;
+  color: #FCC15D;
+  padding: 5px;
+}
+
+.delete-banner {
+  display: none;
+  border-radius: 10px;
+  position: absolute;
+  color: #2F294D;
+  width: 350px;
+  background-color: white;
+  bottom: -50px;
+  left: 50%;
+  padding: 5px;
+  transform: translate(-50%);
+  background-color: #f8f8f8;
+}
+
+.show {
+  display: inline-block;
+}
+
+.edit-delete-container {
+  position: relative;
+}
+
 #mail_body {
   margin: 25px auto;
   border: solid #FCC15D 2px;
