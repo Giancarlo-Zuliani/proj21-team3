@@ -5,7 +5,7 @@
 FooDuro e' una piattaforma che si ispira ai grandi siti di food delivery, essa prevede la registrazione di ristoratori che possono mettere in vendita i loro prodotti, che a loro volte  possono essere ordinati comodamente da casa dai visitatori. Gli utenti, attraverso una ricerca per tipologie, possono visionare tutti i vari ristoratori e i loro menù ed eventualmente ordinare il piatto desiderato.
 
 
-## Immagini 
+## Anteprima interfaccia sito 
 
 - Home page
 <a href="#"><img width="800" src="main/storage/app/public/assets/home-page.png"></a>
@@ -40,7 +40,7 @@ FooDuro e' una piattaforma che si ispira ai grandi siti di food delivery, essa p
 * NPM
 * MySQL
 
-#### Installazione
+### Installazione
 
 * Clonare la repository da GitHub con il seguente comando da terminale.
 
