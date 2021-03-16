@@ -10,22 +10,31 @@
         left: 50%;
         transform: translateX(-50%);
         color: white;
+        width: 100%;
         h1 {
-            font-size: 2.8rem;
+            font-size: 4.3rem;
+        }
+        .quattro{
+            font-size: 5rem;
         }
     }
     #error_404_button {
         position: absolute;
-        bottom: 10%;
+        bottom: 15%;
         left: 50%;
-        transform: translateX(-50%);
-        background-color: $yellow;
-        padding: 25px 35px;
-        border-radius: 25px;
-        color: white;
-        font-size: 1.5rem;
-        &:hover {
-            cursor: pointer;
+        transform: translateX(-50%);                       
+        a > h1 {
+        font-size: 2.5rem; 
+        color: $yellow;
+        background-color: $pink;
+        padding: 15px;
+        border-radius: 20px;  
         }
+    }
+    #error_404_button:hover a > h1 {
+        cursor: pointer;
+     
+        color: $darkblue;
+        background-color: $yellow;
     }
 }

@@ -11362,26 +11362,36 @@ select:focus {
   left: 50%;
   transform: translateX(-50%);
   color: white;
+  width: 100%;
 }
 
 #container_404 #notfound h1 {
-  font-size: 2.8rem;
+  font-size: 4.3rem;
+}
+
+#container_404 #notfound .quattro {
+  font-size: 5rem;
 }
 
 #container_404 #error_404_button {
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #FCC15D;
-  padding: 25px 35px;
-  border-radius: 25px;
-  color: white;
-  font-size: 1.5rem;
 }
 
-#container_404 #error_404_button:hover {
+#container_404 #error_404_button a > h1 {
+  font-size: 2.5rem;
+  color: #FCC15D;
+  background-color: #E7257D;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+#container_404 #error_404_button:hover a > h1 {
   cursor: pointer;
+  color: #2F294D;
+  background-color: #FCC15D;
 }
 
 .jumboTron {
