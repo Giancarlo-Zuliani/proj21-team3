@@ -45,7 +45,7 @@ class HomeController extends Controller
           'name' => 'required|string|min:5',
           'description' => 'required|string',
           'ingredients' => 'required|string',
-          'price' => 'required|numeric|gt:0|max:2000',
+          'price' => 'required|numeric|gt:0|max:200000',
           'lactose' => 'required|in:1,0',
           'gluten' => 'required|in:1,0'
       ],[
@@ -103,7 +103,7 @@ class HomeController extends Controller
 
     $item = Item::findOrFail($id);
     $item -> update($data);
-      
+
     return redirect() -> route('home');
   }
 
@@ -189,5 +189,5 @@ class HomeController extends Controller
   // CHECK OUT PAGE
   public function payment() {
     return view('pages.checkout');
-  }    
+  }
 }
