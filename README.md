@@ -7,12 +7,14 @@ FooDuro e' una piattaforma che si ispira ai grandi siti di food delivery, essa p
 
 ## Anteprima interfaccia sito 
 
-- Home page
-<a href="#"><img width="800" src="main/storage/app/public/assets/home-page.png"></a>
-- Scelta delle tipologie
-<a href="#"><img width="800" src="main/storage/app/public/assets/typologies.png"></a>
-- Ristorante
-<a href="#"><img width="800" src="main/storage/app/public/assets/restaurant.png"></a>
+* Home page
+<a href="#"><img width="800" style="margin: 20px" src="main/storage/app/public/assets/home-page.png"></a>
+
+* Scelta delle tipologie
+<a href="#"><img width="800" style="margin: 20px" src="main/storage/app/public/assets/typologies.png"></a>
+
+* Ristorante
+<a href="#"><img width="800" style="margin: 20px" src="main/storage/app/public/assets/restaurant.png"></a>
 
 ## Tecnologie principali
 
