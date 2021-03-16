@@ -4,6 +4,7 @@
 
 FooDuro e' una piattaforma che si ispira ai grandi siti di food delivery, essa prevede la registrazione di ristoratori che possono mettere in vendita i loro prodotti, che a loro volte  possono essere ordinati comodamente da casa dai visitatori. Gli utenti, attraverso una ricerca per tipologie, possono visionare tutti i vari ristoratori e i loro menù ed eventualmente ordinare il piatto desiderato.
 
+- immagine
 <a href="#"><img width="300" align='right' src="main/storage/app/public/assets/home-page.png"></a>
 
 ## Tecnologie principali
