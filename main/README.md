@@ -5,16 +5,16 @@
 FooDuro e' una piattaforma che si ispira ai grandi siti di food delivery, essa prevede la registrazione di ristoratori che possono mettere in vendita i loro prodotti, che a loro volte  possono essere ordinati comodamente da casa dai visitatori. Gli utenti, attraverso una ricerca per tipologie, possono visionare tutti i vari ristoratori e i loro menù ed eventualmente ordinare il piatto desiderato.
 
 
-## Anteprima interfaccia sito 
+## Anteprima interfaccia sito
 
 * Home page
-<a href="#"><img width="800" style="margin: 20px" src="storage/app/public/assets/home-page.png"></a>
+<a href="#"><img width="800" style="margin: 20px" src="main/storage/app/public/assets/home-page.png"></a>
 
 * Scelta delle tipologie
-<a href="#"><img width="800" style="margin: 20px" src="storage/app/public/assets/typologies.png"></a>
+<a href="#"><img width="800" style="margin: 20px" src="main/storage/app/public/assets/typologies.png"></a>
 
 * Ristorante
-<a href="#"><img width="800" style="margin: 20px" src="storage/app/public/assets/restaurant.png"></a>
+<a href="#"><img width="800" style="margin: 20px" src="main/storage/app/public/assets/restaurant.png"></a>
 
 ## Tecnologie principali
 
@@ -38,7 +38,7 @@ FooDuro e' una piattaforma che si ispira ai grandi siti di food delivery, essa p
 
 * PHP >= 7.2.*
 * Composer
-* Node.js 
+* Node.js
 * NPM
 * MySQL
 
@@ -62,7 +62,7 @@ $ cd main
 $ cp .env.example .env
 ```
 
-* Compilare i seguenti campi del file ".env" in modo da farli combaciare con il proprio ambiente di lavoro locale. 
+* Compilare i seguenti campi del file ".env" in modo da farli combaciare con il proprio ambiente di lavoro locale.
 
 * Scaricare il database che si trova nella cartella 'database' e importarlo all'interno di MySQL. Infine, compilare il file .env per il collegamento.
 
@@ -72,10 +72,10 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=fooduro
 DB_USERNAME=root
-DB_PASSWORD= 
+DB_PASSWORD=
 ```
 
-* Le chiavi per abilitare Braintree sono reperibili registrandosi [qui](https://developers.braintreepayments.com/). 
+* Le chiavi per abilitare Braintree sono reperibili registrandosi [qui](https://developers.braintreepayments.com/).
 
 ```sh
 BRAINTREE_ENV=sandbox
@@ -102,6 +102,8 @@ MAIL_FROM_NAME="${APP_NAME}"
 $ composer install
 
 $ php artisan key:generate
+
+$ php artisan storage:link
 
 $ npm install && npm run watch
 
